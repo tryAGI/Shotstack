@@ -1,0 +1,19 @@
+#nullable enable
+
+namespace Shotstack
+{
+    public partial interface IIngestClient
+    {
+        /// <summary>
+        /// Get Source<br/>
+        /// Fetch a source file details and status by its id.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/ingest/{version}&lt;/a&gt;
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Shotstack.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Shotstack.SourceResponse> GetSourceAsync(
+            string id,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}
