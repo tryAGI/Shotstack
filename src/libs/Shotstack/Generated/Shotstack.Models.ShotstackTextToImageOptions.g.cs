@@ -53,10 +53,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ShotstackTextToImageOptions" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `text-to-image` for text-to-image.<br/>
-        /// Default Value: text-to-image
-        /// </param>
         /// <param name="prompt">
         /// The text prompt to generate an image from.<br/>
         /// Example: A detailed photograph of Mars, showcasing its orange-red surface
@@ -69,6 +65,10 @@ namespace Shotstack
         /// The height of the image in pixels.<br/>
         /// Example: 512
         /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `text-to-image` for text-to-image.<br/>
+        /// Default Value: text-to-image
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,10 +78,10 @@ namespace Shotstack
             int height,
             global::Shotstack.ShotstackTextToImageOptionsType type = global::Shotstack.ShotstackTextToImageOptionsType.TextToImage)
         {
+            this.Type = type;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Width = width;
             this.Height = height;
-            this.Type = type;
         }
 
         /// <summary>

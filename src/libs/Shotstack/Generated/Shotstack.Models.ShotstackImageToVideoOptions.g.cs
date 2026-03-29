@@ -53,10 +53,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ShotstackImageToVideoOptions" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `image-to-video` for image-to-video.<br/>
-        /// Default Value: image-to-video
-        /// </param>
         /// <param name="imageUrl">
         /// The URL of the image to convert to video. The URL must be publicly accessible or include credentials. The image dimensions must exactly match one of the following: 1024px x 576px, 576px x 1024px or 768px x 768px.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/image.jpg
@@ -71,6 +67,10 @@ namespace Shotstack
         /// Default Value: 127<br/>
         /// Example: 127
         /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `image-to-video` for image-to-video.<br/>
+        /// Default Value: image-to-video
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,8 +80,8 @@ namespace Shotstack
             int? motion,
             global::Shotstack.ShotstackImageToVideoOptionsType type = global::Shotstack.ShotstackImageToVideoOptionsType.ImageToVideo)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.GuidanceScale = guidanceScale;
             this.Motion = motion;
         }

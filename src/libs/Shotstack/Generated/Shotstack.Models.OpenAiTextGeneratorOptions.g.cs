@@ -56,10 +56,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenAiTextGeneratorOptions" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `text-generator` for text generation.<br/>
-        /// Default Value: text-generator
-        /// </param>
         /// <param name="prompt">
         /// The text prompt to generate text from.<br/>
         /// Example: Generate a short script for a 15 second video describing the benefits of the Shotstack API
@@ -75,6 +71,10 @@ namespace Shotstack
         /// The system prompt to use for generating the text. This is an optional prompt that can be used to provide context or additional information to the model.<br/>
         /// Example: You are a professional script writer and film maker
         /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `text-generator` for text generation.<br/>
+        /// Default Value: text-generator
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,9 +84,9 @@ namespace Shotstack
             string? systemPrompt,
             global::Shotstack.OpenAiTextGeneratorOptionsType type = global::Shotstack.OpenAiTextGeneratorOptionsType.TextGenerator)
         {
+            this.Type = type;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
-            this.Type = type;
             this.SystemPrompt = systemPrompt;
         }
 

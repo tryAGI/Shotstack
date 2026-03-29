@@ -43,9 +43,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgEllipseShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `ellipse`.
-        /// </param>
         /// <param name="radiusX">
         /// The horizontal radius (semi-major axis) in pixels.<br/>
         /// Example: 80
@@ -53,6 +50,9 @@ namespace Shotstack
         /// <param name="radiusY">
         /// The vertical radius (semi-minor axis) in pixels.<br/>
         /// Example: 50
+        /// </param>
+        /// <param name="type">
+        /// The shape type - set to `ellipse`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,9 +62,9 @@ namespace Shotstack
             double radiusY,
             global::Shotstack.SvgEllipseShapeType type)
         {
+            this.Type = type;
             this.RadiusX = radiusX;
             this.RadiusY = radiusY;
-            this.Type = type;
         }
 
         /// <summary>

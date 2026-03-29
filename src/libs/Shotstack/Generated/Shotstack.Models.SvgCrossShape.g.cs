@@ -52,9 +52,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgCrossShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `cross`.
-        /// </param>
         /// <param name="width">
         /// The total width of the cross in pixels.<br/>
         /// Example: 100
@@ -67,6 +64,9 @@ namespace Shotstack
         /// The thickness of the cross arms in pixels.<br/>
         /// Example: 20
         /// </param>
+        /// <param name="type">
+        /// The shape type - set to `cross`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,10 +76,10 @@ namespace Shotstack
             double thickness,
             global::Shotstack.SvgCrossShapeType type)
         {
+            this.Type = type;
             this.Width = width;
             this.Height = height;
             this.Thickness = thickness;
-            this.Type = type;
         }
 
         /// <summary>

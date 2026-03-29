@@ -123,13 +123,17 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="StabilityAiTextToImageOptions" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `text-to-image` for text-to-image.<br/>
-        /// Default Value: text-to-image
-        /// </param>
         /// <param name="prompt">
         /// The text prompt to generate an image from.<br/>
         /// Example: A detailed photograph of Mars, showcasing its orange-red surface
+        /// </param>
+        /// <param name="width">
+        /// The width of the image in pixels. Must be divisible by 64.<br/>
+        /// Example: 512
+        /// </param>
+        /// <param name="height">
+        /// The height of the image in pixels. Must be divisible by 64.<br/>
+        /// Example: 512
         /// </param>
         /// <param name="engine">
         /// The engine (model) to use for generating the image. Select from the list of available engines: &lt;ul&gt;<br/>
@@ -141,14 +145,6 @@ namespace Shotstack
         /// &lt;/ul&gt;<br/>
         /// Default Value: stable-diffusion-xl-1024-v1-0<br/>
         /// Example: stable-diffusion-xl-1024-v1-0
-        /// </param>
-        /// <param name="width">
-        /// The width of the image in pixels. Must be divisible by 64.<br/>
-        /// Example: 512
-        /// </param>
-        /// <param name="height">
-        /// The height of the image in pixels. Must be divisible by 64.<br/>
-        /// Example: 512
         /// </param>
         /// <param name="steps">
         /// The number of iterative diffusion steps to run. A number between 10 and 50.<br/>
@@ -187,6 +183,10 @@ namespace Shotstack
         /// &lt;/ul&gt;<br/>
         /// Example: photographic
         /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `text-to-image` for text-to-image.<br/>
+        /// Default Value: text-to-image
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -201,11 +201,11 @@ namespace Shotstack
             global::Shotstack.StabilityAiTextToImageOptionsStylePreset? stylePreset,
             global::Shotstack.StabilityAiTextToImageOptionsType type = global::Shotstack.StabilityAiTextToImageOptionsType.TextToImage)
         {
+            this.Type = type;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Engine = engine;
             this.Width = width;
             this.Height = height;
-            this.Type = type;
-            this.Engine = engine;
             this.Steps = steps;
             this.Seed = seed;
             this.CfgScale = cfgScale;

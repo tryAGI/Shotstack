@@ -48,10 +48,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgSolidFill" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The fill type - set to `solid` for a single color fill.<br/>
-        /// Default Value: solid
-        /// </param>
         /// <param name="color">
         /// The fill color using hexadecimal color notation (e.g., `#FF0000` for red).<br/>
         /// Must be a 6-digit hex color code prefixed with `#`.<br/>
@@ -64,6 +60,10 @@ namespace Shotstack
         /// Default Value: 1<br/>
         /// Example: 0.8F
         /// </param>
+        /// <param name="type">
+        /// The fill type - set to `solid` for a single color fill.<br/>
+        /// Default Value: solid
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,8 +72,8 @@ namespace Shotstack
             double? opacity,
             global::Shotstack.SvgSolidFillType type = global::Shotstack.SvgSolidFillType.Solid)
         {
-            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Type = type;
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Opacity = opacity;
         }
 

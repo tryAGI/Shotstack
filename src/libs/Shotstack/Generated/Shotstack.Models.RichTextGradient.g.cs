@@ -43,6 +43,9 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="RichTextGradient" /> class.
         /// </summary>
+        /// <param name="stops">
+        /// Gradient color stops. Must have at least 2 stops.
+        /// </param>
         /// <param name="type">
         /// The type of gradient.<br/>
         /// Default Value: linear<br/>
@@ -53,9 +56,6 @@ namespace Shotstack
         /// Default Value: 0<br/>
         /// Example: 45
         /// </param>
-        /// <param name="stops">
-        /// Gradient color stops. Must have at least 2 stops.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,9 +64,9 @@ namespace Shotstack
             global::Shotstack.RichTextGradientType? type,
             double? angle)
         {
-            this.Stops = stops ?? throw new global::System.ArgumentNullException(nameof(stops));
             this.Type = type;
             this.Angle = angle;
+            this.Stops = stops ?? throw new global::System.ArgumentNullException(nameof(stops));
         }
 
         /// <summary>

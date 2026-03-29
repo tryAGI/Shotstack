@@ -34,12 +34,12 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgCircleShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `circle`.
-        /// </param>
         /// <param name="radius">
         /// The radius of the circle in pixels.<br/>
         /// Example: 50
+        /// </param>
+        /// <param name="type">
+        /// The shape type - set to `circle`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace Shotstack
             double radius,
             global::Shotstack.SvgCircleShapeType type)
         {
-            this.Radius = radius;
             this.Type = type;
+            this.Radius = radius;
         }
 
         /// <summary>

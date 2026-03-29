@@ -81,10 +81,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ShapeAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `shape` for shape.<br/>
-        /// Default Value: shape
-        /// </param>
         /// <param name="shape">
         /// The shape to display.
         /// </param>
@@ -111,6 +107,10 @@ namespace Shotstack
         /// <param name="line">
         /// Configuration settings for the line shape. Required when `shape` is set to `line`.
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `shape` for shape.<br/>
+        /// Default Value: shape
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -125,8 +125,8 @@ namespace Shotstack
             global::Shotstack.ShapeAssetLine? line,
             global::Shotstack.ShapeAssetType type = global::Shotstack.ShapeAssetType.Shape)
         {
-            this.Shape = shape;
             this.Type = type;
+            this.Shape = shape;
             this.Width = width;
             this.Height = height;
             this.Fill = fill;

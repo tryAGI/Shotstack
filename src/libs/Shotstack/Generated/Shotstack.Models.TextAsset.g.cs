@@ -90,10 +90,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="TextAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `text` for text.<br/>
-        /// Default Value: text
-        /// </param>
         /// <param name="text">
         /// The text string to display.<br/>
         /// Example: Hello World
@@ -125,6 +121,10 @@ namespace Shotstack
         /// The string to display when text overflows its bounding box. Set to an ellipsis character or custom string to indicate truncated text.<br/>
         /// Example: ...
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `text` for text.<br/>
+        /// Default Value: text
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -140,8 +140,8 @@ namespace Shotstack
             string? ellipsis,
             global::Shotstack.TextAssetType type = global::Shotstack.TextAssetType.Text)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Width = width;
             this.Height = height;
             this.Font = font;

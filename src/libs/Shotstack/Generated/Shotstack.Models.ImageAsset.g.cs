@@ -41,16 +41,16 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `image` for images.<br/>
-        /// Default Value: image
-        /// </param>
         /// <param name="src">
         /// The image source URL. The URL must be publicly accessible or include credentials.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/image.jpg
         /// </param>
         /// <param name="crop">
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
+        /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `image` for images.<br/>
+        /// Default Value: image
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,8 +60,8 @@ namespace Shotstack
             global::Shotstack.Crop? crop,
             global::Shotstack.ImageAssetType type = global::Shotstack.ImageAssetType.Image)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Crop = crop;
         }
 

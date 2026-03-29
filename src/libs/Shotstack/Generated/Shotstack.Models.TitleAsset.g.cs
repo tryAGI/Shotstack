@@ -115,10 +115,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="TitleAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `title` for titles.<br/>
-        /// Default Value: title
-        /// </param>
         /// <param name="text">
         /// The title text string - i.e. "My Title".<br/>
         /// Example: Hello World
@@ -171,6 +167,10 @@ namespace Shotstack
         /// <param name="offset">
         /// Offsets the position of an asset horizontally or vertically by a relative distance.
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `title` for titles.<br/>
+        /// Default Value: title
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -184,8 +184,8 @@ namespace Shotstack
             global::Shotstack.Offset? offset,
             global::Shotstack.TitleAssetType type = global::Shotstack.TitleAssetType.Title)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Style = style;
             this.Color = color;
             this.Size = size;

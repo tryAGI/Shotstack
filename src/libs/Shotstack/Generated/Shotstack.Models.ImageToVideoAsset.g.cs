@@ -66,10 +66,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageToVideoAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `image-to-video` for image-to-video.<br/>
-        /// Default Value: image-to-video
-        /// </param>
         /// <param name="src">
         /// The image source URL. The URL must be publicly accessible or include credentials.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/image.jpg
@@ -89,6 +85,10 @@ namespace Shotstack
         /// <param name="crop">
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
         /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `image-to-video` for image-to-video.<br/>
+        /// Default Value: image-to-video
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,8 +100,8 @@ namespace Shotstack
             global::Shotstack.Crop? crop,
             global::Shotstack.ImageToVideoAssetType type = global::Shotstack.ImageToVideoAssetType.ImageToVideo)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Prompt = prompt;
             this.AspectRatio = aspectRatio;
             this.Speed = speed;

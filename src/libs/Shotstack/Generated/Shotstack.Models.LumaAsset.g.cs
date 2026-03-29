@@ -41,16 +41,16 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="LumaAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `luma` for luma mattes.<br/>
-        /// Default Value: luma
-        /// </param>
         /// <param name="src">
         /// The luma matte source URL. The URL must be publicly accessible or include credentials.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/mask.mp4
         /// </param>
         /// <param name="trim">
         /// The start trim point of the luma matte clip, in seconds (defaults to 0). Videos will start from the in trim point. A luma matte video will play until the file ends or the Clip length is reached.
+        /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `luma` for luma mattes.<br/>
+        /// Default Value: luma
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,8 +60,8 @@ namespace Shotstack
             double? trim,
             global::Shotstack.LumaAssetType type = global::Shotstack.LumaAssetType.Luma)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Trim = trim;
         }
 

@@ -67,10 +67,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="AudioAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `audio` for audio assets.<br/>
-        /// Default Value: audio
-        /// </param>
         /// <param name="src">
         /// The audio source URL. The URL must be publicly accessible or include credentials.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/sound.mp3
@@ -92,6 +88,10 @@ namespace Shotstack
         ///   &lt;li&gt;`fadeInFadeOut` - fade volume in and out&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `audio` for audio assets.<br/>
+        /// Default Value: audio
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,8 +103,8 @@ namespace Shotstack
             global::Shotstack.AudioAssetEffect? effect,
             global::Shotstack.AudioAssetType type = global::Shotstack.AudioAssetType.Audio)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Trim = trim;
             this.Volume = volume;
             this.Speed = speed;

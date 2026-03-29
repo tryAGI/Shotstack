@@ -94,10 +94,6 @@ namespace Shotstack
         /// <param name="type">
         /// The type of service used to generate the asset, `text-to-speech` or `text-to-avatar`.
         /// </param>
-        /// <param name="url">
-        /// The URL of the asset file hosted by Shotstack. The file at the URL can be used by the Edit API. Generated asset file URL's consist of a base URL (AWS bucket), owner id, asset id and extension. The extension varies depending on the type of file generated.<br/>
-        /// Example: https://shotstack-create-api-v1-assets.s3.amazonaws.com/5ca6hu7s9k/01gz0-tj679-xj30t-hr8zk-3hasvk.mp3
-        /// </param>
         /// <param name="status">
         /// The status of the asset file generation task. &lt;ul&gt;<br/>
         ///   &lt;li&gt;`queued` - generation task is queued waiting to be processed&lt;/li&gt;<br/>
@@ -116,6 +112,10 @@ namespace Shotstack
         /// The time the asset status was last updated.<br/>
         /// Example: 2023-01-02T01:47:37.260Z
         /// </param>
+        /// <param name="url">
+        /// The URL of the asset file hosted by Shotstack. The file at the URL can be used by the Edit API. Generated asset file URL's consist of a base URL (AWS bucket), owner id, asset id and extension. The extension varies depending on the type of file generated.<br/>
+        /// Example: https://shotstack-create-api-v1-assets.s3.amazonaws.com/5ca6hu7s9k/01gz0-tj679-xj30t-hr8zk-3hasvk.mp3
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -131,10 +131,10 @@ namespace Shotstack
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Provider = provider;
             this.Type = type;
+            this.Url = url;
             this.Status = status;
             this.Created = created ?? throw new global::System.ArgumentNullException(nameof(created));
             this.Updated = updated ?? throw new global::System.ArgumentNullException(nameof(updated));
-            this.Url = url;
         }
 
         /// <summary>

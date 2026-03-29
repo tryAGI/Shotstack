@@ -44,9 +44,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgRingShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `ring`.
-        /// </param>
         /// <param name="outerRadius">
         /// The outer radius of the ring in pixels.<br/>
         /// Example: 50
@@ -56,6 +53,9 @@ namespace Shotstack
         /// Must be smaller than outerRadius.<br/>
         /// Example: 30
         /// </param>
+        /// <param name="type">
+        /// The shape type - set to `ring`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,9 +64,9 @@ namespace Shotstack
             double innerRadius,
             global::Shotstack.SvgRingShapeType type)
         {
+            this.Type = type;
             this.OuterRadius = outerRadius;
             this.InnerRadius = innerRadius;
-            this.Type = type;
         }
 
         /// <summary>

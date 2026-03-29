@@ -137,10 +137,6 @@ namespace Shotstack
         /// The owner id of the render task.<br/>
         /// Example: 5ca6hu7s9k
         /// </param>
-        /// <param name="plan">
-        /// The customer subscription plan.<br/>
-        /// Example: basic
-        /// </param>
         /// <param name="status">
         /// The status of the render task. &lt;ul&gt;<br/>
         ///   &lt;li&gt;`queued` - render is queued waiting to be rendered&lt;/li&gt;<br/>
@@ -152,6 +148,10 @@ namespace Shotstack
         ///   &lt;li&gt;`failed` - there was an error rendering the asset&lt;/li&gt;<br/>
         /// &lt;/ul&gt;<br/>
         /// Example: done
+        /// </param>
+        /// <param name="plan">
+        /// The customer subscription plan.<br/>
+        /// Example: basic
         /// </param>
         /// <param name="error">
         /// An error message, only displayed if an error occurred.
@@ -207,8 +207,8 @@ namespace Shotstack
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.Status = status;
             this.Plan = plan;
+            this.Status = status;
             this.Error = error;
             this.Duration = duration;
             this.RenderTime = renderTime;

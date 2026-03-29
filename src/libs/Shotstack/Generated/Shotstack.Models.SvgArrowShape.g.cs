@@ -61,9 +61,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgArrowShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `arrow`.
-        /// </param>
         /// <param name="length">
         /// The total length of the arrow from tail to tip in pixels.<br/>
         /// Example: 100
@@ -80,6 +77,9 @@ namespace Shotstack
         /// The width of the arrow shaft (body) in pixels.<br/>
         /// Example: 20
         /// </param>
+        /// <param name="type">
+        /// The shape type - set to `arrow`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,11 +90,11 @@ namespace Shotstack
             double shaftWidth,
             global::Shotstack.SvgArrowShapeType type)
         {
+            this.Type = type;
             this.Length = length;
             this.HeadWidth = headWidth;
             this.HeadLength = headLength;
             this.ShaftWidth = shaftWidth;
-            this.Type = type;
         }
 
         /// <summary>

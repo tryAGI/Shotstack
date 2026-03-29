@@ -75,10 +75,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="CaptionAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `caption` for captions.<br/>
-        /// Default Value: caption
-        /// </param>
         /// <param name="src">
         /// The URL to an SRT or VTT subtitles file, or an alias reference to auto-generate captions from an audio or video clip. For file URLs, the URL must be publicly accessible or include credentials. For auto-captioning, use the format `alias://clip-name` where clip-name is the alias of an audio, video, or text-to-speech clip. The system will automatically transcribe the audio and detect the language.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/captions.srt
@@ -100,6 +96,10 @@ namespace Shotstack
         /// Adjust the playback speed of the captions between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to  adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire captions (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire captions (i.e. original length / 2).<br/>
         /// Example: 1
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `caption` for captions.<br/>
+        /// Default Value: caption
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -112,8 +112,8 @@ namespace Shotstack
             float? speed,
             global::Shotstack.CaptionAssetType type = global::Shotstack.CaptionAssetType.Caption)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Font = font;
             this.Background = background;
             this.Margin = margin;

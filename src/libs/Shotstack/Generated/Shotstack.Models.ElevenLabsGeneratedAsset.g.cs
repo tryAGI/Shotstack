@@ -36,15 +36,15 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ElevenLabsGeneratedAsset" /> class.
         /// </summary>
-        /// <param name="provider">
-        /// The name of the provider - set to `elevenlabs` for ElevenLabs.<br/>
-        /// Default Value: elevenlabs
-        /// </param>
         /// <param name="options">
         /// Generate assets using the third party ElevenLabs provider AI services.<br/>
         /// The following AI generation services are available: &lt;ul&gt;<br/>
         ///   &lt;li&gt;&lt;a href="#tocs_elevenlabstexttospeechoptions"&gt;ElevenLabsTextToSpeechOptions&lt;/a&gt;&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
+        /// </param>
+        /// <param name="provider">
+        /// The name of the provider - set to `elevenlabs` for ElevenLabs.<br/>
+        /// Default Value: elevenlabs
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,8 +53,8 @@ namespace Shotstack
             global::Shotstack.ElevenLabsTextToSpeechOptions options,
             global::Shotstack.ElevenLabsGeneratedAssetProvider provider = global::Shotstack.ElevenLabsGeneratedAssetProvider.Elevenlabs)
         {
-            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             this.Provider = provider;
+            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
         }
 
         /// <summary>

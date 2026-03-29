@@ -48,6 +48,9 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="Timeline" /> class.
         /// </summary>
+        /// <param name="tracks">
+        /// A timeline consists of an array of tracks, each track containing clips. Tracks are layered on top of each other in the same order they are added to the array with the top most track layered over the top of those below it. Ensure that a track containing titles is the top most track so that it is displayed above videos and images.
+        /// </param>
         /// <param name="soundtrack">
         /// A music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.
         /// </param>
@@ -56,9 +59,6 @@ namespace Shotstack
         /// </param>
         /// <param name="fonts">
         /// An array of custom fonts to be downloaded for use by the HTML assets.
-        /// </param>
-        /// <param name="tracks">
-        /// A timeline consists of an array of tracks, each track containing clips. Tracks are layered on top of each other in the same order they are added to the array with the top most track layered over the top of those below it. Ensure that a track containing titles is the top most track so that it is displayed above videos and images.
         /// </param>
         /// <param name="cache">
         /// Disable the caching of ingested source footage and assets. See  [caching](https://shotstack.io/docs/guide/architecting-an-application/caching/) for more details.
@@ -73,10 +73,10 @@ namespace Shotstack
             global::System.Collections.Generic.IList<global::Shotstack.Font>? fonts,
             bool? cache)
         {
-            this.Tracks = tracks ?? throw new global::System.ArgumentNullException(nameof(tracks));
             this.Soundtrack = soundtrack;
             this.Background = background;
             this.Fonts = fonts;
+            this.Tracks = tracks ?? throw new global::System.ArgumentNullException(nameof(tracks));
             this.Cache = cache;
         }
 

@@ -91,10 +91,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="RichTextAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `rich-text` for rich text.<br/>
-        /// Default Value: rich-text
-        /// </param>
         /// <param name="text">
         /// The text string to display. Maximum 5000 characters.<br/>
         /// Example: Hello World
@@ -126,6 +122,10 @@ namespace Shotstack
         /// <param name="animation">
         /// Animation properties for text entrance effects.
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `rich-text` for rich text.<br/>
+        /// Default Value: rich-text
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -142,8 +142,8 @@ namespace Shotstack
             global::Shotstack.RichTextAnimation? animation,
             global::Shotstack.RichTextAssetType type = global::Shotstack.RichTextAssetType.RichText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Font = font;
             this.Style = style;
             this.Stroke = stroke;
