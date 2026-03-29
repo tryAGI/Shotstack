@@ -46,9 +46,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgPolygonShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `polygon`.
-        /// </param>
         /// <param name="sides">
         /// The number of sides of the polygon.<br/>
         /// Minimum 3 (triangle), maximum 100 for practical use.<br/>
@@ -59,6 +56,9 @@ namespace Shotstack
         /// This determines the size of the polygon.<br/>
         /// Example: 50
         /// </param>
+        /// <param name="type">
+        /// The shape type - set to `polygon`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,9 +67,9 @@ namespace Shotstack
             double radius,
             global::Shotstack.SvgPolygonShapeType type)
         {
+            this.Type = type;
             this.Sides = sides;
             this.Radius = radius;
-            this.Type = type;
         }
 
         /// <summary>

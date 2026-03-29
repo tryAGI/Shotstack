@@ -43,9 +43,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgLineShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `line`.
-        /// </param>
         /// <param name="length">
         /// The length of the line in pixels.<br/>
         /// Example: 100
@@ -53,6 +50,9 @@ namespace Shotstack
         /// <param name="thickness">
         /// The thickness of the line in pixels.<br/>
         /// Example: 4
+        /// </param>
+        /// <param name="type">
+        /// The shape type - set to `line`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,9 +62,9 @@ namespace Shotstack
             double thickness,
             global::Shotstack.SvgLineShapeType type)
         {
+            this.Type = type;
             this.Length = length;
             this.Thickness = thickness;
-            this.Type = type;
         }
 
         /// <summary>

@@ -36,15 +36,15 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="DIDGeneratedAsset" /> class.
         /// </summary>
-        /// <param name="provider">
-        /// The name of the provider - set to `d-id` for D-ID.<br/>
-        /// Default Value: d-id
-        /// </param>
         /// <param name="options">
         /// Generate assets using the third party D-ID provider AI services.<br/>
         /// The following AI generation services are available: &lt;ul&gt;<br/>
         ///   &lt;li&gt;&lt;a href="#tocs_didtexttoavataroptions"&gt;DidTextToAvatarOptions&lt;/a&gt;&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
+        /// </param>
+        /// <param name="provider">
+        /// The name of the provider - set to `d-id` for D-ID.<br/>
+        /// Default Value: d-id
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,8 +53,8 @@ namespace Shotstack
             global::Shotstack.DIDTextToAvatarOptions options,
             global::Shotstack.DIDGeneratedAssetProvider provider = global::Shotstack.DIDGeneratedAssetProvider.DId)
         {
-            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             this.Provider = provider;
+            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
         }
 
         /// <summary>

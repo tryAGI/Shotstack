@@ -89,10 +89,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="VideoAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `video` for videos.<br/>
-        /// Default Value: video
-        /// </param>
         /// <param name="src">
         /// The video source URL. The URL must be publicly accessible or include credentials.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
@@ -125,6 +121,10 @@ namespace Shotstack
         /// <param name="chromaKey">
         /// Chroma key is a technique that replaces a specific color in a video with a different background image or video, enabling seamless integration of diverse environments. Commonly used for green screen and blue screen effects.
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `video` for videos.<br/>
+        /// Default Value: video
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -139,8 +139,8 @@ namespace Shotstack
             global::Shotstack.ChromaKey? chromaKey,
             global::Shotstack.VideoAssetType type = global::Shotstack.VideoAssetType.Video)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Transcode = transcode;
             this.Trim = trim;
             this.Volume = volume;

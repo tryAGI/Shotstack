@@ -42,12 +42,12 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgRadialGradientFill" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The fill type - set to `radial` for a radial gradient fill.
-        /// </param>
         /// <param name="stops">
         /// Array of color stops that define the gradient colors and their positions.<br/>
         /// Must have at least 2 stops. Offset `0` is the center, `1` is the outer edge.
+        /// </param>
+        /// <param name="type">
+        /// The fill type - set to `radial` for a radial gradient fill.
         /// </param>
         /// <param name="opacity">
         /// The overall opacity of the gradient where `1` is fully opaque and `0` is fully transparent.<br/>
@@ -62,8 +62,8 @@ namespace Shotstack
             global::Shotstack.SvgRadialGradientFillType type,
             double? opacity)
         {
-            this.Stops = stops ?? throw new global::System.ArgumentNullException(nameof(stops));
             this.Type = type;
+            this.Stops = stops ?? throw new global::System.ArgumentNullException(nameof(stops));
             this.Opacity = opacity;
         }
 

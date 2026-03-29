@@ -114,6 +114,15 @@ namespace Shotstack
         /// The owner id of the asset.<br/>
         /// Example: 5ca6hu7s9k
         /// </param>
+        /// <param name="status">
+        /// The status of the asset. &lt;ul&gt;<br/>
+        ///   &lt;li&gt;`importing` - the asset is being copied to the hosting service&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`ready` - the asset is ready to be served to users&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`failed` - the asset failed to copy or delete&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`deleted` - the asset has been deleted&lt;/li&gt;<br/>
+        /// &lt;/ul&gt;<br/>
+        /// Example: ready
+        /// </param>
         /// <param name="region">
         /// The region the asset is hosted, currently only `au` (Australia).<br/>
         /// Example: au
@@ -133,15 +142,6 @@ namespace Shotstack
         /// <param name="url">
         /// The asset file name.<br/>
         /// Example: https://cdn.shotstack.io/au/v1/5ca6hu7s9k/2abd5c11-0f3d-4c6d-ba20-235fc9b8e8b7.mp4
-        /// </param>
-        /// <param name="status">
-        /// The status of the asset. &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`importing` - the asset is being copied to the hosting service&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`ready` - the asset is ready to be served to users&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`failed` - the asset failed to copy or delete&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`deleted` - the asset has been deleted&lt;/li&gt;<br/>
-        /// &lt;/ul&gt;<br/>
-        /// Example: ready
         /// </param>
         /// <param name="created">
         /// The time the asset was created.<br/>
@@ -168,12 +168,12 @@ namespace Shotstack
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.Status = status;
             this.Region = region;
             this.RenderId = renderId;
             this.ProviderId = providerId;
             this.Filename = filename;
             this.Url = url;
+            this.Status = status;
             this.Created = created;
             this.Updated = updated;
         }

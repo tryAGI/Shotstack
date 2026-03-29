@@ -35,13 +35,13 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgHeartShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `heart`.
-        /// </param>
         /// <param name="size">
         /// The size of the heart in pixels.<br/>
         /// This determines both the width and height proportionally.<br/>
         /// Example: 100
+        /// </param>
+        /// <param name="type">
+        /// The shape type - set to `heart`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace Shotstack
             double size,
             global::Shotstack.SvgHeartShapeType type)
         {
-            this.Size = size;
             this.Type = type;
+            this.Size = size;
         }
 
         /// <summary>

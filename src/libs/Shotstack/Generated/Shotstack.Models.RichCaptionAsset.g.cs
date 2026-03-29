@@ -98,10 +98,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="RichCaptionAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `rich-caption` for rich captions.<br/>
-        /// Default Value: rich-caption
-        /// </param>
         /// <param name="src">
         /// The URL to an SRT or VTT subtitles file, or an alias reference to auto-generate captions from an audio or video clip. For file URLs, the URL must be publicly accessible or include credentials. For auto-captioning, use the format `alias://clip-name` where clip-name is the alias of an audio, video, or text-to-speech clip.<br/>
         /// Example: alias://audio
@@ -136,6 +132,10 @@ namespace Shotstack
         /// <param name="animation">
         /// Word-level animation properties for caption effects.
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `rich-caption` for rich captions.<br/>
+        /// Default Value: rich-caption
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -153,8 +153,8 @@ namespace Shotstack
             global::Shotstack.RichCaptionAnimation? animation,
             global::Shotstack.RichCaptionAssetType type = global::Shotstack.RichCaptionAssetType.RichCaption)
         {
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Type = type;
+            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
             this.Font = font;
             this.Style = style;
             this.Stroke = stroke;

@@ -35,13 +35,13 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ShotstackTextGeneratorOptions" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `text-generator` for text generation.<br/>
-        /// Default Value: text-generator
-        /// </param>
         /// <param name="prompt">
         /// The text prompt to generate text from.<br/>
         /// Example: Generate a short script for a 15 second video describing the benefits of the Shotstack API
+        /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `text-generator` for text generation.<br/>
+        /// Default Value: text-generator
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace Shotstack
             string prompt,
             global::Shotstack.ShotstackTextGeneratorOptionsType type = global::Shotstack.ShotstackTextGeneratorOptionsType.TextGenerator)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Type = type;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }
 
         /// <summary>

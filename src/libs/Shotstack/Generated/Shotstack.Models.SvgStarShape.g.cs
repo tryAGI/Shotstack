@@ -55,9 +55,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgStarShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `star`.
-        /// </param>
         /// <param name="points">
         /// The number of points on the star.<br/>
         /// Minimum 3 for a triangle-like star, typically 5 for a classic star.<br/>
@@ -72,6 +69,9 @@ namespace Shotstack
         /// Should be smaller than outerRadius for a star effect.<br/>
         /// Example: 25
         /// </param>
+        /// <param name="type">
+        /// The shape type - set to `star`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,10 +81,10 @@ namespace Shotstack
             double innerRadius,
             global::Shotstack.SvgStarShapeType type)
         {
+            this.Type = type;
             this.Points = points;
             this.OuterRadius = outerRadius;
             this.InnerRadius = innerRadius;
-            this.Type = type;
         }
 
         /// <summary>

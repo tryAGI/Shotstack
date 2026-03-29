@@ -54,9 +54,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgRectangleShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `rectangle`.
-        /// </param>
         /// <param name="width">
         /// The width of the rectangle in pixels.<br/>
         /// Example: 200
@@ -64,6 +61,9 @@ namespace Shotstack
         /// <param name="height">
         /// The height of the rectangle in pixels.<br/>
         /// Example: 100
+        /// </param>
+        /// <param name="type">
+        /// The shape type - set to `rectangle`.
         /// </param>
         /// <param name="cornerRadius">
         /// The corner radius for rounded corners in pixels.<br/>
@@ -81,9 +81,9 @@ namespace Shotstack
             global::Shotstack.SvgRectangleShapeType type,
             double? cornerRadius)
         {
+            this.Type = type;
             this.Width = width;
             this.Height = height;
-            this.Type = type;
             this.CornerRadius = cornerRadius;
         }
 

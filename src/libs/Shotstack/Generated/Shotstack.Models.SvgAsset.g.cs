@@ -152,11 +152,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The asset type - set to `svg` for SVG shapes.<br/>
-        /// Default Value: svg<br/>
-        /// Example: svg
-        /// </param>
         /// <param name="src">
         /// Raw SVG markup string to import. When provided, the shape is extracted<br/>
         /// automatically from the SVG content.<br/>
@@ -211,6 +206,11 @@ namespace Shotstack
         /// If omitted, the shape uses its natural dimensions.<br/>
         /// **Note:** Only allowed when using `shape`, not with `src`.<br/>
         /// Example: 300
+        /// </param>
+        /// <param name="type">
+        /// The asset type - set to `svg` for SVG shapes.<br/>
+        /// Default Value: svg<br/>
+        /// Example: svg
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

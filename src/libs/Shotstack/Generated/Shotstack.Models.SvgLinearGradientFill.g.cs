@@ -52,6 +52,10 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgLinearGradientFill" /> class.
         /// </summary>
+        /// <param name="stops">
+        /// Array of color stops that define the gradient colors and their positions.<br/>
+        /// Must have at least 2 stops. Offsets should increase from 0 to 1.
+        /// </param>
         /// <param name="type">
         /// The fill type - set to `linear` for a linear gradient fill.
         /// </param>
@@ -60,10 +64,6 @@ namespace Shotstack
         /// `90` is vertical (bottom to top), `180` is right to left, etc.<br/>
         /// Default Value: 0<br/>
         /// Example: 45
-        /// </param>
-        /// <param name="stops">
-        /// Array of color stops that define the gradient colors and their positions.<br/>
-        /// Must have at least 2 stops. Offsets should increase from 0 to 1.
         /// </param>
         /// <param name="opacity">
         /// The overall opacity of the gradient where `1` is fully opaque and `0` is fully transparent.<br/>
@@ -79,9 +79,9 @@ namespace Shotstack
             double? angle,
             double? opacity)
         {
-            this.Stops = stops ?? throw new global::System.ArgumentNullException(nameof(stops));
             this.Type = type;
             this.Angle = angle;
+            this.Stops = stops ?? throw new global::System.ArgumentNullException(nameof(stops));
             this.Opacity = opacity;
         }
 

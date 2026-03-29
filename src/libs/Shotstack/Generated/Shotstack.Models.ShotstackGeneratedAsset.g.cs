@@ -34,12 +34,12 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="ShotstackGeneratedAsset" /> class.
         /// </summary>
+        /// <param name="options">
+        /// Generate assets using the native Shotstack provider AI services.
+        /// </param>
         /// <param name="provider">
         /// The name of the provider - set to `shotstack` for Shotstack.<br/>
         /// Default Value: shotstack
-        /// </param>
-        /// <param name="options">
-        /// Generate assets using the native Shotstack provider AI services.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace Shotstack
             global::Shotstack.ShotstackGeneratedAssetOptions options,
             global::Shotstack.ShotstackGeneratedAssetProvider provider = global::Shotstack.ShotstackGeneratedAssetProvider.Shotstack)
         {
-            this.Options = options;
             this.Provider = provider;
+            this.Options = options;
         }
 
         /// <summary>

@@ -47,14 +47,14 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="SvgPathShape" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The shape type - set to `path`.
-        /// </param>
         /// <param name="d">
         /// The SVG path data string defining the shape.<br/>
         /// Uses standard SVG path commands (M, L, C, Q, A, Z, etc.).<br/>
         /// Example: `M 0 0 L 100 0 L 100 100 L 0 100 Z` draws a square.<br/>
         /// Example: M 0 0 L 100 0 L 50 86.6 Z
+        /// </param>
+        /// <param name="type">
+        /// The shape type - set to `path`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,8 +63,8 @@ namespace Shotstack
             string d,
             global::Shotstack.SvgPathShapeType type)
         {
-            this.D = d ?? throw new global::System.ArgumentNullException(nameof(d));
             this.Type = type;
+            this.D = d ?? throw new global::System.ArgumentNullException(nameof(d));
         }
 
         /// <summary>

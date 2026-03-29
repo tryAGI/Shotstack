@@ -93,10 +93,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="HtmlAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset - set to `html` for HTML.<br/>
-        /// Default Value: html
-        /// </param>
         /// <param name="html">
         /// The HTML text string. See list of [supported HTML tags](https://shotstack.io/docs/guide/architecting-an-application/html-support/#supported-html-tags).<br/>
         /// Example: &lt;p&gt;Hello &lt;b&gt;World&lt;/b&gt;&lt;/p&gt;
@@ -129,6 +125,10 @@ namespace Shotstack
         ///   &lt;li&gt;`center` - center&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
         /// </param>
+        /// <param name="type">
+        /// The type of asset - set to `html` for HTML.<br/>
+        /// Default Value: html
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -141,8 +141,8 @@ namespace Shotstack
             global::Shotstack.HtmlAssetPosition? position,
             global::Shotstack.HtmlAssetType type = global::Shotstack.HtmlAssetType.Html)
         {
-            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
             this.Type = type;
+            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
             this.Css = css;
             this.Width = width;
             this.Height = height;

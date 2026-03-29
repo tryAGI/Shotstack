@@ -57,10 +57,6 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="TextToImageAsset" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of asset to generate - set to `text-to-image` for text-to-image.<br/>
-        /// Default Value: text-to-image
-        /// </param>
         /// <param name="prompt">
         /// The text prompt to generate an image from.<br/>
         /// Example: A serene landscape featuring a crystal-clear mountain lake at sunrise. The water reflects the pink and orange sky like a mirror. In the foreground, a majestic pine tree stands tall, its branches framing the view. Snow-capped peaks rise in the distance, their edges softened by a light morning mist. A pair of deer drink from the lake's edge, creating gentle ripples on the otherwise still surface.
@@ -76,6 +72,10 @@ namespace Shotstack
         /// <param name="crop">
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
         /// </param>
+        /// <param name="type">
+        /// The type of asset to generate - set to `text-to-image` for text-to-image.<br/>
+        /// Default Value: text-to-image
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,8 +86,8 @@ namespace Shotstack
             global::Shotstack.Crop? crop,
             global::Shotstack.TextToImageAssetType type = global::Shotstack.TextToImageAssetType.TextToImage)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Type = type;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Width = width;
             this.Height = height;
             this.Crop = crop;
