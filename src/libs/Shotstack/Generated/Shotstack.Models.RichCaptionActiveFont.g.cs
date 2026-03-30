@@ -10,10 +10,9 @@ namespace Shotstack
     {
         /// <summary>
         /// The active word color using hexadecimal color notation.<br/>
-        /// Default Value: #ffff00<br/>
-        /// Example: #ffff00
+        /// Example: #C96741
         /// </summary>
-        /// <example>#ffff00</example>
+        /// <example>#C96741</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
         public string? Color { get; set; }
 
@@ -63,8 +62,7 @@ namespace Shotstack
         /// </summary>
         /// <param name="color">
         /// The active word color using hexadecimal color notation.<br/>
-        /// Default Value: #ffff00<br/>
-        /// Example: #ffff00
+        /// Example: #C96741
         /// </param>
         /// <param name="background">
         /// The background color behind the active word using hexadecimal color notation.<br/>
