@@ -345,134 +345,6 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter),
 
-            typeof(global::Shotstack.JsonConverters.ShotstackGeneratedAssetProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackGeneratedAssetProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackGeneratedAssetOptionsDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToSpeechOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToSpeechOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToSpeechOptionsVoiceJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToSpeechOptionsVoiceNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToSpeechOptionsLanguageJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToSpeechOptionsLanguageNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToImageOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextToImageOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackImageToVideoOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackImageToVideoOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextGeneratorOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackTextGeneratorOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDGeneratedAssetProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDGeneratedAssetProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDGeneratedAssetOptionsDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDTextToAvatarOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDTextToAvatarOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDTextToAvatarOptionsAvatarJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDTextToAvatarOptionsAvatarNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsGeneratedAssetProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsGeneratedAssetProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsGeneratedAssetOptionsDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsTextToSpeechOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsTextToSpeechOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsTextToSpeechOptionsVoiceJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsTextToSpeechOptionsVoiceNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenGeneratedAssetProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenGeneratedAssetProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenGeneratedAssetOptionsDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsAvatarJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsAvatarNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsVoiceJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsVoiceNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsAvatarStyleJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsAvatarStyleNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsRatioJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenTextToAvatarOptionsRatioNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiGeneratedAssetProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiGeneratedAssetProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiGeneratedAssetOptionsDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiTextGeneratorOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiTextGeneratorOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiTextGeneratorOptionsModelJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiTextGeneratorOptionsModelNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiGeneratedAssetProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiGeneratedAssetProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiGeneratedAssetOptionsDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiTextToImageOptionsTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiTextToImageOptionsTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiTextToImageOptionsEngineJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiTextToImageOptionsEngineNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiTextToImageOptionsStylePresetJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiTextToImageOptionsStylePresetNullableJsonConverter),
-
             typeof(global::Shotstack.JsonConverters.RenderResponseDataStatusJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.RenderResponseDataStatusNullableJsonConverter),
@@ -492,18 +364,6 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.RenditionResponseAttributesStatusJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.RenditionResponseAttributesStatusNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetResponseAttributesProviderJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetResponseAttributesProviderNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetResponseAttributesTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetResponseAttributesTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetResponseAttributesStatusJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetResponseAttributesStatusNullableJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TextAnimationPresetJsonConverter),
 
@@ -530,20 +390,6 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.DestinationsJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.AudioEnhancementJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GeneratedAssetJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ShotstackGeneratedAssetOptionsJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.DIDGeneratedAssetOptionsJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.ElevenLabsGeneratedAssetOptionsJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.HeyGenGeneratedAssetOptionsJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.OpenAiGeneratedAssetOptionsJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.StabilityAiGeneratedAssetOptionsJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, string>),
 
@@ -692,10 +538,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetPosition), TypeInfoPropertyName = "TitleAssetPosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgAssetType), TypeInfoPropertyName = "SvgAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShape), TypeInfoPropertyName = "SvgShape2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgFill), TypeInfoPropertyName = "SvgFill2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStroke))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShadow))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgTransform))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRectangleShape))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgCircleShape))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgEllipseShape))]
@@ -720,6 +562,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgCrossShapeType), TypeInfoPropertyName = "SvgCrossShapeType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRingShapeType), TypeInfoPropertyName = "SvgRingShapeType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgPathShapeType), TypeInfoPropertyName = "SvgPathShapeType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgFill), TypeInfoPropertyName = "SvgFill2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgSolidFill))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgLinearGradientFill))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRadialGradientFill))]
@@ -730,9 +573,12 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.SvgGradientStop>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgGradientStop))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRadialGradientFillType), TypeInfoPropertyName = "SvgRadialGradientFillType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStroke))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStrokeLineCap), TypeInfoPropertyName = "SvgStrokeLineCap2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStrokeLineJoin), TypeInfoPropertyName = "SvgStrokeLineJoin2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShadow))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgTransform))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionIn), TypeInfoPropertyName = "TransitionIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionOut), TypeInfoPropertyName = "TransitionOut2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RotateTransformation))]
@@ -805,67 +651,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DolbyEnhancementOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DolbyEnhancementOptionsPreset), TypeInfoPropertyName = "DolbyEnhancementOptionsPreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Transfer))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAsset), TypeInfoPropertyName = "GeneratedAsset2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackGeneratedAsset))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDGeneratedAsset))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsGeneratedAsset))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenGeneratedAsset))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiGeneratedAsset))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiGeneratedAsset))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackGeneratedAssetProvider), TypeInfoPropertyName = "ShotstackGeneratedAssetProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackGeneratedAssetOptions), TypeInfoPropertyName = "ShotstackGeneratedAssetOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextToSpeechOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextToImageOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextGeneratorOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackImageToVideoOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackGeneratedAssetOptionsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackGeneratedAssetOptionsDiscriminatorType), TypeInfoPropertyName = "ShotstackGeneratedAssetOptionsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextToSpeechOptionsType), TypeInfoPropertyName = "ShotstackTextToSpeechOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextToSpeechOptionsVoice), TypeInfoPropertyName = "ShotstackTextToSpeechOptionsVoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextToSpeechOptionsLanguage), TypeInfoPropertyName = "ShotstackTextToSpeechOptionsLanguage2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextToImageOptionsType), TypeInfoPropertyName = "ShotstackTextToImageOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackImageToVideoOptionsType), TypeInfoPropertyName = "ShotstackImageToVideoOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackTextGeneratorOptionsType), TypeInfoPropertyName = "ShotstackTextGeneratorOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDGeneratedAssetProvider), TypeInfoPropertyName = "DIDGeneratedAssetProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDGeneratedAssetOptions), TypeInfoPropertyName = "DIDGeneratedAssetOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDTextToAvatarOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDGeneratedAssetOptionsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDGeneratedAssetOptionsDiscriminatorType), TypeInfoPropertyName = "DIDGeneratedAssetOptionsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDTextToAvatarOptionsType), TypeInfoPropertyName = "DIDTextToAvatarOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DIDTextToAvatarOptionsAvatar), TypeInfoPropertyName = "DIDTextToAvatarOptionsAvatar2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsGeneratedAssetProvider), TypeInfoPropertyName = "ElevenLabsGeneratedAssetProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsGeneratedAssetOptions), TypeInfoPropertyName = "ElevenLabsGeneratedAssetOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsTextToSpeechOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsGeneratedAssetOptionsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsGeneratedAssetOptionsDiscriminatorType), TypeInfoPropertyName = "ElevenLabsGeneratedAssetOptionsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsTextToSpeechOptionsType), TypeInfoPropertyName = "ElevenLabsTextToSpeechOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ElevenLabsTextToSpeechOptionsVoice), TypeInfoPropertyName = "ElevenLabsTextToSpeechOptionsVoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenGeneratedAssetProvider), TypeInfoPropertyName = "HeyGenGeneratedAssetProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenGeneratedAssetOptions), TypeInfoPropertyName = "HeyGenGeneratedAssetOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenTextToAvatarOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenGeneratedAssetOptionsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenGeneratedAssetOptionsDiscriminatorType), TypeInfoPropertyName = "HeyGenGeneratedAssetOptionsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenTextToAvatarOptionsType), TypeInfoPropertyName = "HeyGenTextToAvatarOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenTextToAvatarOptionsAvatar), TypeInfoPropertyName = "HeyGenTextToAvatarOptionsAvatar2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenTextToAvatarOptionsVoice), TypeInfoPropertyName = "HeyGenTextToAvatarOptionsVoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenTextToAvatarOptionsAvatarStyle), TypeInfoPropertyName = "HeyGenTextToAvatarOptionsAvatarStyle2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HeyGenTextToAvatarOptionsRatio), TypeInfoPropertyName = "HeyGenTextToAvatarOptionsRatio2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiGeneratedAssetProvider), TypeInfoPropertyName = "OpenAiGeneratedAssetProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiGeneratedAssetOptions), TypeInfoPropertyName = "OpenAiGeneratedAssetOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiTextGeneratorOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiGeneratedAssetOptionsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiGeneratedAssetOptionsDiscriminatorType), TypeInfoPropertyName = "OpenAiGeneratedAssetOptionsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiTextGeneratorOptionsType), TypeInfoPropertyName = "OpenAiTextGeneratorOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OpenAiTextGeneratorOptionsModel), TypeInfoPropertyName = "OpenAiTextGeneratorOptionsModel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiGeneratedAssetProvider), TypeInfoPropertyName = "StabilityAiGeneratedAssetProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiGeneratedAssetOptions), TypeInfoPropertyName = "StabilityAiGeneratedAssetOptions2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiTextToImageOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiGeneratedAssetOptionsDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiGeneratedAssetOptionsDiscriminatorType), TypeInfoPropertyName = "StabilityAiGeneratedAssetOptionsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiTextToImageOptionsType), TypeInfoPropertyName = "StabilityAiTextToImageOptionsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiTextToImageOptionsEngine), TypeInfoPropertyName = "StabilityAiTextToImageOptionsEngine2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.StabilityAiTextToImageOptionsStylePreset), TypeInfoPropertyName = "StabilityAiTextToImageOptionsStylePreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.QueuedResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.QueuedResponseData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenderResponse))]
@@ -908,15 +693,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.IngestErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.IngestErrorResponseData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.IngestErrorResponseData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetResponseData))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetResponseAttributes))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetResponseAttributesProvider), TypeInfoPropertyName = "GeneratedAssetResponseAttributesProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetResponseAttributesType), TypeInfoPropertyName = "GeneratedAssetResponseAttributesType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetResponseAttributesStatus), TypeInfoPropertyName = "GeneratedAssetResponseAttributesStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetErrorResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.GeneratedAssetErrorResponseData>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GeneratedAssetErrorResponseData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAnimationPreset), TypeInfoPropertyName = "TextAnimationPreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionStyleTextTransform), TypeInfoPropertyName = "RichCaptionStyleTextTransform2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionStyleTextDecoration), TypeInfoPropertyName = "RichCaptionStyleTextDecoration2")]
@@ -942,7 +718,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.SourceResponseData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RenditionResponseAttributes>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.IngestErrorResponseData>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.GeneratedAssetErrorResponseData>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }

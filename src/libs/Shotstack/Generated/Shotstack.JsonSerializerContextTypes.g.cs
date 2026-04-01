@@ -476,167 +476,167 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgFill? Type112 { get; set; }
+        public global::Shotstack.SvgRectangleShape? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgStroke? Type113 { get; set; }
+        public global::Shotstack.SvgCircleShape? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgShadow? Type114 { get; set; }
+        public global::Shotstack.SvgEllipseShape? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgTransform? Type115 { get; set; }
+        public global::Shotstack.SvgLineShape? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgRectangleShape? Type116 { get; set; }
+        public global::Shotstack.SvgPolygonShape? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgCircleShape? Type117 { get; set; }
+        public global::Shotstack.SvgStarShape? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgEllipseShape? Type118 { get; set; }
+        public global::Shotstack.SvgArrowShape? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgLineShape? Type119 { get; set; }
+        public global::Shotstack.SvgHeartShape? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgPolygonShape? Type120 { get; set; }
+        public global::Shotstack.SvgCrossShape? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgStarShape? Type121 { get; set; }
+        public global::Shotstack.SvgRingShape? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgArrowShape? Type122 { get; set; }
+        public global::Shotstack.SvgPathShape? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgHeartShape? Type123 { get; set; }
+        public global::Shotstack.SvgShapeDiscriminator? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgCrossShape? Type124 { get; set; }
+        public global::Shotstack.SvgShapeDiscriminatorType? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgRingShape? Type125 { get; set; }
+        public global::Shotstack.SvgRectangleShapeType? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgPathShape? Type126 { get; set; }
+        public global::Shotstack.SvgCircleShapeType? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgShapeDiscriminator? Type127 { get; set; }
+        public global::Shotstack.SvgEllipseShapeType? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgShapeDiscriminatorType? Type128 { get; set; }
+        public global::Shotstack.SvgLineShapeType? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgRectangleShapeType? Type129 { get; set; }
+        public global::Shotstack.SvgPolygonShapeType? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgCircleShapeType? Type130 { get; set; }
+        public global::Shotstack.SvgStarShapeType? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgEllipseShapeType? Type131 { get; set; }
+        public global::Shotstack.SvgArrowShapeType? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgLineShapeType? Type132 { get; set; }
+        public global::Shotstack.SvgHeartShapeType? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgPolygonShapeType? Type133 { get; set; }
+        public global::Shotstack.SvgCrossShapeType? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgStarShapeType? Type134 { get; set; }
+        public global::Shotstack.SvgRingShapeType? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgArrowShapeType? Type135 { get; set; }
+        public global::Shotstack.SvgPathShapeType? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgHeartShapeType? Type136 { get; set; }
+        public global::Shotstack.SvgFill? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgCrossShapeType? Type137 { get; set; }
+        public global::Shotstack.SvgSolidFill? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgRingShapeType? Type138 { get; set; }
+        public global::Shotstack.SvgLinearGradientFill? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgPathShapeType? Type139 { get; set; }
+        public global::Shotstack.SvgRadialGradientFill? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgSolidFill? Type140 { get; set; }
+        public global::Shotstack.SvgFillDiscriminator? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgLinearGradientFill? Type141 { get; set; }
+        public global::Shotstack.SvgFillDiscriminatorType? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgRadialGradientFill? Type142 { get; set; }
+        public global::Shotstack.SvgSolidFillType? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgFillDiscriminator? Type143 { get; set; }
+        public global::Shotstack.SvgLinearGradientFillType? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgFillDiscriminatorType? Type144 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.SvgGradientStop>? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgSolidFillType? Type145 { get; set; }
+        public global::Shotstack.SvgGradientStop? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgLinearGradientFillType? Type146 { get; set; }
+        public global::Shotstack.SvgRadialGradientFillType? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.SvgGradientStop>? Type147 { get; set; }
+        public global::Shotstack.SvgStroke? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgGradientStop? Type148 { get; set; }
+        public global::Shotstack.SvgStrokeLineCap? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgRadialGradientFillType? Type149 { get; set; }
+        public global::Shotstack.SvgStrokeLineJoin? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgStrokeLineCap? Type150 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SvgStrokeLineJoin? Type151 { get; set; }
+        public global::Shotstack.SvgShadow? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type152 { get; set; }
+        public global::Shotstack.SvgTransform? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -928,479 +928,199 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GeneratedAsset? Type225 { get; set; }
+        public global::Shotstack.QueuedResponse? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackGeneratedAsset? Type226 { get; set; }
+        public global::Shotstack.QueuedResponseData? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDGeneratedAsset? Type227 { get; set; }
+        public global::Shotstack.RenderResponse? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsGeneratedAsset? Type228 { get; set; }
+        public global::Shotstack.RenderResponseData? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenGeneratedAsset? Type229 { get; set; }
+        public global::Shotstack.RenderResponseDataStatus? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OpenAiGeneratedAsset? Type230 { get; set; }
+        public global::Shotstack.TemplateResponse? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.StabilityAiGeneratedAsset? Type231 { get; set; }
+        public global::Shotstack.TemplateResponseData? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GeneratedAssetDiscriminator? Type232 { get; set; }
+        public global::Shotstack.TemplateDataResponse? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackGeneratedAssetProvider? Type233 { get; set; }
+        public global::Shotstack.TemplateDataResponseData? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackGeneratedAssetOptions? Type234 { get; set; }
+        public global::Shotstack.TemplateListResponse? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextToSpeechOptions? Type235 { get; set; }
+        public global::Shotstack.TemplateListResponseData? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextToImageOptions? Type236 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.TemplateListResponseItem>? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextGeneratorOptions? Type237 { get; set; }
+        public global::Shotstack.TemplateListResponseItem? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackImageToVideoOptions? Type238 { get; set; }
+        public global::Shotstack.ProbeResponse? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackGeneratedAssetOptionsDiscriminator? Type239 { get; set; }
+        public global::Shotstack.AssetResponse? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackGeneratedAssetOptionsDiscriminatorType? Type240 { get; set; }
+        public global::Shotstack.AssetResponseData? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextToSpeechOptionsType? Type241 { get; set; }
+        public global::Shotstack.AssetRenderResponse? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextToSpeechOptionsVoice? Type242 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.AssetResponseData>? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextToSpeechOptionsLanguage? Type243 { get; set; }
+        public global::Shotstack.AssetResponseAttributes? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextToImageOptionsType? Type244 { get; set; }
+        public global::Shotstack.AssetResponseAttributesStatus? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackImageToVideoOptionsType? Type245 { get; set; }
+        public global::Shotstack.TransferResponse? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackTextGeneratorOptionsType? Type246 { get; set; }
+        public global::Shotstack.TransferResponseData? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDGeneratedAssetProvider? Type247 { get; set; }
+        public global::Shotstack.TransferResponseAttributes? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDGeneratedAssetOptions? Type248 { get; set; }
+        public global::Shotstack.TransferResponseAttributesStatus? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDTextToAvatarOptions? Type249 { get; set; }
+        public global::Shotstack.QueuedSourceResponse? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDGeneratedAssetOptionsDiscriminator? Type250 { get; set; }
+        public global::Shotstack.QueuedSourceResponseData? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDGeneratedAssetOptionsDiscriminatorType? Type251 { get; set; }
+        public global::Shotstack.SourceListResponse? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDTextToAvatarOptionsType? Type252 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.SourceResponseData>? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DIDTextToAvatarOptionsAvatar? Type253 { get; set; }
+        public global::Shotstack.SourceResponseData? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsGeneratedAssetProvider? Type254 { get; set; }
+        public global::Shotstack.SourceResponse? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsGeneratedAssetOptions? Type255 { get; set; }
+        public global::Shotstack.SourceResponseAttributes? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsTextToSpeechOptions? Type256 { get; set; }
+        public global::Shotstack.SourceResponseAttributesStatus? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsGeneratedAssetOptionsDiscriminator? Type257 { get; set; }
+        public global::Shotstack.OutputsResponse? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsGeneratedAssetOptionsDiscriminatorType? Type258 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.RenditionResponseAttributes>? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsTextToSpeechOptionsType? Type259 { get; set; }
+        public global::Shotstack.RenditionResponseAttributes? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ElevenLabsTextToSpeechOptionsVoice? Type260 { get; set; }
+        public global::Shotstack.RenditionResponseAttributesStatus? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenGeneratedAssetProvider? Type261 { get; set; }
+        public global::Shotstack.UploadResponse? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenGeneratedAssetOptions? Type262 { get; set; }
+        public global::Shotstack.UploadResponseData? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenTextToAvatarOptions? Type263 { get; set; }
+        public global::Shotstack.UploadResponseAttributes? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenGeneratedAssetOptionsDiscriminator? Type264 { get; set; }
+        public global::Shotstack.IngestErrorResponse? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenGeneratedAssetOptionsDiscriminatorType? Type265 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.IngestErrorResponseData>? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenTextToAvatarOptionsType? Type266 { get; set; }
+        public global::Shotstack.IngestErrorResponseData? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenTextToAvatarOptionsAvatar? Type267 { get; set; }
+        public global::Shotstack.TextAnimationPreset? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenTextToAvatarOptionsVoice? Type268 { get; set; }
+        public global::Shotstack.RichCaptionStyleTextTransform? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenTextToAvatarOptionsAvatarStyle? Type269 { get; set; }
+        public global::Shotstack.RichCaptionStyleTextDecoration? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.HeyGenTextToAvatarOptionsRatio? Type270 { get; set; }
+        public global::Shotstack.TiktokDestinationOptions? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OpenAiGeneratedAssetProvider? Type271 { get; set; }
+        public global::Shotstack.TiktokDestinationOptionsPrivacyLevel? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OpenAiGeneratedAssetOptions? Type272 { get; set; }
+        public global::Shotstack.AkamaiNetStorageDestinationOptions? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OpenAiTextGeneratorOptions? Type273 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.OpenAiGeneratedAssetOptionsDiscriminator? Type274 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.OpenAiGeneratedAssetOptionsDiscriminatorType? Type275 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.OpenAiTextGeneratorOptionsType? Type276 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.OpenAiTextGeneratorOptionsModel? Type277 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiGeneratedAssetProvider? Type278 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiGeneratedAssetOptions? Type279 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiTextToImageOptions? Type280 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiGeneratedAssetOptionsDiscriminator? Type281 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiGeneratedAssetOptionsDiscriminatorType? Type282 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiTextToImageOptionsType? Type283 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiTextToImageOptionsEngine? Type284 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.StabilityAiTextToImageOptionsStylePreset? Type285 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.QueuedResponse? Type286 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.QueuedResponseData? Type287 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RenderResponse? Type288 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RenderResponseData? Type289 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RenderResponseDataStatus? Type290 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateResponse? Type291 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateResponseData? Type292 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateDataResponse? Type293 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateDataResponseData? Type294 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateListResponse? Type295 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateListResponseData? Type296 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.TemplateListResponseItem>? Type297 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TemplateListResponseItem? Type298 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.ProbeResponse? Type299 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AssetResponse? Type300 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AssetResponseData? Type301 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AssetRenderResponse? Type302 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.AssetResponseData>? Type303 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AssetResponseAttributes? Type304 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AssetResponseAttributesStatus? Type305 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TransferResponse? Type306 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TransferResponseData? Type307 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TransferResponseAttributes? Type308 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TransferResponseAttributesStatus? Type309 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.QueuedSourceResponse? Type310 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.QueuedSourceResponseData? Type311 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.SourceListResponse? Type312 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.SourceResponseData>? Type313 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.SourceResponseData? Type314 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.SourceResponse? Type315 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.SourceResponseAttributes? Type316 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.SourceResponseAttributesStatus? Type317 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.OutputsResponse? Type318 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.RenditionResponseAttributes>? Type319 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RenditionResponseAttributes? Type320 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RenditionResponseAttributesStatus? Type321 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.UploadResponse? Type322 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.UploadResponseData? Type323 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.UploadResponseAttributes? Type324 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.IngestErrorResponse? Type325 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.IngestErrorResponseData>? Type326 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.IngestErrorResponseData? Type327 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetResponse? Type328 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetResponseData? Type329 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetResponseAttributes? Type330 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetResponseAttributesProvider? Type331 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetResponseAttributesType? Type332 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetResponseAttributesStatus? Type333 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetErrorResponse? Type334 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.GeneratedAssetErrorResponseData>? Type335 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.GeneratedAssetErrorResponseData? Type336 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TextAnimationPreset? Type337 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RichCaptionStyleTextTransform? Type338 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.RichCaptionStyleTextDecoration? Type339 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TiktokDestinationOptions? Type340 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.TiktokDestinationOptionsPrivacyLevel? Type341 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AkamaiNetStorageDestinationOptions? Type342 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Shotstack.AzureBlobStorageDestinationOptions? Type343 { get; set; }
+        public global::Shotstack.AzureBlobStorageDestinationOptions? Type273 { get; set; }
 
         /// <summary>
         /// 
@@ -1474,9 +1194,5 @@ namespace Shotstack
         /// 
         /// </summary>
         public global::System.Collections.Generic.List<global::Shotstack.IngestErrorResponseData>? ListType17 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Shotstack.GeneratedAssetErrorResponseData>? ListType18 { get; set; }
     }
 }

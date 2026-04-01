@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// The asset type - set to `svg` for SVG shapes.<br/>
+    /// The asset type - set to `svg` for SVG assets.<br/>
     /// Default Value: svg<br/>
     /// Example: svg
     /// </summary>
