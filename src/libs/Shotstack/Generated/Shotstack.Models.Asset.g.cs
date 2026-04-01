@@ -217,43 +217,23 @@ namespace Shotstack
         public bool IsShape => Shape != null;
 
         /// <summary>
-        /// The SvgAsset is used to add scalable vector graphics (SVG) shapes to a video.<br/>
-        /// It provides two mutually exclusive ways to define shapes:<br/>
-        /// **Option 1: Import SVG markup using `src`**<br/>
+        /// The SvgAsset is used to add scalable vector graphics (SVG) to a video using raw SVG markup.<br/>
         /// ```json<br/>
         /// {<br/>
         ///   "type": "svg",<br/>
         ///   "src": "&lt;svg width=\"100\" height=\"100\"&gt;&lt;circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#FF0000\"/&gt;&lt;/svg&gt;"<br/>
         /// }<br/>
         /// ```<br/>
-        /// When using `src`, no other properties are allowed. The fill, stroke, and dimensions<br/>
-        /// are automatically extracted from the SVG markup.<br/>
-        /// **Option 2: Define shapes programmatically using `shape`**<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "type": "svg",<br/>
-        ///   "shape": { "type": "circle", "radius": 50 },<br/>
-        ///   "fill": { "type": "solid", "color": "#FF0000" }<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// When using `shape`, you can customize fill, stroke, shadow, transform, and other properties.<br/>
-        /// The `src` property is not allowed in this mode.<br/>
-        /// **Important:** You must provide either `src` OR `shape`, but not both.<br/>
-        /// These two modes are mutually exclusive.<br/>
-        /// **Available Shapes (Option 2 only):**<br/>
-        /// - `rectangle` - Rectangles with optional rounded corners<br/>
-        /// - `circle` - Perfect circles<br/>
-        /// - `ellipse` - Ellipses/ovals with separate x and y radii<br/>
-        /// - `line` - Straight lines with configurable thickness<br/>
-        /// - `polygon` - Regular polygons (triangle, pentagon, hexagon, etc.)<br/>
-        /// - `star` - Multi-pointed stars<br/>
-        /// - `arrow` - Directional arrows<br/>
-        /// - `heart` - Heart shapes<br/>
-        /// - `cross` - Plus/cross shapes<br/>
-        /// - `ring` - Donut/ring shapes<br/>
-        /// - `path` - Custom shapes using SVG path data<br/>
+        /// **Supported elements:** `&lt;path&gt;`, `&lt;rect&gt;`, `&lt;circle&gt;`, `&lt;ellipse&gt;`,<br/>
+        /// `&lt;line&gt;`, `&lt;polygon&gt;`, `&lt;polyline&gt;`<br/>
+        /// **Automatically extracted from SVG markup:**<br/>
+        /// - Path data (converted to a single combined path)<br/>
+        /// - Fill color (from `fill` attribute or `style`)<br/>
+        /// - Stroke color and width (from attributes or `style`)<br/>
+        /// - Dimensions (from `width`/`height` or `viewBox`)<br/>
+        /// - Opacity (from `opacity` attribute)<br/>
         /// See [W3C SVG 2 Specification](https://www.w3.org/TR/SVG2/) for path data syntax.<br/>
-        /// Example: {"type":"svg","shape":{"type":"star","points":5,"outerRadius":100,"innerRadius":50},"fill":{"type":"linear","angle":45,"stops":[{"offset":0,"color":"#FFD700"},{"offset":1,"color":"#FF6B6B"}],"opacity":1},"stroke":{"color":"#2C3E50","width":3,"opacity":1,"lineCap":"round","lineJoin":"round"},"transform":{"x":200,"y":150,"rotation":0,"scale":1},"opacity":1}
+        /// Example: {"type":"svg","src":"\u003Csvg width=\u0022200\u0022 height=\u0022200\u0022\u003E\u003Crect x=\u002210\u0022 y=\u002210\u0022 width=\u0022180\u0022 height=\u0022180\u0022 rx=\u002220\u0022 fill=\u0022#3498db\u0022 stroke=\u0022#2C3E50\u0022 stroke-width=\u00223\u0022/\u003E\u003C/svg\u003E"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.SvgAsset? Svg { get; init; }
