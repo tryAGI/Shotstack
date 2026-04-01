@@ -369,55 +369,55 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.ShotstackDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.ShotstackDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.ShotstackDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShotstackDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShotstackDestination!, typeInfo);
             }
             else if (value.IsMuxDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.MuxDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.MuxDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.MuxDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MuxDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MuxDestination!, typeInfo);
             }
             else if (value.IsS3Destination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.S3Destination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.S3Destination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.S3Destination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3Destination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3Destination!, typeInfo);
             }
             else if (value.IsGoogleCloudStorageDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.GoogleCloudStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.GoogleCloudStorageDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.GoogleCloudStorageDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleCloudStorageDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleCloudStorageDestination!, typeInfo);
             }
             else if (value.IsGoogleDriveDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.GoogleDriveDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.GoogleDriveDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.GoogleDriveDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleDriveDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleDriveDestination!, typeInfo);
             }
             else if (value.IsVimeoDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.VimeoDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.VimeoDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.VimeoDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VimeoDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VimeoDestination!, typeInfo);
             }
             else if (value.IsTiktokDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.TiktokDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.TiktokDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.TiktokDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TiktokDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TiktokDestination!, typeInfo);
             }
             else if (value.IsAkamaiNetStorageDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.AkamaiNetStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.AkamaiNetStorageDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.AkamaiNetStorageDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AkamaiNetStorageDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AkamaiNetStorageDestination!, typeInfo);
             }
             else if (value.IsAzureBlobStorageDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.AzureBlobStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.AzureBlobStorageDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.AzureBlobStorageDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureBlobStorageDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureBlobStorageDestination!, typeInfo);
             }
         }
     }

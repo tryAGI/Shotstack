@@ -50,7 +50,7 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.HeyGenTextToAvatarOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.HeyGenTextToAvatarOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.HeyGenTextToAvatarOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToAvatar, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToAvatar!, typeInfo);
             }
         }
     }

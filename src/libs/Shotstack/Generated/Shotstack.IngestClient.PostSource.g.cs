@@ -234,6 +234,7 @@ namespace Shotstack
             string? callback = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Shotstack.Source
             {
                 Url = url,

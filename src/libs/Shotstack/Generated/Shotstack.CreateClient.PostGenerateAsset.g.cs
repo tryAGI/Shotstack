@@ -215,6 +215,7 @@ namespace Shotstack
         public async global::System.Threading.Tasks.Task<global::Shotstack.GeneratedAssetResponse> PostGenerateAssetAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Shotstack.GeneratedAsset
             {
             };

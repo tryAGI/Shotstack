@@ -224,6 +224,7 @@ namespace Shotstack
             global::Shotstack.EditInstance? instance = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Shotstack.Edit
             {
                 Timeline = timeline,

@@ -191,6 +191,7 @@ namespace Shotstack
             global::System.Collections.Generic.IList<global::Shotstack.Destinations> destinations,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Shotstack.Transfer
             {
                 Url = url,

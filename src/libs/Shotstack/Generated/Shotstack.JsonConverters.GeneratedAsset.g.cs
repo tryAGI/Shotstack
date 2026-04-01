@@ -264,37 +264,37 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.ShotstackGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.ShotstackGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.ShotstackGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shotstack, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shotstack!, typeInfo);
             }
             else if (value.IsDId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.DIDGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.DIDGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.DIDGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DId, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DId!, typeInfo);
             }
             else if (value.IsElevenlabs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.ElevenLabsGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.ElevenLabsGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.ElevenLabsGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Elevenlabs, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Elevenlabs!, typeInfo);
             }
             else if (value.IsHeygen)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.HeyGenGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.HeyGenGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.HeyGenGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heygen, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heygen!, typeInfo);
             }
             else if (value.IsOpenai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.OpenAiGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.OpenAiGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.OpenAiGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai!, typeInfo);
             }
             else if (value.IsStabilityAi)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.StabilityAiGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.StabilityAiGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.StabilityAiGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StabilityAi, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StabilityAi!, typeInfo);
             }
         }
     }
