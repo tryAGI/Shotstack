@@ -140,67 +140,67 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgRectangleShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgRectangleShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgRectangleShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rectangle, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rectangle!, typeInfo);
             }
             else if (value.IsCircle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgCircleShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgCircleShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgCircleShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Circle, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Circle!, typeInfo);
             }
             else if (value.IsEllipse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgEllipseShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgEllipseShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgEllipseShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ellipse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ellipse!, typeInfo);
             }
             else if (value.IsLine)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgLineShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgLineShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgLineShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Line, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Line!, typeInfo);
             }
             else if (value.IsPolygon)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgPolygonShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgPolygonShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgPolygonShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Polygon, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Polygon!, typeInfo);
             }
             else if (value.IsStar)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgStarShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgStarShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgStarShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Star, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Star!, typeInfo);
             }
             else if (value.IsArrow)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgArrowShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgArrowShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgArrowShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Arrow, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Arrow!, typeInfo);
             }
             else if (value.IsHeart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgHeartShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgHeartShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgHeartShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heart, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heart!, typeInfo);
             }
             else if (value.IsCross)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgCrossShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgCrossShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgCrossShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cross, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cross!, typeInfo);
             }
             else if (value.IsRing)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgRingShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgRingShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgRingShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ring, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ring!, typeInfo);
             }
             else if (value.IsPath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgPathShape), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgPathShape?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgPathShape).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Path, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Path!, typeInfo);
             }
         }
     }

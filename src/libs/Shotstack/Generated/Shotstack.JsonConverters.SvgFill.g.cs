@@ -68,19 +68,19 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgSolidFill), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgSolidFill?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgSolidFill).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Solid, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Solid!, typeInfo);
             }
             else if (value.IsLinear)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgLinearGradientFill), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgLinearGradientFill?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgLinearGradientFill).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Linear, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Linear!, typeInfo);
             }
             else if (value.IsRadial)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.SvgRadialGradientFill), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.SvgRadialGradientFill?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.SvgRadialGradientFill).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Radial, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Radial!, typeInfo);
             }
         }
     }

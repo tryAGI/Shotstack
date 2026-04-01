@@ -50,7 +50,7 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.OpenAiTextGeneratorOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.OpenAiTextGeneratorOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.OpenAiTextGeneratorOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGenerator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGenerator!, typeInfo);
             }
         }
     }

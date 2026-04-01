@@ -50,7 +50,7 @@ namespace Shotstack.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.ElevenLabsTextToSpeechOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.ElevenLabsTextToSpeechOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.ElevenLabsTextToSpeechOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech!, typeInfo);
             }
         }
     }

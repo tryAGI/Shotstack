@@ -188,6 +188,7 @@ namespace Shotstack
             global::Shotstack.Edit? template1 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Shotstack.Template
             {
                 Name = name,
