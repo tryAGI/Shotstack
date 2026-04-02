@@ -37,7 +37,7 @@ namespace Shotstack
         public global::Shotstack.RichCaptionStyleTextTransform? TextTransform { get; set; }
 
         /// <summary>
-        /// The font size of the active word in pixels. Overrides the scale property when set.<br/>
+        /// The font size in pixels. Can be used as an alternative to font.size.<br/>
         /// Example: 120
         /// </summary>
         /// <example>120</example>
@@ -85,7 +85,7 @@ namespace Shotstack
         /// Example: uppercase
         /// </param>
         /// <param name="size">
-        /// The font size of the active word in pixels. Overrides the scale property when set.<br/>
+        /// The font size in pixels. Can be used as an alternative to font.size.<br/>
         /// Example: 120
         /// </param>
         /// <param name="textDecoration">

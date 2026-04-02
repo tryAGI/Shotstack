@@ -29,15 +29,6 @@ namespace Shotstack
         public global::Shotstack.OneOf<global::Shotstack.RichTextShadow, global::Shotstack.RichCaptionActiveShadow?>? Shadow { get; set; }
 
         /// <summary>
-        /// Scale multiplier for the active word. 1.0 is normal size, 1.2 is 20% larger.<br/>
-        /// Default Value: 1<br/>
-        /// Example: 1.2F
-        /// </summary>
-        /// <example>1.2F</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("scale")]
-        public double? Scale { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,24 +46,17 @@ namespace Shotstack
         /// <param name="shadow">
         /// Shadow properties for the active word. Set to "none" to explicitly remove the base shadow on the active word.
         /// </param>
-        /// <param name="scale">
-        /// Scale multiplier for the active word. 1.0 is normal size, 1.2 is 20% larger.<br/>
-        /// Default Value: 1<br/>
-        /// Example: 1.2F
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RichCaptionActive(
             global::Shotstack.RichCaptionActiveFont? font,
             global::Shotstack.OneOf<global::Shotstack.RichTextStroke, global::Shotstack.RichCaptionActiveStroke?>? stroke,
-            global::Shotstack.OneOf<global::Shotstack.RichTextShadow, global::Shotstack.RichCaptionActiveShadow?>? shadow,
-            double? scale)
+            global::Shotstack.OneOf<global::Shotstack.RichTextShadow, global::Shotstack.RichCaptionActiveShadow?>? shadow)
         {
             this.Font = font;
             this.Stroke = stroke;
             this.Shadow = shadow;
-            this.Scale = scale;
         }
 
         /// <summary>
