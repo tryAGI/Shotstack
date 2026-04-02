@@ -9,6 +9,21 @@ namespace Shotstack
     public sealed partial class RichCaptionActiveFont
     {
         /// <summary>
+        /// The font family for the active word. Inherits from the base font.family when not set.<br/>
+        /// Example: Roboto
+        /// </summary>
+        /// <example>Roboto</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("family")]
+        public string? Family { get; set; }
+
+        /// <summary>
+        /// The weight of the font for the active word. Can be a number (100-900) or a string. Inherits from the base font.weight when not set.<br/>
+        /// Default Value: 400
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
+        public object? Weight { get; set; }
+
+        /// <summary>
         /// The active word color using hexadecimal color notation.<br/>
         /// Example: #C96741
         /// </summary>
@@ -34,7 +49,7 @@ namespace Shotstack
         public double? Opacity { get; set; }
 
         /// <summary>
-        /// The font size of the active word in pixels. Overrides the scale property when set.<br/>
+        /// The font size of the active word in pixels.<br/>
         /// Example: 120
         /// </summary>
         /// <example>120</example>
@@ -60,6 +75,14 @@ namespace Shotstack
         /// <summary>
         /// Initializes a new instance of the <see cref="RichCaptionActiveFont" /> class.
         /// </summary>
+        /// <param name="family">
+        /// The font family for the active word. Inherits from the base font.family when not set.<br/>
+        /// Example: Roboto
+        /// </param>
+        /// <param name="weight">
+        /// The weight of the font for the active word. Can be a number (100-900) or a string. Inherits from the base font.weight when not set.<br/>
+        /// Default Value: 400
+        /// </param>
         /// <param name="color">
         /// The active word color using hexadecimal color notation.<br/>
         /// Example: #C96741
@@ -74,7 +97,7 @@ namespace Shotstack
         /// Example: 1
         /// </param>
         /// <param name="size">
-        /// The font size of the active word in pixels. Overrides the scale property when set.<br/>
+        /// The font size of the active word in pixels.<br/>
         /// Example: 120
         /// </param>
         /// <param name="textDecoration">
@@ -86,12 +109,16 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RichCaptionActiveFont(
+            string? family,
+            object? weight,
             string? color,
             string? background,
             double? opacity,
             double? size,
             global::Shotstack.RichCaptionActiveFontTextDecoration? textDecoration)
         {
+            this.Family = family;
+            this.Weight = weight;
             this.Color = color;
             this.Background = background;
             this.Opacity = opacity;

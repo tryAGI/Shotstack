@@ -161,78 +161,6 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.SvgAssetTypeNullableJsonConverter),
 
-            typeof(global::Shotstack.JsonConverters.SvgShapeDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgShapeDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgRectangleShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgRectangleShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgCircleShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgCircleShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgEllipseShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgEllipseShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgLineShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgLineShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgPolygonShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgPolygonShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgStarShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgStarShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgArrowShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgArrowShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgHeartShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgHeartShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgCrossShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgCrossShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgRingShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgRingShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgPathShapeTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgPathShapeTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgFillDiscriminatorTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgFillDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgSolidFillTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgSolidFillTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgLinearGradientFillTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgLinearGradientFillTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgRadialGradientFillTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgRadialGradientFillTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgStrokeLineCapJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgStrokeLineCapNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgStrokeLineJoinJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgStrokeLineJoinNullableJsonConverter),
-
             typeof(global::Shotstack.JsonConverters.TransitionInJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TransitionInNullableJsonConverter),
@@ -383,10 +311,6 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.AssetJsonConverter),
 
-            typeof(global::Shotstack.JsonConverters.SvgShapeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.SvgFillJsonConverter),
-
             typeof(global::Shotstack.JsonConverters.DestinationsJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.AudioEnhancementJsonConverter),
@@ -518,6 +442,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionActive))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionAnimation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionActiveFont))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionActiveFontTextDecoration), TypeInfoPropertyName = "RichCaptionActiveFontTextDecoration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<global::Shotstack.RichTextStroke, global::Shotstack.RichCaptionActiveStroke?>), TypeInfoPropertyName = "OneOfRichTextStrokeRichCaptionActiveStroke2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionActiveStroke), TypeInfoPropertyName = "RichCaptionActiveStroke2")]
@@ -537,48 +462,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetSize), TypeInfoPropertyName = "TitleAssetSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetPosition), TypeInfoPropertyName = "TitleAssetPosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgAssetType), TypeInfoPropertyName = "SvgAssetType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShape), TypeInfoPropertyName = "SvgShape2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRectangleShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgCircleShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgEllipseShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgLineShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgPolygonShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStarShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgArrowShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgHeartShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgCrossShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRingShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgPathShape))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShapeDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShapeDiscriminatorType), TypeInfoPropertyName = "SvgShapeDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRectangleShapeType), TypeInfoPropertyName = "SvgRectangleShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgCircleShapeType), TypeInfoPropertyName = "SvgCircleShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgEllipseShapeType), TypeInfoPropertyName = "SvgEllipseShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgLineShapeType), TypeInfoPropertyName = "SvgLineShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgPolygonShapeType), TypeInfoPropertyName = "SvgPolygonShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStarShapeType), TypeInfoPropertyName = "SvgStarShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgArrowShapeType), TypeInfoPropertyName = "SvgArrowShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgHeartShapeType), TypeInfoPropertyName = "SvgHeartShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgCrossShapeType), TypeInfoPropertyName = "SvgCrossShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRingShapeType), TypeInfoPropertyName = "SvgRingShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgPathShapeType), TypeInfoPropertyName = "SvgPathShapeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgFill), TypeInfoPropertyName = "SvgFill2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgSolidFill))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgLinearGradientFill))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRadialGradientFill))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgFillDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgFillDiscriminatorType), TypeInfoPropertyName = "SvgFillDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgSolidFillType), TypeInfoPropertyName = "SvgSolidFillType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgLinearGradientFillType), TypeInfoPropertyName = "SvgLinearGradientFillType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.SvgGradientStop>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgGradientStop))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgRadialGradientFillType), TypeInfoPropertyName = "SvgRadialGradientFillType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStroke))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStrokeLineCap), TypeInfoPropertyName = "SvgStrokeLineCap2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgStrokeLineJoin), TypeInfoPropertyName = "SvgStrokeLineJoin2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgShadow))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgTransform))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionIn), TypeInfoPropertyName = "TransitionIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionOut), TypeInfoPropertyName = "TransitionOut2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RotateTransformation))]
@@ -586,7 +469,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.FlipTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAlignmentHorizontal), TypeInfoPropertyName = "TextAlignmentHorizontal2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAlignmentVertical), TypeInfoPropertyName = "TextAlignmentVertical2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextStyleTextTransform), TypeInfoPropertyName = "RichTextStyleTextTransform2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextStyleTextDecoration), TypeInfoPropertyName = "RichTextStyleTextDecoration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextGradient))]
@@ -707,8 +589,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<float?, global::System.Collections.Generic.List<global::Shotstack.Tween>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Tween>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.List<global::Shotstack.Tween>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.SvgGradientStop>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RichTextGradientStop>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Destinations>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>))]
