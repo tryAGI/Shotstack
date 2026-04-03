@@ -124,7 +124,7 @@ namespace Shotstack
         /// Captions can be applied independently from a video or audio file for greater<br/>
         /// flexibility with styling and layout. For example you can scale, position or crop a video without modifying the<br/>
         /// captions.<br/>
-        /// To sync captions with a video or audio file use a [Video](#tocs_videoasset") or [Audio](#tocs_audioasset") with<br/>
+        /// To sync captions with a video or audio file use a [Video](#tocs_videoasset) or [Audio](#tocs_audioasset) with<br/>
         /// matching start and end time.
         /// </summary>
 #if NET6_0_OR_GREATER
