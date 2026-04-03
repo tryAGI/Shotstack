@@ -1613,7 +1613,7 @@
         ]
       },
       "CaptionAsset": {
-        "description": "The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will\nbe read and burnt to the video.\n\nCaptions can be applied independently from a video or audio file for greater\nflexibility with styling and layout. For example you can scale, position or crop a video without modifying the\ncaptions.\n\nTo sync captions with a video or audio file use a [Video](#tocs_videoasset\") or [Audio](#tocs_audioasset\") with\nmatching start and end time.\n",
+        "description": "The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will\nbe read and burnt to the video.\n\nCaptions can be applied independently from a video or audio file for greater\nflexibility with styling and layout. For example you can scale, position or crop a video without modifying the\ncaptions.\n\nTo sync captions with a video or audio file use a [Video](#tocs_videoasset) or [Audio](#tocs_audioasset) with\nmatching start and end time.\n",
         "type": "object",
         "properties": {
           "type": {
