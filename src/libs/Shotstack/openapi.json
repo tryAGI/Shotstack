@@ -2185,7 +2185,7 @@
         ]
       },
       "SvgAsset": {
-        "description": "The SvgAsset is used to add scalable vector graphics (SVG) to a video using raw SVG markup.\n\n```json\n{\n  \"type\": \"svg\",\n  \"src\": \"<svg width=\\\"100\\\" height=\\\"100\\\"><circle cx=\\\"50\\\" cy=\\\"50\\\" r=\\\"40\\\" fill=\\\"#FF0000\\\"/></svg>\"\n}\n```\n\n**Supported elements:** `<path>`, `<rect>`, `<circle>`, `<ellipse>`,\n`<line>`, `<polygon>`, `<polyline>`\n\n**Automatically extracted from SVG markup:**\n- Path data (converted to a single combined path)\n- Fill color (from `fill` attribute or `style`)\n- Stroke color and width (from attributes or `style`)\n- Dimensions (from `width`/`height` or `viewBox`)\n- Opacity (from `opacity` attribute)\n\nSee [W3C SVG 2 Specification](https://www.w3.org/TR/SVG2/) for path data syntax.\n",
+        "description": "The SvgAsset is used to add scalable vector graphics (SVG) to a video using raw SVG markup.\n\n**Supported elements:** `<path>`, `<rect>`, `<circle>`, `<ellipse>`,\n`<line>`, `<polygon>`, `<polyline>`\n\n**Automatically extracted from SVG markup:**\n- Path data (converted to a single combined path)\n- Fill color (from `fill` attribute or `style`)\n- Stroke color and width (from attributes or `style`)\n- Dimensions (from `width`/`height` or `viewBox`)\n- Opacity (from `opacity` attribute)\n\nSee [W3C SVG 2 Specification](https://www.w3.org/TR/SVG2/) for path data syntax.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -2198,7 +2198,7 @@
             "example": "svg"
           },
           "src": {
-            "description": "Raw SVG markup string. The shape, fill, stroke, dimensions and opacity\nare automatically extracted from the SVG content.\n",
+            "description": "Raw SVG markup string. The SVG must contain valid SVG elements. The shape,\nfill, stroke, dimensions and opacity are automatically extracted from the\nSVG content.\n",
             "type": "string",
             "minLength": 1,
             "maxLength": 500000,
@@ -2212,7 +2212,7 @@
         ],
         "example": {
           "type": "svg",
-          "src": "<svg width=\"200\" height=\"200\"><rect x=\"10\" y=\"10\" width=\"180\" height=\"180\" rx=\"20\" fill=\"#3498db\" stroke=\"#2C3E50\" stroke-width=\"3\"/></svg>"
+          "src": "<svg width=\"100\" height=\"100\"><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#3498db\"/></svg>"
         }
       },
       "Transition": {
