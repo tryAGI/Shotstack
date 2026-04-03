@@ -5,12 +5,6 @@ namespace Shotstack
 {
     /// <summary>
     /// The SvgAsset is used to add scalable vector graphics (SVG) to a video using raw SVG markup.<br/>
-    /// ```json<br/>
-    /// {<br/>
-    ///   "type": "svg",<br/>
-    ///   "src": "&lt;svg width=\"100\" height=\"100\"&gt;&lt;circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#FF0000\"/&gt;&lt;/svg&gt;"<br/>
-    /// }<br/>
-    /// ```<br/>
     /// **Supported elements:** `&lt;path&gt;`, `&lt;rect&gt;`, `&lt;circle&gt;`, `&lt;ellipse&gt;`,<br/>
     /// `&lt;line&gt;`, `&lt;polygon&gt;`, `&lt;polyline&gt;`<br/>
     /// **Automatically extracted from SVG markup:**<br/>
@@ -20,7 +14,7 @@ namespace Shotstack
     /// - Dimensions (from `width`/`height` or `viewBox`)<br/>
     /// - Opacity (from `opacity` attribute)<br/>
     /// See [W3C SVG 2 Specification](https://www.w3.org/TR/SVG2/) for path data syntax.<br/>
-    /// Example: {"type":"svg","src":"\u003Csvg width=\u0022200\u0022 height=\u0022200\u0022\u003E\u003Crect x=\u002210\u0022 y=\u002210\u0022 width=\u0022180\u0022 height=\u0022180\u0022 rx=\u002220\u0022 fill=\u0022#3498db\u0022 stroke=\u0022#2C3E50\u0022 stroke-width=\u00223\u0022/\u003E\u003C/svg\u003E"}
+    /// Example: {"type":"svg","src":"\u003Csvg width=\u0022100\u0022 height=\u0022100\u0022\u003E\u003Ccircle cx=\u002250\u0022 cy=\u002250\u0022 r=\u002240\u0022 fill=\u0022#3498db\u0022/\u003E\u003C/svg\u003E"}
     /// </summary>
     public sealed partial class SvgAsset
     {
@@ -36,8 +30,9 @@ namespace Shotstack
         public global::Shotstack.SvgAssetType Type { get; set; } = global::Shotstack.SvgAssetType.Svg;
 
         /// <summary>
-        /// Raw SVG markup string. The shape, fill, stroke, dimensions and opacity<br/>
-        /// are automatically extracted from the SVG content.<br/>
+        /// Raw SVG markup string. The SVG must contain valid SVG elements. The shape,<br/>
+        /// fill, stroke, dimensions and opacity are automatically extracted from the<br/>
+        /// SVG content.<br/>
         /// Example: &lt;svg width="100" height="100"&gt;&lt;circle cx="50" cy="50" r="40" fill="#3498db"/&gt;&lt;/svg&gt;
         /// </summary>
         /// <example>&lt;svg width="100" height="100"&gt;&lt;circle cx="50" cy="50" r="40" fill="#3498db"/&gt;&lt;/svg&gt;</example>
@@ -55,8 +50,9 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="SvgAsset" /> class.
         /// </summary>
         /// <param name="src">
-        /// Raw SVG markup string. The shape, fill, stroke, dimensions and opacity<br/>
-        /// are automatically extracted from the SVG content.<br/>
+        /// Raw SVG markup string. The SVG must contain valid SVG elements. The shape,<br/>
+        /// fill, stroke, dimensions and opacity are automatically extracted from the<br/>
+        /// SVG content.<br/>
         /// Example: &lt;svg width="100" height="100"&gt;&lt;circle cx="50" cy="50" r="40" fill="#3498db"/&gt;&lt;/svg&gt;
         /// </param>
         /// <param name="type">
