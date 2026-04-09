@@ -6,6 +6,7 @@ namespace Shotstack
     public sealed partial class ShotstackClient
     {
         /// <inheritdoc cref="ShotstackClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Shotstack.EndPointAuthorization}?, bool)"/>
+
         public ShotstackClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

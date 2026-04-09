@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_PostTemplateRenderSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_PostTemplateRenderSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_PostTemplateRenderSecurityRequirement0,
+            };
         partial void PreparePostTemplateRenderArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Shotstack.TemplateRender request);
@@ -43,9 +62,15 @@ namespace Shotstack
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostTemplateRenderSecurityRequirements,
+                operationName: "PostTemplateRenderAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: "/edit/v1/templates/render",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

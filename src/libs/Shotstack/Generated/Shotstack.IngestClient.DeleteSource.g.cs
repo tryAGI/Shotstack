@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_DeleteSourceSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_DeleteSourceSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_DeleteSourceSecurityRequirement0,
+            };
         partial void PrepareDeleteSourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -34,9 +53,15 @@ namespace Shotstack
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteSourceSecurityRequirements,
+                operationName: "DeleteSourceAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: $"/ingest/v1/sources/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

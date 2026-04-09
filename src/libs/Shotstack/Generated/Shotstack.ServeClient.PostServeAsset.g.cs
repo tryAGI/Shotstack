@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class ServeClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_PostServeAssetSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_PostServeAssetSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_PostServeAssetSecurityRequirement0,
+            };
         partial void PreparePostServeAssetArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Shotstack.Transfer request);
@@ -43,9 +62,15 @@ namespace Shotstack
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostServeAssetSecurityRequirements,
+                operationName: "PostServeAssetAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: "/serve/v1/assets",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

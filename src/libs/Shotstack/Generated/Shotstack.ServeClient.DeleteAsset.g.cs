@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class ServeClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_DeleteAssetSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_DeleteAssetSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_DeleteAssetSecurityRequirement0,
+            };
         partial void PrepareDeleteAssetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -35,9 +54,15 @@ namespace Shotstack
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteAssetSecurityRequirements,
+                operationName: "DeleteAssetAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: $"/serve/v1/assets/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
