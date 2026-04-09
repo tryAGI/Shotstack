@@ -8,6 +8,7 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+
         public void AuthorizeUsingAuthorization(
  );
     }

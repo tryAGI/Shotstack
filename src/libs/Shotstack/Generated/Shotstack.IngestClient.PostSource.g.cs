@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_PostSourceSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_PostSourceSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_PostSourceSecurityRequirement0,
+            };
         partial void PreparePostSourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Shotstack.Source request);
@@ -43,9 +62,15 @@ namespace Shotstack
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostSourceSecurityRequirements,
+                operationName: "PostSourceAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: "/ingest/v1/sources",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

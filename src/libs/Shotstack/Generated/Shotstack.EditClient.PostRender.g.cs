@@ -7,6 +7,25 @@ namespace Shotstack
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_PostRenderSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_PostRenderSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_PostRenderSecurityRequirement0,
+            };
         partial void PreparePostRenderArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Shotstack.Edit request);
@@ -54,9 +73,15 @@ namespace Shotstack
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostRenderSecurityRequirements,
+                operationName: "PostRenderAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: "/edit/v1/render",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

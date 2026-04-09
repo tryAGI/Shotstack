@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_GetSourcesSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_GetSourcesSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_GetSourcesSecurityRequirement0,
+            };
         partial void PrepareGetSourcesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSourcesRequest(
@@ -34,9 +53,15 @@ namespace Shotstack
             PrepareGetSourcesArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSourcesSecurityRequirements,
+                operationName: "GetSourcesAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: "/ingest/v1/sources",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -5,6 +5,25 @@ namespace Shotstack
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_GetUploadSignedUrlSecurityRequirement0 =
+            new global::Shotstack.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
+                {                    new global::Shotstack.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_GetUploadSignedUrlSecurityRequirements =
+            new global::Shotstack.EndPointSecurityRequirement[]
+            {                s_GetUploadSignedUrlSecurityRequirement0,
+            };
         partial void PrepareGetUploadSignedUrlArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetUploadSignedUrlRequest(
@@ -45,9 +64,15 @@ namespace Shotstack
             PrepareGetUploadSignedUrlArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetUploadSignedUrlSecurityRequirements,
+                operationName: "GetUploadSignedUrlAsync");
+
             var __pathBuilder = new global::Shotstack.PathBuilder(
                 path: "/ingest/v1/upload",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
