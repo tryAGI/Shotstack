@@ -23,6 +23,7 @@ namespace Shotstack
             Authorizations.Add(new global::Shotstack.EndPointAuthorization
             {
                 Type = "",
+                SchemeId = "DeveloperKey",
                 Location = "",
                 Name = "",
                 Value = "",

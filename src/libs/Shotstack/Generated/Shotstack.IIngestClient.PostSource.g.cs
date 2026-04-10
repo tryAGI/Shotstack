@@ -11,11 +11,13 @@ namespace Shotstack
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/ingest/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Shotstack.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.QueuedSourceResponse> PostSourceAsync(
 
             global::Shotstack.Source request,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Fetch Source<br/>
@@ -38,6 +40,7 @@ namespace Shotstack
         /// An optional webhook callback URL used to receive status notifications when sources are uploaded and renditions processed.<br/>
         /// Example: https://my-server.com/callback.php
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.QueuedSourceResponse> PostSourceAsync(
@@ -45,6 +48,7 @@ namespace Shotstack
             global::Shotstack.Outputs? outputs = default,
             global::Shotstack.Destinations? destinations = default,
             string? callback = default,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
