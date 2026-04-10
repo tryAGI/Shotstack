@@ -11,11 +11,13 @@ namespace Shotstack
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Shotstack.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.QueuedResponse> PostTemplateRenderAsync(
 
             global::Shotstack.TemplateRender request,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Render Template<br/>
@@ -30,11 +32,13 @@ namespace Shotstack
         /// <param name="merge">
         /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`. 
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.QueuedResponse> PostTemplateRenderAsync(
             string id,
             global::System.Collections.Generic.IList<global::Shotstack.MergeField>? merge = default,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
