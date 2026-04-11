@@ -35,6 +35,18 @@ namespace Shotstack
         public double? BorderRadius { get; set; }
 
         /// <summary>
+        /// When true, the background pill shrinks to fit the rendered text bounding box plus the<br/>
+        /// asset's padding (and stroke width, if present), producing a pill or badge effect. When<br/>
+        /// false (default), the background fills the full asset content area. Available on<br/>
+        /// rich-text and rich-caption assets only; not supported on legacy `type: text`.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wrap")]
+        public bool? Wrap { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,17 +69,27 @@ namespace Shotstack
         /// Default Value: 0<br/>
         /// Example: 10
         /// </param>
+        /// <param name="wrap">
+        /// When true, the background pill shrinks to fit the rendered text bounding box plus the<br/>
+        /// asset's padding (and stroke width, if present), producing a pill or badge effect. When<br/>
+        /// false (default), the background fills the full asset content area. Available on<br/>
+        /// rich-text and rich-caption assets only; not supported on legacy `type: text`.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RichTextBackground(
             string? color,
             double? opacity,
-            double? borderRadius)
+            double? borderRadius,
+            bool? wrap)
         {
             this.Color = color;
             this.Opacity = opacity;
             this.BorderRadius = borderRadius;
+            this.Wrap = wrap;
         }
 
         /// <summary>
