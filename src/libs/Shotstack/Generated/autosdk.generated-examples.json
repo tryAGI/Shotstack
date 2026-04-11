@@ -1,0 +1,48 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Get Render Status",
+      "Slug": "getrender",
+      "Description": "Get the rendering status, temporary asset url and details of a render by ID.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
+      "Language": "http",
+      "Code": "### Get Render Status\n# @name getRender\nGET {{host}}/edit/v1/render/{{id}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The render status details\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getRender",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Render Asset",
+      "Slug": "postrender",
+      "Description": "Queue and render the contents of an [Edit](#tocs_edit) as a video, image or audio file.\n\n**Rendering Process:**\n1. **Validation**: The edit JSON is validated\n2. **Download**: All assets are downloaded and cached  \n3. **Preprocessing**: Video assets are automatically processed to fix compatibility issues\n4. **Rendering**: The timeline is rendered using the processed assets\n5. **Output**: The final media file is generated and stored\n\n**Video Preprocessing:**\nVideo assets undergo automatic preprocessing to ensure compatibility. You can force \npreprocessing by setting \u0060\u0022transcode\u0022: true\u0060 on video assets. See [Preprocessing](#preprocessing) \nfor more details.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
+      "Language": "http",
+      "Code": "### Render Asset\n# @name postRender\nPOST {{host}}/edit/v1/render\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022timeline\u0022: {\n    \u0022soundtrack\u0022: {\n      \u0022src\u0022: \u0022https://s3-ap-northeast-1.amazonaws.com/my-bucket/music.mp3\u0022,\n      \u0022effect\u0022: \u0022fadeInFadeOut\u0022\n    },\n    \u0022background\u0022: \u0022#000000\u0022,\n    \u0022tracks\u0022: [\n      {\n        \u0022clips\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022type\u0022: \u0022title\u0022,\n              \u0022text\u0022: \u0022Hello World\u0022,\n              \u0022style\u0022: \u0022minimal\u0022\n            },\n            \u0022start\u0022: 0,\n            \u0022length\u0022: 4,\n            \u0022transition\u0022: {\n              \u0022in\u0022: \u0022fade\u0022,\n              \u0022out\u0022: \u0022fade\u0022\n            },\n            \u0022effect\u0022: \u0022slideRight\u0022\n          },\n          {\n            \u0022asset\u0022: {\n              \u0022type\u0022: \u0022image\u0022,\n              \u0022src\u0022: \u0022https://s3-ap-northeast-1.amazonaws.com/my-bucket/my-image.jpg\u0022\n            },\n            \u0022start\u0022: 3,\n            \u0022length\u0022: 4,\n            \u0022effect\u0022: \u0022zoomIn\u0022,\n            \u0022filter\u0022: \u0022greyscale\u0022\n          }\n        ]\n      },\n      {\n        \u0022clips\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022type\u0022: \u0022video\u0022,\n              \u0022src\u0022: \u0022https://s3-ap-northeast-1.amazonaws.com/my-bucket/my-clip-1.mp4\u0022,\n              \u0022trim\u0022: 10.5,\n              \u0022transcode\u0022: true\n            },\n            \u0022start\u0022: 7,\n            \u0022length\u0022: 4.5\n          },\n          {\n            \u0022asset\u0022: {\n              \u0022type\u0022: \u0022video\u0022,\n              \u0022src\u0022: \u0022https://s3-ap-northeast-1.amazonaws.com/my-bucket/my-clip-2.mp4\u0022,\n              \u0022volume\u0022: 0.5\n            },\n            \u0022start\u0022: 11.5,\n            \u0022length\u0022: 5,\n            \u0022transition\u0022: {\n              \u0022out\u0022: \u0022wipeLeft\u0022\n            }\n          }\n        ]\n      }\n    ]\n  },\n  \u0022output\u0022: {\n    \u0022format\u0022: \u0022mp4\u0022,\n    \u0022resolution\u0022: \u0022sd\u0022\n  }\n}\n\n## Responses\n# 201\n# Description: The queued render details\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "postRender",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Update Template",
+      "Slug": "puttemplate",
+      "Description": "Update an existing template by template id.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
+      "Language": "http",
+      "Code": "### Update Template\n# @name putTemplate\nPUT {{host}}/edit/v1/templates/{{id}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022My template\u0022,\n  \u0022template\u0022: {\n    \u0022timeline\u0022: {\n      \u0022soundtrack\u0022: {},\n      \u0022background\u0022: \u0022string\u0022,\n      \u0022fonts\u0022: [],\n      \u0022tracks\u0022: [],\n      \u0022cache\u0022: true\n    },\n    \u0022output\u0022: {\n      \u0022format\u0022: \u0022mp4\u0022,\n      \u0022resolution\u0022: \u0022hd\u0022,\n      \u0022aspectRatio\u0022: \u002216:9\u0022,\n      \u0022size\u0022: {},\n      \u0022fps\u0022: 25,\n      \u0022scaleTo\u0022: \u0022preview\u0022,\n      \u0022quality\u0022: \u0022medium\u0022,\n      \u0022repeat\u0022: true,\n      \u0022mute\u0022: false,\n      \u0022range\u0022: {},\n      \u0022poster\u0022: {},\n      \u0022thumbnail\u0022: {},\n      \u0022destinations\u0022: []\n    },\n    \u0022merge\u0022: [\n      {}\n    ],\n    \u0022callback\u0022: \u0022https://my-server.com/callback.php\u0022,\n    \u0022disk\u0022: \u0022local\u0022,\n    \u0022instance\u0022: \u0022s1\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: Update a templates name and [Edit](#tocs_edit)\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "putTemplate",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "Fetch Source",
+      "Slug": "postsource",
+      "Description": "Queue a source file to be fetched from a URL and stored by Shotstack. Source files can be videos, images, audio\nfiles and fonts. Once ingested, new [output renditions](#tocs_outputs) can be created from the source file.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/ingest/{version}\u003C/a\u003E",
+      "Language": "http",
+      "Code": "### Fetch Source\n# @name postSource\nPOST {{host}}/ingest/v1/sources\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022url\u0022: \u0022https://github.com/shotstack/test-media/raw/main/captioning/scott-ko.mp4\u0022\n}\n\n## Responses\n# 201\n# Description: The queued source file details\n# Content-Type: application/json\n# 400\n# Description: A list of validation and other errors\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "postSource",
+      "Setup": null
+    }
+  ]
+}

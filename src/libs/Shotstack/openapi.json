@@ -2900,6 +2900,12 @@
             "minimum": 0,
             "default": 0,
             "example": 10
+          },
+          "wrap": {
+            "description": "When true, the background pill shrinks to fit the rendered text bounding box plus the\nasset's padding (and stroke width, if present), producing a pill or badge effect. When\nfalse (default), the background fills the full asset content area. Available on\nrich-text and rich-caption assets only; not supported on legacy `type: text`.\n",
+            "type": "boolean",
+            "default": false,
+            "example": true
           }
         },
         "additionalProperties": false,
