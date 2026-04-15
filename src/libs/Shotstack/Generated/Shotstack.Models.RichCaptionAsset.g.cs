@@ -5,8 +5,9 @@ namespace Shotstack
 {
     /// <summary>
     /// The RichCaptionAsset provides word-level caption animations with rich-text styling. It supports<br/>
-    /// karaoke-style highlighting, word-by-word animations, and advanced typography. Use with SRT/VTT<br/>
-    /// files or auto-transcription via aliases.
+    /// karaoke-style highlighting, word-by-word animations, and advanced typography. Captions can be<br/>
+    /// sourced from SRT/VTT/TTML subtitle files, from audio/video media URLs (auto-transcribed), or<br/>
+    /// from alias references to other clips in the same timeline.
     /// </summary>
     public sealed partial class RichCaptionAsset
     {
@@ -20,7 +21,7 @@ namespace Shotstack
         public global::Shotstack.RichCaptionAssetType Type { get; set; } = global::Shotstack.RichCaptionAssetType.RichCaption;
 
         /// <summary>
-        /// The URL to an SRT or VTT subtitles file, or an alias reference to auto-generate captions from an audio or video clip. For file URLs, the URL must be publicly accessible or include credentials. For auto-captioning, use the format `alias://clip-name` where clip-name is the alias of an audio, video, or text-to-speech clip.<br/>
+        /// Source for the caption words. Accepts three formats: (1) the URL to a subtitle file (`.srt`, `.vtt`, `.ttml`, or `.dfxp`) which is parsed directly; (2) the URL to an audio or video media file (`.mp4`, `.mov`, `.webm`, `.mp3`, `.wav`, `.m4a`, `.flac`, `.aac`, `.ogg`, and related formats) which is auto-transcribed; (3) an alias reference in the form `alias://clip-name` where `clip-name` is the alias of another audio, video, or text-to-speech clip in the same timeline — the referenced clip's source is auto-transcribed. For file URLs, the URL must be publicly accessible or include credentials. Content is classified at runtime and unsupported content types (HTML, PDF, images, archives) are rejected with a structured error.<br/>
         /// Example: alias://audio
         /// </summary>
         /// <example>alias://audio</example>
@@ -99,7 +100,7 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="RichCaptionAsset" /> class.
         /// </summary>
         /// <param name="src">
-        /// The URL to an SRT or VTT subtitles file, or an alias reference to auto-generate captions from an audio or video clip. For file URLs, the URL must be publicly accessible or include credentials. For auto-captioning, use the format `alias://clip-name` where clip-name is the alias of an audio, video, or text-to-speech clip.<br/>
+        /// Source for the caption words. Accepts three formats: (1) the URL to a subtitle file (`.srt`, `.vtt`, `.ttml`, or `.dfxp`) which is parsed directly; (2) the URL to an audio or video media file (`.mp4`, `.mov`, `.webm`, `.mp3`, `.wav`, `.m4a`, `.flac`, `.aac`, `.ogg`, and related formats) which is auto-transcribed; (3) an alias reference in the form `alias://clip-name` where `clip-name` is the alias of another audio, video, or text-to-speech clip in the same timeline — the referenced clip's source is auto-transcribed. For file URLs, the URL must be publicly accessible or include credentials. Content is classified at runtime and unsupported content types (HTML, PDF, images, archives) are rejected with a structured error.<br/>
         /// Example: alias://audio
         /// </param>
         /// <param name="font">
