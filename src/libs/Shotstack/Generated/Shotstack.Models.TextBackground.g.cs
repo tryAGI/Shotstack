@@ -41,6 +41,14 @@ namespace Shotstack
         public double? BorderRadius { get; set; }
 
         /// <summary>
+        /// Not supported on legacy `text` assets. Accepted here only so validators can emit a clear migration error pointing users to `rich-text` or `rich-caption`, which support background wrapping natively.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wrap")]
+        public bool? Wrap { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +73,10 @@ namespace Shotstack
         /// The border radius of the background box in pixels for rounded corners.<br/>
         /// Example: 5
         /// </param>
+        /// <param name="wrap">
+        /// Not supported on legacy `text` assets. Accepted here only so validators can emit a clear migration error pointing users to `rich-text` or `rich-caption`, which support background wrapping natively.<br/>
+        /// Example: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,12 +84,14 @@ namespace Shotstack
             string? color,
             double? opacity,
             double? padding,
-            double? borderRadius)
+            double? borderRadius,
+            bool? wrap)
         {
             this.Color = color;
             this.Opacity = opacity;
             this.Padding = padding;
             this.BorderRadius = borderRadius;
+            this.Wrap = wrap;
         }
 
         /// <summary>
