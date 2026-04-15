@@ -143,8 +143,9 @@ namespace Shotstack
 
         /// <summary>
         /// The RichCaptionAsset provides word-level caption animations with rich-text styling. It supports<br/>
-        /// karaoke-style highlighting, word-by-word animations, and advanced typography. Use with SRT/VTT<br/>
-        /// files or auto-transcription via aliases.
+        /// karaoke-style highlighting, word-by-word animations, and advanced typography. Captions can be<br/>
+        /// sourced from SRT/VTT/TTML subtitle files, from audio/video media URLs (auto-transcribed), or<br/>
+        /// from alias references to other clips in the same timeline.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.RichCaptionAsset? RichCaption { get; init; }
