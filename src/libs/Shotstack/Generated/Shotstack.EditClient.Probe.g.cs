@@ -111,7 +111,7 @@ namespace Shotstack
                 PrepareProbeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    url: url);
+                    url: url!);
 
                 return __httpRequest;
             }
