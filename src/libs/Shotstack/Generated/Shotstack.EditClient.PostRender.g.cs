@@ -68,6 +68,40 @@ namespace Shotstack
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await PostRenderAsResponseAsync(
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Render Asset<br/>
+        /// Queue and render the contents of an [Edit](#tocs_edit) as a video, image or audio file.<br/>
+        /// **Rendering Process:**<br/>
+        /// 1. **Validation**: The edit JSON is validated<br/>
+        /// 2. **Download**: All assets are downloaded and cached  <br/>
+        /// 3. **Preprocessing**: Video assets are automatically processed to fix compatibility issues<br/>
+        /// 4. **Rendering**: The timeline is rendered using the processed assets<br/>
+        /// 5. **Output**: The final media file is generated and stored<br/>
+        /// **Video Preprocessing:**<br/>
+        /// Video assets undergo automatic preprocessing to ensure compatibility. You can force <br/>
+        /// preprocessing by setting `"transcode": true` on video assets. See [Preprocessing](#preprocessing) <br/>
+        /// for more details.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Shotstack.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Shotstack.AutoSDKHttpResponse<global::Shotstack.QueuedResponse>> PostRenderAsResponseAsync(
+
+            global::Shotstack.Edit request,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -98,6 +132,7 @@ namespace Shotstack
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Shotstack.PathBuilder(
                                 path: "/edit/v1/render",
                                 baseUri: HttpClient.BaseAddress);
@@ -160,6 +195,8 @@ namespace Shotstack
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -170,6 +207,11 @@ namespace Shotstack
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Shotstack.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Shotstack.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -187,6 +229,8 @@ namespace Shotstack
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -196,8 +240,7 @@ namespace Shotstack
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Shotstack.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -206,6 +249,11 @@ namespace Shotstack
                         __attempt < __maxAttempts &&
                         global::Shotstack.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Shotstack.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Shotstack.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Shotstack.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -222,14 +270,15 @@ namespace Shotstack
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Shotstack.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -269,6 +318,8 @@ namespace Shotstack
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -289,6 +340,8 @@ namespace Shotstack
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -313,9 +366,13 @@ namespace Shotstack
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Shotstack.QueuedResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Shotstack.QueuedResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Shotstack.AutoSDKHttpResponse<global::Shotstack.QueuedResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Shotstack.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -343,9 +400,13 @@ namespace Shotstack
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Shotstack.QueuedResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Shotstack.QueuedResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Shotstack.AutoSDKHttpResponse<global::Shotstack.QueuedResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Shotstack.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
