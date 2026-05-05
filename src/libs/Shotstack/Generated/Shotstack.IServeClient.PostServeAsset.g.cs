@@ -25,6 +25,21 @@ namespace Shotstack
         /// [destinations](#tocs_destinations).<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/serve/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Shotstack.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Shotstack.AutoSDKHttpResponse<global::Shotstack.TransferResponse>> PostServeAssetAsResponseAsync(
+
+            global::Shotstack.Transfer request,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Transfer Asset<br/>
+        /// Transfer a file from any publicly available URL to one or more Serve API<br/>
+        /// [destinations](#tocs_destinations).<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/serve/{version}&lt;/a&gt;
+        /// </summary>
         /// <param name="url">
         /// The file URL to fetch and transfer.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
