@@ -18,10 +18,9 @@ public class VideoEditing
 
         using var client = new ShotstackClient(apiKey);
 
-        //// The client has 4 sub-clients for different APIs.
+        //// The client has 3 sub-clients for different APIs.
         Assert.IsNotNull(client.Edit);
         Assert.IsNotNull(client.Serve);
         Assert.IsNotNull(client.Ingest);
-        Assert.IsNotNull(client.Create);
     }
 }
