@@ -28,6 +28,19 @@ namespace Shotstack
         public bool IsShotstackDestination => ShotstackDestination != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShotstackDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.ShotstackDestination? value)
+        {
+            value = ShotstackDestination;
+            return IsShotstackDestination;
+        }
+
+        /// <summary>
         /// Send videos to the [Mux](https://shotstack.io/docs/guide/serving-assets/destinations/mux/) video hosting and streaming service. Mux credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/mux), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MuxDestination))]
 #endif
         public bool IsMuxDestination => MuxDestination != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMuxDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.MuxDestination? value)
+        {
+            value = MuxDestination;
+            return IsMuxDestination;
+        }
 
         /// <summary>
         /// Send videos and assets to an [Amazon S3](https://shotstack.io/docs/guide/serving-assets/destinations/s3/) bucket. Send files to any region with your own prefix and filename. AWS credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/s3), not in the request.
@@ -62,6 +88,19 @@ namespace Shotstack
         public bool IsS3Destination => S3Destination != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickS3Destination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.S3Destination? value)
+        {
+            value = S3Destination;
+            return IsS3Destination;
+        }
+
+        /// <summary>
         /// Send videos and assets to a [Google Cloud Storage](https://cloud.google.com/storage) bucket. Send files with your own prefix and filename. Google Cloud credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/google-cloud-storage), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleCloudStorageDestination))]
 #endif
         public bool IsGoogleCloudStorageDestination => GoogleCloudStorageDestination != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogleCloudStorageDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.GoogleCloudStorageDestination? value)
+        {
+            value = GoogleCloudStorageDestination;
+            return IsGoogleCloudStorageDestination;
+        }
 
         /// <summary>
         /// Send rendered videos and assets to the [Google Drive](https://shotstack.io/docs/guide/serving-assets/destinations/google-drive/) cloud storage service. Google Drive uses OAuth and you must authenticate and link your Google account via  [dashboard](https://dashboard.shotstack.io/integrations/google-drive), not in the request.
@@ -96,6 +148,19 @@ namespace Shotstack
         public bool IsGoogleDriveDestination => GoogleDriveDestination != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogleDriveDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.GoogleDriveDestination? value)
+        {
+            value = GoogleDriveDestination;
+            return IsGoogleDriveDestination;
+        }
+
+        /// <summary>
         /// Send videos to [Vimeo](https://shotstack.io/docs/guide/serving-assets/destinations/vimeo/) video hosting and streaming service. Vimeo credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/vimeo), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +176,19 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VimeoDestination))]
 #endif
         public bool IsVimeoDestination => VimeoDestination != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVimeoDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.VimeoDestination? value)
+        {
+            value = VimeoDestination;
+            return IsVimeoDestination;
+        }
 
         /// <summary>
         /// Send videos to TikTok. TikTok credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/tiktok), not in the request.
@@ -130,6 +208,19 @@ namespace Shotstack
         public bool IsTiktokDestination => TiktokDestination != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTiktokDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.TiktokDestination? value)
+        {
+            value = TiktokDestination;
+            return IsTiktokDestination;
+        }
+
+        /// <summary>
         /// Send videos and assets to [Akamai NetStorage](https://techdocs.akamai.com/netstorage-usage/docs). Send files to your NetStorage upload directory with a custom path and filename. Akamai credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/akamai-netstorage), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -147,6 +238,19 @@ namespace Shotstack
         public bool IsAkamaiNetStorageDestination => AkamaiNetStorageDestination != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAkamaiNetStorageDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.AkamaiNetStorageDestination? value)
+        {
+            value = AkamaiNetStorageDestination;
+            return IsAkamaiNetStorageDestination;
+        }
+
+        /// <summary>
         /// Send videos and assets to [Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/). Send files to any container with a custom prefix and filename. Azure credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/azure-blob-storage), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -162,6 +266,19 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureBlobStorageDestination))]
 #endif
         public bool IsAzureBlobStorageDestination => AzureBlobStorageDestination != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureBlobStorageDestination(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.AzureBlobStorageDestination? value)
+        {
+            value = AzureBlobStorageDestination;
+            return IsAzureBlobStorageDestination;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -392,15 +509,15 @@ namespace Shotstack
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Shotstack.ShotstackDestination?, TResult>? shotstackDestination = null,
-            global::System.Func<global::Shotstack.MuxDestination?, TResult>? muxDestination = null,
-            global::System.Func<global::Shotstack.S3Destination?, TResult>? s3Destination = null,
-            global::System.Func<global::Shotstack.GoogleCloudStorageDestination?, TResult>? googleCloudStorageDestination = null,
-            global::System.Func<global::Shotstack.GoogleDriveDestination?, TResult>? googleDriveDestination = null,
-            global::System.Func<global::Shotstack.VimeoDestination?, TResult>? vimeoDestination = null,
-            global::System.Func<global::Shotstack.TiktokDestination?, TResult>? tiktokDestination = null,
-            global::System.Func<global::Shotstack.AkamaiNetStorageDestination?, TResult>? akamaiNetStorageDestination = null,
-            global::System.Func<global::Shotstack.AzureBlobStorageDestination?, TResult>? azureBlobStorageDestination = null,
+            global::System.Func<global::Shotstack.ShotstackDestination, TResult>? shotstackDestination = null,
+            global::System.Func<global::Shotstack.MuxDestination, TResult>? muxDestination = null,
+            global::System.Func<global::Shotstack.S3Destination, TResult>? s3Destination = null,
+            global::System.Func<global::Shotstack.GoogleCloudStorageDestination, TResult>? googleCloudStorageDestination = null,
+            global::System.Func<global::Shotstack.GoogleDriveDestination, TResult>? googleDriveDestination = null,
+            global::System.Func<global::Shotstack.VimeoDestination, TResult>? vimeoDestination = null,
+            global::System.Func<global::Shotstack.TiktokDestination, TResult>? tiktokDestination = null,
+            global::System.Func<global::Shotstack.AkamaiNetStorageDestination, TResult>? akamaiNetStorageDestination = null,
+            global::System.Func<global::Shotstack.AzureBlobStorageDestination, TResult>? azureBlobStorageDestination = null,
             bool validate = true)
         {
             if (validate)
@@ -452,15 +569,81 @@ namespace Shotstack
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Shotstack.ShotstackDestination?>? shotstackDestination = null,
-            global::System.Action<global::Shotstack.MuxDestination?>? muxDestination = null,
-            global::System.Action<global::Shotstack.S3Destination?>? s3Destination = null,
-            global::System.Action<global::Shotstack.GoogleCloudStorageDestination?>? googleCloudStorageDestination = null,
-            global::System.Action<global::Shotstack.GoogleDriveDestination?>? googleDriveDestination = null,
-            global::System.Action<global::Shotstack.VimeoDestination?>? vimeoDestination = null,
-            global::System.Action<global::Shotstack.TiktokDestination?>? tiktokDestination = null,
-            global::System.Action<global::Shotstack.AkamaiNetStorageDestination?>? akamaiNetStorageDestination = null,
-            global::System.Action<global::Shotstack.AzureBlobStorageDestination?>? azureBlobStorageDestination = null,
+            global::System.Action<global::Shotstack.ShotstackDestination>? shotstackDestination = null,
+
+            global::System.Action<global::Shotstack.MuxDestination>? muxDestination = null,
+
+            global::System.Action<global::Shotstack.S3Destination>? s3Destination = null,
+
+            global::System.Action<global::Shotstack.GoogleCloudStorageDestination>? googleCloudStorageDestination = null,
+
+            global::System.Action<global::Shotstack.GoogleDriveDestination>? googleDriveDestination = null,
+
+            global::System.Action<global::Shotstack.VimeoDestination>? vimeoDestination = null,
+
+            global::System.Action<global::Shotstack.TiktokDestination>? tiktokDestination = null,
+
+            global::System.Action<global::Shotstack.AkamaiNetStorageDestination>? akamaiNetStorageDestination = null,
+
+            global::System.Action<global::Shotstack.AzureBlobStorageDestination>? azureBlobStorageDestination = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShotstackDestination)
+            {
+                shotstackDestination?.Invoke(ShotstackDestination!);
+            }
+            else if (IsMuxDestination)
+            {
+                muxDestination?.Invoke(MuxDestination!);
+            }
+            else if (IsS3Destination)
+            {
+                s3Destination?.Invoke(S3Destination!);
+            }
+            else if (IsGoogleCloudStorageDestination)
+            {
+                googleCloudStorageDestination?.Invoke(GoogleCloudStorageDestination!);
+            }
+            else if (IsGoogleDriveDestination)
+            {
+                googleDriveDestination?.Invoke(GoogleDriveDestination!);
+            }
+            else if (IsVimeoDestination)
+            {
+                vimeoDestination?.Invoke(VimeoDestination!);
+            }
+            else if (IsTiktokDestination)
+            {
+                tiktokDestination?.Invoke(TiktokDestination!);
+            }
+            else if (IsAkamaiNetStorageDestination)
+            {
+                akamaiNetStorageDestination?.Invoke(AkamaiNetStorageDestination!);
+            }
+            else if (IsAzureBlobStorageDestination)
+            {
+                azureBlobStorageDestination?.Invoke(AzureBlobStorageDestination!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Shotstack.ShotstackDestination>? shotstackDestination = null,
+            global::System.Action<global::Shotstack.MuxDestination>? muxDestination = null,
+            global::System.Action<global::Shotstack.S3Destination>? s3Destination = null,
+            global::System.Action<global::Shotstack.GoogleCloudStorageDestination>? googleCloudStorageDestination = null,
+            global::System.Action<global::Shotstack.GoogleDriveDestination>? googleDriveDestination = null,
+            global::System.Action<global::Shotstack.VimeoDestination>? vimeoDestination = null,
+            global::System.Action<global::Shotstack.TiktokDestination>? tiktokDestination = null,
+            global::System.Action<global::Shotstack.AkamaiNetStorageDestination>? akamaiNetStorageDestination = null,
+            global::System.Action<global::Shotstack.AzureBlobStorageDestination>? azureBlobStorageDestination = null,
             bool validate = true)
         {
             if (validate)
