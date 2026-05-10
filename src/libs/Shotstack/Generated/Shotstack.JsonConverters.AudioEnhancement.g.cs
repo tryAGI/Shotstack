@@ -66,6 +66,7 @@ namespace Shotstack.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.DolbyEnhancement), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.DolbyEnhancement> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.DolbyEnhancement).Name}");
                     dolby = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
