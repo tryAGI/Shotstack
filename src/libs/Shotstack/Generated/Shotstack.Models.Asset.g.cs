@@ -510,6 +510,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromVideo(global::Shotstack.VideoAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.ImageAsset value) => new Asset((global::Shotstack.ImageAsset?)value);
 
         /// <summary>
@@ -524,6 +529,11 @@ namespace Shotstack
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromImage(global::Shotstack.ImageAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -546,6 +556,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromText(global::Shotstack.TextAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.RichTextAsset value) => new Asset((global::Shotstack.RichTextAsset?)value);
 
         /// <summary>
@@ -560,6 +575,11 @@ namespace Shotstack
         {
             RichText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromRichText(global::Shotstack.RichTextAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -582,6 +602,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromAudio(global::Shotstack.AudioAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.LumaAsset value) => new Asset((global::Shotstack.LumaAsset?)value);
 
         /// <summary>
@@ -596,6 +621,11 @@ namespace Shotstack
         {
             Luma = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromLuma(global::Shotstack.LumaAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -618,6 +648,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromCaption(global::Shotstack.CaptionAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.RichCaptionAsset value) => new Asset((global::Shotstack.RichCaptionAsset?)value);
 
         /// <summary>
@@ -632,6 +667,11 @@ namespace Shotstack
         {
             RichCaption = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromRichCaption(global::Shotstack.RichCaptionAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -654,6 +694,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromHtml(global::Shotstack.HtmlAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.TitleAsset value) => new Asset((global::Shotstack.TitleAsset?)value);
 
         /// <summary>
@@ -668,6 +713,11 @@ namespace Shotstack
         {
             Title = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromTitle(global::Shotstack.TitleAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -690,6 +740,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromShape(global::Shotstack.ShapeAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.SvgAsset value) => new Asset((global::Shotstack.SvgAsset?)value);
 
         /// <summary>
@@ -704,6 +759,11 @@ namespace Shotstack
         {
             Svg = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromSvg(global::Shotstack.SvgAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -726,6 +786,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromTextToImage(global::Shotstack.TextToImageAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.ImageToVideoAsset value) => new Asset((global::Shotstack.ImageToVideoAsset?)value);
 
         /// <summary>
@@ -744,6 +809,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromImageToVideo(global::Shotstack.ImageToVideoAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.TextToSpeechAsset value) => new Asset((global::Shotstack.TextToSpeechAsset?)value);
 
         /// <summary>
@@ -758,6 +828,11 @@ namespace Shotstack
         {
             TextToSpeech = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromTextToSpeech(global::Shotstack.TextToSpeechAsset? value) => new Asset(value);
 
         /// <summary>
         /// 

@@ -62,6 +62,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static AudioEnhancement FromDolby(global::Shotstack.DolbyEnhancement? value) => new AudioEnhancement(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Dolby as object 
             ;
