@@ -51,5 +51,6 @@ namespace Shotstack
         public Transcription()
         {
         }
+
     }
 }

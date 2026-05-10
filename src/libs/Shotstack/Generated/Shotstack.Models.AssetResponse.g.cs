@@ -42,5 +42,6 @@ namespace Shotstack
         public AssetResponse()
         {
         }
+
     }
 }

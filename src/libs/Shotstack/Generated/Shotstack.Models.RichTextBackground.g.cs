@@ -98,5 +98,6 @@ namespace Shotstack
         public RichTextBackground()
         {
         }
+
     }
 }

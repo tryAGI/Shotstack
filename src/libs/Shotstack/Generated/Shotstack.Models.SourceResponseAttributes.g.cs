@@ -210,5 +210,6 @@ namespace Shotstack
         public SourceResponseAttributes()
         {
         }
+
     }
 }

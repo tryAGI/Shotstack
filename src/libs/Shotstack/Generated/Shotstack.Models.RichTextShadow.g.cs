@@ -110,5 +110,6 @@ namespace Shotstack
         public RichTextShadow()
         {
         }
+
     }
 }

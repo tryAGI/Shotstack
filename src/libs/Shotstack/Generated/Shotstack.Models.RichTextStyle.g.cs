@@ -123,5 +123,6 @@ namespace Shotstack
         public RichTextStyle()
         {
         }
+
     }
 }

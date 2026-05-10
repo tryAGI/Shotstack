@@ -100,5 +100,6 @@ namespace Shotstack
         public TextBackground()
         {
         }
+
     }
 }

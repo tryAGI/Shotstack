@@ -150,5 +150,6 @@ namespace Shotstack
         public Transition()
         {
         }
+
     }
 }

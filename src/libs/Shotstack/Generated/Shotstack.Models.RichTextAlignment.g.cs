@@ -64,5 +64,6 @@ namespace Shotstack
         public RichTextAlignment()
         {
         }
+
     }
 }

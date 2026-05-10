@@ -184,5 +184,6 @@ namespace Shotstack
         public AssetResponseAttributes()
         {
         }
+
     }
 }

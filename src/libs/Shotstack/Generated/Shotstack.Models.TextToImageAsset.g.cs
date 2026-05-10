@@ -99,5 +99,18 @@ namespace Shotstack
         public TextToImageAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TextToImageAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TextToImageAsset FromPrompt(string prompt)
+        {
+            return new TextToImageAsset
+            {
+                Prompt = prompt,
+            };
+        }
+
     }
 }

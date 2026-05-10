@@ -77,5 +77,6 @@ namespace Shotstack
         public VimeoDestinationOptions()
         {
         }
+
     }
 }

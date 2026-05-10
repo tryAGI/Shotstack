@@ -102,5 +102,6 @@ namespace Shotstack
         public TiktokDestinationOptions()
         {
         }
+
     }
 }

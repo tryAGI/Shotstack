@@ -57,5 +57,6 @@ namespace Shotstack
         public TemplateListResponseData()
         {
         }
+
     }
 }

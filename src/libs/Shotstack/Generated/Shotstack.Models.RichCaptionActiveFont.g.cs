@@ -132,5 +132,6 @@ namespace Shotstack
         public RichCaptionActiveFont()
         {
         }
+
     }
 }

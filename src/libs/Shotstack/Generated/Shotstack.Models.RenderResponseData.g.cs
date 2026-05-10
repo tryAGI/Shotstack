@@ -226,5 +226,6 @@ namespace Shotstack
         public RenderResponseData()
         {
         }
+
     }
 }

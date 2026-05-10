@@ -75,5 +75,6 @@ namespace Shotstack
         public RichTextGradient()
         {
         }
+
     }
 }

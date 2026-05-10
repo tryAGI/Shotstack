@@ -41,6 +41,13 @@ namespace Shotstack
             value = Dolby;
             return IsDolby;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.DolbyEnhancement PickDolby() => IsDolby
+            ? Dolby!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dolby' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

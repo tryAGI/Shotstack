@@ -56,5 +56,6 @@ namespace Shotstack
         public Template()
         {
         }
+
     }
 }

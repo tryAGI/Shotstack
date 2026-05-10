@@ -55,5 +55,6 @@ namespace Shotstack
         public TransferResponseData()
         {
         }
+
     }
 }

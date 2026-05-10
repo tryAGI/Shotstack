@@ -58,5 +58,6 @@ namespace Shotstack
         public ShapeAssetFill()
         {
         }
+
     }
 }
