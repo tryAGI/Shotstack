@@ -59,5 +59,6 @@ namespace Shotstack
         public S3Destination()
         {
         }
+
     }
 }

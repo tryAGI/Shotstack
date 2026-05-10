@@ -86,5 +86,6 @@ namespace Shotstack
         public CaptionBackground()
         {
         }
+
     }
 }

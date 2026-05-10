@@ -60,5 +60,6 @@ namespace Shotstack
         public TemplateResponseData()
         {
         }
+
     }
 }

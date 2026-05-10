@@ -45,5 +45,6 @@ namespace Shotstack
         public ShapeAssetCircle()
         {
         }
+
     }
 }

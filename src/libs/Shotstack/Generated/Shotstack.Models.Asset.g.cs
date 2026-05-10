@@ -45,6 +45,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.VideoAsset PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
+
+        /// <summary>
         /// The ImageAsset is used to create video from images to compose an image. The src must be a publicly accessible URL to an image resource such as a jpg or png file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Shotstack
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.ImageAsset PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom<br/>
@@ -106,6 +120,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TextAsset PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// The RichTextAsset provides advanced text rendering with support for custom fonts, gradients, shadows, strokes,<br/>
         /// animations, and styling options. It offers more flexibility and visual effects than the basic TextAsset.
         /// </summary>
@@ -135,6 +156,13 @@ namespace Shotstack
             value = RichText;
             return IsRichText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.RichTextAsset PickRichText() => IsRichText
+            ? RichText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RichText' but the value was {ToString()}.");
 
         /// <summary>
         /// The AudioAsset is used to add sound effects and audio at specific intervals on the timeline. The src must be a publicly accessible URL to an audio resource such  as an mp3 file.
@@ -167,6 +195,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.AudioAsset PickAudio() => IsAudio
+            ? Audio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
+
+        /// <summary>
         /// The LumaAsset is used to create luma matte masks, transitions and effects between other assets. A luma matte is a grey scale image or animated video where the black areas are transparent and the white areas solid. The luma matte animation should be provided as an mp4 video file. The src must be a publicly accessible URL to the file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace Shotstack
             value = Luma;
             return IsLuma;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.LumaAsset PickLuma() => IsLuma
+            ? Luma!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Luma' but the value was {ToString()}.");
 
         /// <summary>
         /// The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will<br/>
@@ -233,6 +275,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.CaptionAsset PickCaption() => IsCaption
+            ? Caption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Caption' but the value was {ToString()}.");
+
+        /// <summary>
         /// The RichCaptionAsset provides word-level caption animations with rich-text styling. It supports<br/>
         /// karaoke-style highlighting, word-by-word animations, and advanced typography. Captions can be<br/>
         /// sourced from SRT/VTT/TTML subtitle files, from audio/video media URLs (auto-transcribed), or<br/>
@@ -264,6 +313,13 @@ namespace Shotstack
             value = RichCaption;
             return IsRichCaption;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.RichCaptionAsset PickRichCaption() => IsRichCaption
+            ? RichCaption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RichCaption' but the value was {ToString()}.");
 
         /// <summary>
         /// **Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
@@ -299,6 +355,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.HtmlAsset PickHtml() => IsHtml
+            ? Html!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
+
+        /// <summary>
         /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
         /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
         /// </summary>
@@ -330,6 +393,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TitleAsset PickTitle() => IsTitle
+            ? Title!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Title' but the value was {ToString()}.");
+
+        /// <summary>
         /// The ShapeAsset is used to add shapes to a video. The shape can be styled with a fill and a stroke.<br/>
         /// You can manipulate properties such as rotation to create dynamic effects like a diamond shape or stripes.
         /// </summary>
@@ -359,6 +429,13 @@ namespace Shotstack
             value = Shape;
             return IsShape;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.ShapeAsset PickShape() => IsShape
+            ? Shape!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shape' but the value was {ToString()}.");
 
         /// <summary>
         /// The SvgAsset is used to add scalable vector graphics (SVG) to a video using raw SVG markup.<br/>
@@ -401,6 +478,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.SvgAsset PickSvg() => IsSvg
+            ? Svg!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Svg' but the value was {ToString()}.");
+
+        /// <summary>
         /// The TextToImageAsset lets you create a dynamic image from a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -429,6 +513,13 @@ namespace Shotstack
             value = TextToImage;
             return IsTextToImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TextToImageAsset PickTextToImage() => IsTextToImage
+            ? TextToImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
@@ -461,6 +552,13 @@ namespace Shotstack
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.ImageToVideoAsset PickImageToVideo() => IsImageToVideo
+            ? ImageToVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
+
+        /// <summary>
         /// The TextToSpeechAsset lets you generate a voice over from text using a text-to-speech service. The generated audio can be trimmed, faded and have its volume and speed adjusted using the same properties available on the AudioAsset.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -489,6 +587,13 @@ namespace Shotstack
             value = TextToSpeech;
             return IsTextToSpeech;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TextToSpeechAsset PickTextToSpeech() => IsTextToSpeech
+            ? TextToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

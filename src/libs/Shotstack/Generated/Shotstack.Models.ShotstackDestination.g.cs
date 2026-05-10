@@ -62,5 +62,6 @@ namespace Shotstack
         public ShotstackDestination()
         {
         }
+
     }
 }

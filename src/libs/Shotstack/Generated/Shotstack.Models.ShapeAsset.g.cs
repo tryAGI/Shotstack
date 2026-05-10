@@ -142,5 +142,18 @@ namespace Shotstack
         public ShapeAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ShapeAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ShapeAsset FromShape(global::Shotstack.ShapeAssetShape shape)
+        {
+            return new ShapeAsset
+            {
+                Shape = shape,
+            };
+        }
+
     }
 }

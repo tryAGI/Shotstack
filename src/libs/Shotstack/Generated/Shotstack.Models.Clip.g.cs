@@ -287,5 +287,6 @@ namespace Shotstack
         public Clip()
         {
         }
+
     }
 }

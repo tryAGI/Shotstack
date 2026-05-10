@@ -39,5 +39,6 @@ namespace Shotstack
         public DestinationsDiscriminator()
         {
         }
+
     }
 }

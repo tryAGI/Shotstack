@@ -40,5 +40,6 @@ namespace Shotstack
         public AssetDiscriminator()
         {
         }
+
     }
 }

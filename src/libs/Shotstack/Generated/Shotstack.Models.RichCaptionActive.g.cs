@@ -65,5 +65,6 @@ namespace Shotstack
         public RichCaptionActive()
         {
         }
+
     }
 }

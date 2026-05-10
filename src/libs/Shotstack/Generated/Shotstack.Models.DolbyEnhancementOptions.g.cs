@@ -66,5 +66,6 @@ namespace Shotstack
         public DolbyEnhancementOptions()
         {
         }
+
     }
 }

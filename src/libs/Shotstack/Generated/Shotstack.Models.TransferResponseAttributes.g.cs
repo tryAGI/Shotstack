@@ -93,5 +93,6 @@ namespace Shotstack
         public TransferResponseAttributes()
         {
         }
+
     }
 }

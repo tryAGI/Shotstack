@@ -114,5 +114,6 @@ namespace Shotstack
         public TextFont()
         {
         }
+
     }
 }

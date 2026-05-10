@@ -161,5 +161,18 @@ namespace Shotstack
         public RichTextAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RichTextAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RichTextAsset FromText(string text)
+        {
+            return new RichTextAsset
+            {
+                Text = text,
+            };
+        }
+
     }
 }

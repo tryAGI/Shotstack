@@ -88,5 +88,6 @@ namespace Shotstack
         public AzureBlobStorageDestinationOptions()
         {
         }
+
     }
 }
