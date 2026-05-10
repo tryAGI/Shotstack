@@ -300,6 +300,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromShotstackDestination(global::Shotstack.ShotstackDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::Shotstack.MuxDestination value) => new Destinations((global::Shotstack.MuxDestination?)value);
 
         /// <summary>
@@ -314,6 +319,11 @@ namespace Shotstack
         {
             MuxDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromMuxDestination(global::Shotstack.MuxDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
@@ -336,6 +346,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromS3Destination(global::Shotstack.S3Destination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::Shotstack.GoogleCloudStorageDestination value) => new Destinations((global::Shotstack.GoogleCloudStorageDestination?)value);
 
         /// <summary>
@@ -350,6 +365,11 @@ namespace Shotstack
         {
             GoogleCloudStorageDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromGoogleCloudStorageDestination(global::Shotstack.GoogleCloudStorageDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
@@ -372,6 +392,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromGoogleDriveDestination(global::Shotstack.GoogleDriveDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::Shotstack.VimeoDestination value) => new Destinations((global::Shotstack.VimeoDestination?)value);
 
         /// <summary>
@@ -386,6 +411,11 @@ namespace Shotstack
         {
             VimeoDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromVimeoDestination(global::Shotstack.VimeoDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
@@ -408,6 +438,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromTiktokDestination(global::Shotstack.TiktokDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::Shotstack.AkamaiNetStorageDestination value) => new Destinations((global::Shotstack.AkamaiNetStorageDestination?)value);
 
         /// <summary>
@@ -426,6 +461,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromAkamaiNetStorageDestination(global::Shotstack.AkamaiNetStorageDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::Shotstack.AzureBlobStorageDestination value) => new Destinations((global::Shotstack.AzureBlobStorageDestination?)value);
 
         /// <summary>
@@ -440,6 +480,11 @@ namespace Shotstack
         {
             AzureBlobStorageDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromAzureBlobStorageDestination(global::Shotstack.AzureBlobStorageDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
