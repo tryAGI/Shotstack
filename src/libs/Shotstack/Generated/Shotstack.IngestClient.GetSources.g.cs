@@ -125,6 +125,8 @@ namespace Shotstack
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest);
 
+                global::Shotstack.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

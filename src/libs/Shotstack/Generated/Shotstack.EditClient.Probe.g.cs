@@ -138,6 +138,8 @@ namespace Shotstack
                     httpRequestMessage: __httpRequest,
                     url: url!);
 
+                global::Shotstack.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
