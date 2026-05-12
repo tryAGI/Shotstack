@@ -84,6 +84,13 @@ namespace Shotstack.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Shotstack.HtmlAsset)}");
                 html = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Shotstack.Html5Asset? html5 = default;
+            if (discriminator?.Type == global::Shotstack.AssetDiscriminatorType.Html5)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.Html5Asset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.Html5Asset> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Shotstack.Html5Asset)}");
+                html5 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Shotstack.TitleAsset? title = default;
             if (discriminator?.Type == global::Shotstack.AssetDiscriminatorType.Title)
             {
@@ -146,6 +153,8 @@ namespace Shotstack.JsonConverters
                 richCaption,
 
                 html,
+
+                html5,
 
                 title,
 
@@ -225,6 +234,12 @@ namespace Shotstack.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.HtmlAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.HtmlAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.HtmlAsset).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Html!, typeInfo);
+            }
+            else if (value.IsHtml5)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Shotstack.Html5Asset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Shotstack.Html5Asset?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Shotstack.Html5Asset).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Html5!, typeInfo);
             }
             else if (value.IsTitle)
             {

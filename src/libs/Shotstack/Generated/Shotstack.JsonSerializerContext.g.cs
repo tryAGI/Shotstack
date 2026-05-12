@@ -141,6 +141,10 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.HtmlAssetPositionNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.Html5AssetTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.Html5AssetTypeNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.TitleAssetTypeJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TitleAssetTypeNullableJsonConverter),
@@ -391,6 +395,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.CaptionAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HtmlAsset))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Html5Asset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgAsset))]
@@ -457,6 +462,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextToSpeechAssetEffect), TypeInfoPropertyName = "TextToSpeechAssetEffect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HtmlAssetType), TypeInfoPropertyName = "HtmlAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HtmlAssetPosition), TypeInfoPropertyName = "HtmlAssetPosition2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Html5AssetType), TypeInfoPropertyName = "Html5AssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetType), TypeInfoPropertyName = "TitleAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetStyle), TypeInfoPropertyName = "TitleAssetStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetSize), TypeInfoPropertyName = "TitleAssetSize2")]
