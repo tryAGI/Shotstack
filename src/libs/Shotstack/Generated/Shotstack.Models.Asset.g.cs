@@ -362,6 +362,43 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
 
         /// <summary>
+        /// The Html5Asset renders full HTML5/CSS3/JS.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Shotstack.Html5Asset? Html5 { get; init; }
+#else
+        public global::Shotstack.Html5Asset? Html5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Html5))]
+#endif
+        public bool IsHtml5 => Html5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHtml5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.Html5Asset? value)
+        {
+            value = Html5;
+            return IsHtml5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.Html5Asset PickHtml5() => IsHtml5
+            ? Html5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Html5' but the value was {ToString()}.");
+
+        /// <summary>
         /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
         /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
         /// </summary>
@@ -804,6 +841,29 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator Asset(global::Shotstack.Html5Asset value) => new Asset((global::Shotstack.Html5Asset?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Shotstack.Html5Asset?(Asset @this) => @this.Html5;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Asset(global::Shotstack.Html5Asset? value)
+        {
+            Html5 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromHtml5(global::Shotstack.Html5Asset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.TitleAsset value) => new Asset((global::Shotstack.TitleAsset?)value);
 
         /// <summary>
@@ -953,6 +1013,7 @@ namespace Shotstack
             global::Shotstack.CaptionAsset? caption,
             global::Shotstack.RichCaptionAsset? richCaption,
             global::Shotstack.HtmlAsset? html,
+            global::Shotstack.Html5Asset? html5,
             global::Shotstack.TitleAsset? title,
             global::Shotstack.ShapeAsset? shape,
             global::Shotstack.SvgAsset? svg,
@@ -972,6 +1033,7 @@ namespace Shotstack
             Caption = caption;
             RichCaption = richCaption;
             Html = html;
+            Html5 = html5;
             Title = title;
             Shape = shape;
             Svg = svg;
@@ -990,6 +1052,7 @@ namespace Shotstack
             Svg as object ??
             Shape as object ??
             Title as object ??
+            Html5 as object ??
             Html as object ??
             RichCaption as object ??
             Caption as object ??
@@ -1014,6 +1077,7 @@ namespace Shotstack
             Caption?.ToString() ??
             RichCaption?.ToString() ??
             Html?.ToString() ??
+            Html5?.ToString() ??
             Title?.ToString() ??
             Shape?.ToString() ??
             Svg?.ToString() ??
@@ -1027,7 +1091,7 @@ namespace Shotstack
         /// </summary>
         public bool Validate()
         {
-            return IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && IsTextToSpeech;
+            return IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && IsTextToSpeech;
         }
 
         /// <summary>
@@ -1043,6 +1107,7 @@ namespace Shotstack
             global::System.Func<global::Shotstack.CaptionAsset, TResult>? caption = null,
             global::System.Func<global::Shotstack.RichCaptionAsset, TResult>? richCaption = null,
             global::System.Func<global::Shotstack.HtmlAsset, TResult>? html = null,
+            global::System.Func<global::Shotstack.Html5Asset, TResult>? html5 = null,
             global::System.Func<global::Shotstack.TitleAsset, TResult>? title = null,
             global::System.Func<global::Shotstack.ShapeAsset, TResult>? shape = null,
             global::System.Func<global::Shotstack.SvgAsset, TResult>? svg = null,
@@ -1091,6 +1156,10 @@ namespace Shotstack
             else if (IsHtml && html != null)
             {
                 return html(Html!);
+            }
+            else if (IsHtml5 && html5 != null)
+            {
+                return html5(Html5!);
             }
             else if (IsTitle && title != null)
             {
@@ -1142,6 +1211,8 @@ namespace Shotstack
 
             global::System.Action<global::Shotstack.HtmlAsset>? html = null,
 
+            global::System.Action<global::Shotstack.Html5Asset>? html5 = null,
+
             global::System.Action<global::Shotstack.TitleAsset>? title = null,
 
             global::System.Action<global::Shotstack.ShapeAsset>? shape = null,
@@ -1195,6 +1266,10 @@ namespace Shotstack
             else if (IsHtml)
             {
                 html?.Invoke(Html!);
+            }
+            else if (IsHtml5)
+            {
+                html5?.Invoke(Html5!);
             }
             else if (IsTitle)
             {
@@ -1235,6 +1310,7 @@ namespace Shotstack
             global::System.Action<global::Shotstack.CaptionAsset>? caption = null,
             global::System.Action<global::Shotstack.RichCaptionAsset>? richCaption = null,
             global::System.Action<global::Shotstack.HtmlAsset>? html = null,
+            global::System.Action<global::Shotstack.Html5Asset>? html5 = null,
             global::System.Action<global::Shotstack.TitleAsset>? title = null,
             global::System.Action<global::Shotstack.ShapeAsset>? shape = null,
             global::System.Action<global::Shotstack.SvgAsset>? svg = null,
@@ -1283,6 +1359,10 @@ namespace Shotstack
             else if (IsHtml)
             {
                 html?.Invoke(Html!);
+            }
+            else if (IsHtml5)
+            {
+                html5?.Invoke(Html5!);
             }
             else if (IsTitle)
             {
@@ -1335,6 +1415,8 @@ namespace Shotstack
                 typeof(global::Shotstack.RichCaptionAsset),
                 Html,
                 typeof(global::Shotstack.HtmlAsset),
+                Html5,
+                typeof(global::Shotstack.Html5Asset),
                 Title,
                 typeof(global::Shotstack.TitleAsset),
                 Shape,
@@ -1372,6 +1454,7 @@ namespace Shotstack
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.CaptionAsset?>.Default.Equals(Caption, other.Caption) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.RichCaptionAsset?>.Default.Equals(RichCaption, other.RichCaption) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.HtmlAsset?>.Default.Equals(Html, other.Html) &&
+                global::System.Collections.Generic.EqualityComparer<global::Shotstack.Html5Asset?>.Default.Equals(Html5, other.Html5) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.TitleAsset?>.Default.Equals(Title, other.Title) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.ShapeAsset?>.Default.Equals(Shape, other.Shape) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.SvgAsset?>.Default.Equals(Svg, other.Svg) &&

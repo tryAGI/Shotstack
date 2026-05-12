@@ -1084,6 +1084,7 @@
             "caption": "#/components/schemas/CaptionAsset",
             "rich-caption": "#/components/schemas/RichCaptionAsset",
             "html": "#/components/schemas/HtmlAsset",
+            "html5": "#/components/schemas/Html5Asset",
             "title": "#/components/schemas/TitleAsset",
             "shape": "#/components/schemas/ShapeAsset",
             "svg": "#/components/schemas/SvgAsset",
@@ -1119,6 +1120,9 @@
           },
           {
             "$ref": "#/components/schemas/HtmlAsset"
+          },
+          {
+            "$ref": "#/components/schemas/Html5Asset"
           },
           {
             "$ref": "#/components/schemas/TitleAsset"
@@ -2094,6 +2098,40 @@
               "center"
             ],
             "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "html"
+        ]
+      },
+      "Html5Asset": {
+        "description": "The Html5Asset renders full HTML5/CSS3/JS.\n",
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "html5"
+            ],
+            "default": "html5",
+            "description": "The type of asset - set to `html5` for HTML5/CSS3/JS.",
+            "type": "string"
+          },
+          "html": {
+            "description": "The HTML markup for the asset.",
+            "type": "string",
+            "example": "<div class='card'><h1>{{title}}</h1></div>"
+          },
+          "css": {
+            "description": "The CSS string applied to the HTML.",
+            "type": "string",
+            "example": ".card { font-family: 'Inter'; padding: 32px; }"
+          },
+          "js": {
+            "description": "Optional JavaScript. Use for chart libraries, animations, or DOM manipulation. `gsap`, `d3`, `anime` and `lottie` are always available. CSS animations, transitions, and `Element.animate()` are also captured automatically.\n",
+            "type": "string",
+            "example": "gsap.to('.card', { x: 200, duration: 1 });"
           }
         },
         "additionalProperties": false,

@@ -23,6 +23,10 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        Html5,
+        /// <summary>
+        /// 
+        /// </summary>
         Image,
         /// <summary>
         /// 
@@ -85,6 +89,7 @@ namespace Shotstack
                 AssetDiscriminatorType.Audio => "audio",
                 AssetDiscriminatorType.Caption => "caption",
                 AssetDiscriminatorType.Html => "html",
+                AssetDiscriminatorType.Html5 => "html5",
                 AssetDiscriminatorType.Image => "image",
                 AssetDiscriminatorType.ImageToVideo => "image-to-video",
                 AssetDiscriminatorType.Luma => "luma",
@@ -110,6 +115,7 @@ namespace Shotstack
                 "audio" => AssetDiscriminatorType.Audio,
                 "caption" => AssetDiscriminatorType.Caption,
                 "html" => AssetDiscriminatorType.Html,
+                "html5" => AssetDiscriminatorType.Html5,
                 "image" => AssetDiscriminatorType.Image,
                 "image-to-video" => AssetDiscriminatorType.ImageToVideo,
                 "luma" => AssetDiscriminatorType.Luma,
