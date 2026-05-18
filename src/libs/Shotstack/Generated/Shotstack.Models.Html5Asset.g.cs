@@ -18,7 +18,7 @@ namespace Shotstack
         public global::Shotstack.Html5AssetType Type { get; set; } = global::Shotstack.Html5AssetType.Html5;
 
         /// <summary>
-        /// The HTML markup for the asset.<br/>
+        /// The HTML markup for the asset. Max 1,000,000 characters.<br/>
         /// Example: &lt;div class='card'&gt;&lt;h1&gt;{{title}}&lt;/h1&gt;&lt;/div&gt;
         /// </summary>
         /// <example>&lt;div class='card'&gt;&lt;h1&gt;{{title}}&lt;/h1&gt;&lt;/div&gt;</example>
@@ -27,7 +27,7 @@ namespace Shotstack
         public required string Html { get; set; }
 
         /// <summary>
-        /// The CSS string applied to the HTML.<br/>
+        /// The CSS string applied to the HTML. Max 500,000 characters.<br/>
         /// Example: .card { font-family: 'Inter'; padding: 32px; }
         /// </summary>
         /// <example>.card { font-family: 'Inter'; padding: 32px; }</example>
@@ -35,7 +35,7 @@ namespace Shotstack
         public string? Css { get; set; }
 
         /// <summary>
-        /// Optional JavaScript. Use for chart libraries, animations, or DOM manipulation. `gsap`, `d3`, `anime` and `lottie` are always available. CSS animations, transitions, and `Element.animate()` are also captured automatically.<br/>
+        /// Optional JavaScript. Use for chart libraries, animations, or DOM manipulation. `gsap`, `d3`, `anime` and `lottie` are always available. CSS animations, transitions, and `Element.animate()` are also captured automatically. Max 500,000 characters.<br/>
         /// Example: gsap.to('.card', { x: 200, duration: 1 });
         /// </summary>
         /// <example>gsap.to('.card', { x: 200, duration: 1 });</example>
@@ -52,15 +52,15 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="Html5Asset" /> class.
         /// </summary>
         /// <param name="html">
-        /// The HTML markup for the asset.<br/>
+        /// The HTML markup for the asset. Max 1,000,000 characters.<br/>
         /// Example: &lt;div class='card'&gt;&lt;h1&gt;{{title}}&lt;/h1&gt;&lt;/div&gt;
         /// </param>
         /// <param name="css">
-        /// The CSS string applied to the HTML.<br/>
+        /// The CSS string applied to the HTML. Max 500,000 characters.<br/>
         /// Example: .card { font-family: 'Inter'; padding: 32px; }
         /// </param>
         /// <param name="js">
-        /// Optional JavaScript. Use for chart libraries, animations, or DOM manipulation. `gsap`, `d3`, `anime` and `lottie` are always available. CSS animations, transitions, and `Element.animate()` are also captured automatically.<br/>
+        /// Optional JavaScript. Use for chart libraries, animations, or DOM manipulation. `gsap`, `d3`, `anime` and `lottie` are always available. CSS animations, transitions, and `Element.animate()` are also captured automatically. Max 500,000 characters.<br/>
         /// Example: gsap.to('.card', { x: 200, duration: 1 });
         /// </param>
         /// <param name="type">
