@@ -2957,6 +2957,13 @@
             "type": "boolean",
             "default": false,
             "example": true
+          },
+          "padding": {
+            "description": "Inner padding in pixels between the wrap pill edge and the rendered text. Only takes\neffect when `wrap: true`. When omitted, the renderer applies a sensible default\nproportional to the font size (approximately 12% of the active page font size on\nrich-caption assets). Set to 0 for a pill that hugs the text exactly. Available on\nrich-text and rich-caption assets only.\n",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 200,
+            "example": 12
           }
         },
         "additionalProperties": false,
