@@ -47,6 +47,18 @@ namespace Shotstack
         public bool? Wrap { get; set; }
 
         /// <summary>
+        /// Inner padding in pixels between the wrap pill edge and the rendered text. Only takes<br/>
+        /// effect when `wrap: true`. When omitted, the renderer applies a sensible default<br/>
+        /// proportional to the font size (approximately 12% of the active page font size on<br/>
+        /// rich-caption assets). Set to 0 for a pill that hugs the text exactly. Available on<br/>
+        /// rich-text and rich-caption assets only.<br/>
+        /// Example: 12
+        /// </summary>
+        /// <example>12</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("padding")]
+        public int? Padding { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -77,6 +89,14 @@ namespace Shotstack
         /// Default Value: false<br/>
         /// Example: true
         /// </param>
+        /// <param name="padding">
+        /// Inner padding in pixels between the wrap pill edge and the rendered text. Only takes<br/>
+        /// effect when `wrap: true`. When omitted, the renderer applies a sensible default<br/>
+        /// proportional to the font size (approximately 12% of the active page font size on<br/>
+        /// rich-caption assets). Set to 0 for a pill that hugs the text exactly. Available on<br/>
+        /// rich-text and rich-caption assets only.<br/>
+        /// Example: 12
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,12 +104,14 @@ namespace Shotstack
             string? color,
             double? opacity,
             double? borderRadius,
-            bool? wrap)
+            bool? wrap,
+            int? padding)
         {
             this.Color = color;
             this.Opacity = opacity;
             this.BorderRadius = borderRadius;
             this.Wrap = wrap;
+            this.Padding = padding;
         }
 
         /// <summary>
