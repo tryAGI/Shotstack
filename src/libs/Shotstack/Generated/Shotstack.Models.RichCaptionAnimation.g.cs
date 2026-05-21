@@ -84,5 +84,6 @@ namespace Shotstack
         public RichCaptionAnimation()
         {
         }
+
     }
 }

@@ -156,5 +156,6 @@ namespace Shotstack
         public HtmlAsset()
         {
         }
+
     }
 }

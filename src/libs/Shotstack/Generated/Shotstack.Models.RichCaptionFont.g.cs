@@ -121,5 +121,6 @@ namespace Shotstack
         public RichCaptionFont()
         {
         }
+
     }
 }

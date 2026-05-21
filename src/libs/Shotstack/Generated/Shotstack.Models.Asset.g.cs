@@ -32,6 +32,26 @@ namespace Shotstack
         public bool IsVideo => Video != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.VideoAsset? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.VideoAsset PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
+
+        /// <summary>
         /// The ImageAsset is used to create video from images to compose an image. The src must be a publicly accessible URL to an image resource such as a jpg or png file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.ImageAsset? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.ImageAsset PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom<br/>
@@ -67,6 +107,26 @@ namespace Shotstack
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.TextAsset? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TextAsset PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// The RichTextAsset provides advanced text rendering with support for custom fonts, gradients, shadows, strokes,<br/>
         /// animations, and styling options. It offers more flexibility and visual effects than the basic TextAsset.
         /// </summary>
@@ -83,6 +143,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RichText))]
 #endif
         public bool IsRichText => RichText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRichText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.RichTextAsset? value)
+        {
+            value = RichText;
+            return IsRichText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.RichTextAsset PickRichText() => IsRichText
+            ? RichText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RichText' but the value was {ToString()}.");
 
         /// <summary>
         /// The AudioAsset is used to add sound effects and audio at specific intervals on the timeline. The src must be a publicly accessible URL to an audio resource such  as an mp3 file.
@@ -102,6 +182,26 @@ namespace Shotstack
         public bool IsAudio => Audio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.AudioAsset? value)
+        {
+            value = Audio;
+            return IsAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.AudioAsset PickAudio() => IsAudio
+            ? Audio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
+
+        /// <summary>
         /// The LumaAsset is used to create luma matte masks, transitions and effects between other assets. A luma matte is a grey scale image or animated video where the black areas are transparent and the white areas solid. The luma matte animation should be provided as an mp4 video file. The src must be a publicly accessible URL to the file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -117,6 +217,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Luma))]
 #endif
         public bool IsLuma => Luma != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLuma(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.LumaAsset? value)
+        {
+            value = Luma;
+            return IsLuma;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.LumaAsset PickLuma() => IsLuma
+            ? Luma!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Luma' but the value was {ToString()}.");
 
         /// <summary>
         /// The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will<br/>
@@ -142,6 +262,26 @@ namespace Shotstack
         public bool IsCaption => Caption != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCaption(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.CaptionAsset? value)
+        {
+            value = Caption;
+            return IsCaption;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.CaptionAsset PickCaption() => IsCaption
+            ? Caption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Caption' but the value was {ToString()}.");
+
+        /// <summary>
         /// The RichCaptionAsset provides word-level caption animations with rich-text styling. It supports<br/>
         /// karaoke-style highlighting, word-by-word animations, and advanced typography. Captions can be<br/>
         /// sourced from SRT/VTT/TTML subtitle files, from audio/video media URLs (auto-transcribed), or<br/>
@@ -160,6 +300,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RichCaption))]
 #endif
         public bool IsRichCaption => RichCaption != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRichCaption(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.RichCaptionAsset? value)
+        {
+            value = RichCaption;
+            return IsRichCaption;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.RichCaptionAsset PickRichCaption() => IsRichCaption
+            ? RichCaption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RichCaption' but the value was {ToString()}.");
 
         /// <summary>
         /// **Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
@@ -182,6 +342,63 @@ namespace Shotstack
         public bool IsHtml => Html != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHtml(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.HtmlAsset? value)
+        {
+            value = Html;
+            return IsHtml;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.HtmlAsset PickHtml() => IsHtml
+            ? Html!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The Html5Asset renders full HTML5/CSS3/JS.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Shotstack.Html5Asset? Html5 { get; init; }
+#else
+        public global::Shotstack.Html5Asset? Html5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Html5))]
+#endif
+        public bool IsHtml5 => Html5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHtml5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.Html5Asset? value)
+        {
+            value = Html5;
+            return IsHtml5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.Html5Asset PickHtml5() => IsHtml5
+            ? Html5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Html5' but the value was {ToString()}.");
+
+        /// <summary>
         /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
         /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
         /// </summary>
@@ -200,6 +417,26 @@ namespace Shotstack
         public bool IsTitle => Title != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTitle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.TitleAsset? value)
+        {
+            value = Title;
+            return IsTitle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TitleAsset PickTitle() => IsTitle
+            ? Title!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Title' but the value was {ToString()}.");
+
+        /// <summary>
         /// The ShapeAsset is used to add shapes to a video. The shape can be styled with a fill and a stroke.<br/>
         /// You can manipulate properties such as rotation to create dynamic effects like a diamond shape or stripes.
         /// </summary>
@@ -216,6 +453,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shape))]
 #endif
         public bool IsShape => Shape != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShape(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.ShapeAsset? value)
+        {
+            value = Shape;
+            return IsShape;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.ShapeAsset PickShape() => IsShape
+            ? Shape!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shape' but the value was {ToString()}.");
 
         /// <summary>
         /// The SvgAsset is used to add scalable vector graphics (SVG) to a video using raw SVG markup.<br/>
@@ -245,6 +502,26 @@ namespace Shotstack
         public bool IsSvg => Svg != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSvg(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.SvgAsset? value)
+        {
+            value = Svg;
+            return IsSvg;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.SvgAsset PickSvg() => IsSvg
+            ? Svg!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Svg' but the value was {ToString()}.");
+
+        /// <summary>
         /// The TextToImageAsset lets you create a dynamic image from a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -260,6 +537,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToImage))]
 #endif
         public bool IsTextToImage => TextToImage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.TextToImageAsset? value)
+        {
+            value = TextToImage;
+            return IsTextToImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TextToImageAsset PickTextToImage() => IsTextToImage
+            ? TextToImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
@@ -279,6 +576,26 @@ namespace Shotstack
         public bool IsImageToVideo => ImageToVideo != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageToVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.ImageToVideoAsset? value)
+        {
+            value = ImageToVideo;
+            return IsImageToVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.ImageToVideoAsset PickImageToVideo() => IsImageToVideo
+            ? ImageToVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
+
+        /// <summary>
         /// The TextToSpeechAsset lets you generate a voice over from text using a text-to-speech service. The generated audio can be trimmed, faded and have its volume and speed adjusted using the same properties available on the AudioAsset.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -294,6 +611,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToSpeech))]
 #endif
         public bool IsTextToSpeech => TextToSpeech != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToSpeech(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.TextToSpeechAsset? value)
+        {
+            value = TextToSpeech;
+            return IsTextToSpeech;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.TextToSpeechAsset PickTextToSpeech() => IsTextToSpeech
+            ? TextToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -311,6 +648,11 @@ namespace Shotstack
         {
             Video = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromVideo(global::Shotstack.VideoAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -333,6 +675,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromImage(global::Shotstack.ImageAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.TextAsset value) => new Asset((global::Shotstack.TextAsset?)value);
 
         /// <summary>
@@ -347,6 +694,11 @@ namespace Shotstack
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromText(global::Shotstack.TextAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -369,6 +721,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromRichText(global::Shotstack.RichTextAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.AudioAsset value) => new Asset((global::Shotstack.AudioAsset?)value);
 
         /// <summary>
@@ -383,6 +740,11 @@ namespace Shotstack
         {
             Audio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromAudio(global::Shotstack.AudioAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -405,6 +767,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromLuma(global::Shotstack.LumaAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.CaptionAsset value) => new Asset((global::Shotstack.CaptionAsset?)value);
 
         /// <summary>
@@ -419,6 +786,11 @@ namespace Shotstack
         {
             Caption = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromCaption(global::Shotstack.CaptionAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -441,6 +813,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromRichCaption(global::Shotstack.RichCaptionAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.HtmlAsset value) => new Asset((global::Shotstack.HtmlAsset?)value);
 
         /// <summary>
@@ -455,6 +832,34 @@ namespace Shotstack
         {
             Html = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromHtml(global::Shotstack.HtmlAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Asset(global::Shotstack.Html5Asset value) => new Asset((global::Shotstack.Html5Asset?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Shotstack.Html5Asset?(Asset @this) => @this.Html5;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Asset(global::Shotstack.Html5Asset? value)
+        {
+            Html5 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromHtml5(global::Shotstack.Html5Asset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -477,6 +882,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromTitle(global::Shotstack.TitleAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.ShapeAsset value) => new Asset((global::Shotstack.ShapeAsset?)value);
 
         /// <summary>
@@ -491,6 +901,11 @@ namespace Shotstack
         {
             Shape = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromShape(global::Shotstack.ShapeAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -513,6 +928,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromSvg(global::Shotstack.SvgAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.TextToImageAsset value) => new Asset((global::Shotstack.TextToImageAsset?)value);
 
         /// <summary>
@@ -527,6 +947,11 @@ namespace Shotstack
         {
             TextToImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromTextToImage(global::Shotstack.TextToImageAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -549,6 +974,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromImageToVideo(global::Shotstack.ImageToVideoAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::Shotstack.TextToSpeechAsset value) => new Asset((global::Shotstack.TextToSpeechAsset?)value);
 
         /// <summary>
@@ -567,6 +997,11 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromTextToSpeech(global::Shotstack.TextToSpeechAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Asset(
             global::Shotstack.AssetDiscriminatorType? type,
             global::Shotstack.VideoAsset? video,
@@ -578,6 +1013,7 @@ namespace Shotstack
             global::Shotstack.CaptionAsset? caption,
             global::Shotstack.RichCaptionAsset? richCaption,
             global::Shotstack.HtmlAsset? html,
+            global::Shotstack.Html5Asset? html5,
             global::Shotstack.TitleAsset? title,
             global::Shotstack.ShapeAsset? shape,
             global::Shotstack.SvgAsset? svg,
@@ -597,6 +1033,7 @@ namespace Shotstack
             Caption = caption;
             RichCaption = richCaption;
             Html = html;
+            Html5 = html5;
             Title = title;
             Shape = shape;
             Svg = svg;
@@ -615,6 +1052,7 @@ namespace Shotstack
             Svg as object ??
             Shape as object ??
             Title as object ??
+            Html5 as object ??
             Html as object ??
             RichCaption as object ??
             Caption as object ??
@@ -639,6 +1077,7 @@ namespace Shotstack
             Caption?.ToString() ??
             RichCaption?.ToString() ??
             Html?.ToString() ??
+            Html5?.ToString() ??
             Title?.ToString() ??
             Shape?.ToString() ??
             Svg?.ToString() ??
@@ -652,28 +1091,29 @@ namespace Shotstack
         /// </summary>
         public bool Validate()
         {
-            return IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && IsTextToSpeech;
+            return IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && IsSvg && !IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && IsTextToImage && !IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && IsImageToVideo && !IsTextToSpeech || !IsVideo && !IsImage && !IsText && !IsRichText && !IsAudio && !IsLuma && !IsCaption && !IsRichCaption && !IsHtml && !IsHtml5 && !IsTitle && !IsShape && !IsSvg && !IsTextToImage && !IsImageToVideo && IsTextToSpeech;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Shotstack.VideoAsset?, TResult>? video = null,
-            global::System.Func<global::Shotstack.ImageAsset?, TResult>? image = null,
-            global::System.Func<global::Shotstack.TextAsset?, TResult>? text = null,
-            global::System.Func<global::Shotstack.RichTextAsset?, TResult>? richText = null,
-            global::System.Func<global::Shotstack.AudioAsset?, TResult>? audio = null,
-            global::System.Func<global::Shotstack.LumaAsset?, TResult>? luma = null,
-            global::System.Func<global::Shotstack.CaptionAsset?, TResult>? caption = null,
-            global::System.Func<global::Shotstack.RichCaptionAsset?, TResult>? richCaption = null,
-            global::System.Func<global::Shotstack.HtmlAsset?, TResult>? html = null,
-            global::System.Func<global::Shotstack.TitleAsset?, TResult>? title = null,
-            global::System.Func<global::Shotstack.ShapeAsset?, TResult>? shape = null,
-            global::System.Func<global::Shotstack.SvgAsset?, TResult>? svg = null,
-            global::System.Func<global::Shotstack.TextToImageAsset?, TResult>? textToImage = null,
-            global::System.Func<global::Shotstack.ImageToVideoAsset?, TResult>? imageToVideo = null,
-            global::System.Func<global::Shotstack.TextToSpeechAsset?, TResult>? textToSpeech = null,
+            global::System.Func<global::Shotstack.VideoAsset, TResult>? video = null,
+            global::System.Func<global::Shotstack.ImageAsset, TResult>? image = null,
+            global::System.Func<global::Shotstack.TextAsset, TResult>? text = null,
+            global::System.Func<global::Shotstack.RichTextAsset, TResult>? richText = null,
+            global::System.Func<global::Shotstack.AudioAsset, TResult>? audio = null,
+            global::System.Func<global::Shotstack.LumaAsset, TResult>? luma = null,
+            global::System.Func<global::Shotstack.CaptionAsset, TResult>? caption = null,
+            global::System.Func<global::Shotstack.RichCaptionAsset, TResult>? richCaption = null,
+            global::System.Func<global::Shotstack.HtmlAsset, TResult>? html = null,
+            global::System.Func<global::Shotstack.Html5Asset, TResult>? html5 = null,
+            global::System.Func<global::Shotstack.TitleAsset, TResult>? title = null,
+            global::System.Func<global::Shotstack.ShapeAsset, TResult>? shape = null,
+            global::System.Func<global::Shotstack.SvgAsset, TResult>? svg = null,
+            global::System.Func<global::Shotstack.TextToImageAsset, TResult>? textToImage = null,
+            global::System.Func<global::Shotstack.ImageToVideoAsset, TResult>? imageToVideo = null,
+            global::System.Func<global::Shotstack.TextToSpeechAsset, TResult>? textToSpeech = null,
             bool validate = true)
         {
             if (validate)
@@ -717,6 +1157,10 @@ namespace Shotstack
             {
                 return html(Html!);
             }
+            else if (IsHtml5 && html5 != null)
+            {
+                return html5(Html5!);
+            }
             else if (IsTitle && title != null)
             {
                 return title(Title!);
@@ -749,21 +1193,37 @@ namespace Shotstack
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Shotstack.VideoAsset?>? video = null,
-            global::System.Action<global::Shotstack.ImageAsset?>? image = null,
-            global::System.Action<global::Shotstack.TextAsset?>? text = null,
-            global::System.Action<global::Shotstack.RichTextAsset?>? richText = null,
-            global::System.Action<global::Shotstack.AudioAsset?>? audio = null,
-            global::System.Action<global::Shotstack.LumaAsset?>? luma = null,
-            global::System.Action<global::Shotstack.CaptionAsset?>? caption = null,
-            global::System.Action<global::Shotstack.RichCaptionAsset?>? richCaption = null,
-            global::System.Action<global::Shotstack.HtmlAsset?>? html = null,
-            global::System.Action<global::Shotstack.TitleAsset?>? title = null,
-            global::System.Action<global::Shotstack.ShapeAsset?>? shape = null,
-            global::System.Action<global::Shotstack.SvgAsset?>? svg = null,
-            global::System.Action<global::Shotstack.TextToImageAsset?>? textToImage = null,
-            global::System.Action<global::Shotstack.ImageToVideoAsset?>? imageToVideo = null,
-            global::System.Action<global::Shotstack.TextToSpeechAsset?>? textToSpeech = null,
+            global::System.Action<global::Shotstack.VideoAsset>? video = null,
+
+            global::System.Action<global::Shotstack.ImageAsset>? image = null,
+
+            global::System.Action<global::Shotstack.TextAsset>? text = null,
+
+            global::System.Action<global::Shotstack.RichTextAsset>? richText = null,
+
+            global::System.Action<global::Shotstack.AudioAsset>? audio = null,
+
+            global::System.Action<global::Shotstack.LumaAsset>? luma = null,
+
+            global::System.Action<global::Shotstack.CaptionAsset>? caption = null,
+
+            global::System.Action<global::Shotstack.RichCaptionAsset>? richCaption = null,
+
+            global::System.Action<global::Shotstack.HtmlAsset>? html = null,
+
+            global::System.Action<global::Shotstack.Html5Asset>? html5 = null,
+
+            global::System.Action<global::Shotstack.TitleAsset>? title = null,
+
+            global::System.Action<global::Shotstack.ShapeAsset>? shape = null,
+
+            global::System.Action<global::Shotstack.SvgAsset>? svg = null,
+
+            global::System.Action<global::Shotstack.TextToImageAsset>? textToImage = null,
+
+            global::System.Action<global::Shotstack.ImageToVideoAsset>? imageToVideo = null,
+
+            global::System.Action<global::Shotstack.TextToSpeechAsset>? textToSpeech = null,
             bool validate = true)
         {
             if (validate)
@@ -806,6 +1266,103 @@ namespace Shotstack
             else if (IsHtml)
             {
                 html?.Invoke(Html!);
+            }
+            else if (IsHtml5)
+            {
+                html5?.Invoke(Html5!);
+            }
+            else if (IsTitle)
+            {
+                title?.Invoke(Title!);
+            }
+            else if (IsShape)
+            {
+                shape?.Invoke(Shape!);
+            }
+            else if (IsSvg)
+            {
+                svg?.Invoke(Svg!);
+            }
+            else if (IsTextToImage)
+            {
+                textToImage?.Invoke(TextToImage!);
+            }
+            else if (IsImageToVideo)
+            {
+                imageToVideo?.Invoke(ImageToVideo!);
+            }
+            else if (IsTextToSpeech)
+            {
+                textToSpeech?.Invoke(TextToSpeech!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Shotstack.VideoAsset>? video = null,
+            global::System.Action<global::Shotstack.ImageAsset>? image = null,
+            global::System.Action<global::Shotstack.TextAsset>? text = null,
+            global::System.Action<global::Shotstack.RichTextAsset>? richText = null,
+            global::System.Action<global::Shotstack.AudioAsset>? audio = null,
+            global::System.Action<global::Shotstack.LumaAsset>? luma = null,
+            global::System.Action<global::Shotstack.CaptionAsset>? caption = null,
+            global::System.Action<global::Shotstack.RichCaptionAsset>? richCaption = null,
+            global::System.Action<global::Shotstack.HtmlAsset>? html = null,
+            global::System.Action<global::Shotstack.Html5Asset>? html5 = null,
+            global::System.Action<global::Shotstack.TitleAsset>? title = null,
+            global::System.Action<global::Shotstack.ShapeAsset>? shape = null,
+            global::System.Action<global::Shotstack.SvgAsset>? svg = null,
+            global::System.Action<global::Shotstack.TextToImageAsset>? textToImage = null,
+            global::System.Action<global::Shotstack.ImageToVideoAsset>? imageToVideo = null,
+            global::System.Action<global::Shotstack.TextToSpeechAsset>? textToSpeech = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsRichText)
+            {
+                richText?.Invoke(RichText!);
+            }
+            else if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
+            else if (IsLuma)
+            {
+                luma?.Invoke(Luma!);
+            }
+            else if (IsCaption)
+            {
+                caption?.Invoke(Caption!);
+            }
+            else if (IsRichCaption)
+            {
+                richCaption?.Invoke(RichCaption!);
+            }
+            else if (IsHtml)
+            {
+                html?.Invoke(Html!);
+            }
+            else if (IsHtml5)
+            {
+                html5?.Invoke(Html5!);
             }
             else if (IsTitle)
             {
@@ -858,6 +1415,8 @@ namespace Shotstack
                 typeof(global::Shotstack.RichCaptionAsset),
                 Html,
                 typeof(global::Shotstack.HtmlAsset),
+                Html5,
+                typeof(global::Shotstack.Html5Asset),
                 Title,
                 typeof(global::Shotstack.TitleAsset),
                 Shape,
@@ -895,6 +1454,7 @@ namespace Shotstack
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.CaptionAsset?>.Default.Equals(Caption, other.Caption) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.RichCaptionAsset?>.Default.Equals(RichCaption, other.RichCaption) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.HtmlAsset?>.Default.Equals(Html, other.Html) &&
+                global::System.Collections.Generic.EqualityComparer<global::Shotstack.Html5Asset?>.Default.Equals(Html5, other.Html5) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.TitleAsset?>.Default.Equals(Title, other.Title) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.ShapeAsset?>.Default.Equals(Shape, other.Shape) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.SvgAsset?>.Default.Equals(Svg, other.Svg) &&

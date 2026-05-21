@@ -52,5 +52,6 @@ namespace Shotstack
         public Outputs()
         {
         }
+
     }
 }

@@ -77,5 +77,18 @@ namespace Shotstack
         public SvgAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SvgAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SvgAsset FromSrc(string src)
+        {
+            return new SvgAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

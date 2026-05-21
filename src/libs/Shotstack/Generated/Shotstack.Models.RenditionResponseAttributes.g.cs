@@ -169,5 +169,6 @@ namespace Shotstack
         public RenditionResponseAttributes()
         {
         }
+
     }
 }

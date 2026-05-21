@@ -47,5 +47,6 @@ namespace Shotstack
         public Enhancements()
         {
         }
+
     }
 }

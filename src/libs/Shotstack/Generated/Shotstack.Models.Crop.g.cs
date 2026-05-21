@@ -80,5 +80,6 @@ namespace Shotstack
         public Crop()
         {
         }
+
     }
 }

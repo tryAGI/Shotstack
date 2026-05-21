@@ -154,6 +154,8 @@ namespace Shotstack
                     id: id!,
                     request: request);
 
+                global::Shotstack.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

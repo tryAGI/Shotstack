@@ -116,5 +116,6 @@ namespace Shotstack
         public VimeoDestinationPrivacyOptions()
         {
         }
+
     }
 }

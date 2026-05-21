@@ -11,6 +11,14 @@ namespace Shotstack
     public sealed partial class Clip
     {
         /// <summary>
+        /// Optional client-generated identifier. Used by client SDKs (e.g. the Shotstack Studio SDK) to reference a clip across edits without relying on its position in the timeline. The render API does not use this field and it does not appear in render output.<br/>
+        /// Example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        /// </summary>
+        /// <example>f47ac10b-58cc-4372-a567-0e02b2c3d479</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
         /// The type of asset to display for the duration of the Clip, i.e. a video clip or an image. Choose from one of the available asset types below.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asset")]
@@ -171,6 +179,10 @@ namespace Shotstack
         /// <param name="length">
         /// The duration the Clip should play for.
         /// </param>
+        /// <param name="id">
+        /// Optional client-generated identifier. Used by client SDKs (e.g. the Shotstack Studio SDK) to reference a clip across edits without relying on its position in the timeline. The render API does not use this field and it does not appear in render output.<br/>
+        /// Example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        /// </param>
         /// <param name="fit">
         /// Set how the asset should be scaled to fit the viewport using one of the following options: <br/>
         ///   &lt;ul&gt;<br/>
@@ -251,6 +263,7 @@ namespace Shotstack
             global::Shotstack.Asset asset,
             global::Shotstack.OneOf<double?, string> start,
             global::Shotstack.OneOf<double?, string> length,
+            string? id,
             global::Shotstack.ClipFit? fit,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? scale,
             float? width,
@@ -264,6 +277,7 @@ namespace Shotstack
             global::Shotstack.Transformation? transform,
             string? alias)
         {
+            this.Id = id;
             this.Asset = asset;
             this.Start = start;
             this.Length = length;
@@ -287,5 +301,6 @@ namespace Shotstack
         public Clip()
         {
         }
+
     }
 }

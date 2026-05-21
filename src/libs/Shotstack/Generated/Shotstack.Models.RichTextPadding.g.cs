@@ -94,5 +94,6 @@ namespace Shotstack
         public RichTextPadding()
         {
         }
+
     }
 }

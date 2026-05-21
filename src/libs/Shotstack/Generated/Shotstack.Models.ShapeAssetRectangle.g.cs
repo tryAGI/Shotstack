@@ -74,5 +74,6 @@ namespace Shotstack
         public ShapeAssetRectangle()
         {
         }
+
     }
 }

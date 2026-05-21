@@ -41,5 +41,6 @@ namespace Shotstack
         public OutputsResponse()
         {
         }
+
     }
 }

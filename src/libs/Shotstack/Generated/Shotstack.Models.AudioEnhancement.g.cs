@@ -28,6 +28,26 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dolby))]
 #endif
         public bool IsDolby => Dolby != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDolby(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Shotstack.DolbyEnhancement? value)
+        {
+            value = Dolby;
+            return IsDolby;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.DolbyEnhancement PickDolby() => IsDolby
+            ? Dolby!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dolby' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -45,6 +65,11 @@ namespace Shotstack
         {
             Dolby = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AudioEnhancement FromDolby(global::Shotstack.DolbyEnhancement? value) => new AudioEnhancement(value);
 
         /// <summary>
         /// 
@@ -72,7 +97,7 @@ namespace Shotstack
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Shotstack.DolbyEnhancement?, TResult>? dolby = null,
+            global::System.Func<global::Shotstack.DolbyEnhancement, TResult>? dolby = null,
             bool validate = true)
         {
             if (validate)
@@ -92,7 +117,25 @@ namespace Shotstack
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Shotstack.DolbyEnhancement?>? dolby = null,
+            global::System.Action<global::Shotstack.DolbyEnhancement>? dolby = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDolby)
+            {
+                dolby?.Invoke(Dolby!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Shotstack.DolbyEnhancement>? dolby = null,
             bool validate = true)
         {
             if (validate)

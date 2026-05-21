@@ -54,5 +54,6 @@ namespace Shotstack
         public Offset()
         {
         }
+
     }
 }

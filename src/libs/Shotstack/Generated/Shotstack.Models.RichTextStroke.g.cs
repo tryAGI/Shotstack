@@ -78,5 +78,6 @@ namespace Shotstack
         public RichTextStroke()
         {
         }
+
     }
 }
