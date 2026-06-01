@@ -4,8 +4,13 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
+    /// with `prompt` and `seed` instead.** This type continues to function and is<br/>
+    /// internally rewritten to VideoAsset; no behaviour change for existing<br/>
+    /// integrations.<br/>
     /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ImageToVideoAsset
     {
         /// <summary>
@@ -15,6 +20,7 @@ namespace Shotstack
         /// <default>global::Shotstack.ImageToVideoAssetType.ImageToVideo</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.ImageToVideoAssetTypeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.ImageToVideoAssetType Type { get; set; } = global::Shotstack.ImageToVideoAssetType.ImageToVideo;
 
         /// <summary>
@@ -24,6 +30,7 @@ namespace Shotstack
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/image.jpg</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("src")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Src { get; set; }
 
         /// <summary>
@@ -32,6 +39,7 @@ namespace Shotstack
         /// </summary>
         /// <example>Slowly zoom out and orbit left around the object.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Prompt { get; set; }
 
         /// <summary>
@@ -41,6 +49,7 @@ namespace Shotstack
         /// <example>16:9</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("aspectRatio")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.ImageToVideoAssetAspectRatioJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.ImageToVideoAssetAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
@@ -49,12 +58,14 @@ namespace Shotstack
         /// </summary>
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public float? Speed { get; set; }
 
         /// <summary>
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("crop")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.Crop? Crop { get; set; }
 
         /// <summary>
@@ -113,18 +124,6 @@ namespace Shotstack
         /// </summary>
         public ImageToVideoAsset()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="ImageToVideoAsset"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static ImageToVideoAsset FromSrc(string src)
-        {
-            return new ImageToVideoAsset
-            {
-                Src = src,
-            };
         }
 
     }

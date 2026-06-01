@@ -15,7 +15,14 @@ namespace Shotstack
         public global::Shotstack.AssetDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// The VideoAsset is used to create video sequences from video files. The src must be a publicly accessible URL to a video resource such as an mp4 file.
+        /// The VideoAsset adds a video to a Clip. The video can be sourced from a URL<br/>
+        /// (`src`) or generated from a text prompt (`prompt`), optionally seeded from a<br/>
+        /// starting image (`seed`). Exactly one of `src` or `prompt` must be provided.<br/>
+        /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
+        /// - **Generated:** set `prompt` to describe the motion. Optionally set `seed` to<br/>
+        ///   a starting image URL (image-to-video). Use `model` to choose the generator<br/>
+        ///   (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in<br/>
+        ///   automatically.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.VideoAsset? Video { get; init; }
@@ -52,7 +59,12 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
 
         /// <summary>
-        /// The ImageAsset is used to create video from images to compose an image. The src must be a publicly accessible URL to an image resource such as a jpg or png file.
+        /// The ImageAsset adds an image to a Clip. The image can be sourced from a URL<br/>
+        /// (`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or<br/>
+        /// `prompt` must be provided.<br/>
+        /// - **Source URL:** set `src` to the publicly accessible URL of a jpg or png file.<br/>
+        /// - **Generated:** set `prompt` to describe the image; the engine generates it<br/>
+        ///   using the provider chosen by `model` and fills `src` in automatically.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.ImageAsset? Image { get; init; }
@@ -165,7 +177,15 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'RichText' but the value was {ToString()}.");
 
         /// <summary>
-        /// The AudioAsset is used to add sound effects and audio at specific intervals on the timeline. The src must be a publicly accessible URL to an audio resource such  as an mp3 file.
+        /// The AudioAsset adds audio to a Clip. The audio can be sourced from a URL<br/>
+        /// (`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or<br/>
+        /// `prompt` must be provided.<br/>
+        /// - **Source URL:** set `src` to a publicly accessible audio URL (e.g. mp3).<br/>
+        /// - **Generated speech:** set `prompt` to the spoken text and `voice` to a voice<br/>
+        ///   identifier (text-to-speech). Optionally set `language`/`newscaster`.<br/>
+        /// - **Generated music or SFX:** set `prompt` describing the sound; omit `voice`.<br/>
+        /// - Use `model` to choose the generator. The generated `src` is filled in<br/>
+        ///   automatically.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.AudioAsset? Audio { get; init; }
@@ -522,6 +542,9 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'Svg' but the value was {ToString()}.");
 
         /// <summary>
+        /// **Notice: TextToImageAsset is deprecated. Use [ImageAsset](#tocs_imageasset)<br/>
+        /// with `prompt` instead.** This type continues to function and is internally<br/>
+        /// rewritten to ImageAsset; no behaviour change for existing integrations.<br/>
         /// The TextToImageAsset lets you create a dynamic image from a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -559,6 +582,10 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
+        /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
+        /// with `prompt` and `seed` instead.** This type continues to function and is<br/>
+        /// internally rewritten to VideoAsset; no behaviour change for existing<br/>
+        /// integrations.<br/>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -596,7 +623,13 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
 
         /// <summary>
-        /// The TextToSpeechAsset lets you generate a voice over from text using a text-to-speech service. The generated audio can be trimmed, faded and have its volume and speed adjusted using the same properties available on the AudioAsset.
+        /// **Notice: TextToSpeechAsset is deprecated. Use [AudioAsset](#tocs_audioasset)<br/>
+        /// with `prompt` (the spoken text) and `voice` instead.** This type continues to<br/>
+        /// function and is internally rewritten to AudioAsset; no behaviour change for<br/>
+        /// existing integrations.<br/>
+        /// The TextToSpeechAsset lets you generate a voice over from text using a text-to-speech service.<br/>
+        /// The generated audio can be trimmed, faded and have its volume and speed adjusted using the<br/>
+        /// same properties available on the AudioAsset.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.TextToSpeechAsset? TextToSpeech { get; init; }

@@ -4,7 +4,14 @@
 namespace Shotstack
 {
     /// <summary>
-    /// The VideoAsset is used to create video sequences from video files. The src must be a publicly accessible URL to a video resource such as an mp4 file.
+    /// The VideoAsset adds a video to a Clip. The video can be sourced from a URL<br/>
+    /// (`src`) or generated from a text prompt (`prompt`), optionally seeded from a<br/>
+    /// starting image (`seed`). Exactly one of `src` or `prompt` must be provided.<br/>
+    /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
+    /// - **Generated:** set `prompt` to describe the motion. Optionally set `seed` to<br/>
+    ///   a starting image URL (image-to-video). Use `model` to choose the generator<br/>
+    ///   (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in<br/>
+    ///   automatically.
     /// </summary>
     public sealed partial class VideoAsset
     {
@@ -18,13 +25,36 @@ namespace Shotstack
         public global::Shotstack.VideoAssetType Type { get; set; } = global::Shotstack.VideoAssetType.Video;
 
         /// <summary>
-        /// The video source URL. The URL must be publicly accessible or include credentials.<br/>
+        /// The video source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
         /// </summary>
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("src")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Src { get; set; }
+        public string? Src { get; set; }
+
+        /// <summary>
+        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `seed` for image-to-video. Use `model` to choose the generator.<br/>
+        /// Example: Slowly zoom out and orbit left around the object.
+        /// </summary>
+        /// <example>Slowly zoom out and orbit left around the object.</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
+        /// Seed image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
+        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg
+        /// </summary>
+        /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public string? Seed { get; set; }
+
+        /// <summary>
+        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// Example: luma-ray-3
+        /// </summary>
+        /// <example>luma-ray-3</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
 
         /// <summary>
         /// Set to `true` to force re-encoding of the video during preprocessing. This can help resolve compatibility issues, fix rotation problems, synchronize audio, or convert formats. The video will be processed to ensure optimal compatibility with the rendering engine.<br/>
@@ -61,7 +91,7 @@ namespace Shotstack
         public global::Shotstack.VideoAssetVolumeEffect? VolumeEffect { get; set; }
 
         /// <summary>
-        /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to  adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire video (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire video (i.e. original length / 2).<br/>
+        /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire video (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire video (i.e. original length / 2).<br/>
         /// Example: 1
         /// </summary>
         /// <example>1</example>
@@ -90,8 +120,20 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="VideoAsset" /> class.
         /// </summary>
         /// <param name="src">
-        /// The video source URL. The URL must be publicly accessible or include credentials.<br/>
+        /// The video source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
+        /// </param>
+        /// <param name="prompt">
+        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `seed` for image-to-video. Use `model` to choose the generator.<br/>
+        /// Example: Slowly zoom out and orbit left around the object.
+        /// </param>
+        /// <param name="seed">
+        /// Seed image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
+        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg
+        /// </param>
+        /// <param name="model">
+        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// Example: luma-ray-3
         /// </param>
         /// <param name="transcode">
         /// Set to `true` to force re-encoding of the video during preprocessing. This can help resolve compatibility issues, fix rotation problems, synchronize audio, or convert formats. The video will be processed to ensure optimal compatibility with the rendering engine.<br/>
@@ -112,7 +154,7 @@ namespace Shotstack
         /// &lt;/ul&gt;
         /// </param>
         /// <param name="speed">
-        /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to  adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire video (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire video (i.e. original length / 2).<br/>
+        /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire video (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire video (i.e. original length / 2).<br/>
         /// Example: 1
         /// </param>
         /// <param name="crop">
@@ -129,7 +171,10 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VideoAsset(
-            string src,
+            string? src,
+            string? prompt,
+            string? seed,
+            string? model,
             bool? transcode,
             double? trim,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
@@ -140,7 +185,10 @@ namespace Shotstack
             global::Shotstack.VideoAssetType type = global::Shotstack.VideoAssetType.Video)
         {
             this.Type = type;
-            this.Src = src ?? throw new global::System.ArgumentNullException(nameof(src));
+            this.Src = src;
+            this.Prompt = prompt;
+            this.Seed = seed;
+            this.Model = model;
             this.Transcode = transcode;
             this.Trim = trim;
             this.Volume = volume;
@@ -155,18 +203,6 @@ namespace Shotstack
         /// </summary>
         public VideoAsset()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="VideoAsset"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static VideoAsset FromSrc(string src)
-        {
-            return new VideoAsset
-            {
-                Src = src,
-            };
         }
 
     }
