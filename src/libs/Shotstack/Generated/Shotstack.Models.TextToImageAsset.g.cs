@@ -4,8 +4,12 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: TextToImageAsset is deprecated. Use [ImageAsset](#tocs_imageasset)<br/>
+    /// with `prompt` instead.** This type continues to function and is internally<br/>
+    /// rewritten to ImageAsset; no behaviour change for existing integrations.<br/>
     /// The TextToImageAsset lets you create a dynamic image from a text prompt.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class TextToImageAsset
     {
         /// <summary>
@@ -15,6 +19,7 @@ namespace Shotstack
         /// <default>global::Shotstack.TextToImageAssetType.TextToImage</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.TextToImageAssetTypeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextToImageAssetType Type { get; set; } = global::Shotstack.TextToImageAssetType.TextToImage;
 
         /// <summary>
@@ -24,6 +29,7 @@ namespace Shotstack
         /// <example>A serene landscape featuring a crystal-clear mountain lake at sunrise. The water reflects the pink and orange sky like a mirror. In the foreground, a majestic pine tree stands tall, its branches framing the view. Snow-capped peaks rise in the distance, their edges softened by a light morning mist. A pair of deer drink from the lake's edge, creating gentle ripples on the otherwise still surface.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Prompt { get; set; }
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace Shotstack
         /// </summary>
         /// <example>512</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? Width { get; set; }
 
         /// <summary>
@@ -40,12 +47,14 @@ namespace Shotstack
         /// </summary>
         /// <example>512</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? Height { get; set; }
 
         /// <summary>
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("crop")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.Crop? Crop { get; set; }
 
         /// <summary>
@@ -98,18 +107,6 @@ namespace Shotstack
         /// </summary>
         public TextToImageAsset()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="TextToImageAsset"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static TextToImageAsset FromPrompt(string prompt)
-        {
-            return new TextToImageAsset
-            {
-                Prompt = prompt,
-            };
         }
 
     }
