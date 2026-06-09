@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// The preset output resolution of the video or image. For custom sizes use the `size` property. &lt;ul&gt;<br/>
+    /// The preset output resolution of the video or image. For custom sizes use the `size` property. Either `resolution` or `size` (with both `width` and `height`) must be specified for all formats except `mp3`. &lt;ul&gt;<br/>
     ///   &lt;li&gt;`preview` - 512px x 288px @ 15fps&lt;/li&gt;<br/>
     ///   &lt;li&gt;`mobile` - 640px x 360px @ 25fps&lt;/li&gt;<br/>
     ///   &lt;li&gt;`sd` - 1024px x 576px @ 25fps&lt;/li&gt;<br/>
