@@ -1151,7 +1151,7 @@
         "additionalProperties": false
       },
       "VideoAsset": {
-        "description": "The VideoAsset adds a video to a Clip. The video can be sourced from a URL\n(`src`) or generated from a text prompt (`prompt`), optionally seeded from a\nstarting image (`seed`). Exactly one of `src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.\n- **Generated:** set `prompt` to describe the motion. Optionally set `seed` to\n  a starting image URL (image-to-video). Use `model` to choose the generator\n  (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in\n  automatically.\n",
+        "description": "The VideoAsset adds a video to a Clip. The video can be sourced from a URL\n(`src`) or generated from a text prompt (`prompt`), optionally from a\nstarting image (`inputSrc`). Exactly one of `src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.\n- **Generated:** set `prompt` to describe the motion. Optionally set `inputSrc`\n  to a starting image URL (image-to-video). Use `model` to choose the generator\n  (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in\n  automatically.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -1170,13 +1170,20 @@
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4"
           },
           "prompt": {
-            "description": "A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `seed` for image-to-video. Use `model` to choose the generator.",
+            "description": "A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `inputSrc` for image-to-video. Use `model` to choose the generator.",
             "type": "string",
             "maxLength": 4000,
             "example": "Slowly zoom out and orbit left around the object."
           },
+          "inputSrc": {
+            "description": "Input image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.",
+            "type": "string",
+            "minLength": 1,
+            "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg"
+          },
           "seed": {
-            "description": "Seed image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.",
+            "deprecated": true,
+            "description": "**Deprecated \u2014 use `inputSrc`.** Legacy alias for the image-to-video input image URL, accepted and normalised to `inputSrc` on ingest. The name is misleading \u2014 industry-wide `seed` means an integer RNG sampling seed \u2014 and will be removed in a future major version.",
             "type": "string",
             "minLength": 1,
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg"
@@ -1969,7 +1976,7 @@
       },
       "ImageToVideoAsset": {
         "deprecated": true,
-        "description": "**Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)\nwith `prompt` and `seed` instead.** This type continues to function and is\ninternally rewritten to VideoAsset; no behaviour change for existing\nintegrations.\n\nThe ImageToVideoAsset lets you create a video from an image and a text prompt.\n",
+        "description": "**Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)\nwith `prompt` and `inputSrc` instead.** This type continues to function and is\ninternally rewritten to VideoAsset; no behaviour change for existing\nintegrations.\n\nThe ImageToVideoAsset lets you create a video from an image and a text prompt.\n",
         "properties": {
           "type": {
             "type": "string",

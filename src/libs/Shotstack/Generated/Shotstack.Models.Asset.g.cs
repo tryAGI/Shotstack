@@ -16,11 +16,11 @@ namespace Shotstack
 
         /// <summary>
         /// The VideoAsset adds a video to a Clip. The video can be sourced from a URL<br/>
-        /// (`src`) or generated from a text prompt (`prompt`), optionally seeded from a<br/>
-        /// starting image (`seed`). Exactly one of `src` or `prompt` must be provided.<br/>
+        /// (`src`) or generated from a text prompt (`prompt`), optionally from a<br/>
+        /// starting image (`inputSrc`). Exactly one of `src` or `prompt` must be provided.<br/>
         /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
-        /// - **Generated:** set `prompt` to describe the motion. Optionally set `seed` to<br/>
-        ///   a starting image URL (image-to-video). Use `model` to choose the generator<br/>
+        /// - **Generated:** set `prompt` to describe the motion. Optionally set `inputSrc`<br/>
+        ///   to a starting image URL (image-to-video). Use `model` to choose the generator<br/>
         ///   (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in<br/>
         ///   automatically.
         /// </summary>
@@ -583,7 +583,7 @@ namespace Shotstack
 
         /// <summary>
         /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
-        /// with `prompt` and `seed` instead.** This type continues to function and is<br/>
+        /// with `prompt` and `inputSrc` instead.** This type continues to function and is<br/>
         /// internally rewritten to VideoAsset; no behaviour change for existing<br/>
         /// integrations.<br/>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.

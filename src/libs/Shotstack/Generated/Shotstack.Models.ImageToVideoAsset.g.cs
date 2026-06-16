@@ -5,7 +5,7 @@ namespace Shotstack
 {
     /// <summary>
     /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
-    /// with `prompt` and `seed` instead.** This type continues to function and is<br/>
+    /// with `prompt` and `inputSrc` instead.** This type continues to function and is<br/>
     /// internally rewritten to VideoAsset; no behaviour change for existing<br/>
     /// integrations.<br/>
     /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
