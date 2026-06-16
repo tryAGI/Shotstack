@@ -1,15 +1,17 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Shotstack
 {
     /// <summary>
     /// The VideoAsset adds a video to a Clip. The video can be sourced from a URL<br/>
-    /// (`src`) or generated from a text prompt (`prompt`), optionally seeded from a<br/>
-    /// starting image (`seed`). Exactly one of `src` or `prompt` must be provided.<br/>
+    /// (`src`) or generated from a text prompt (`prompt`), optionally from a<br/>
+    /// starting image (`inputSrc`). Exactly one of `src` or `prompt` must be provided.<br/>
     /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
-    /// - **Generated:** set `prompt` to describe the motion. Optionally set `seed` to<br/>
-    ///   a starting image URL (image-to-video). Use `model` to choose the generator<br/>
+    /// - **Generated:** set `prompt` to describe the motion. Optionally set `inputSrc`<br/>
+    ///   to a starting image URL (image-to-video). Use `model` to choose the generator<br/>
     ///   (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in<br/>
     ///   automatically.
     /// </summary>
@@ -33,7 +35,7 @@ namespace Shotstack
         public string? Src { get; set; }
 
         /// <summary>
-        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `seed` for image-to-video. Use `model` to choose the generator.<br/>
+        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `inputSrc` for image-to-video. Use `model` to choose the generator.<br/>
         /// Example: Slowly zoom out and orbit left around the object.
         /// </summary>
         /// <example>Slowly zoom out and orbit left around the object.</example>
@@ -41,11 +43,20 @@ namespace Shotstack
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// Seed image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
+        /// Input image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
+        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg
+        /// </summary>
+        /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputSrc")]
+        public string? InputSrc { get; set; }
+
+        /// <summary>
+        /// **Deprecated — use `inputSrc`.** Legacy alias for the image-to-video input image URL, accepted and normalised to `inputSrc` on ingest. The name is misleading — industry-wide `seed` means an integer RNG sampling seed — and will be removed in a future major version.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg
         /// </summary>
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Seed { get; set; }
 
         /// <summary>
@@ -124,12 +135,12 @@ namespace Shotstack
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
         /// </param>
         /// <param name="prompt">
-        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `seed` for image-to-video. Use `model` to choose the generator.<br/>
+        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `inputSrc` for image-to-video. Use `model` to choose the generator.<br/>
         /// Example: Slowly zoom out and orbit left around the object.
         /// </param>
-        /// <param name="seed">
-        /// Seed image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
-        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg
+        /// <param name="inputSrc">
+        /// Input image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
+        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg
         /// </param>
         /// <param name="model">
         /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.<br/>
@@ -173,7 +184,7 @@ namespace Shotstack
         public VideoAsset(
             string? src,
             string? prompt,
-            string? seed,
+            string? inputSrc,
             string? model,
             bool? transcode,
             double? trim,
@@ -187,7 +198,7 @@ namespace Shotstack
             this.Type = type;
             this.Src = src;
             this.Prompt = prompt;
-            this.Seed = seed;
+            this.InputSrc = inputSrc;
             this.Model = model;
             this.Transcode = transcode;
             this.Trim = trim;
