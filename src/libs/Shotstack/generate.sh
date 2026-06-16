@@ -1,4 +1,9 @@
-dotnet tool install --global autosdk.cli --prerelease
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
+
+install_autosdk_cli
 rm -rf Generated
 
 # Step 1: Clone the Shotstack OpenAPI repo (has external $refs across files)
