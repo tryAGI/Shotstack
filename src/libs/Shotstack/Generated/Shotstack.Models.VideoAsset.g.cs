@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Shotstack
@@ -49,15 +47,6 @@ namespace Shotstack
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputSrc")]
         public string? InputSrc { get; set; }
-
-        /// <summary>
-        /// **Deprecated — use `inputSrc`.** Legacy alias for the image-to-video input image URL, accepted and normalised to `inputSrc` on ingest. The name is misleading — industry-wide `seed` means an integer RNG sampling seed — and will be removed in a future major version.<br/>
-        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg
-        /// </summary>
-        /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public string? Seed { get; set; }
 
         /// <summary>
         /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.<br/>
