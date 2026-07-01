@@ -1181,13 +1181,6 @@
             "minLength": 1,
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg"
           },
-          "seed": {
-            "deprecated": true,
-            "description": "**Deprecated \u2014 use `inputSrc`.** Legacy alias for the image-to-video input image URL, accepted and normalised to `inputSrc` on ingest. The name is misleading \u2014 industry-wide `seed` means an integer RNG sampling seed \u2014 and will be removed in a future major version.",
-            "type": "string",
-            "minLength": 1,
-            "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/seed-image.jpg"
-          },
           "model": {
             "description": "The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.",
             "type": "string",
