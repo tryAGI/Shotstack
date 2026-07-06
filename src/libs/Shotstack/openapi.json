@@ -1182,9 +1182,59 @@
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg"
           },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.",
+            "description": "The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`, `fal/seedance-2.0`). Defaults to the platform's preferred generator if omitted.",
             "type": "string",
             "example": "luma-ray-3"
+          },
+          "resolution": {
+            "description": "Output resolution for video generation. Only meaningful when `prompt` is set and the model supports it (e.g. `fal/seedance-2.0`).",
+            "enum": [
+              "480p",
+              "720p",
+              "1080p"
+            ],
+            "type": "string",
+            "example": "720p"
+          },
+          "duration": {
+            "description": "Target video duration in seconds for generation models that accept it. `\"auto\"` lets the model decide. Only meaningful when `prompt` is set.",
+            "enum": [
+              "auto",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15"
+            ],
+            "type": "string",
+            "default": "auto",
+            "example": "5"
+          },
+          "aspectRatio": {
+            "description": "Aspect ratio for the generated video. Only meaningful when `prompt` is set and the model supports it.",
+            "enum": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:3",
+              "3:4",
+              "21:9",
+              "9:21"
+            ],
+            "type": "string",
+            "example": "16:9"
+          },
+          "generateAudio": {
+            "description": "Set to `true` to request audio generation alongside the video. Only meaningful for video generation models that support it (e.g. `fal/seedance-2.0`).",
+            "type": "boolean",
+            "default": false
           },
           "transcode": {
             "type": "boolean",
@@ -1272,9 +1322,33 @@
             "example": "A serene landscape with a crystal-clear mountain lake at sunrise."
           },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `flux-schnell`). Defaults to the platform's preferred generator if omitted.",
+            "description": "The generation model to use when `prompt` is set (e.g. `flux-schnell`, `fal/flux-schnell`, `fal/nano-banana-2`). Defaults to the platform's preferred generator if omitted.",
             "type": "string",
             "example": "flux-schnell"
+          },
+          "resolution": {
+            "description": "Output resolution tier for supported image generation models. `1K` (default), `2K`, or `4K`. Only meaningful when `prompt` is set.",
+            "enum": [
+              "1K",
+              "2K",
+              "4K"
+            ],
+            "type": "string",
+            "example": "1K"
+          },
+          "aspectRatio": {
+            "description": "Aspect ratio for the generated image. Only meaningful when `prompt` is set and the model supports it.",
+            "enum": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:3",
+              "3:4",
+              "21:9",
+              "9:21"
+            ],
+            "type": "string",
+            "example": "1:1"
           },
           "crop": {
             "$ref": "#/components/schemas/Crop"
@@ -1456,9 +1530,26 @@
             "default": false
           },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `polly-neural`). Defaults to the platform's preferred generator if omitted.",
+            "description": "The generation model to use when `prompt` is set (e.g. `polly-neural`, `fal/elevenlabs-tts`, `fal/minimax-speech`, `fal/elevenlabs-music`). Defaults to the platform's preferred generator if omitted.",
             "type": "string",
             "example": "polly-neural"
+          },
+          "musicLengthMs": {
+            "description": "Target duration in milliseconds for generated music (3,000\u2013600,000). Only meaningful when `prompt` is set and the model is a music generator (e.g. `fal/elevenlabs-music`).",
+            "type": "number",
+            "minimum": 3000,
+            "maximum": 600000,
+            "example": 30000
+          },
+          "forceInstrumental": {
+            "description": "Set to `true` to force instrumental music (no vocals). Only meaningful for music generation models.",
+            "type": "boolean",
+            "default": false
+          },
+          "compositionPlan": {
+            "description": "An optional structured composition plan for music generation. Only meaningful for music generation models (e.g. `fal/elevenlabs-music`).",
+            "type": "string",
+            "maxLength": 4000
           },
           "trim": {
             "description": "The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.",

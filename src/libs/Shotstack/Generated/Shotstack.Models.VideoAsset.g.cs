@@ -49,12 +49,47 @@ namespace Shotstack
         public string? InputSrc { get; set; }
 
         /// <summary>
-        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`, `fal/seedance-2.0`). Defaults to the platform's preferred generator if omitted.<br/>
         /// Example: luma-ray-3
         /// </summary>
         /// <example>luma-ray-3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
+
+        /// <summary>
+        /// Output resolution for video generation. Only meaningful when `prompt` is set and the model supports it (e.g. `fal/seedance-2.0`).<br/>
+        /// Example: 720p
+        /// </summary>
+        /// <example>720p</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.VideoAssetResolutionJsonConverter))]
+        public global::Shotstack.VideoAssetResolution? Resolution { get; set; }
+
+        /// <summary>
+        /// Target video duration in seconds for generation models that accept it. `"auto"` lets the model decide. Only meaningful when `prompt` is set.<br/>
+        /// Default Value: auto<br/>
+        /// Example: 5
+        /// </summary>
+        /// <example>5</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.VideoAssetDurationJsonConverter))]
+        public global::Shotstack.VideoAssetDuration? Duration { get; set; }
+
+        /// <summary>
+        /// Aspect ratio for the generated video. Only meaningful when `prompt` is set and the model supports it.<br/>
+        /// Example: 16:9
+        /// </summary>
+        /// <example>16:9</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aspectRatio")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.VideoAssetAspectRatioJsonConverter))]
+        public global::Shotstack.VideoAssetAspectRatio? AspectRatio { get; set; }
+
+        /// <summary>
+        /// Set to `true` to request audio generation alongside the video. Only meaningful for video generation models that support it (e.g. `fal/seedance-2.0`).<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("generateAudio")]
+        public bool? GenerateAudio { get; set; }
 
         /// <summary>
         /// Set to `true` to force re-encoding of the video during preprocessing. This can help resolve compatibility issues, fix rotation problems, synchronize audio, or convert formats. The video will be processed to ensure optimal compatibility with the rendering engine.<br/>
@@ -132,8 +167,25 @@ namespace Shotstack
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg
         /// </param>
         /// <param name="model">
-        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`, `fal/seedance-2.0`). Defaults to the platform's preferred generator if omitted.<br/>
         /// Example: luma-ray-3
+        /// </param>
+        /// <param name="resolution">
+        /// Output resolution for video generation. Only meaningful when `prompt` is set and the model supports it (e.g. `fal/seedance-2.0`).<br/>
+        /// Example: 720p
+        /// </param>
+        /// <param name="duration">
+        /// Target video duration in seconds for generation models that accept it. `"auto"` lets the model decide. Only meaningful when `prompt` is set.<br/>
+        /// Default Value: auto<br/>
+        /// Example: 5
+        /// </param>
+        /// <param name="aspectRatio">
+        /// Aspect ratio for the generated video. Only meaningful when `prompt` is set and the model supports it.<br/>
+        /// Example: 16:9
+        /// </param>
+        /// <param name="generateAudio">
+        /// Set to `true` to request audio generation alongside the video. Only meaningful for video generation models that support it (e.g. `fal/seedance-2.0`).<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="transcode">
         /// Set to `true` to force re-encoding of the video during preprocessing. This can help resolve compatibility issues, fix rotation problems, synchronize audio, or convert formats. The video will be processed to ensure optimal compatibility with the rendering engine.<br/>
@@ -175,6 +227,10 @@ namespace Shotstack
             string? prompt,
             string? inputSrc,
             string? model,
+            global::Shotstack.VideoAssetResolution? resolution,
+            global::Shotstack.VideoAssetDuration? duration,
+            global::Shotstack.VideoAssetAspectRatio? aspectRatio,
+            bool? generateAudio,
             bool? transcode,
             double? trim,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
@@ -189,6 +245,10 @@ namespace Shotstack
             this.Prompt = prompt;
             this.InputSrc = inputSrc;
             this.Model = model;
+            this.Resolution = resolution;
+            this.Duration = duration;
+            this.AspectRatio = aspectRatio;
+            this.GenerateAudio = generateAudio;
             this.Transcode = transcode;
             this.Trim = trim;
             this.Volume = volume;

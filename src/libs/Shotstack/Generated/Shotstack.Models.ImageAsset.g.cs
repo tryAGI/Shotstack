@@ -39,12 +39,30 @@ namespace Shotstack
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// The generation model to use when `prompt` is set (e.g. `flux-schnell`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `flux-schnell`, `fal/flux-schnell`, `fal/nano-banana-2`). Defaults to the platform's preferred generator if omitted.<br/>
         /// Example: flux-schnell
         /// </summary>
         /// <example>flux-schnell</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
+
+        /// <summary>
+        /// Output resolution tier for supported image generation models. `1K` (default), `2K`, or `4K`. Only meaningful when `prompt` is set.<br/>
+        /// Example: 1K
+        /// </summary>
+        /// <example>1K</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.ImageAssetResolutionJsonConverter))]
+        public global::Shotstack.ImageAssetResolution? Resolution { get; set; }
+
+        /// <summary>
+        /// Aspect ratio for the generated image. Only meaningful when `prompt` is set and the model supports it.<br/>
+        /// Example: 1:1
+        /// </summary>
+        /// <example>1:1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("aspectRatio")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.ImageAssetAspectRatioJsonConverter))]
+        public global::Shotstack.ImageAssetAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
@@ -70,8 +88,16 @@ namespace Shotstack
         /// Example: A serene landscape with a crystal-clear mountain lake at sunrise.
         /// </param>
         /// <param name="model">
-        /// The generation model to use when `prompt` is set (e.g. `flux-schnell`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `flux-schnell`, `fal/flux-schnell`, `fal/nano-banana-2`). Defaults to the platform's preferred generator if omitted.<br/>
         /// Example: flux-schnell
+        /// </param>
+        /// <param name="resolution">
+        /// Output resolution tier for supported image generation models. `1K` (default), `2K`, or `4K`. Only meaningful when `prompt` is set.<br/>
+        /// Example: 1K
+        /// </param>
+        /// <param name="aspectRatio">
+        /// Aspect ratio for the generated image. Only meaningful when `prompt` is set and the model supports it.<br/>
+        /// Example: 1:1
         /// </param>
         /// <param name="crop">
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
@@ -87,6 +113,8 @@ namespace Shotstack
             string? src,
             string? prompt,
             string? model,
+            global::Shotstack.ImageAssetResolution? resolution,
+            global::Shotstack.ImageAssetAspectRatio? aspectRatio,
             global::Shotstack.Crop? crop,
             global::Shotstack.ImageAssetType type = global::Shotstack.ImageAssetType.Image)
         {
@@ -94,6 +122,8 @@ namespace Shotstack
             this.Src = src;
             this.Prompt = prompt;
             this.Model = model;
+            this.Resolution = resolution;
+            this.AspectRatio = aspectRatio;
             this.Crop = crop;
         }
 
