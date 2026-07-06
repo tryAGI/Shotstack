@@ -65,12 +65,33 @@ namespace Shotstack
         public bool? Newscaster { get; set; }
 
         /// <summary>
-        /// The generation model to use when `prompt` is set (e.g. `polly-neural`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `polly-neural`, `fal/elevenlabs-tts`, `fal/minimax-speech`, `fal/elevenlabs-music`). Defaults to the platform's preferred generator if omitted.<br/>
         /// Example: polly-neural
         /// </summary>
         /// <example>polly-neural</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
+
+        /// <summary>
+        /// Target duration in milliseconds for generated music (3,000–600,000). Only meaningful when `prompt` is set and the model is a music generator (e.g. `fal/elevenlabs-music`).<br/>
+        /// Example: 30000
+        /// </summary>
+        /// <example>30000</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("musicLengthMs")]
+        public double? MusicLengthMs { get; set; }
+
+        /// <summary>
+        /// Set to `true` to force instrumental music (no vocals). Only meaningful for music generation models.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("forceInstrumental")]
+        public bool? ForceInstrumental { get; set; }
+
+        /// <summary>
+        /// An optional structured composition plan for music generation. Only meaningful for music generation models (e.g. `fal/elevenlabs-music`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compositionPlan")]
+        public string? CompositionPlan { get; set; }
 
         /// <summary>
         /// The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.
@@ -134,8 +155,19 @@ namespace Shotstack
         /// Default Value: false
         /// </param>
         /// <param name="model">
-        /// The generation model to use when `prompt` is set (e.g. `polly-neural`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `polly-neural`, `fal/elevenlabs-tts`, `fal/minimax-speech`, `fal/elevenlabs-music`). Defaults to the platform's preferred generator if omitted.<br/>
         /// Example: polly-neural
+        /// </param>
+        /// <param name="musicLengthMs">
+        /// Target duration in milliseconds for generated music (3,000–600,000). Only meaningful when `prompt` is set and the model is a music generator (e.g. `fal/elevenlabs-music`).<br/>
+        /// Example: 30000
+        /// </param>
+        /// <param name="forceInstrumental">
+        /// Set to `true` to force instrumental music (no vocals). Only meaningful for music generation models.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="compositionPlan">
+        /// An optional structured composition plan for music generation. Only meaningful for music generation models (e.g. `fal/elevenlabs-music`).
         /// </param>
         /// <param name="trim">
         /// The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.
@@ -168,6 +200,9 @@ namespace Shotstack
             string? language,
             bool? newscaster,
             string? model,
+            double? musicLengthMs,
+            bool? forceInstrumental,
+            string? compositionPlan,
             double? trim,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
             float? speed,
@@ -181,6 +216,9 @@ namespace Shotstack
             this.Language = language;
             this.Newscaster = newscaster;
             this.Model = model;
+            this.MusicLengthMs = musicLengthMs;
+            this.ForceInstrumental = forceInstrumental;
+            this.CompositionPlan = compositionPlan;
             this.Trim = trim;
             this.Volume = volume;
             this.Speed = speed;

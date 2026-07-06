@@ -49,6 +49,18 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.VideoAssetTypeNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.VideoAssetResolutionJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.VideoAssetResolutionNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.VideoAssetDurationJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.VideoAssetDurationNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.VideoAssetAspectRatioJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.VideoAssetAspectRatioNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.VideoAssetVolumeEffectJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.VideoAssetVolumeEffectNullableJsonConverter),
@@ -56,6 +68,14 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.ImageAssetTypeJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.ImageAssetTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.ImageAssetResolutionJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.ImageAssetResolutionNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.ImageAssetAspectRatioJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.ImageAssetAspectRatioNullableJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TextAssetTypeJsonConverter),
 
@@ -405,10 +425,15 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AssetDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AssetDiscriminatorType), TypeInfoPropertyName = "AssetDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetType), TypeInfoPropertyName = "VideoAssetType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetResolution), TypeInfoPropertyName = "VideoAssetResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetDuration), TypeInfoPropertyName = "VideoAssetDuration2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetAspectRatio), TypeInfoPropertyName = "VideoAssetAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetVolumeEffect), TypeInfoPropertyName = "VideoAssetVolumeEffect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Crop))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ChromaKey))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageAssetType), TypeInfoPropertyName = "ImageAssetType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageAssetResolution), TypeInfoPropertyName = "ImageAssetResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageAssetAspectRatio), TypeInfoPropertyName = "ImageAssetAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAssetType), TypeInfoPropertyName = "TextAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextFont))]
