@@ -23,8 +23,7 @@ namespace Shotstack
         /// Pass the folder ID and options to configure how assets are stored in Google Drive.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Shotstack.GoogleDriveDestinationOptions Options { get; set; }
+        public global::Shotstack.GoogleDriveDestinationOptions? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,10 +47,10 @@ namespace Shotstack
 #endif
         public GoogleDriveDestination(
             string provider,
-            global::Shotstack.GoogleDriveDestinationOptions options)
+            global::Shotstack.GoogleDriveDestinationOptions? options)
         {
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
-            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            this.Options = options;
         }
 
         /// <summary>

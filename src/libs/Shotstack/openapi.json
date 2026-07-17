@@ -3806,21 +3806,20 @@
             "example": "google-drive"
           },
           "options": {
-            "description": "Additional Google Drive configuration and features.",
+            "description": "Additional Google Drive configuration and features. If omitted, files are saved to the root of My Drive using the default Shotstack filename.",
             "$ref": "#/components/schemas/GoogleDriveDestinationOptions"
           }
         },
         "type": "object",
         "required": [
-          "provider",
-          "options"
+          "provider"
         ]
       },
       "GoogleDriveDestinationOptions": {
         "description": "Pass the folder ID and options to configure how assets are stored in Google Drive.",
         "properties": {
           "folderId": {
-            "description": "The Google Drive folder ID where asset will be stored. The folder ID is required and can be retrieved from the URL when logged in to Google Drive, e.g. <a href=\"#\">https://drive.google.com/drive/u/0/folders/1r-eTY6OLO8tzQRKwMyq-fIrQ_7AJEI6A</a>.",
+            "description": "The Google Drive folder ID where the asset will be stored. If omitted, the asset is saved to the root of My Drive. The folder ID can be retrieved from the URL when logged in to Google Drive, e.g. <a href=\"#\">https://drive.google.com/drive/u/0/folders/1r-eTY6OLO8tzQRKwMyq-fIrQ_7AJEI6A</a>.",
             "type": "string",
             "example": "1r-eTY6OLO8tzQRKwMyq-fIrQ_7AJEI6A"
           },
@@ -3829,10 +3828,7 @@
             "type": "string",
             "example": "my-file"
           }
-        },
-        "required": [
-          "folderId"
-        ]
+        }
       },
       "VimeoDestination": {
         "description": "Send videos to [Vimeo](https://shotstack.io/docs/guide/serving-assets/destinations/vimeo/) video hosting and streaming service. Vimeo credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/vimeo), not in the request.",
