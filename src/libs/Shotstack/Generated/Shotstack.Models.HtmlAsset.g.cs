@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// **Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
+    /// **Notice: The HtmlAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.**<br/>
     /// The HtmlAsset clip type lets you create text based layout and formatting using<br/>
     /// HTML and CSS. You can also set the height and width of a bounding box for the HTML<br/>
     /// content to sit within. Text and elements will wrap within the bounding box.

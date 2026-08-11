@@ -101,6 +101,8 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
+        /// **Notice: The TextAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.** This type<br/>
+        /// continues to function; no behaviour change for existing integrations.<br/>
         /// The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom<br/>
         /// [Fonts](#tocs_font). You can also add a background bounding box used to control wrapping and overflow. Emoticons are also supported.
         /// </summary>
@@ -342,7 +344,7 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'RichCaption' but the value was {ToString()}.");
 
         /// <summary>
-        /// **Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
+        /// **Notice: The HtmlAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.**<br/>
         /// The HtmlAsset clip type lets you create text based layout and formatting using<br/>
         /// HTML and CSS. You can also set the height and width of a bounding box for the HTML<br/>
         /// content to sit within. Text and elements will wrap within the bounding box.
@@ -419,7 +421,7 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'Html5' but the value was {ToString()}.");
 
         /// <summary>
-        /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
+        /// **Notice: The TitleAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.**<br/>
         /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
         /// </summary>
 #if NET6_0_OR_GREATER

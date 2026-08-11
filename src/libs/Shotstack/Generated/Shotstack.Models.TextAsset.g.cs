@@ -4,9 +4,12 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: The TextAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.** This type<br/>
+    /// continues to function; no behaviour change for existing integrations.<br/>
     /// The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom<br/>
     /// [Fonts](#tocs_font). You can also add a background bounding box used to control wrapping and overflow. Emoticons are also supported.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class TextAsset
     {
         /// <summary>
@@ -16,6 +19,7 @@ namespace Shotstack
         /// <default>global::Shotstack.TextAssetType.Text</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.TextAssetTypeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextAssetType Type { get; set; } = global::Shotstack.TextAssetType.Text;
 
         /// <summary>
@@ -25,6 +29,7 @@ namespace Shotstack
         /// <example>Hello World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Text { get; set; }
 
         /// <summary>
@@ -33,6 +38,7 @@ namespace Shotstack
         /// </summary>
         /// <example>400</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? Width { get; set; }
 
         /// <summary>
@@ -41,36 +47,42 @@ namespace Shotstack
         /// </summary>
         /// <example>200</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? Height { get; set; }
 
         /// <summary>
         /// Font properties for text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("font")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextFont? Font { get; set; }
 
         /// <summary>
         /// Displays a background box behind the text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextBackground? Background { get; set; }
 
         /// <summary>
         /// Horizontal and vertical alignment properties for text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alignment")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextAlignment? Alignment { get; set; }
 
         /// <summary>
         /// Text stroke (outline) properties.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stroke")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextStroke? Stroke { get; set; }
 
         /// <summary>
         /// Animation properties for text entrance effects.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("animation")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TextAnimation? Animation { get; set; }
 
         /// <summary>
@@ -79,6 +91,7 @@ namespace Shotstack
         /// </summary>
         /// <example>...</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ellipsis")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Ellipsis { get; set; }
 
         /// <summary>
@@ -157,18 +170,6 @@ namespace Shotstack
         /// </summary>
         public TextAsset()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="TextAsset"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static TextAsset FromText(string text)
-        {
-            return new TextAsset
-            {
-                Text = text,
-            };
         }
 
     }

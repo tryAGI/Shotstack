@@ -791,7 +791,8 @@
         "description": "A timeline represents the contents of a video edit over time, an audio edit over time, in seconds, or an image layout. A timeline consists of layers called tracks. Tracks are composed of titles, images, audio, html or video segments referred to as clips which are placed along the track at specific starting point and lasting for a specific amount of time.",
         "properties": {
           "soundtrack": {
-            "description": "A music or audio soundtrack file in mp3 format.",
+            "deprecated": true,
+            "description": "A music or audio soundtrack file in mp3 format. Deprecated - use an [AudioAsset](#tocs_audioasset) clip on its own track instead.",
             "$ref": "#/components/schemas/Soundtrack"
           },
           "background": {
@@ -825,7 +826,8 @@
         "type": "object"
       },
       "Soundtrack": {
-        "description": "A music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.",
+        "deprecated": true,
+        "description": "**Notice: The Soundtrack is deprecated, use an [AudioAsset](#tocs_audioasset) clip on its own track instead.** This type continues to function; no behaviour change for existing integrations.\nA music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.",
         "properties": {
           "src": {
             "description": "The URL of the mp3 audio file. The URL must be publicly accessible or include credentials.",
@@ -1360,7 +1362,8 @@
         ]
       },
       "TextAsset": {
-        "description": "The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom\n[Fonts](#tocs_font). You can also add a background bounding box used to control wrapping and overflow. Emoticons are also supported.\n",
+        "deprecated": true,
+        "description": "**Notice: The TextAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.** This type\ncontinues to function; no behaviour change for existing integrations.\n\nThe TextAsset is used to add text and titles to a video. The text can be styled with built in and custom\n[Fonts](#tocs_font). You can also add a background bounding box used to control wrapping and overflow. Emoticons are also supported.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -2199,7 +2202,7 @@
       },
       "HtmlAsset": {
         "deprecated": true,
-        "description": "**Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**\n\nThe HtmlAsset clip type lets you create text based layout and formatting using\nHTML and CSS. You can also set the height and width of a bounding box for the HTML\ncontent to sit within. Text and elements will wrap within the bounding box.\n",
+        "description": "**Notice: The HtmlAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.**\n\nThe HtmlAsset clip type lets you create text based layout and formatting using\nHTML and CSS. You can also set the height and width of a bounding box for the HTML\ncontent to sit within. Text and elements will wrap within the bounding box.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -2295,7 +2298,7 @@
       },
       "TitleAsset": {
         "deprecated": true,
-        "description": "**Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**\n\nThe TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.\n",
+        "description": "**Notice: The TitleAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.**\n\nThe TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.\n",
         "type": "object",
         "properties": {
           "type": {

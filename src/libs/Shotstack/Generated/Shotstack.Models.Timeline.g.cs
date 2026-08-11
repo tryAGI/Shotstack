@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Shotstack
@@ -9,9 +11,11 @@ namespace Shotstack
     public sealed partial class Timeline
     {
         /// <summary>
+        /// **Notice: The Soundtrack is deprecated, use an [AudioAsset](#tocs_audioasset) clip on its own track instead.** This type continues to function; no behaviour change for existing integrations.<br/>
         /// A music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("soundtrack")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.Soundtrack? Soundtrack { get; set; }
 
         /// <summary>
@@ -51,9 +55,6 @@ namespace Shotstack
         /// <param name="tracks">
         /// A timeline consists of an array of tracks, each track containing clips. Tracks are layered on top of each other in the same order they are added to the array with the top most track layered over the top of those below it. Ensure that a track containing titles is the top most track so that it is displayed above videos and images.
         /// </param>
-        /// <param name="soundtrack">
-        /// A music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.
-        /// </param>
         /// <param name="background">
         /// A hexadecimal value for the timeline background colour. Defaults to #000000 (black).
         /// </param>
@@ -68,12 +69,10 @@ namespace Shotstack
 #endif
         public Timeline(
             global::System.Collections.Generic.IList<global::Shotstack.Track> tracks,
-            global::Shotstack.Soundtrack? soundtrack,
             string? background,
             global::System.Collections.Generic.IList<global::Shotstack.Font>? fonts,
             bool? cache)
         {
-            this.Soundtrack = soundtrack;
             this.Background = background;
             this.Fonts = fonts;
             this.Tracks = tracks ?? throw new global::System.ArgumentNullException(nameof(tracks));
