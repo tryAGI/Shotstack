@@ -4,8 +4,10 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: The Soundtrack is deprecated, use an [AudioAsset](#tocs_audioasset) clip on its own track instead.** This type continues to function; no behaviour change for existing integrations.<br/>
     /// A music or audio file in mp3 format that plays for the duration of the rendered video or the length of the audio file, which ever is shortest.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class Soundtrack
     {
         /// <summary>
@@ -15,6 +17,7 @@ namespace Shotstack
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/music.mp3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("src")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Src { get; set; }
 
         /// <summary>
@@ -26,12 +29,14 @@ namespace Shotstack
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effect")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.SoundtrackEffectJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.SoundtrackEffect? Effect { get; set; }
 
         /// <summary>
         /// Set the volume for the soundtrack between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("volume")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public double? Volume { get; set; }
 
         /// <summary>

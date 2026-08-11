@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
+    /// **Notice: The TitleAsset is deprecated, use the [RichTextAsset](#tocs_richtextasset) instead.**<br/>
     /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
     /// </summary>
     [global::System.Obsolete("This model marked as deprecated.")]
