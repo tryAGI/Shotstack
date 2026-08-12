@@ -5,13 +5,16 @@ namespace Shotstack
 {
     /// <summary>
     /// The VideoAsset adds a video to a Clip. The video can be sourced from a URL<br/>
-    /// (`src`) or generated from a text prompt (`prompt`), optionally from a<br/>
-    /// starting image (`inputSrc`). Exactly one of `src` or `prompt` must be provided.<br/>
+    /// (`src`), generated from a text prompt (`prompt`), or both. At least one of<br/>
+    /// `src` or `prompt` must be provided.<br/>
     /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
-    /// - **Generated:** set `prompt` to describe the motion. Optionally set `inputSrc`<br/>
-    ///   to a starting image URL (image-to-video). Use `model` to choose the generator<br/>
-    ///   (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in<br/>
-    ///   automatically.
+    /// - **Generated:** set `prompt` to describe the motion. Choose a generator<br/>
+    ///   with `model` and configure it with model-specific `options` (including a<br/>
+    ///   starting image for image-to-video). The generated `src` is filled in<br/>
+    ///   automatically.<br/>
+    /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
+    ///   generation — the video is regenerated from the prompt at render time.<br/>
+    ///   Unchanged prompts and options resolve from the generation cache.
     /// </summary>
     public sealed partial class VideoAsset
     {
@@ -25,7 +28,7 @@ namespace Shotstack
         public global::Shotstack.VideoAssetType Type { get; set; } = global::Shotstack.VideoAssetType.Video;
 
         /// <summary>
-        /// The video source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.<br/>
+        /// The video source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the video is regenerated from the prompt at render time.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
         /// </summary>
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4</example>
@@ -33,7 +36,7 @@ namespace Shotstack
         public string? Src { get; set; }
 
         /// <summary>
-        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `inputSrc` for image-to-video. Use `model` to choose the generator.<br/>
+        /// A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it (including a starting image for image-to-video).<br/>
         /// Example: Slowly zoom out and orbit left around the object.
         /// </summary>
         /// <example>Slowly zoom out and orbit left around the object.</example>
@@ -41,55 +44,20 @@ namespace Shotstack
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// Input image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
-        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg
+        /// The generation model to use when `prompt` is set (e.g. `shotstack-itv-mini`, `ray-flash-2`, `seedance-2.0`). Defaults to `seedance-2.0` if omitted. Each model's available options are defined by the model registry.<br/>
+        /// Example: seedance-2.0
         /// </summary>
-        /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inputSrc")]
-        public string? InputSrc { get; set; }
-
-        /// <summary>
-        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`, `fal/seedance-2.0`). Defaults to the platform's preferred generator if omitted.<br/>
-        /// Example: luma-ray-3
-        /// </summary>
-        /// <example>luma-ray-3</example>
+        /// <example>seedance-2.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
         /// <summary>
-        /// Output resolution for video generation. Only meaningful when `prompt` is set and the model supports it (e.g. `fal/seedance-2.0`).<br/>
-        /// Example: 720p
+        /// Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.<br/>
+        /// Example: {"resolution":"720p","duration":"8","generateAudio":true}
         /// </summary>
-        /// <example>720p</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.VideoAssetResolutionJsonConverter))]
-        public global::Shotstack.VideoAssetResolution? Resolution { get; set; }
-
-        /// <summary>
-        /// Target video duration in seconds for generation models that accept it. `"auto"` lets the model decide. Only meaningful when `prompt` is set.<br/>
-        /// Default Value: auto<br/>
-        /// Example: 5
-        /// </summary>
-        /// <example>5</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.VideoAssetDurationJsonConverter))]
-        public global::Shotstack.VideoAssetDuration? Duration { get; set; }
-
-        /// <summary>
-        /// Aspect ratio for the generated video. Only meaningful when `prompt` is set and the model supports it.<br/>
-        /// Example: 16:9
-        /// </summary>
-        /// <example>16:9</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("aspectRatio")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.VideoAssetAspectRatioJsonConverter))]
-        public global::Shotstack.VideoAssetAspectRatio? AspectRatio { get; set; }
-
-        /// <summary>
-        /// Set to `true` to request audio generation alongside the video. Only meaningful for video generation models that support it (e.g. `fal/seedance-2.0`).<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("generateAudio")]
-        public bool? GenerateAudio { get; set; }
+        /// <example>{"resolution":"720p","duration":"8","generateAudio":true}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("options")]
+        public object? Options { get; set; }
 
         /// <summary>
         /// Set to `true` to force re-encoding of the video during preprocessing. This can help resolve compatibility issues, fix rotation problems, synchronize audio, or convert formats. The video will be processed to ensure optimal compatibility with the rendering engine.<br/>
@@ -155,37 +123,20 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="VideoAsset" /> class.
         /// </summary>
         /// <param name="src">
-        /// The video source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.<br/>
+        /// The video source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the video is regenerated from the prompt at render time.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
         /// </param>
         /// <param name="prompt">
-        /// A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `inputSrc` for image-to-video. Use `model` to choose the generator.<br/>
+        /// A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it (including a starting image for image-to-video).<br/>
         /// Example: Slowly zoom out and orbit left around the object.
         /// </param>
-        /// <param name="inputSrc">
-        /// Input image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.<br/>
-        /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg
-        /// </param>
         /// <param name="model">
-        /// The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`, `fal/seedance-2.0`). Defaults to the platform's preferred generator if omitted.<br/>
-        /// Example: luma-ray-3
+        /// The generation model to use when `prompt` is set (e.g. `shotstack-itv-mini`, `ray-flash-2`, `seedance-2.0`). Defaults to `seedance-2.0` if omitted. Each model's available options are defined by the model registry.<br/>
+        /// Example: seedance-2.0
         /// </param>
-        /// <param name="resolution">
-        /// Output resolution for video generation. Only meaningful when `prompt` is set and the model supports it (e.g. `fal/seedance-2.0`).<br/>
-        /// Example: 720p
-        /// </param>
-        /// <param name="duration">
-        /// Target video duration in seconds for generation models that accept it. `"auto"` lets the model decide. Only meaningful when `prompt` is set.<br/>
-        /// Default Value: auto<br/>
-        /// Example: 5
-        /// </param>
-        /// <param name="aspectRatio">
-        /// Aspect ratio for the generated video. Only meaningful when `prompt` is set and the model supports it.<br/>
-        /// Example: 16:9
-        /// </param>
-        /// <param name="generateAudio">
-        /// Set to `true` to request audio generation alongside the video. Only meaningful for video generation models that support it (e.g. `fal/seedance-2.0`).<br/>
-        /// Default Value: false
+        /// <param name="options">
+        /// Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.<br/>
+        /// Example: {"resolution":"720p","duration":"8","generateAudio":true}
         /// </param>
         /// <param name="transcode">
         /// Set to `true` to force re-encoding of the video during preprocessing. This can help resolve compatibility issues, fix rotation problems, synchronize audio, or convert formats. The video will be processed to ensure optimal compatibility with the rendering engine.<br/>
@@ -225,12 +176,8 @@ namespace Shotstack
         public VideoAsset(
             string? src,
             string? prompt,
-            string? inputSrc,
             string? model,
-            global::Shotstack.VideoAssetResolution? resolution,
-            global::Shotstack.VideoAssetDuration? duration,
-            global::Shotstack.VideoAssetAspectRatio? aspectRatio,
-            bool? generateAudio,
+            object? options,
             bool? transcode,
             double? trim,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
@@ -243,12 +190,8 @@ namespace Shotstack
             this.Type = type;
             this.Src = src;
             this.Prompt = prompt;
-            this.InputSrc = inputSrc;
             this.Model = model;
-            this.Resolution = resolution;
-            this.Duration = duration;
-            this.AspectRatio = aspectRatio;
-            this.GenerateAudio = generateAudio;
+            this.Options = options;
             this.Transcode = transcode;
             this.Trim = trim;
             this.Volume = volume;

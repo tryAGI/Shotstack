@@ -5,14 +5,18 @@ namespace Shotstack
 {
     /// <summary>
     /// The AudioAsset adds audio to a Clip. The audio can be sourced from a URL<br/>
-    /// (`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or<br/>
-    /// `prompt` must be provided.<br/>
+    /// (`src`), generated from a text prompt (`prompt`), or both. At least one of<br/>
+    /// `src` or `prompt` must be provided.<br/>
     /// - **Source URL:** set `src` to a publicly accessible audio URL (e.g. mp3).<br/>
-    /// - **Generated speech:** set `prompt` to the spoken text and `voice` to a voice<br/>
-    ///   identifier (text-to-speech). Optionally set `language`/`newscaster`.<br/>
-    /// - **Generated music or SFX:** set `prompt` describing the sound; omit `voice`.<br/>
-    /// - Use `model` to choose the generator. The generated `src` is filled in<br/>
-    ///   automatically.
+    /// - **Generated speech:** set `prompt` to the spoken text and choose a<br/>
+    ///   text-to-speech `model`; set the voice via `options`.<br/>
+    /// - **Generated music or SFX:** set `prompt` describing the sound and choose<br/>
+    ///   a music generation `model`.<br/>
+    /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
+    ///   generation — the audio is regenerated from the prompt at render time.<br/>
+    ///   Unchanged prompts and options resolve from the generation cache.<br/>
+    /// - Use `model` to choose the generator and `options` to configure it. The<br/>
+    ///   generated `src` is filled in automatically.
     /// </summary>
     public sealed partial class AudioAsset
     {
@@ -26,7 +30,7 @@ namespace Shotstack
         public global::Shotstack.AudioAssetType Type { get; set; } = global::Shotstack.AudioAssetType.Audio;
 
         /// <summary>
-        /// The audio source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.<br/>
+        /// The audio source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the audio is regenerated from the prompt at render time.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/sound.mp3
         /// </summary>
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/sound.mp3</example>
@@ -34,7 +38,7 @@ namespace Shotstack
         public string? Src { get; set; }
 
         /// <summary>
-        /// A text prompt. When `voice` is set, the prompt is the spoken text (text-to-speech). Without `voice`, the prompt describes generated music or sound effects. The generated `src` is filled in automatically.<br/>
+        /// A text prompt. For text-to-speech models the prompt is the spoken text; for music models it describes the sound to generate. The generated `src` is filled in automatically; an existing `src` is treated as a preview placeholder and replaced.<br/>
         /// Example: Welcome to today's broadcast.
         /// </summary>
         /// <example>Welcome to today's broadcast.</example>
@@ -42,30 +46,7 @@ namespace Shotstack
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// Voice identifier for text-to-speech generation (e.g. `Matthew`, `Joanna`). Only meaningful when `prompt` is set.<br/>
-        /// Example: Matthew
-        /// </summary>
-        /// <example>Matthew</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        public string? Voice { get; set; }
-
-        /// <summary>
-        /// Optional BCP-47 language code (e.g. `en-US`) for text-to-speech. Only meaningful when `prompt` and `voice` are set.<br/>
-        /// Example: en-US
-        /// </summary>
-        /// <example>en-US</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        public string? Language { get; set; }
-
-        /// <summary>
-        /// Set to `true` to use the voice's newscaster mode when supported. Only meaningful when `prompt` and `voice` are set.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("newscaster")]
-        public bool? Newscaster { get; set; }
-
-        /// <summary>
-        /// The generation model to use when `prompt` is set (e.g. `polly-neural`, `fal/elevenlabs-tts`, `fal/minimax-speech`, `fal/elevenlabs-music`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `polly-neural`, `elevenlabs-tts`, `elevenlabs-music`). Defaults to `elevenlabs-tts` (with a default voice) if omitted. Each model's available options are defined by the model registry.<br/>
         /// Example: polly-neural
         /// </summary>
         /// <example>polly-neural</example>
@@ -73,25 +54,12 @@ namespace Shotstack
         public string? Model { get; set; }
 
         /// <summary>
-        /// Target duration in milliseconds for generated music (3,000–600,000). Only meaningful when `prompt` is set and the model is a music generator (e.g. `fal/elevenlabs-music`).<br/>
-        /// Example: 30000
+        /// Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.<br/>
+        /// Example: {"voice":"Matthew","language":"en-US"}
         /// </summary>
-        /// <example>30000</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("musicLengthMs")]
-        public double? MusicLengthMs { get; set; }
-
-        /// <summary>
-        /// Set to `true` to force instrumental music (no vocals). Only meaningful for music generation models.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("forceInstrumental")]
-        public bool? ForceInstrumental { get; set; }
-
-        /// <summary>
-        /// An optional structured composition plan for music generation. Only meaningful for music generation models (e.g. `fal/elevenlabs-music`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("compositionPlan")]
-        public string? CompositionPlan { get; set; }
+        /// <example>{"voice":"Matthew","language":"en-US"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("options")]
+        public object? Options { get; set; }
 
         /// <summary>
         /// The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.
@@ -135,39 +103,20 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="AudioAsset" /> class.
         /// </summary>
         /// <param name="src">
-        /// The audio source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.<br/>
+        /// The audio source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the audio is regenerated from the prompt at render time.<br/>
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/sound.mp3
         /// </param>
         /// <param name="prompt">
-        /// A text prompt. When `voice` is set, the prompt is the spoken text (text-to-speech). Without `voice`, the prompt describes generated music or sound effects. The generated `src` is filled in automatically.<br/>
+        /// A text prompt. For text-to-speech models the prompt is the spoken text; for music models it describes the sound to generate. The generated `src` is filled in automatically; an existing `src` is treated as a preview placeholder and replaced.<br/>
         /// Example: Welcome to today's broadcast.
         /// </param>
-        /// <param name="voice">
-        /// Voice identifier for text-to-speech generation (e.g. `Matthew`, `Joanna`). Only meaningful when `prompt` is set.<br/>
-        /// Example: Matthew
-        /// </param>
-        /// <param name="language">
-        /// Optional BCP-47 language code (e.g. `en-US`) for text-to-speech. Only meaningful when `prompt` and `voice` are set.<br/>
-        /// Example: en-US
-        /// </param>
-        /// <param name="newscaster">
-        /// Set to `true` to use the voice's newscaster mode when supported. Only meaningful when `prompt` and `voice` are set.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="model">
-        /// The generation model to use when `prompt` is set (e.g. `polly-neural`, `fal/elevenlabs-tts`, `fal/minimax-speech`, `fal/elevenlabs-music`). Defaults to the platform's preferred generator if omitted.<br/>
+        /// The generation model to use when `prompt` is set (e.g. `polly-neural`, `elevenlabs-tts`, `elevenlabs-music`). Defaults to `elevenlabs-tts` (with a default voice) if omitted. Each model's available options are defined by the model registry.<br/>
         /// Example: polly-neural
         /// </param>
-        /// <param name="musicLengthMs">
-        /// Target duration in milliseconds for generated music (3,000–600,000). Only meaningful when `prompt` is set and the model is a music generator (e.g. `fal/elevenlabs-music`).<br/>
-        /// Example: 30000
-        /// </param>
-        /// <param name="forceInstrumental">
-        /// Set to `true` to force instrumental music (no vocals). Only meaningful for music generation models.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="compositionPlan">
-        /// An optional structured composition plan for music generation. Only meaningful for music generation models (e.g. `fal/elevenlabs-music`).
+        /// <param name="options">
+        /// Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.<br/>
+        /// Example: {"voice":"Matthew","language":"en-US"}
         /// </param>
         /// <param name="trim">
         /// The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.
@@ -196,13 +145,8 @@ namespace Shotstack
         public AudioAsset(
             string? src,
             string? prompt,
-            string? voice,
-            string? language,
-            bool? newscaster,
             string? model,
-            double? musicLengthMs,
-            bool? forceInstrumental,
-            string? compositionPlan,
+            object? options,
             double? trim,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
             float? speed,
@@ -212,13 +156,8 @@ namespace Shotstack
             this.Type = type;
             this.Src = src;
             this.Prompt = prompt;
-            this.Voice = voice;
-            this.Language = language;
-            this.Newscaster = newscaster;
             this.Model = model;
-            this.MusicLengthMs = musicLengthMs;
-            this.ForceInstrumental = forceInstrumental;
-            this.CompositionPlan = compositionPlan;
+            this.Options = options;
             this.Trim = trim;
             this.Volume = volume;
             this.Speed = speed;
