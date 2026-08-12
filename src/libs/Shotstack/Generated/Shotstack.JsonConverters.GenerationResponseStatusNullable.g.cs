@@ -3,10 +3,10 @@
 namespace Shotstack.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class VideoAssetAspectRatioJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Shotstack.VideoAssetAspectRatio>
+    public sealed class GenerationResponseStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Shotstack.GenerationResponseStatus?>
     {
         /// <inheritdoc />
-        public override global::Shotstack.VideoAssetAspectRatio Read(
+        public override global::Shotstack.GenerationResponseStatus? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Shotstack.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Shotstack.VideoAssetAspectRatioExtensions.ToEnum(stringValue) ?? default;
+                        return global::Shotstack.GenerationResponseStatusExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Shotstack.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Shotstack.VideoAssetAspectRatio)numValue;
+                    return (global::Shotstack.GenerationResponseStatus)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Shotstack.VideoAssetAspectRatio);
+                    return default(global::Shotstack.GenerationResponseStatus?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace Shotstack.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Shotstack.VideoAssetAspectRatio value,
+            global::Shotstack.GenerationResponseStatus? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Shotstack.VideoAssetAspectRatioExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Shotstack.GenerationResponseStatusExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

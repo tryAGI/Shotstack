@@ -442,6 +442,133 @@
         }
       ]
     },
+    "/edit/v1/generate": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "The generated asset was already cached and is immediately available.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "The generation job has been queued. Poll the status endpoint.",
+            "headers": {
+              "Location": {
+                "description": "The relative URL to poll for job status.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Retry-After": {
+                "description": "Suggested seconds to wait before polling.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "Generate a single image, video or audio asset from a text prompt without\nrendering a full edit. Submit a prompt-bearing asset; the response is\nimmediate when an identical asset has been generated before (results are\ncached by prompt, model and options), otherwise the job is queued and can\nbe polled via the status endpoint.\n\nGeneration is billed in credits per asset. Identical repeat requests\nresolve from the cache at no charge.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "summary": "Generate Asset",
+        "operationId": "postGenerate",
+        "requestBody": {
+          "description": "A prompt-bearing image, video or audio asset to generate.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "asset": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/ImageAsset"
+                      },
+                      {
+                        "$ref": "#/components/schemas/VideoAsset"
+                      },
+                      {
+                        "$ref": "#/components/schemas/AudioAsset"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "asset"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DeveloperKey": []
+          }
+        ],
+        "tags": [
+          "Edit"
+        ]
+      }
+    },
+    "/edit/v1/generate/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "The generation job has finished (done or failed).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "The generation job is still processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "Get the status of an on-demand asset generation job created with the\ngenerate endpoint. Jobs are owner-scoped.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "summary": "Get Generation Status",
+        "operationId": "getGenerate",
+        "security": [
+          {
+            "DeveloperKey": []
+          }
+        ],
+        "tags": [
+          "Edit"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The generation job id returned by the generate endpoint."
+        }
+      ]
+    },
     "/serve/v1/assets/{id}": {
       "get": {
         "responses": {
@@ -1153,7 +1280,7 @@
         "additionalProperties": false
       },
       "VideoAsset": {
-        "description": "The VideoAsset adds a video to a Clip. The video can be sourced from a URL\n(`src`) or generated from a text prompt (`prompt`), optionally from a\nstarting image (`inputSrc`). Exactly one of `src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.\n- **Generated:** set `prompt` to describe the motion. Optionally set `inputSrc`\n  to a starting image URL (image-to-video). Use `model` to choose the generator\n  (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in\n  automatically.\n",
+        "description": "The VideoAsset adds a video to a Clip. The video can be sourced from a URL\n(`src`), generated from a text prompt (`prompt`), or both. At least one of\n`src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.\n- **Generated:** set `prompt` to describe the motion. Choose a generator\n  with `model` and configure it with model-specific `options` (including a\n  starting image for image-to-video). The generated `src` is filled in\n  automatically.\n- **Both:** `src` acts as a preview placeholder while `prompt` drives\n  generation \u2014 the video is regenerated from the prompt at render time.\n  Unchanged prompts and options resolve from the generation cache.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -1165,78 +1292,32 @@
             "type": "string"
           },
           "src": {
-            "description": "The video source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.",
+            "description": "The video source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the video is regenerated from the prompt at render time.",
             "type": "string",
             "minLength": 1,
             "pattern": "\\S",
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4"
           },
           "prompt": {
-            "description": "A text prompt to generate the video from. When set without `src`, the engine generates a video and fills `src` automatically. Optionally pair with `inputSrc` for image-to-video. Use `model` to choose the generator.",
+            "description": "A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it (including a starting image for image-to-video).",
             "type": "string",
             "maxLength": 4000,
             "example": "Slowly zoom out and orbit left around the object."
           },
-          "inputSrc": {
-            "description": "Input image URL for image-to-video generation. The image is used as the starting frame; `prompt` describes the motion. Has no effect unless `prompt` is set.",
-            "type": "string",
-            "minLength": 1,
-            "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/input-image.jpg"
-          },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `luma-ray-3`, `runpod-itv-mini`, `fal/seedance-2.0`). Defaults to the platform's preferred generator if omitted.",
+            "description": "The generation model to use when `prompt` is set (e.g. `shotstack-itv-mini`, `ray-flash-2`, `seedance-2.0`). Defaults to `seedance-2.0` if omitted. Each model's available options are defined by the model registry.",
             "type": "string",
-            "example": "luma-ray-3"
+            "example": "seedance-2.0"
           },
-          "resolution": {
-            "description": "Output resolution for video generation. Only meaningful when `prompt` is set and the model supports it (e.g. `fal/seedance-2.0`).",
-            "enum": [
-              "480p",
-              "720p",
-              "1080p"
-            ],
-            "type": "string",
-            "example": "720p"
-          },
-          "duration": {
-            "description": "Target video duration in seconds for generation models that accept it. `\"auto\"` lets the model decide. Only meaningful when `prompt` is set.",
-            "enum": [
-              "auto",
-              "4",
-              "5",
-              "6",
-              "7",
-              "8",
-              "9",
-              "10",
-              "11",
-              "12",
-              "13",
-              "14",
-              "15"
-            ],
-            "type": "string",
-            "default": "auto",
-            "example": "5"
-          },
-          "aspectRatio": {
-            "description": "Aspect ratio for the generated video. Only meaningful when `prompt` is set and the model supports it.",
-            "enum": [
-              "1:1",
-              "16:9",
-              "9:16",
-              "4:3",
-              "3:4",
-              "21:9",
-              "9:21"
-            ],
-            "type": "string",
-            "example": "16:9"
-          },
-          "generateAudio": {
-            "description": "Set to `true` to request audio generation alongside the video. Only meaningful for video generation models that support it (e.g. `fal/seedance-2.0`).",
-            "type": "boolean",
-            "default": false
+          "options": {
+            "description": "Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.",
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "resolution": "720p",
+              "duration": "8",
+              "generateAudio": true
+            }
           },
           "transcode": {
             "type": "boolean",
@@ -1299,7 +1380,7 @@
         ]
       },
       "ImageAsset": {
-        "description": "The ImageAsset adds an image to a Clip. The image can be sourced from a URL\n(`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or\n`prompt` must be provided.\n\n- **Source URL:** set `src` to the publicly accessible URL of a jpg or png file.\n- **Generated:** set `prompt` to describe the image; the engine generates it\n  using the provider chosen by `model` and fills `src` in automatically.\n",
+        "description": "The ImageAsset adds an image to a Clip. The image can be sourced from a URL\n(`src`), generated from a text prompt (`prompt`), or both. At least one of\n`src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the publicly accessible URL of a jpg or png file.\n- **Generated:** set `prompt` to describe the image. Choose a generator with\n  `model` and configure it with model-specific `options`; the engine fills\n  `src` in automatically.\n- **Both:** `src` acts as a preview placeholder while `prompt` drives\n  generation \u2014 the image is regenerated from the prompt at render time.\n  Unchanged prompts and options resolve from the generation cache.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -1311,46 +1392,31 @@
             "type": "string"
           },
           "src": {
-            "description": "The image source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.",
+            "description": "The image source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the image is regenerated from the prompt at render time.",
             "type": "string",
             "minLength": 1,
             "pattern": "\\S",
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/image.jpg"
           },
           "prompt": {
-            "description": "A text prompt to generate the image from. When set without `src`, the engine generates an image and fills `src` automatically. Use `model` to choose the generator.",
+            "description": "A text prompt to generate the image from. The engine generates an image at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it.",
             "type": "string",
             "maxLength": 4000,
             "example": "A serene landscape with a crystal-clear mountain lake at sunrise."
           },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `flux-schnell`, `fal/flux-schnell`, `fal/nano-banana-2`). Defaults to the platform's preferred generator if omitted.",
+            "description": "The generation model to use when `prompt` is set (e.g. `flux-schnell`, `nano-banana-2`). Defaults to `nano-banana-2` if omitted. Each model's available options are defined by the model registry.",
             "type": "string",
             "example": "flux-schnell"
           },
-          "resolution": {
-            "description": "Output resolution tier for supported image generation models. `1K` (default), `2K`, or `4K`. Only meaningful when `prompt` is set.",
-            "enum": [
-              "1K",
-              "2K",
-              "4K"
-            ],
-            "type": "string",
-            "example": "1K"
-          },
-          "aspectRatio": {
-            "description": "Aspect ratio for the generated image. Only meaningful when `prompt` is set and the model supports it.",
-            "enum": [
-              "1:1",
-              "16:9",
-              "9:16",
-              "4:3",
-              "3:4",
-              "21:9",
-              "9:21"
-            ],
-            "type": "string",
-            "example": "1:1"
+          "options": {
+            "description": "Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.",
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "resolution": "1K",
+              "aspectRatio": "16:9"
+            }
           },
           "crop": {
             "$ref": "#/components/schemas/Crop"
@@ -1493,7 +1559,7 @@
         ]
       },
       "AudioAsset": {
-        "description": "The AudioAsset adds audio to a Clip. The audio can be sourced from a URL\n(`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or\n`prompt` must be provided.\n\n- **Source URL:** set `src` to a publicly accessible audio URL (e.g. mp3).\n- **Generated speech:** set `prompt` to the spoken text and `voice` to a voice\n  identifier (text-to-speech). Optionally set `language`/`newscaster`.\n- **Generated music or SFX:** set `prompt` describing the sound; omit `voice`.\n- Use `model` to choose the generator. The generated `src` is filled in\n  automatically.\n",
+        "description": "The AudioAsset adds audio to a Clip. The audio can be sourced from a URL\n(`src`), generated from a text prompt (`prompt`), or both. At least one of\n`src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to a publicly accessible audio URL (e.g. mp3).\n- **Generated speech:** set `prompt` to the spoken text and choose a\n  text-to-speech `model`; set the voice via `options`.\n- **Generated music or SFX:** set `prompt` describing the sound and choose\n  a music generation `model`.\n- **Both:** `src` acts as a preview placeholder while `prompt` drives\n  generation \u2014 the audio is regenerated from the prompt at render time.\n  Unchanged prompts and options resolve from the generation cache.\n- Use `model` to choose the generator and `options` to configure it. The\n  generated `src` is filled in automatically.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -1505,54 +1571,31 @@
             "type": "string"
           },
           "src": {
-            "description": "The audio source URL. The URL must be publicly accessible or include credentials. Provide either `src` or `prompt`, not both.",
+            "description": "The audio source URL. The URL must be publicly accessible or include credentials. When `prompt` is also set, `src` serves as a preview placeholder and the audio is regenerated from the prompt at render time.",
             "type": "string",
             "minLength": 1,
             "pattern": "\\S",
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/sound.mp3"
           },
           "prompt": {
-            "description": "A text prompt. When `voice` is set, the prompt is the spoken text (text-to-speech). Without `voice`, the prompt describes generated music or sound effects. The generated `src` is filled in automatically.",
+            "description": "A text prompt. For text-to-speech models the prompt is the spoken text; for music models it describes the sound to generate. The generated `src` is filled in automatically; an existing `src` is treated as a preview placeholder and replaced.",
             "type": "string",
             "maxLength": 4000,
             "example": "Welcome to today's broadcast."
           },
-          "voice": {
-            "description": "Voice identifier for text-to-speech generation (e.g. `Matthew`, `Joanna`). Only meaningful when `prompt` is set.",
-            "type": "string",
-            "example": "Matthew"
-          },
-          "language": {
-            "description": "Optional BCP-47 language code (e.g. `en-US`) for text-to-speech. Only meaningful when `prompt` and `voice` are set.",
-            "type": "string",
-            "example": "en-US"
-          },
-          "newscaster": {
-            "description": "Set to `true` to use the voice's newscaster mode when supported. Only meaningful when `prompt` and `voice` are set.",
-            "type": "boolean",
-            "default": false
-          },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `polly-neural`, `fal/elevenlabs-tts`, `fal/minimax-speech`, `fal/elevenlabs-music`). Defaults to the platform's preferred generator if omitted.",
+            "description": "The generation model to use when `prompt` is set (e.g. `polly-neural`, `elevenlabs-tts`, `elevenlabs-music`). Defaults to `elevenlabs-tts` (with a default voice) if omitted. Each model's available options are defined by the model registry.",
             "type": "string",
             "example": "polly-neural"
           },
-          "musicLengthMs": {
-            "description": "Target duration in milliseconds for generated music (3,000\u2013600,000). Only meaningful when `prompt` is set and the model is a music generator (e.g. `fal/elevenlabs-music`).",
-            "type": "number",
-            "minimum": 3000,
-            "maximum": 600000,
-            "example": 30000
-          },
-          "forceInstrumental": {
-            "description": "Set to `true` to force instrumental music (no vocals). Only meaningful for music generation models.",
-            "type": "boolean",
-            "default": false
-          },
-          "compositionPlan": {
-            "description": "An optional structured composition plan for music generation. Only meaningful for music generation models (e.g. `fal/elevenlabs-music`).",
-            "type": "string",
-            "maxLength": 4000
+          "options": {
+            "description": "Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.",
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "voice": "Matthew",
+              "language": "en-US"
+            }
           },
           "trim": {
             "description": "The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.",
@@ -5554,6 +5597,41 @@
         "type": "object",
         "required": [
           "provider"
+        ]
+      },
+      "GenerationResponse": {
+        "description": "The status of an on-demand asset generation job. Completed jobs include the public URL of the generated asset.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The generation job id. Deterministic for a given owner and asset payload (or idempotency key), so identical requests return the same job and cached result.",
+            "type": "string",
+            "example": "8a1f2c3d-4e5b-5a6c-9d7e-1f2a3b4c5d6e"
+          },
+          "status": {
+            "description": "The status of the generation job.",
+            "type": "string",
+            "enum": [
+              "queued",
+              "processing",
+              "done",
+              "failed"
+            ],
+            "example": "done"
+          },
+          "url": {
+            "description": "The public URL of the generated asset. Present only when `status` is `done`.",
+            "type": "string",
+            "example": "https://shotstack-api-v1-output.s3-ap-southeast-2.amazonaws.com/owner/8a1f2c3d.png"
+          },
+          "error": {
+            "description": "A human readable error message. Present only when `status` is `failed`.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status"
         ]
       }
     },

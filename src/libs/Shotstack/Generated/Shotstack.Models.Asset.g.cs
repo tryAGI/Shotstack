@@ -16,13 +16,16 @@ namespace Shotstack
 
         /// <summary>
         /// The VideoAsset adds a video to a Clip. The video can be sourced from a URL<br/>
-        /// (`src`) or generated from a text prompt (`prompt`), optionally from a<br/>
-        /// starting image (`inputSrc`). Exactly one of `src` or `prompt` must be provided.<br/>
+        /// (`src`), generated from a text prompt (`prompt`), or both. At least one of<br/>
+        /// `src` or `prompt` must be provided.<br/>
         /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
-        /// - **Generated:** set `prompt` to describe the motion. Optionally set `inputSrc`<br/>
-        ///   to a starting image URL (image-to-video). Use `model` to choose the generator<br/>
-        ///   (e.g. `luma-ray-3`, `runpod-itv-mini`). The generated `src` is filled in<br/>
-        ///   automatically.
+        /// - **Generated:** set `prompt` to describe the motion. Choose a generator<br/>
+        ///   with `model` and configure it with model-specific `options` (including a<br/>
+        ///   starting image for image-to-video). The generated `src` is filled in<br/>
+        ///   automatically.<br/>
+        /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
+        ///   generation — the video is regenerated from the prompt at render time.<br/>
+        ///   Unchanged prompts and options resolve from the generation cache.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.VideoAsset? Video { get; init; }
@@ -60,11 +63,15 @@ namespace Shotstack
 
         /// <summary>
         /// The ImageAsset adds an image to a Clip. The image can be sourced from a URL<br/>
-        /// (`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or<br/>
-        /// `prompt` must be provided.<br/>
+        /// (`src`), generated from a text prompt (`prompt`), or both. At least one of<br/>
+        /// `src` or `prompt` must be provided.<br/>
         /// - **Source URL:** set `src` to the publicly accessible URL of a jpg or png file.<br/>
-        /// - **Generated:** set `prompt` to describe the image; the engine generates it<br/>
-        ///   using the provider chosen by `model` and fills `src` in automatically.
+        /// - **Generated:** set `prompt` to describe the image. Choose a generator with<br/>
+        ///   `model` and configure it with model-specific `options`; the engine fills<br/>
+        ///   `src` in automatically.<br/>
+        /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
+        ///   generation — the image is regenerated from the prompt at render time.<br/>
+        ///   Unchanged prompts and options resolve from the generation cache.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.ImageAsset? Image { get; init; }
@@ -180,14 +187,18 @@ namespace Shotstack
 
         /// <summary>
         /// The AudioAsset adds audio to a Clip. The audio can be sourced from a URL<br/>
-        /// (`src`) or generated from a text prompt (`prompt`). Exactly one of `src` or<br/>
-        /// `prompt` must be provided.<br/>
+        /// (`src`), generated from a text prompt (`prompt`), or both. At least one of<br/>
+        /// `src` or `prompt` must be provided.<br/>
         /// - **Source URL:** set `src` to a publicly accessible audio URL (e.g. mp3).<br/>
-        /// - **Generated speech:** set `prompt` to the spoken text and `voice` to a voice<br/>
-        ///   identifier (text-to-speech). Optionally set `language`/`newscaster`.<br/>
-        /// - **Generated music or SFX:** set `prompt` describing the sound; omit `voice`.<br/>
-        /// - Use `model` to choose the generator. The generated `src` is filled in<br/>
-        ///   automatically.
+        /// - **Generated speech:** set `prompt` to the spoken text and choose a<br/>
+        ///   text-to-speech `model`; set the voice via `options`.<br/>
+        /// - **Generated music or SFX:** set `prompt` describing the sound and choose<br/>
+        ///   a music generation `model`.<br/>
+        /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
+        ///   generation — the audio is regenerated from the prompt at render time.<br/>
+        ///   Unchanged prompts and options resolve from the generation cache.<br/>
+        /// - Use `model` to choose the generator and `options` to configure it. The<br/>
+        ///   generated `src` is filled in automatically.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.AudioAsset? Audio { get; init; }
