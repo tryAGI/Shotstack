@@ -34,6 +34,16 @@ namespace Shotstack
         public object? Weight { get; set; }
 
         /// <summary>
+        /// The font style.<br/>
+        /// Default Value: normal<br/>
+        /// Example: italic
+        /// </summary>
+        /// <example>italic</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("style")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.RichTextFontStyleJsonConverter))]
+        public global::Shotstack.RichTextFontStyle? Style { get; set; }
+
+        /// <summary>
         /// The text color using hexadecimal color notation.<br/>
         /// Default Value: #000000<br/>
         /// Example: #ff0000
@@ -88,6 +98,11 @@ namespace Shotstack
         /// The weight of the font. Can be a number (100-900) or a string ('normal', 'bold', etc.). 100 is lightest, 900 is heaviest (boldest).<br/>
         /// Default Value: 400
         /// </param>
+        /// <param name="style">
+        /// The font style.<br/>
+        /// Default Value: normal<br/>
+        /// Example: italic
+        /// </param>
         /// <param name="color">
         /// The text color using hexadecimal color notation.<br/>
         /// Default Value: #000000<br/>
@@ -112,6 +127,7 @@ namespace Shotstack
             string? family,
             int? size,
             object? weight,
+            global::Shotstack.RichTextFontStyle? style,
             string? color,
             double? opacity,
             string? background,
@@ -120,6 +136,7 @@ namespace Shotstack
             this.Family = family;
             this.Size = size;
             this.Weight = weight;
+            this.Style = style;
             this.Color = color;
             this.Opacity = opacity;
             this.Background = background;

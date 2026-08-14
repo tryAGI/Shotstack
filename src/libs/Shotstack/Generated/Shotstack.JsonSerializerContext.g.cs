@@ -181,6 +181,10 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.TextAlignmentVerticalNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.RichTextFontStyleJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.RichTextFontStyleNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.RichTextStyleTextTransformJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.RichTextStyleTextTransformNullableJsonConverter),
@@ -300,6 +304,10 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.TextAnimationPresetJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TextAnimationPresetNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.RichCaptionFontStyleJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.RichCaptionFontStyleNullableJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.RichCaptionStyleTextTransformJsonConverter),
 
@@ -481,6 +489,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.FlipTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAlignmentHorizontal), TypeInfoPropertyName = "TextAlignmentHorizontal2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAlignmentVertical), TypeInfoPropertyName = "TextAlignmentVertical2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextFontStyle), TypeInfoPropertyName = "RichTextFontStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextStyleTextTransform), TypeInfoPropertyName = "RichTextStyleTextTransform2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextStyleTextDecoration), TypeInfoPropertyName = "RichTextStyleTextDecoration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextGradient))]
@@ -588,6 +597,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.IngestErrorResponseData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.IngestErrorResponseData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAnimationPreset), TypeInfoPropertyName = "TextAnimationPreset2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionFontStyle), TypeInfoPropertyName = "RichCaptionFontStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionStyleTextTransform), TypeInfoPropertyName = "RichCaptionStyleTextTransform2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionStyleTextDecoration), TypeInfoPropertyName = "RichCaptionStyleTextDecoration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TiktokDestinationOptions))]
