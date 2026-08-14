@@ -512,471 +512,479 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextStyleTextTransform? Type121 { get; set; }
+        public global::Shotstack.RichTextFontStyle? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextStyleTextDecoration? Type122 { get; set; }
+        public global::Shotstack.RichTextStyleTextTransform? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextGradient? Type123 { get; set; }
+        public global::Shotstack.RichTextStyleTextDecoration? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextGradientType? Type124 { get; set; }
+        public global::Shotstack.RichTextGradient? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.RichTextGradientStop>? Type125 { get; set; }
+        public global::Shotstack.RichTextGradientType? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextGradientStop? Type126 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.RichTextGradientStop>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextAlignmentHorizontal? Type127 { get; set; }
+        public global::Shotstack.RichTextGradientStop? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextAlignmentVertical? Type128 { get; set; }
+        public global::Shotstack.RichTextAlignmentHorizontal? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextAnimationPreset? Type129 { get; set; }
+        public global::Shotstack.RichTextAlignmentVertical? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextAnimationStyle? Type130 { get; set; }
+        public global::Shotstack.RichTextAnimationPreset? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichTextAnimationDirection? Type131 { get; set; }
+        public global::Shotstack.RichTextAnimationStyle? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TweenInterpolation? Type132 { get; set; }
+        public global::Shotstack.RichTextAnimationDirection? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TweenEasing? Type133 { get; set; }
+        public global::Shotstack.TweenInterpolation? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OutputFormat? Type134 { get; set; }
+        public global::Shotstack.TweenEasing? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OutputResolution? Type135 { get; set; }
+        public global::Shotstack.OutputFormat? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OutputAspectRatio? Type136 { get; set; }
+        public global::Shotstack.OutputResolution? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Size? Type137 { get; set; }
+        public global::Shotstack.OutputAspectRatio? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OutputScaleTo? Type138 { get; set; }
+        public global::Shotstack.Size? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OutputQuality? Type139 { get; set; }
+        public global::Shotstack.OutputScaleTo? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Range? Type140 { get; set; }
+        public global::Shotstack.OutputQuality? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Poster? Type141 { get; set; }
+        public global::Shotstack.Range? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Thumbnail? Type142 { get; set; }
+        public global::Shotstack.Poster? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.Destinations>? Type143 { get; set; }
+        public global::Shotstack.Thumbnail? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Destinations? Type144 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.Destinations>? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ShotstackDestination? Type145 { get; set; }
+        public global::Shotstack.Destinations? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.MuxDestination? Type146 { get; set; }
+        public global::Shotstack.ShotstackDestination? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.S3Destination? Type147 { get; set; }
+        public global::Shotstack.MuxDestination? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GoogleCloudStorageDestination? Type148 { get; set; }
+        public global::Shotstack.S3Destination? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GoogleDriveDestination? Type149 { get; set; }
+        public global::Shotstack.GoogleCloudStorageDestination? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.VimeoDestination? Type150 { get; set; }
+        public global::Shotstack.GoogleDriveDestination? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TiktokDestination? Type151 { get; set; }
+        public global::Shotstack.VimeoDestination? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AkamaiNetStorageDestination? Type152 { get; set; }
+        public global::Shotstack.TiktokDestination? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AzureBlobStorageDestination? Type153 { get; set; }
+        public global::Shotstack.AkamaiNetStorageDestination? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DestinationsDiscriminator? Type154 { get; set; }
+        public global::Shotstack.AzureBlobStorageDestination? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.MuxDestinationOptions? Type155 { get; set; }
+        public global::Shotstack.DestinationsDiscriminator? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>? Type156 { get; set; }
+        public global::Shotstack.MuxDestinationOptions? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem? Type157 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.S3DestinationOptions? Type158 { get; set; }
+        public global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GoogleCloudStorageDestinationOptions? Type159 { get; set; }
+        public global::Shotstack.S3DestinationOptions? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GoogleDriveDestinationOptions? Type160 { get; set; }
+        public global::Shotstack.GoogleCloudStorageDestinationOptions? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.VimeoDestinationOptions? Type161 { get; set; }
+        public global::Shotstack.GoogleDriveDestinationOptions? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.VimeoDestinationPrivacyOptions? Type162 { get; set; }
+        public global::Shotstack.VimeoDestinationOptions? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.VimeoDestinationPrivacyOptionsView? Type163 { get; set; }
+        public global::Shotstack.VimeoDestinationPrivacyOptions? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.VimeoDestinationPrivacyOptionsEmbed? Type164 { get; set; }
+        public global::Shotstack.VimeoDestinationPrivacyOptionsView? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.VimeoDestinationPrivacyOptionsComments? Type165 { get; set; }
+        public global::Shotstack.VimeoDestinationPrivacyOptionsEmbed? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Template? Type166 { get; set; }
+        public global::Shotstack.VimeoDestinationPrivacyOptionsComments? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateRender? Type167 { get; set; }
+        public global::Shotstack.Template? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Source? Type168 { get; set; }
+        public global::Shotstack.TemplateRender? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Outputs? Type169 { get; set; }
+        public global::Shotstack.Source? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.Rendition>? Type170 { get; set; }
+        public global::Shotstack.Outputs? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Rendition? Type171 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.Rendition>? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Transcription? Type172 { get; set; }
+        public global::Shotstack.Rendition? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenditionFormat? Type173 { get; set; }
+        public global::Shotstack.Transcription? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenditionFit? Type174 { get; set; }
+        public global::Shotstack.RenditionFormat? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenditionResolution? Type175 { get; set; }
+        public global::Shotstack.RenditionFit? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Speed? Type176 { get; set; }
+        public global::Shotstack.RenditionResolution? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Enhancements? Type177 { get; set; }
+        public global::Shotstack.Speed? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TranscriptionFormat? Type178 { get; set; }
+        public global::Shotstack.Enhancements? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AudioEnhancement? Type179 { get; set; }
+        public global::Shotstack.TranscriptionFormat? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DolbyEnhancement? Type180 { get; set; }
+        public global::Shotstack.AudioEnhancement? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AudioEnhancementDiscriminator? Type181 { get; set; }
+        public global::Shotstack.DolbyEnhancement? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DolbyEnhancementOptions? Type182 { get; set; }
+        public global::Shotstack.AudioEnhancementDiscriminator? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.DolbyEnhancementOptionsPreset? Type183 { get; set; }
+        public global::Shotstack.DolbyEnhancementOptions? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.Transfer? Type184 { get; set; }
+        public global::Shotstack.DolbyEnhancementOptionsPreset? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.QueuedResponse? Type185 { get; set; }
+        public global::Shotstack.Transfer? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.QueuedResponseData? Type186 { get; set; }
+        public global::Shotstack.QueuedResponse? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenderResponse? Type187 { get; set; }
+        public global::Shotstack.QueuedResponseData? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenderResponseData? Type188 { get; set; }
+        public global::Shotstack.RenderResponse? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenderResponseDataStatus? Type189 { get; set; }
+        public global::Shotstack.RenderResponseData? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateResponse? Type190 { get; set; }
+        public global::Shotstack.RenderResponseDataStatus? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateResponseData? Type191 { get; set; }
+        public global::Shotstack.TemplateResponse? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateDataResponse? Type192 { get; set; }
+        public global::Shotstack.TemplateResponseData? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateDataResponseData? Type193 { get; set; }
+        public global::Shotstack.TemplateDataResponse? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateListResponse? Type194 { get; set; }
+        public global::Shotstack.TemplateDataResponseData? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateListResponseData? Type195 { get; set; }
+        public global::Shotstack.TemplateListResponse? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.TemplateListResponseItem>? Type196 { get; set; }
+        public global::Shotstack.TemplateListResponseData? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TemplateListResponseItem? Type197 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.TemplateListResponseItem>? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.ProbeResponse? Type198 { get; set; }
+        public global::Shotstack.TemplateListResponseItem? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AssetResponse? Type199 { get; set; }
+        public global::Shotstack.ProbeResponse? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AssetResponseData? Type200 { get; set; }
+        public global::Shotstack.AssetResponse? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AssetRenderResponse? Type201 { get; set; }
+        public global::Shotstack.AssetResponseData? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.AssetResponseData>? Type202 { get; set; }
+        public global::Shotstack.AssetRenderResponse? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AssetResponseAttributes? Type203 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.AssetResponseData>? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AssetResponseAttributesStatus? Type204 { get; set; }
+        public global::Shotstack.AssetResponseAttributes? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TransferResponse? Type205 { get; set; }
+        public global::Shotstack.AssetResponseAttributesStatus? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TransferResponseData? Type206 { get; set; }
+        public global::Shotstack.TransferResponse? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TransferResponseAttributes? Type207 { get; set; }
+        public global::Shotstack.TransferResponseData? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TransferResponseAttributesStatus? Type208 { get; set; }
+        public global::Shotstack.TransferResponseAttributes? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.QueuedSourceResponse? Type209 { get; set; }
+        public global::Shotstack.TransferResponseAttributesStatus? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.QueuedSourceResponseData? Type210 { get; set; }
+        public global::Shotstack.QueuedSourceResponse? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SourceListResponse? Type211 { get; set; }
+        public global::Shotstack.QueuedSourceResponseData? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.SourceResponseData>? Type212 { get; set; }
+        public global::Shotstack.SourceListResponse? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SourceResponseData? Type213 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.SourceResponseData>? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SourceResponse? Type214 { get; set; }
+        public global::Shotstack.SourceResponseData? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SourceResponseAttributes? Type215 { get; set; }
+        public global::Shotstack.SourceResponse? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.SourceResponseAttributesStatus? Type216 { get; set; }
+        public global::Shotstack.SourceResponseAttributes? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OutputsResponse? Type217 { get; set; }
+        public global::Shotstack.SourceResponseAttributesStatus? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.RenditionResponseAttributes>? Type218 { get; set; }
+        public global::Shotstack.OutputsResponse? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenditionResponseAttributes? Type219 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.RenditionResponseAttributes>? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RenditionResponseAttributesStatus? Type220 { get; set; }
+        public global::Shotstack.RenditionResponseAttributes? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.UploadResponse? Type221 { get; set; }
+        public global::Shotstack.RenditionResponseAttributesStatus? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.UploadResponseData? Type222 { get; set; }
+        public global::Shotstack.UploadResponse? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.UploadResponseAttributes? Type223 { get; set; }
+        public global::Shotstack.UploadResponseData? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.IngestErrorResponse? Type224 { get; set; }
+        public global::Shotstack.UploadResponseAttributes? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.IngestErrorResponseData>? Type225 { get; set; }
+        public global::Shotstack.IngestErrorResponse? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.IngestErrorResponseData? Type226 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.IngestErrorResponseData>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TextAnimationPreset? Type227 { get; set; }
+        public global::Shotstack.IngestErrorResponseData? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichCaptionStyleTextTransform? Type228 { get; set; }
+        public global::Shotstack.TextAnimationPreset? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.RichCaptionStyleTextDecoration? Type229 { get; set; }
+        public global::Shotstack.RichCaptionFontStyle? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TiktokDestinationOptions? Type230 { get; set; }
+        public global::Shotstack.RichCaptionStyleTextTransform? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.TiktokDestinationOptionsPrivacyLevel? Type231 { get; set; }
+        public global::Shotstack.RichCaptionStyleTextDecoration? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AkamaiNetStorageDestinationOptions? Type232 { get; set; }
+        public global::Shotstack.TiktokDestinationOptions? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.AzureBlobStorageDestinationOptions? Type233 { get; set; }
+        public global::Shotstack.TiktokDestinationOptionsPrivacyLevel? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GenerationResponse? Type234 { get; set; }
+        public global::Shotstack.AkamaiNetStorageDestinationOptions? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.GenerationResponseStatus? Type235 { get; set; }
+        public global::Shotstack.AzureBlobStorageDestinationOptions? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.PostGenerateRequest? Type236 { get; set; }
+        public global::Shotstack.GenerationResponse? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>? Type237 { get; set; }
+        public global::Shotstack.GenerationResponseStatus? Type237 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.PostGenerateRequest? Type238 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>? Type239 { get; set; }
 
         /// <summary>
         /// 
