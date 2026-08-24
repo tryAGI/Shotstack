@@ -980,11 +980,43 @@ namespace Shotstack
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.PostGenerateRequest? Type238 { get; set; }
+        public global::Shotstack.GenerationModelPricing? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>? Type239 { get; set; }
+        public global::Shotstack.GenerationModelPricingUnit? Type239 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.OneOf<double?, object>? Type240 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string>? Type241 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.GenerationModel? Type242 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.GenerationModelType? Type243 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.GenerationModelListResponse? Type244 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>? Type245 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.PostGenerateRequest? Type246 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>? Type247 { get; set; }
 
         /// <summary>
         /// 
@@ -1050,5 +1082,13 @@ namespace Shotstack
         /// 
         /// </summary>
         public global::System.Collections.Generic.List<global::Shotstack.IngestErrorResponseData>? ListType15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<string>? ListType16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Shotstack.GenerationModel>? ListType17 { get; set; }
     }
 }

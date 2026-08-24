@@ -325,6 +325,14 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.GenerationResponseStatusNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.GenerationModelPricingUnitJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelPricingUnitNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelTypeNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.AssetJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.DestinationsJsonConverter),
@@ -362,6 +370,8 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, object>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>),
 
@@ -606,6 +616,14 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AzureBlobStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponseStatus), TypeInfoPropertyName = "GenerationResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricing))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingUnit), TypeInfoPropertyName = "GenerationModelPricingUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, object>), TypeInfoPropertyName = "OneOfDoubleObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModel))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelType), TypeInfoPropertyName = "GenerationModelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PostGenerateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>), TypeInfoPropertyName = "OneOfImageAssetVideoAssetAudioAsset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MergeField>))]
@@ -624,6 +642,8 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.SourceResponseData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RenditionResponseAttributes>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.IngestErrorResponseData>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.GenerationModel>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
