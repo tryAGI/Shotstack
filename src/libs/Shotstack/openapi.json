@@ -569,6 +569,90 @@
         }
       ]
     },
+    "/edit/v1/models": {
+      "get": {
+        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets, with the options each accepts and what it costs in credits.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "summary": "List Generation Models",
+        "operationId": "getModels",
+        "responses": {
+          "200": {
+            "description": "The available generation models.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationModelListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DeveloperKey": []
+          }
+        ],
+        "tags": [
+          "Edit"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "query",
+          "name": "expand",
+          "required": false,
+          "description": "Set to `options` to include each model's option schema in the list. Omitted by default to keep the response small.",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "options"
+            ]
+          },
+          "example": "options"
+        }
+      ]
+    },
+    "/edit/v1/models/{id}": {
+      "get": {
+        "description": "Get one generation model, including the JSON Schema for the options it accepts and\nwhat it costs in credits.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "summary": "Get Generation Model",
+        "operationId": "getModel",
+        "responses": {
+          "200": {
+            "description": "The generation model, with its option schema.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No model exists with that identifier."
+          }
+        },
+        "security": [
+          {
+            "DeveloperKey": []
+          }
+        ],
+        "tags": [
+          "Edit"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The model identifier, as returned by the list endpoint.",
+          "schema": {
+            "type": "string"
+          },
+          "example": "seedance-2.0"
+        }
+      ]
+    },
     "/serve/v1/assets/{id}": {
       "get": {
         "responses": {
@@ -5653,6 +5737,115 @@
           "id",
           "status"
         ]
+      },
+      "GenerationModelPricing": {
+        "description": "What one generation costs, in credits. There is no formula to evaluate: multiply the rate by the number of units the generation consumes. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.",
+        "properties": {
+          "unit": {
+            "description": "What one unit is. `render` means the whole generation counts as one unit, whatever its size.",
+            "type": "string",
+            "enum": [
+              "render",
+              "second",
+              "minute",
+              "thousandCharacters"
+            ],
+            "example": "second"
+          },
+          "credits": {
+            "description": "Credits per unit. A number when the rate is flat, or an object keyed by the values of the options named in `tieredBy`.",
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "object",
+                "additionalProperties": true
+              }
+            ],
+            "example": {
+              "480p": 0.9375,
+              "720p": 1.8962,
+              "1080p": 4.2625
+            }
+          },
+          "tieredBy": {
+            "description": "The options whose values select the rate, outermost first. Absent when `credits` is a single number.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "resolution"
+            ]
+          },
+          "minUnits": {
+            "description": "The fewest units a generation is charged for, when a model has a minimum charge.",
+            "type": "number",
+            "example": 0.1
+          },
+          "effectiveFrom": {
+            "description": "The date this rate took effect, or `legacy` for a rate that predates dated pricing.",
+            "type": "string",
+            "example": "2026-08-13"
+          }
+        },
+        "required": [
+          "unit",
+          "credits",
+          "effectiveFrom"
+        ],
+        "type": "object"
+      },
+      "GenerationModel": {
+        "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts and what it costs. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
+        "properties": {
+          "model": {
+            "description": "The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.",
+            "type": "string",
+            "example": "seedance-2.0"
+          },
+          "type": {
+            "description": "The asset type this model generates.",
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "audio"
+            ],
+            "example": "video"
+          },
+          "pricing": {
+            "description": "What one generation with this model costs.",
+            "$ref": "#/components/schemas/GenerationModelPricing"
+          },
+          "options": {
+            "description": "JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.",
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "model",
+          "type"
+        ],
+        "type": "object"
+      },
+      "GenerationModelListResponse": {
+        "description": "The generation models available to this account.",
+        "properties": {
+          "models": {
+            "description": "The available models.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenerationModel"
+            }
+          }
+        },
+        "required": [
+          "models"
+        ],
+        "type": "object"
       }
     },
     "responses": {},
