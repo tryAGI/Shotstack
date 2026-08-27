@@ -10,7 +10,7 @@ namespace Shotstack
     public enum ImageAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
     }

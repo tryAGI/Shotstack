@@ -11,15 +11,15 @@ namespace Shotstack
     public enum RichTextStyleTextDecoration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineThrough,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Underline,
     }

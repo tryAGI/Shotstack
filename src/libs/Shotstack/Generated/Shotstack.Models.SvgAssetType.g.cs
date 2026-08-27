@@ -11,7 +11,7 @@ namespace Shotstack
     public enum SvgAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Svg,
     }

@@ -4,12 +4,12 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DestinationsDiscriminator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("destinations")]
         public string? Destinations { get; set; }

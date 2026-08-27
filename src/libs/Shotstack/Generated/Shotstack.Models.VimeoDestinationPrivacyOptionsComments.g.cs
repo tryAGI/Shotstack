@@ -13,15 +13,15 @@ namespace Shotstack
     public enum VimeoDestinationPrivacyOptionsComments
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anybody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contacts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nobody,
     }

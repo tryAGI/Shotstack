@@ -10,7 +10,7 @@ namespace Shotstack
     public enum Html5AssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html5,
     }

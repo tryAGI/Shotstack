@@ -10,7 +10,7 @@ namespace Shotstack
     public enum RichTextAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RichText,
     }

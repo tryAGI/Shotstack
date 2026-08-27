@@ -20,7 +20,7 @@ namespace Shotstack.JsonConverters
                     {
                         return global::Shotstack.MuxDestinationOptionsPlaybackPolicyItemExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

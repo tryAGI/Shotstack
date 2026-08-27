@@ -15,23 +15,23 @@ namespace Shotstack
     public enum VimeoDestinationPrivacyOptionsView
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anybody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contacts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nobody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Password,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unlisted,
     }

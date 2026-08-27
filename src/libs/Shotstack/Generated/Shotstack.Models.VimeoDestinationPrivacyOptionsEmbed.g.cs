@@ -13,15 +13,15 @@ namespace Shotstack
     public enum VimeoDestinationPrivacyOptionsEmbed
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Private,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Public,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Whitelist,
     }

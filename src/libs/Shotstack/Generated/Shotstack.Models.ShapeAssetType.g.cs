@@ -10,7 +10,7 @@ namespace Shotstack
     public enum ShapeAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shape,
     }

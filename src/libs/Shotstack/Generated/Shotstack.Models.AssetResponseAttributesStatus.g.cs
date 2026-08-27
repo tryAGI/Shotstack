@@ -15,19 +15,19 @@ namespace Shotstack
     public enum AssetResponseAttributesStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Importing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ready,
     }

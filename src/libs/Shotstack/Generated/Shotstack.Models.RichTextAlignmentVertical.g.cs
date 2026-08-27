@@ -11,15 +11,15 @@ namespace Shotstack
     public enum RichTextAlignmentVertical
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Middle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Top,
     }

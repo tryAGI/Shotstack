@@ -17,31 +17,31 @@ namespace Shotstack
     public enum TitleAssetSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Large,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Small,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XSmall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XxLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         XxSmall,
     }

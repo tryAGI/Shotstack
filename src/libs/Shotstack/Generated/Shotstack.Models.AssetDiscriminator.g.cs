@@ -4,12 +4,12 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AssetDiscriminator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.AssetDiscriminatorTypeJsonConverter))]

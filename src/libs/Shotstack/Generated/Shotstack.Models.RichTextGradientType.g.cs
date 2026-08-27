@@ -11,11 +11,11 @@ namespace Shotstack
     public enum RichTextGradientType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Linear,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Radial,
     }

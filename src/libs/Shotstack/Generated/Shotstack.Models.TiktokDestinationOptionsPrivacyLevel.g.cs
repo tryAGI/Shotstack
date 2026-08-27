@@ -14,15 +14,15 @@ namespace Shotstack
     public enum TiktokDestinationOptionsPrivacyLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Friends,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Private,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Public,
     }

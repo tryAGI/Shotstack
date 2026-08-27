@@ -76,7 +76,7 @@ namespace Shotstack
         /// The output format, render range and type of media to generate. For all formats except `mp3`, either `resolution` or `size` (with both `width` and `height`) must be specified.
         /// </param>
         /// <param name="merge">
-        /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`. 
+        /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`.
         /// </param>
         /// <param name="callback">
         /// An optional webhook callback URL used to receive status notifications when a render completes or fails. Notifications are also sent when a rendered video is sent to an output  [destination](https://shotstack.io/docs/guide/serving-assets/destinations/).<br/>

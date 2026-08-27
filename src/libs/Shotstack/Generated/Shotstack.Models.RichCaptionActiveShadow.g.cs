@@ -4,12 +4,12 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RichCaptionActiveShadow
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

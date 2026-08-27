@@ -13,15 +13,15 @@ namespace Shotstack
     public enum SoundtrackEffect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeInFadeOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeOut,
     }

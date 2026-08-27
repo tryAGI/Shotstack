@@ -17,27 +17,27 @@ namespace Shotstack
     public enum RichTextAnimationPreset
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ascend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MovingLetters,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shift,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Typewriter,
     }

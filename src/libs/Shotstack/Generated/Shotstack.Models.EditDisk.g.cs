@@ -14,11 +14,11 @@ namespace Shotstack
     public enum EditDisk
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Local,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mount,
     }

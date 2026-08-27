@@ -16,75 +16,75 @@ namespace Shotstack
     public enum ClipEffect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideDown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideDownFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideDownSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideLeftFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideLeftSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideRightFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideRightSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideUp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideUpFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideUpSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZoomIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZoomInFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZoomInSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZoomOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZoomOutFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZoomOutSlow,
     }

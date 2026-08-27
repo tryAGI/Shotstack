@@ -9,15 +9,15 @@ namespace Shotstack
     public enum ShapeAssetShape
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Circle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rectangle,
     }

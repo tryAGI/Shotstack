@@ -13,11 +13,11 @@ namespace Shotstack
     public enum TranscriptionFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Srt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vtt,
     }

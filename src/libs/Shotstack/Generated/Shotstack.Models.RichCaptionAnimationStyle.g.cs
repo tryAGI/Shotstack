@@ -20,35 +20,35 @@ namespace Shotstack
     public enum RichCaptionAnimationStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bounce,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fade,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Highlight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Karaoke,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Typewriter,
     }

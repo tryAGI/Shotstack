@@ -10,7 +10,7 @@ namespace Shotstack
     public readonly partial struct Asset : global::System.IEquatable<Asset>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.AssetDiscriminatorType? Type { get; }
 
@@ -20,8 +20,9 @@ namespace Shotstack
         /// `src` or `prompt` must be provided.<br/>
         /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
         /// - **Generated:** set `prompt` to describe the motion. Choose a generator<br/>
-        ///   with `model` and configure it with model-specific `options` (including a<br/>
-        ///   starting image for image-to-video). The generated `src` is filled in<br/>
+        ///   with `model` and configure it with model-specific `options`. Models that<br/>
+        ///   animate a starting image take it as `options.inputSrc`; the default model<br/>
+        ///   generates from the prompt alone. The generated `src` is filled in<br/>
         ///   automatically.<br/>
         /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
         ///   generation — the video is regenerated from the prompt at render time.<br/>
@@ -34,7 +35,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Video))]
@@ -42,7 +43,7 @@ namespace Shotstack
         public bool IsVideo => Video != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVideo(
 #if NET6_0_OR_GREATER
@@ -55,7 +56,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.VideoAsset PickVideo() => IsVideo
             ? Video!
@@ -80,7 +81,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -88,7 +89,7 @@ namespace Shotstack
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -101,7 +102,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.ImageAsset PickImage() => IsImage
             ? Image!
@@ -120,7 +121,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -128,7 +129,7 @@ namespace Shotstack
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -141,7 +142,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.TextAsset PickText() => IsText
             ? Text!
@@ -158,7 +159,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RichText))]
@@ -166,7 +167,7 @@ namespace Shotstack
         public bool IsRichText => RichText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRichText(
 #if NET6_0_OR_GREATER
@@ -179,7 +180,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.RichTextAsset PickRichText() => IsRichText
             ? RichText!
@@ -207,7 +208,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
@@ -215,7 +216,7 @@ namespace Shotstack
         public bool IsAudio => Audio != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAudio(
 #if NET6_0_OR_GREATER
@@ -228,7 +229,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.AudioAsset PickAudio() => IsAudio
             ? Audio!
@@ -244,7 +245,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Luma))]
@@ -252,7 +253,7 @@ namespace Shotstack
         public bool IsLuma => Luma != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLuma(
 #if NET6_0_OR_GREATER
@@ -265,7 +266,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.LumaAsset PickLuma() => IsLuma
             ? Luma!
@@ -287,7 +288,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Caption))]
@@ -295,7 +296,7 @@ namespace Shotstack
         public bool IsCaption => Caption != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCaption(
 #if NET6_0_OR_GREATER
@@ -308,7 +309,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.CaptionAsset PickCaption() => IsCaption
             ? Caption!
@@ -327,7 +328,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RichCaption))]
@@ -335,7 +336,7 @@ namespace Shotstack
         public bool IsRichCaption => RichCaption != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRichCaption(
 #if NET6_0_OR_GREATER
@@ -348,7 +349,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.RichCaptionAsset PickRichCaption() => IsRichCaption
             ? RichCaption!
@@ -367,7 +368,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Html))]
@@ -375,7 +376,7 @@ namespace Shotstack
         public bool IsHtml => Html != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHtml(
 #if NET6_0_OR_GREATER
@@ -388,7 +389,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.HtmlAsset PickHtml() => IsHtml
             ? Html!
@@ -404,7 +405,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Html5))]
@@ -412,7 +413,7 @@ namespace Shotstack
         public bool IsHtml5 => Html5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHtml5(
 #if NET6_0_OR_GREATER
@@ -425,7 +426,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.Html5Asset PickHtml5() => IsHtml5
             ? Html5!
@@ -442,7 +443,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Title))]
@@ -450,7 +451,7 @@ namespace Shotstack
         public bool IsTitle => Title != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTitle(
 #if NET6_0_OR_GREATER
@@ -463,7 +464,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.TitleAsset PickTitle() => IsTitle
             ? Title!
@@ -480,7 +481,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shape))]
@@ -488,7 +489,7 @@ namespace Shotstack
         public bool IsShape => Shape != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShape(
 #if NET6_0_OR_GREATER
@@ -501,7 +502,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.ShapeAsset PickShape() => IsShape
             ? Shape!
@@ -527,7 +528,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Svg))]
@@ -535,7 +536,7 @@ namespace Shotstack
         public bool IsSvg => Svg != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSvg(
 #if NET6_0_OR_GREATER
@@ -548,7 +549,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.SvgAsset PickSvg() => IsSvg
             ? Svg!
@@ -567,7 +568,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToImage))]
@@ -575,7 +576,7 @@ namespace Shotstack
         public bool IsTextToImage => TextToImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextToImage(
 #if NET6_0_OR_GREATER
@@ -588,7 +589,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.TextToImageAsset PickTextToImage() => IsTextToImage
             ? TextToImage!
@@ -596,9 +597,10 @@ namespace Shotstack
 
         /// <summary>
         /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
-        /// with `prompt` and `inputSrc` instead.** This type continues to function and is<br/>
-        /// internally rewritten to VideoAsset; no behaviour change for existing<br/>
-        /// integrations.<br/>
+        /// with `prompt`, a `model` that accepts a starting image, and that image in<br/>
+        /// `options.inputSrc` — for example `shotstack-itv-mini`.** This type continues to<br/>
+        /// function and is internally rewritten to VideoAsset; no behaviour change for<br/>
+        /// existing integrations.<br/>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -608,7 +610,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageToVideo))]
@@ -616,7 +618,7 @@ namespace Shotstack
         public bool IsImageToVideo => ImageToVideo != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageToVideo(
 #if NET6_0_OR_GREATER
@@ -629,7 +631,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.ImageToVideoAsset PickImageToVideo() => IsImageToVideo
             ? ImageToVideo!
@@ -651,7 +653,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToSpeech))]
@@ -659,7 +661,7 @@ namespace Shotstack
         public bool IsTextToSpeech => TextToSpeech != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextToSpeech(
 #if NET6_0_OR_GREATER
@@ -672,23 +674,23 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.TextToSpeechAsset PickTextToSpeech() => IsTextToSpeech
             ? TextToSpeech!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.VideoAsset value) => new Asset((global::Shotstack.VideoAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.VideoAsset?(Asset @this) => @this.Video;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.VideoAsset? value)
         {
@@ -696,22 +698,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromVideo(global::Shotstack.VideoAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.ImageAsset value) => new Asset((global::Shotstack.ImageAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.ImageAsset?(Asset @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.ImageAsset? value)
         {
@@ -719,22 +721,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromImage(global::Shotstack.ImageAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.TextAsset value) => new Asset((global::Shotstack.TextAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.TextAsset?(Asset @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.TextAsset? value)
         {
@@ -742,22 +744,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromText(global::Shotstack.TextAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.RichTextAsset value) => new Asset((global::Shotstack.RichTextAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.RichTextAsset?(Asset @this) => @this.RichText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.RichTextAsset? value)
         {
@@ -765,22 +767,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromRichText(global::Shotstack.RichTextAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.AudioAsset value) => new Asset((global::Shotstack.AudioAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.AudioAsset?(Asset @this) => @this.Audio;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.AudioAsset? value)
         {
@@ -788,22 +790,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromAudio(global::Shotstack.AudioAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.LumaAsset value) => new Asset((global::Shotstack.LumaAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.LumaAsset?(Asset @this) => @this.Luma;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.LumaAsset? value)
         {
@@ -811,22 +813,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromLuma(global::Shotstack.LumaAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.CaptionAsset value) => new Asset((global::Shotstack.CaptionAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.CaptionAsset?(Asset @this) => @this.Caption;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.CaptionAsset? value)
         {
@@ -834,22 +836,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromCaption(global::Shotstack.CaptionAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.RichCaptionAsset value) => new Asset((global::Shotstack.RichCaptionAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.RichCaptionAsset?(Asset @this) => @this.RichCaption;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.RichCaptionAsset? value)
         {
@@ -857,22 +859,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromRichCaption(global::Shotstack.RichCaptionAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.HtmlAsset value) => new Asset((global::Shotstack.HtmlAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.HtmlAsset?(Asset @this) => @this.Html;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.HtmlAsset? value)
         {
@@ -880,22 +882,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromHtml(global::Shotstack.HtmlAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.Html5Asset value) => new Asset((global::Shotstack.Html5Asset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.Html5Asset?(Asset @this) => @this.Html5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.Html5Asset? value)
         {
@@ -903,22 +905,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromHtml5(global::Shotstack.Html5Asset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.TitleAsset value) => new Asset((global::Shotstack.TitleAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.TitleAsset?(Asset @this) => @this.Title;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.TitleAsset? value)
         {
@@ -926,22 +928,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromTitle(global::Shotstack.TitleAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.ShapeAsset value) => new Asset((global::Shotstack.ShapeAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.ShapeAsset?(Asset @this) => @this.Shape;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.ShapeAsset? value)
         {
@@ -949,22 +951,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromShape(global::Shotstack.ShapeAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.SvgAsset value) => new Asset((global::Shotstack.SvgAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.SvgAsset?(Asset @this) => @this.Svg;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.SvgAsset? value)
         {
@@ -972,22 +974,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromSvg(global::Shotstack.SvgAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.TextToImageAsset value) => new Asset((global::Shotstack.TextToImageAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.TextToImageAsset?(Asset @this) => @this.TextToImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.TextToImageAsset? value)
         {
@@ -995,22 +997,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromTextToImage(global::Shotstack.TextToImageAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.ImageToVideoAsset value) => new Asset((global::Shotstack.ImageToVideoAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.ImageToVideoAsset?(Asset @this) => @this.ImageToVideo;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.ImageToVideoAsset? value)
         {
@@ -1018,22 +1020,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromImageToVideo(global::Shotstack.ImageToVideoAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Asset(global::Shotstack.TextToSpeechAsset value) => new Asset((global::Shotstack.TextToSpeechAsset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.TextToSpeechAsset?(Asset @this) => @this.TextToSpeech;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(global::Shotstack.TextToSpeechAsset? value)
         {
@@ -1041,12 +1043,12 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Asset FromTextToSpeech(global::Shotstack.TextToSpeechAsset? value) => new Asset(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Asset(
             global::Shotstack.AssetDiscriminatorType? type,
@@ -1089,7 +1091,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TextToSpeech as object ??
@@ -1107,11 +1109,11 @@ namespace Shotstack
             RichText as object ??
             Text as object ??
             Image as object ??
-            Video as object 
+            Video as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Video?.ToString() ??
@@ -1129,11 +1131,11 @@ namespace Shotstack
             Svg?.ToString() ??
             TextToImage?.ToString() ??
             ImageToVideo?.ToString() ??
-            TextToSpeech?.ToString() 
+            TextToSpeech?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -1141,7 +1143,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Shotstack.VideoAsset, TResult>? video = null,
@@ -1236,7 +1238,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Shotstack.VideoAsset>? video = null,
@@ -1344,7 +1346,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Shotstack.VideoAsset>? video = null,
@@ -1437,7 +1439,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1486,7 +1488,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Asset other)
         {
@@ -1506,12 +1508,12 @@ namespace Shotstack
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.SvgAsset?>.Default.Equals(Svg, other.Svg) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.TextToImageAsset?>.Default.Equals(TextToImage, other.TextToImage) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.ImageToVideoAsset?>.Default.Equals(ImageToVideo, other.ImageToVideo) &&
-                global::System.Collections.Generic.EqualityComparer<global::Shotstack.TextToSpeechAsset?>.Default.Equals(TextToSpeech, other.TextToSpeech) 
+                global::System.Collections.Generic.EqualityComparer<global::Shotstack.TextToSpeechAsset?>.Default.Equals(TextToSpeech, other.TextToSpeech)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Asset obj1, Asset obj2)
         {
@@ -1519,7 +1521,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Asset obj1, Asset obj2)
         {
@@ -1527,7 +1529,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

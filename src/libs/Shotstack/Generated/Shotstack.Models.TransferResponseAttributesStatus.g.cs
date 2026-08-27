@@ -13,11 +13,11 @@ namespace Shotstack
     public enum TransferResponseAttributesStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
     }

@@ -20,7 +20,7 @@ namespace Shotstack.JsonConverters
                     {
                         return global::Shotstack.Html5AssetTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

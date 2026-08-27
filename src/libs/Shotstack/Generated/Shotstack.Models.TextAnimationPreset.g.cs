@@ -12,7 +12,7 @@ namespace Shotstack
     public enum TextAnimationPreset
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Typewriter,
     }
