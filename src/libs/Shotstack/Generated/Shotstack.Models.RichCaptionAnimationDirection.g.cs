@@ -11,19 +11,19 @@ namespace Shotstack
     public enum RichCaptionAnimationDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Down,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Left,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Right,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Up,
     }

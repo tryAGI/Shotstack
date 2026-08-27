@@ -20,7 +20,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShotstackDestination))]
@@ -28,7 +28,7 @@ namespace Shotstack
         public bool IsShotstackDestination => ShotstackDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShotstackDestination(
 #if NET6_0_OR_GREATER
@@ -41,7 +41,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.ShotstackDestination PickShotstackDestination() => IsShotstackDestination
             ? ShotstackDestination!
@@ -57,7 +57,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MuxDestination))]
@@ -65,7 +65,7 @@ namespace Shotstack
         public bool IsMuxDestination => MuxDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMuxDestination(
 #if NET6_0_OR_GREATER
@@ -78,7 +78,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.MuxDestination PickMuxDestination() => IsMuxDestination
             ? MuxDestination!
@@ -94,7 +94,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(S3Destination))]
@@ -102,7 +102,7 @@ namespace Shotstack
         public bool IsS3Destination => S3Destination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickS3Destination(
 #if NET6_0_OR_GREATER
@@ -115,7 +115,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.S3Destination PickS3Destination() => IsS3Destination
             ? S3Destination!
@@ -131,7 +131,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleCloudStorageDestination))]
@@ -139,7 +139,7 @@ namespace Shotstack
         public bool IsGoogleCloudStorageDestination => GoogleCloudStorageDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGoogleCloudStorageDestination(
 #if NET6_0_OR_GREATER
@@ -152,7 +152,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.GoogleCloudStorageDestination PickGoogleCloudStorageDestination() => IsGoogleCloudStorageDestination
             ? GoogleCloudStorageDestination!
@@ -168,7 +168,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleDriveDestination))]
@@ -176,7 +176,7 @@ namespace Shotstack
         public bool IsGoogleDriveDestination => GoogleDriveDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGoogleDriveDestination(
 #if NET6_0_OR_GREATER
@@ -189,7 +189,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.GoogleDriveDestination PickGoogleDriveDestination() => IsGoogleDriveDestination
             ? GoogleDriveDestination!
@@ -205,7 +205,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VimeoDestination))]
@@ -213,7 +213,7 @@ namespace Shotstack
         public bool IsVimeoDestination => VimeoDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVimeoDestination(
 #if NET6_0_OR_GREATER
@@ -226,7 +226,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.VimeoDestination PickVimeoDestination() => IsVimeoDestination
             ? VimeoDestination!
@@ -242,7 +242,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TiktokDestination))]
@@ -250,7 +250,7 @@ namespace Shotstack
         public bool IsTiktokDestination => TiktokDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTiktokDestination(
 #if NET6_0_OR_GREATER
@@ -263,7 +263,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.TiktokDestination PickTiktokDestination() => IsTiktokDestination
             ? TiktokDestination!
@@ -279,7 +279,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AkamaiNetStorageDestination))]
@@ -287,7 +287,7 @@ namespace Shotstack
         public bool IsAkamaiNetStorageDestination => AkamaiNetStorageDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAkamaiNetStorageDestination(
 #if NET6_0_OR_GREATER
@@ -300,7 +300,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.AkamaiNetStorageDestination PickAkamaiNetStorageDestination() => IsAkamaiNetStorageDestination
             ? AkamaiNetStorageDestination!
@@ -316,7 +316,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureBlobStorageDestination))]
@@ -324,7 +324,7 @@ namespace Shotstack
         public bool IsAzureBlobStorageDestination => AzureBlobStorageDestination != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAzureBlobStorageDestination(
 #if NET6_0_OR_GREATER
@@ -337,23 +337,23 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.AzureBlobStorageDestination PickAzureBlobStorageDestination() => IsAzureBlobStorageDestination
             ? AzureBlobStorageDestination!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureBlobStorageDestination' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.ShotstackDestination value) => new Destinations((global::Shotstack.ShotstackDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.ShotstackDestination?(Destinations @this) => @this.ShotstackDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.ShotstackDestination? value)
         {
@@ -361,22 +361,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromShotstackDestination(global::Shotstack.ShotstackDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.MuxDestination value) => new Destinations((global::Shotstack.MuxDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.MuxDestination?(Destinations @this) => @this.MuxDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.MuxDestination? value)
         {
@@ -384,22 +384,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromMuxDestination(global::Shotstack.MuxDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.S3Destination value) => new Destinations((global::Shotstack.S3Destination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.S3Destination?(Destinations @this) => @this.S3Destination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.S3Destination? value)
         {
@@ -407,22 +407,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromS3Destination(global::Shotstack.S3Destination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.GoogleCloudStorageDestination value) => new Destinations((global::Shotstack.GoogleCloudStorageDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.GoogleCloudStorageDestination?(Destinations @this) => @this.GoogleCloudStorageDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.GoogleCloudStorageDestination? value)
         {
@@ -430,22 +430,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromGoogleCloudStorageDestination(global::Shotstack.GoogleCloudStorageDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.GoogleDriveDestination value) => new Destinations((global::Shotstack.GoogleDriveDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.GoogleDriveDestination?(Destinations @this) => @this.GoogleDriveDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.GoogleDriveDestination? value)
         {
@@ -453,22 +453,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromGoogleDriveDestination(global::Shotstack.GoogleDriveDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.VimeoDestination value) => new Destinations((global::Shotstack.VimeoDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.VimeoDestination?(Destinations @this) => @this.VimeoDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.VimeoDestination? value)
         {
@@ -476,22 +476,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromVimeoDestination(global::Shotstack.VimeoDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.TiktokDestination value) => new Destinations((global::Shotstack.TiktokDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.TiktokDestination?(Destinations @this) => @this.TiktokDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.TiktokDestination? value)
         {
@@ -499,22 +499,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromTiktokDestination(global::Shotstack.TiktokDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.AkamaiNetStorageDestination value) => new Destinations((global::Shotstack.AkamaiNetStorageDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.AkamaiNetStorageDestination?(Destinations @this) => @this.AkamaiNetStorageDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.AkamaiNetStorageDestination? value)
         {
@@ -522,22 +522,22 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromAkamaiNetStorageDestination(global::Shotstack.AkamaiNetStorageDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Destinations(global::Shotstack.AzureBlobStorageDestination value) => new Destinations((global::Shotstack.AzureBlobStorageDestination?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.AzureBlobStorageDestination?(Destinations @this) => @this.AzureBlobStorageDestination;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(global::Shotstack.AzureBlobStorageDestination? value)
         {
@@ -545,12 +545,12 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Destinations FromAzureBlobStorageDestination(global::Shotstack.AzureBlobStorageDestination? value) => new Destinations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Destinations(
             global::Shotstack.ShotstackDestination? shotstackDestination,
@@ -576,7 +576,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AzureBlobStorageDestination as object ??
@@ -587,11 +587,11 @@ namespace Shotstack
             GoogleCloudStorageDestination as object ??
             S3Destination as object ??
             MuxDestination as object ??
-            ShotstackDestination as object 
+            ShotstackDestination as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ShotstackDestination?.ToString() ??
@@ -602,11 +602,11 @@ namespace Shotstack
             VimeoDestination?.ToString() ??
             TiktokDestination?.ToString() ??
             AkamaiNetStorageDestination?.ToString() ??
-            AzureBlobStorageDestination?.ToString() 
+            AzureBlobStorageDestination?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -614,7 +614,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Shotstack.ShotstackDestination, TResult>? shotstackDestination = null,
@@ -674,7 +674,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Shotstack.ShotstackDestination>? shotstackDestination = null,
@@ -740,7 +740,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Shotstack.ShotstackDestination>? shotstackDestination = null,
@@ -798,7 +798,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -833,7 +833,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Destinations other)
         {
@@ -846,12 +846,12 @@ namespace Shotstack
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.VimeoDestination?>.Default.Equals(VimeoDestination, other.VimeoDestination) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.TiktokDestination?>.Default.Equals(TiktokDestination, other.TiktokDestination) &&
                 global::System.Collections.Generic.EqualityComparer<global::Shotstack.AkamaiNetStorageDestination?>.Default.Equals(AkamaiNetStorageDestination, other.AkamaiNetStorageDestination) &&
-                global::System.Collections.Generic.EqualityComparer<global::Shotstack.AzureBlobStorageDestination?>.Default.Equals(AzureBlobStorageDestination, other.AzureBlobStorageDestination) 
+                global::System.Collections.Generic.EqualityComparer<global::Shotstack.AzureBlobStorageDestination?>.Default.Equals(AzureBlobStorageDestination, other.AzureBlobStorageDestination)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Destinations obj1, Destinations obj2)
         {
@@ -859,7 +859,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Destinations obj1, Destinations obj2)
         {
@@ -867,7 +867,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

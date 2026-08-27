@@ -14,15 +14,15 @@ namespace Shotstack
     public enum RenditionFit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cover,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crop,
     }

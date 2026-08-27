@@ -20,43 +20,43 @@ namespace Shotstack
     public enum TitleAssetStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blockbuster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chunk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChunkLight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Future,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Marker,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sketchy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skinny,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subtitle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vogue,
     }

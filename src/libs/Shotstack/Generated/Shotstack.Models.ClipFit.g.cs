@@ -15,19 +15,19 @@ namespace Shotstack
     public enum ClipFit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cover,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

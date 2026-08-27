@@ -16,23 +16,23 @@ namespace Shotstack
     public enum RenditionResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fhd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mobile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sd,
     }

@@ -14,15 +14,15 @@ namespace Shotstack
     public enum TweenInterpolation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bezier,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Constant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Linear,
     }

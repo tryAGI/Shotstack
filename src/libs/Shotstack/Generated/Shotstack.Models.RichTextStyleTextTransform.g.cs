@@ -11,19 +11,19 @@ namespace Shotstack
     public enum RichTextStyleTextTransform
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Capitalize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lowercase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uppercase,
     }

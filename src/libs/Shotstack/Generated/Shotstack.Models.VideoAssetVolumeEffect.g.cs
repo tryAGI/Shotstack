@@ -13,19 +13,19 @@ namespace Shotstack
     public enum VideoAssetVolumeEffect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeInFadeOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

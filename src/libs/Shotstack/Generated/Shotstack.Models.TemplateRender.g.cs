@@ -18,7 +18,7 @@ namespace Shotstack
         public required string Id { get; set; }
 
         /// <summary>
-        /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`. 
+        /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge")]
         public global::System.Collections.Generic.IList<global::Shotstack.MergeField>? Merge { get; set; }
@@ -37,7 +37,7 @@ namespace Shotstack
         /// Example: f5493c17-d01f-445c-bb49-535fae65f219
         /// </param>
         /// <param name="merge">
-        /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`. 
+        /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

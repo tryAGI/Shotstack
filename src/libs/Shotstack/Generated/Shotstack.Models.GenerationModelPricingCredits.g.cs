@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GenerationModelPricingCredits
     {

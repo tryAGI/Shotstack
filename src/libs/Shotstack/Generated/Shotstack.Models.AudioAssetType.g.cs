@@ -10,7 +10,7 @@ namespace Shotstack
     public enum AudioAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
     }

@@ -18,31 +18,31 @@ namespace Shotstack
     public enum RenderResponseDataStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Done,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fetching,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Preprocessing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rendering,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Saving,
     }

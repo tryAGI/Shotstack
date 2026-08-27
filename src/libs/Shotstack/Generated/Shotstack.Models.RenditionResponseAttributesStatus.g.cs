@@ -17,27 +17,27 @@ namespace Shotstack
     public enum RenditionResponseAttributesStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Importing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Overwritten,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ready,
     }

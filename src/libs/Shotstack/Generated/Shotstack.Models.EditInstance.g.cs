@@ -14,15 +14,15 @@ namespace Shotstack
     public enum EditInstance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         A1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S2,
     }

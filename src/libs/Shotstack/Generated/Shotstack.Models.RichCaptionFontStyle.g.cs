@@ -11,11 +11,11 @@ namespace Shotstack
     public enum RichCaptionFontStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Italic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Normal,
     }

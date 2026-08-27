@@ -4,16 +4,16 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MuxDestinationOptionsPlaybackPolicyItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Public,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Signed,
     }

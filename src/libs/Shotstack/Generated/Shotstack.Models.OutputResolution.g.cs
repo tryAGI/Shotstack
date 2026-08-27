@@ -17,27 +17,27 @@ namespace Shotstack
     public enum OutputResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1080,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hd,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mobile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sd,
     }

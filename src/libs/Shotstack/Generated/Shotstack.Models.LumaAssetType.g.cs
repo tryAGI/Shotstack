@@ -10,7 +10,7 @@ namespace Shotstack
     public enum LumaAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Luma,
     }

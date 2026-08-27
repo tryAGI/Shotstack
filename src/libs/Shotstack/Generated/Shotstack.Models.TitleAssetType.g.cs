@@ -10,7 +10,7 @@ namespace Shotstack
     public enum TitleAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Title,
     }

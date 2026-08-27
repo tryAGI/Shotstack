@@ -10,19 +10,19 @@ namespace Shotstack
     public enum GenerationModelPricingUnit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minute,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Render,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Second,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThousandCharacters,
     }

@@ -33,251 +33,251 @@ namespace Shotstack
     public enum TransitionIn
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselDown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselDownFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselDownSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselLeftFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselLeftSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselRightFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselRightSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselUp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselUpFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CarouselUpSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fade,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadeSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reveal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RevealFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RevealSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleBottomLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleBottomLeftFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleBottomLeftSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleBottomRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleBottomRightFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleBottomRightSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleLeftBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleLeftBottomFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleLeftBottomSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleLeftTop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleLeftTopFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleLeftTopSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleRightBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleRightBottomFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleRightBottomSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleRightTop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleRightTopFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleRightTopSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleTopLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleTopLeftFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleTopLeftSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleTopRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleTopRightFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShuffleTopRightSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideDown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideDownFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideDownSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideLeftFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideLeftSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideRightFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideRightSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideUp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideUpFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlideUpSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WipeLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WipeLeftFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WipeLeftSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WipeRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WipeRightFast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WipeRightSlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zoom,
     }

@@ -10,11 +10,11 @@ namespace Shotstack
     public enum RichTextAnimationStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Character,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Word,
     }

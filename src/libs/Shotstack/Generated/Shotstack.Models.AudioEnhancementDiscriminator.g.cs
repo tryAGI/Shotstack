@@ -4,12 +4,12 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AudioEnhancementDiscriminator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enhancement")]
         public string? Enhancement { get; set; }

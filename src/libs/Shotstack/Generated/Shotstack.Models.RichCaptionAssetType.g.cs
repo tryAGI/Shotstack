@@ -10,7 +10,7 @@ namespace Shotstack
     public enum RichCaptionAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RichCaption,
     }

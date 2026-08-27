@@ -10,7 +10,7 @@ namespace Shotstack
     public enum VideoAssetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

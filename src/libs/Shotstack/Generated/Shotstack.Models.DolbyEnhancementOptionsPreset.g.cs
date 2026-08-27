@@ -20,39 +20,39 @@ namespace Shotstack
     public enum DolbyEnhancementOptionsPreset
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Conference,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Interview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lecture,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Meeting,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MobilePhone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Music,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Podcast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Studio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VoiceOver,
     }

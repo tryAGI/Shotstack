@@ -9,115 +9,115 @@ namespace Shotstack
     public enum TweenEasing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ease,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInBack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInCirc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInCubic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInExpo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutBack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutCirc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutCubic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutExpo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutQuad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutQuart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutQuint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInOutSine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInQuad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInQuart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInQuint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseInSine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutBack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutCirc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutCubic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutExpo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutQuad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutQuart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutQuint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EaseOutSine,
     }

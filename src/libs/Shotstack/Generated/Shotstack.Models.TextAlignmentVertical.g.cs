@@ -14,15 +14,15 @@ namespace Shotstack
     public enum TextAlignmentVertical
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Center,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Top,
     }

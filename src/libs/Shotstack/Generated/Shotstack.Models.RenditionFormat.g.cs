@@ -26,63 +26,63 @@ namespace Shotstack
     public enum RenditionFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Avif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mkv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mov,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ogv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wmv,
     }

@@ -22,7 +22,7 @@ namespace Shotstack
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dolby))]
@@ -30,7 +30,7 @@ namespace Shotstack
         public bool IsDolby => Dolby != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDolby(
 #if NET6_0_OR_GREATER
@@ -43,23 +43,23 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Shotstack.DolbyEnhancement PickDolby() => IsDolby
             ? Dolby!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dolby' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AudioEnhancement(global::Shotstack.DolbyEnhancement value) => new AudioEnhancement((global::Shotstack.DolbyEnhancement?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Shotstack.DolbyEnhancement?(AudioEnhancement @this) => @this.Dolby;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioEnhancement(global::Shotstack.DolbyEnhancement? value)
         {
@@ -67,26 +67,26 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AudioEnhancement FromDolby(global::Shotstack.DolbyEnhancement? value) => new AudioEnhancement(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Dolby as object 
+            Dolby as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Dolby?.ToString() 
+            Dolby?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -94,7 +94,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Shotstack.DolbyEnhancement, TResult>? dolby = null,
@@ -114,7 +114,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Shotstack.DolbyEnhancement>? dolby = null,
@@ -132,7 +132,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Shotstack.DolbyEnhancement>? dolby = null,
@@ -150,7 +150,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -169,17 +169,17 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AudioEnhancement other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Shotstack.DolbyEnhancement?>.Default.Equals(Dolby, other.Dolby) 
+                global::System.Collections.Generic.EqualityComparer<global::Shotstack.DolbyEnhancement?>.Default.Equals(Dolby, other.Dolby)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AudioEnhancement obj1, AudioEnhancement obj2)
         {
@@ -187,7 +187,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AudioEnhancement obj1, AudioEnhancement obj2)
         {
@@ -195,7 +195,7 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,72 +4,72 @@
 namespace Shotstack
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AssetDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Caption,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageToVideo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Luma,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RichCaption,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RichText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shape,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Svg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextToImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextToSpeech,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Title,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

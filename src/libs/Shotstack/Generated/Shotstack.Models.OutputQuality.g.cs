@@ -16,23 +16,23 @@ namespace Shotstack
     public enum OutputQuality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veryhigh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Verylow,
     }

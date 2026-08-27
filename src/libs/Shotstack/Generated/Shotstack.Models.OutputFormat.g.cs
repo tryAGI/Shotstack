@@ -17,27 +17,27 @@ namespace Shotstack
     public enum OutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bmp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
     }

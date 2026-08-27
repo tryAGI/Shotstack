@@ -20,39 +20,39 @@ namespace Shotstack
     public enum ClipFilter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blur,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Boost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contrast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Darken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Greyscale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lighten,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Muted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Negative,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }
