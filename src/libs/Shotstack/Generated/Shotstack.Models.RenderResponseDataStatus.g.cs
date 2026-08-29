@@ -9,6 +9,7 @@ namespace Shotstack
     ///   &lt;li&gt;`fetching` - assets are being fetched&lt;/li&gt;<br/>
     ///   &lt;li&gt;`preprocessing` - video assets are being processed for compatibility&lt;/li&gt;<br/>
     ///   &lt;li&gt;`rendering` - the asset is being rendered&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`generating` - AI/media generation is in progress&lt;/li&gt;<br/>
     ///   &lt;li&gt;`saving` - the final asset is being saved to storage&lt;/li&gt;<br/>
     ///   &lt;li&gt;`done` - the asset is ready to be downloaded&lt;/li&gt;<br/>
     ///   &lt;li&gt;`failed` - there was an error rendering the asset&lt;/li&gt;<br/>
@@ -29,6 +30,10 @@ namespace Shotstack
         ///
         /// </summary>
         Fetching,
+        /// <summary>
+        ///
+        /// </summary>
+        Generating,
         /// <summary>
         ///
         /// </summary>
@@ -62,6 +67,7 @@ namespace Shotstack
                 RenderResponseDataStatus.Done => "done",
                 RenderResponseDataStatus.Failed => "failed",
                 RenderResponseDataStatus.Fetching => "fetching",
+                RenderResponseDataStatus.Generating => "generating",
                 RenderResponseDataStatus.Preprocessing => "preprocessing",
                 RenderResponseDataStatus.Queued => "queued",
                 RenderResponseDataStatus.Rendering => "rendering",
@@ -79,6 +85,7 @@ namespace Shotstack
                 "done" => RenderResponseDataStatus.Done,
                 "failed" => RenderResponseDataStatus.Failed,
                 "fetching" => RenderResponseDataStatus.Fetching,
+                "generating" => RenderResponseDataStatus.Generating,
                 "preprocessing" => RenderResponseDataStatus.Preprocessing,
                 "queued" => RenderResponseDataStatus.Queued,
                 "rendering" => RenderResponseDataStatus.Rendering,

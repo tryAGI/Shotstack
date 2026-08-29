@@ -1894,7 +1894,8 @@
         ]
       },
       "CaptionAsset": {
-        "description": "The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will\nbe read and burnt to the video.\n\nCaptions can be applied independently from a video or audio file for greater\nflexibility with styling and layout. For example you can scale, position or crop a video without modifying the\ncaptions.\n\nTo sync captions with a video or audio file use a [Video](#tocs_videoasset) or [Audio](#tocs_audioasset) with\nmatching start and end time.\n",
+        "deprecated": true,
+        "description": "**Notice: The CaptionAsset is deprecated, use the [RichCaptionAsset](#tocs_richcaptionasset) instead.**\n\nThe CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will\nbe read and burnt to the video.\n\nCaptions can be applied independently from a video or audio file for greater\nflexibility with styling and layout. For example you can scale, position or crop a video without modifying the\ncaptions.\n\nTo sync captions with a video or audio file use a [Video](#tocs_videoasset) or [Audio](#tocs_audioasset) with\nmatching start and end time.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -4458,12 +4459,13 @@
             "example": "basic"
           },
           "status": {
-            "description": "The status of the render task. <ul>\n  <li>`queued` - render is queued waiting to be rendered</li>\n  <li>`fetching` - assets are being fetched</li>\n  <li>`preprocessing` - video assets are being processed for compatibility</li>\n  <li>`rendering` - the asset is being rendered</li>\n  <li>`saving` - the final asset is being saved to storage</li>\n  <li>`done` - the asset is ready to be downloaded</li>\n  <li>`failed` - there was an error rendering the asset</li>\n</ul>",
+            "description": "The status of the render task. <ul>\n  <li>`queued` - render is queued waiting to be rendered</li>\n  <li>`fetching` - assets are being fetched</li>\n  <li>`preprocessing` - video assets are being processed for compatibility</li>\n  <li>`rendering` - the asset is being rendered</li>\n  <li>`generating` - AI/media generation is in progress</li>\n  <li>`saving` - the final asset is being saved to storage</li>\n  <li>`done` - the asset is ready to be downloaded</li>\n  <li>`failed` - there was an error rendering the asset</li>\n</ul>",
             "enum": [
               "queued",
               "fetching",
               "preprocessing",
               "rendering",
+              "generating",
               "saving",
               "done",
               "failed"
