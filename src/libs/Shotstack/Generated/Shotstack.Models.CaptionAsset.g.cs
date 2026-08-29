@@ -4,6 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: The CaptionAsset is deprecated, use the [RichCaptionAsset](#tocs_richcaptionasset) instead.**<br/>
     /// The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will<br/>
     /// be read and burnt to the video.<br/>
     /// Captions can be applied independently from a video or audio file for greater<br/>
@@ -12,6 +13,7 @@ namespace Shotstack
     /// To sync captions with a video or audio file use a [Video](#tocs_videoasset) or [Audio](#tocs_audioasset) with<br/>
     /// matching start and end time.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class CaptionAsset
     {
         /// <summary>
@@ -21,6 +23,7 @@ namespace Shotstack
         /// <default>global::Shotstack.CaptionAssetType.Caption</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.CaptionAssetTypeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.CaptionAssetType Type { get; set; } = global::Shotstack.CaptionAssetType.Caption;
 
         /// <summary>
@@ -30,24 +33,28 @@ namespace Shotstack
         /// <example>https://s3-ap-northeast-1.amazonaws.com/my-bucket/captions.srt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("src")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Src { get; set; }
 
         /// <summary>
         /// Font properties for captions text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("font")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.CaptionFont? Font { get; set; }
 
         /// <summary>
         /// Displays a background box behind the caption text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.CaptionBackground? Background { get; set; }
 
         /// <summary>
         /// The margin properties for captions. Margins are used to position the caption text and background on the screen.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("margin")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.CaptionMargin? Margin { get; set; }
 
         /// <summary>
@@ -56,6 +63,7 @@ namespace Shotstack
         /// </summary>
         /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("trim")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public double? Trim { get; set; }
 
         /// <summary>
@@ -64,6 +72,7 @@ namespace Shotstack
         /// </summary>
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public float? Speed { get; set; }
 
         /// <summary>
@@ -126,18 +135,6 @@ namespace Shotstack
         /// </summary>
         public CaptionAsset()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="CaptionAsset"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static CaptionAsset FromSrc(string src)
-        {
-            return new CaptionAsset
-            {
-                Src = src,
-            };
         }
 
     }

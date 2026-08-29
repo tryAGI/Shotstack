@@ -273,6 +273,7 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'Luma' but the value was {ToString()}.");
 
         /// <summary>
+        /// **Notice: The CaptionAsset is deprecated, use the [RichCaptionAsset](#tocs_richcaptionasset) instead.**<br/>
         /// The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will<br/>
         /// be read and burnt to the video.<br/>
         /// Captions can be applied independently from a video or audio file for greater<br/>
