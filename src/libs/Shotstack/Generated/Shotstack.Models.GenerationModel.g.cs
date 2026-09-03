@@ -10,9 +10,9 @@ namespace Shotstack
     {
         /// <summary>
         /// The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.<br/>
-        /// Example: seedance-2.0
+        /// Example: seedance-2.0-text-to-video
         /// </summary>
-        /// <example>seedance-2.0</example>
+        /// <example>seedance-2.0-text-to-video</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
@@ -50,7 +50,7 @@ namespace Shotstack
         /// </summary>
         /// <param name="model">
         /// The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.<br/>
-        /// Example: seedance-2.0
+        /// Example: seedance-2.0-text-to-video
         /// </param>
         /// <param name="type">
         /// The asset type this model generates.<br/>

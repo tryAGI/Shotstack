@@ -599,7 +599,7 @@ namespace Shotstack
         /// <summary>
         /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
         /// with `prompt`, a `model` that accepts a starting image, and that image in<br/>
-        /// `options.inputSrc` — for example `shotstack-itv-mini`.** This type continues to<br/>
+        /// `options.inputSrc` — for example `seedance-2.0-image-to-video`.** This type continues to<br/>
         /// function and is internally rewritten to VideoAsset; no behaviour change for<br/>
         /// existing integrations.<br/>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
