@@ -649,7 +649,7 @@
           "schema": {
             "type": "string"
           },
-          "example": "seedance-2.0"
+          "example": "seedance-2.0-text-to-video"
         }
       ]
     },
@@ -1389,9 +1389,9 @@
             "example": "Slowly zoom out and orbit left around the object."
           },
           "model": {
-            "description": "The generation model to use when `prompt` is set (e.g. `shotstack-itv-mini`, `ray-flash-2`, `seedance-2.0`). Defaults to `seedance-2.0` if omitted. Each model's available options are defined by the model registry.",
+            "description": "The generation model to use when `prompt` is set (e.g. `seedance-2.0-text-to-video`). Defaults to `seedance-2.0-text-to-video` if omitted. `GET /models` lists what is available and the options each accepts.",
             "type": "string",
-            "example": "seedance-2.0"
+            "example": "seedance-2.0-text-to-video"
           },
           "options": {
             "description": "Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.",
@@ -2191,7 +2191,7 @@
       },
       "ImageToVideoAsset": {
         "deprecated": true,
-        "description": "**Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)\nwith `prompt`, a `model` that accepts a starting image, and that image in\n`options.inputSrc` \u2014 for example `shotstack-itv-mini`.** This type continues to\nfunction and is internally rewritten to VideoAsset; no behaviour change for\nexisting integrations.\n\nThe ImageToVideoAsset lets you create a video from an image and a text prompt.\n",
+        "description": "**Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)\nwith `prompt`, a `model` that accepts a starting image, and that image in\n`options.inputSrc` \u2014 for example `seedance-2.0-image-to-video`.** This type continues to\nfunction and is internally rewritten to VideoAsset; no behaviour change for\nexisting integrations.\n\nThe ImageToVideoAsset lets you create a video from an image and a text prompt.\n",
         "properties": {
           "type": {
             "type": "string",
@@ -5843,7 +5843,7 @@
           "model": {
             "description": "The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.",
             "type": "string",
-            "example": "seedance-2.0"
+            "example": "seedance-2.0-text-to-video"
           },
           "type": {
             "description": "The asset type this model generates.",

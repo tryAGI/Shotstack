@@ -45,10 +45,10 @@ namespace Shotstack
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// The generation model to use when `prompt` is set (e.g. `shotstack-itv-mini`, `ray-flash-2`, `seedance-2.0`). Defaults to `seedance-2.0` if omitted. Each model's available options are defined by the model registry.<br/>
-        /// Example: seedance-2.0
+        /// The generation model to use when `prompt` is set (e.g. `seedance-2.0-text-to-video`). Defaults to `seedance-2.0-text-to-video` if omitted. `GET /models` lists what is available and the options each accepts.<br/>
+        /// Example: seedance-2.0-text-to-video
         /// </summary>
-        /// <example>seedance-2.0</example>
+        /// <example>seedance-2.0-text-to-video</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
@@ -132,8 +132,8 @@ namespace Shotstack
         /// Example: Slowly zoom out and orbit left around the object.
         /// </param>
         /// <param name="model">
-        /// The generation model to use when `prompt` is set (e.g. `shotstack-itv-mini`, `ray-flash-2`, `seedance-2.0`). Defaults to `seedance-2.0` if omitted. Each model's available options are defined by the model registry.<br/>
-        /// Example: seedance-2.0
+        /// The generation model to use when `prompt` is set (e.g. `seedance-2.0-text-to-video`). Defaults to `seedance-2.0-text-to-video` if omitted. `GET /models` lists what is available and the options each accepts.<br/>
+        /// Example: seedance-2.0-text-to-video
         /// </param>
         /// <param name="options">
         /// Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.<br/>
