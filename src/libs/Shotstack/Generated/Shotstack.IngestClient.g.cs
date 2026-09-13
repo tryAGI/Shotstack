@@ -35,7 +35,7 @@ namespace Shotstack
         /// <inheritdoc/>
         public global::Shotstack.AutoSDKClientOptions Options { get; }
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Shotstack.SourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Shotstack.IngestSourceGenerationContext.Default);
 
         /// <summary>
         ///
