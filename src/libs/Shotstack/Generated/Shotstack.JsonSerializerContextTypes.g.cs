@@ -1017,19 +1017,23 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.GenerationModelListResponse? Type246 { get; set; }
+        public global::Shotstack.GenerationModelUnavailableReason? Type246 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>? Type247 { get; set; }
+        public global::Shotstack.GenerationModelListResponse? Type247 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.PostGenerateRequest? Type248 { get; set; }
+        public global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>? Type248 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>? Type249 { get; set; }
+        public global::Shotstack.PostGenerateRequest? Type249 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>? Type250 { get; set; }
 
         /// <summary>
         ///

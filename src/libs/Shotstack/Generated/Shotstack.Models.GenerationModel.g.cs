@@ -28,6 +28,22 @@ namespace Shotstack
         public required global::Shotstack.GenerationModelType Type { get; set; }
 
         /// <summary>
+        /// The model's display name, for a model picker.<br/>
+        /// Example: Seedance 2.0 · Text to video
+        /// </summary>
+        /// <example>Seedance 2.0 · Text to video</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// What the model is suited to, in a sentence or two.<br/>
+        /// Example: Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio.
+        /// </summary>
+        /// <example>Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio.</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pricing")]
@@ -38,6 +54,23 @@ namespace Shotstack
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
         public object? Options { get; set; }
+
+        /// <summary>
+        /// Whether the account behind the calling API key can generate with this model. Omitted when that cannot be determined; treat a missing value as unknown, not as available. Generation requests are checked either way.<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("available")]
+        public bool? Available { get; set; }
+
+        /// <summary>
+        /// Why `available` is false. `AiCapabilityNotIncluded`: the account's plan does not include this kind of generation. `AiDisabled`: AI generation is turned off for the account. `AiAccessUnavailable`: access could not be confirmed; try again later.<br/>
+        /// Example: AiCapabilityNotIncluded
+        /// </summary>
+        /// <example>AiCapabilityNotIncluded</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unavailableReason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonJsonConverter))]
+        public global::Shotstack.GenerationModelUnavailableReason? UnavailableReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,11 +89,27 @@ namespace Shotstack
         /// The asset type this model generates.<br/>
         /// Example: video
         /// </param>
+        /// <param name="name">
+        /// The model's display name, for a model picker.<br/>
+        /// Example: Seedance 2.0 · Text to video
+        /// </param>
+        /// <param name="description">
+        /// What the model is suited to, in a sentence or two.<br/>
+        /// Example: Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio.
+        /// </param>
         /// <param name="pricing">
         /// What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.
         /// </param>
         /// <param name="options">
         /// JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.
+        /// </param>
+        /// <param name="available">
+        /// Whether the account behind the calling API key can generate with this model. Omitted when that cannot be determined; treat a missing value as unknown, not as available. Generation requests are checked either way.<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="unavailableReason">
+        /// Why `available` is false. `AiCapabilityNotIncluded`: the account's plan does not include this kind of generation. `AiDisabled`: AI generation is turned off for the account. `AiAccessUnavailable`: access could not be confirmed; try again later.<br/>
+        /// Example: AiCapabilityNotIncluded
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -68,13 +117,21 @@ namespace Shotstack
         public GenerationModel(
             string model,
             global::Shotstack.GenerationModelType type,
+            string? name,
+            string? description,
             global::Shotstack.GenerationModelPricing? pricing,
-            object? options)
+            object? options,
+            bool? available,
+            global::Shotstack.GenerationModelUnavailableReason? unavailableReason)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Type = type;
+            this.Name = name;
+            this.Description = description;
             this.Pricing = pricing;
             this.Options = options;
+            this.Available = available;
+            this.UnavailableReason = unavailableReason;
         }
 
         /// <summary>

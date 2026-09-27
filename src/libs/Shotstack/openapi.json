@@ -571,7 +571,7 @@
     },
     "/edit/v1/models": {
       "get": {
-        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets, with the options each accepts and what it costs in credits.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets, with the options each accepts and what it costs in credits.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\nEach model's `available` reflects the plan of the account behind the calling API\nkey, so offer only the models it marks available.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
         "summary": "List Generation Models",
         "operationId": "getModels",
         "responses": {
@@ -5855,6 +5855,16 @@
             ],
             "example": "video"
           },
+          "name": {
+            "description": "The model's display name, for a model picker.",
+            "type": "string",
+            "example": "Seedance 2.0 \u00b7 Text to video"
+          },
+          "description": {
+            "description": "What the model is suited to, in a sentence or two.",
+            "type": "string",
+            "example": "Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio."
+          },
           "pricing": {
             "description": "What one generation with this model costs.",
             "$ref": "#/components/schemas/GenerationModelPricing"
@@ -5863,6 +5873,21 @@
             "description": "JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.",
             "type": "object",
             "additionalProperties": true
+          },
+          "available": {
+            "description": "Whether the account behind the calling API key can generate with this model. Omitted when that cannot be determined; treat a missing value as unknown, not as available. Generation requests are checked either way.",
+            "type": "boolean",
+            "example": false
+          },
+          "unavailableReason": {
+            "description": "Why `available` is false. `AiCapabilityNotIncluded`: the account's plan does not include this kind of generation. `AiDisabled`: AI generation is turned off for the account. `AiAccessUnavailable`: access could not be confirmed; try again later.",
+            "type": "string",
+            "enum": [
+              "AiCapabilityNotIncluded",
+              "AiDisabled",
+              "AiAccessUnavailable"
+            ],
+            "example": "AiCapabilityNotIncluded"
           }
         },
         "required": [

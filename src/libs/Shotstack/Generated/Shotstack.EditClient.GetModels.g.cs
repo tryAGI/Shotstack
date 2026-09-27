@@ -48,6 +48,8 @@ namespace Shotstack
         /// on your side. Each entry carries the asset type it generates, so filter the list<br/>
         /// client side when a picker only needs one kind.<br/>
         /// Option schemas are omitted by default. Request them with `expand=options`.<br/>
+        /// Each model's `available` reflects the plan of the account behind the calling API<br/>
+        /// key, so offer only the models it marks available.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -73,6 +75,8 @@ namespace Shotstack
         /// on your side. Each entry carries the asset type it generates, so filter the list<br/>
         /// client side when a picker only needs one kind.<br/>
         /// Option schemas are omitted by default. Request them with `expand=options`.<br/>
+        /// Each model's `available` reflects the plan of the account behind the calling API<br/>
+        /// key, so offer only the models it marks available.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

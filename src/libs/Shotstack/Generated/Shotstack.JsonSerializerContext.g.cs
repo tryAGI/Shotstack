@@ -337,6 +337,10 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.GenerationModelTypeNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.AssetJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.DestinationsJsonConverter),
@@ -629,6 +633,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityRound), TypeInfoPropertyName = "GenerationModelPricingQuantityRound2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelType), TypeInfoPropertyName = "GenerationModelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelUnavailableReason), TypeInfoPropertyName = "GenerationModelUnavailableReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PostGenerateRequest))]
