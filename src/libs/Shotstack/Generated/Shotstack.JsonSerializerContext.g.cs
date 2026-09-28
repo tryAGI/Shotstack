@@ -1,14 +1,12 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Shotstack
 {
     /// <summary>
     ///
     /// </summary>
+    #pragma warning disable CS3016 // Converter type array in this attribute is not CLS-compliant.
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
@@ -357,6 +355,8 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::Shotstack.RichTextPadding>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
@@ -385,6 +385,7 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.UnixTimestampJsonConverter),
         })]
+    #pragma warning restore CS3016
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Edit))]
@@ -393,15 +394,21 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.MergeField>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.MergeField))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.EditDisk), TypeInfoPropertyName = "EditDisk2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.EditInstance), TypeInfoPropertyName = "EditInstance2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Soundtrack))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.Font>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Font))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.Track>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Track))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SoundtrackEffect), TypeInfoPropertyName = "SoundtrackEffect2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.Clip>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Clip))]
@@ -421,20 +428,34 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Transformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageAsset))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAsset))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AudioAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.LumaAsset))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.CaptionAsset))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionAsset))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HtmlAsset))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Html5Asset))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAsset))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgAsset))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextToImageAsset))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageToVideoAsset))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextToSpeechAsset))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AssetDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AssetDiscriminatorType), TypeInfoPropertyName = "AssetDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetType), TypeInfoPropertyName = "VideoAssetType2")]
@@ -443,7 +464,9 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Crop))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ChromaKey))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageAssetType), TypeInfoPropertyName = "ImageAssetType2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextAssetType), TypeInfoPropertyName = "TextAssetType2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextFont))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextBackground))]
@@ -471,7 +494,9 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAssetCircle))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAssetLine))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.LumaAssetType), TypeInfoPropertyName = "LumaAssetType2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.CaptionAssetType), TypeInfoPropertyName = "CaptionAssetType2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.CaptionFont))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.CaptionBackground))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.CaptionMargin))]
@@ -488,18 +513,40 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionActiveShadow), TypeInfoPropertyName = "RichCaptionActiveShadow2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionAnimationStyle), TypeInfoPropertyName = "RichCaptionAnimationStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionAnimationDirection), TypeInfoPropertyName = "RichCaptionAnimationDirection2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextToImageAssetType), TypeInfoPropertyName = "TextToImageAssetType2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageToVideoAssetType), TypeInfoPropertyName = "ImageToVideoAssetType2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageToVideoAssetAspectRatio), TypeInfoPropertyName = "ImageToVideoAssetAspectRatio2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextToSpeechAssetType), TypeInfoPropertyName = "TextToSpeechAssetType2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TextToSpeechAssetEffect), TypeInfoPropertyName = "TextToSpeechAssetEffect2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HtmlAssetType), TypeInfoPropertyName = "HtmlAssetType2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HtmlAssetPosition), TypeInfoPropertyName = "HtmlAssetPosition2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Html5AssetType), TypeInfoPropertyName = "Html5AssetType2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetType), TypeInfoPropertyName = "TitleAssetType2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetStyle), TypeInfoPropertyName = "TitleAssetStyle2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetSize), TypeInfoPropertyName = "TitleAssetSize2")]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TitleAssetPosition), TypeInfoPropertyName = "TitleAssetPosition2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgAssetType), TypeInfoPropertyName = "SvgAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionIn), TypeInfoPropertyName = "TransitionIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionOut), TypeInfoPropertyName = "TransitionOut2")]
@@ -564,7 +611,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenditionFormat), TypeInfoPropertyName = "RenditionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenditionFit), TypeInfoPropertyName = "RenditionFit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenditionResolution), TypeInfoPropertyName = "RenditionResolution2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Speed))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Speed2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Enhancements))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TranscriptionFormat), TypeInfoPropertyName = "TranscriptionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AudioEnhancement), TypeInfoPropertyName = "AudioEnhancement2")]

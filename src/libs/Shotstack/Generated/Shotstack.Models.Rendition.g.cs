@@ -100,7 +100,7 @@ namespace Shotstack
         /// Set the playback speed of a video or audio file. Allows you to preserve the pitch of the audio so that it is sped up without sounding too high pitched or too low.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public global::Shotstack.Speed? Speed { get; set; }
+        public global::Shotstack.Speed2? Speed { get; set; }
 
         /// <summary>
         /// The keyframe interval is useful to optimize playback, seeking and smoother scrubbing in browsers. The value sets the number of frames between a keyframe. The lower the number, the larger the file. Try a value between 10 and 25 for smooth scrubbing.<br/>
@@ -247,7 +247,7 @@ namespace Shotstack
             global::Shotstack.RenditionResolution? resolution,
             int? quality,
             double? fps,
-            global::Shotstack.Speed? speed,
+            global::Shotstack.Speed2? speed,
             int? keyframeInterval,
             bool? fixOffset,
             bool? fixRotation,

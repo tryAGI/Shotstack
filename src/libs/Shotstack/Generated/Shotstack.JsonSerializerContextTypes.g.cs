@@ -741,7 +741,7 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.Speed? Type177 { get; set; }
+        public global::Shotstack.Speed2? Type177 { get; set; }
         /// <summary>
         ///
         /// </summary>
