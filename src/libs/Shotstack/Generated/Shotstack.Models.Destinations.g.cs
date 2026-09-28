@@ -43,8 +43,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.ShotstackDestination PickShotstackDestination() => IsShotstackDestination
-            ? ShotstackDestination!
+        public global::Shotstack.ShotstackDestination PickShotstackDestination() => ShotstackDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShotstackDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.MuxDestination PickMuxDestination() => IsMuxDestination
-            ? MuxDestination!
+        public global::Shotstack.MuxDestination PickMuxDestination() => MuxDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MuxDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.S3Destination PickS3Destination() => IsS3Destination
-            ? S3Destination!
+        public global::Shotstack.S3Destination PickS3Destination() => S3Destination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3Destination' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.GoogleCloudStorageDestination PickGoogleCloudStorageDestination() => IsGoogleCloudStorageDestination
-            ? GoogleCloudStorageDestination!
+        public global::Shotstack.GoogleCloudStorageDestination PickGoogleCloudStorageDestination() => GoogleCloudStorageDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCloudStorageDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.GoogleDriveDestination PickGoogleDriveDestination() => IsGoogleDriveDestination
-            ? GoogleDriveDestination!
+        public global::Shotstack.GoogleDriveDestination PickGoogleDriveDestination() => GoogleDriveDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleDriveDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.VimeoDestination PickVimeoDestination() => IsVimeoDestination
-            ? VimeoDestination!
+        public global::Shotstack.VimeoDestination PickVimeoDestination() => VimeoDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VimeoDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.TiktokDestination PickTiktokDestination() => IsTiktokDestination
-            ? TiktokDestination!
+        public global::Shotstack.TiktokDestination PickTiktokDestination() => TiktokDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TiktokDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.AkamaiNetStorageDestination PickAkamaiNetStorageDestination() => IsAkamaiNetStorageDestination
-            ? AkamaiNetStorageDestination!
+        public global::Shotstack.AkamaiNetStorageDestination PickAkamaiNetStorageDestination() => AkamaiNetStorageDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AkamaiNetStorageDestination' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.AzureBlobStorageDestination PickAzureBlobStorageDestination() => IsAzureBlobStorageDestination
-            ? AzureBlobStorageDestination!
+        public global::Shotstack.AzureBlobStorageDestination PickAzureBlobStorageDestination() => AzureBlobStorageDestination is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureBlobStorageDestination' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -633,41 +633,41 @@ namespace Shotstack
                 Validate();
             }
 
-            if (IsShotstackDestination && shotstackDestination != null)
+            if (ShotstackDestination is { } __value0 && shotstackDestination != null)
             {
-                return shotstackDestination(ShotstackDestination!);
+                return shotstackDestination(__value0);
             }
-            else if (IsMuxDestination && muxDestination != null)
+            else if (MuxDestination is { } __value1 && muxDestination != null)
             {
-                return muxDestination(MuxDestination!);
+                return muxDestination(__value1);
             }
-            else if (IsS3Destination && s3Destination != null)
+            else if (S3Destination is { } __value2 && s3Destination != null)
             {
-                return s3Destination(S3Destination!);
+                return s3Destination(__value2);
             }
-            else if (IsGoogleCloudStorageDestination && googleCloudStorageDestination != null)
+            else if (GoogleCloudStorageDestination is { } __value3 && googleCloudStorageDestination != null)
             {
-                return googleCloudStorageDestination(GoogleCloudStorageDestination!);
+                return googleCloudStorageDestination(__value3);
             }
-            else if (IsGoogleDriveDestination && googleDriveDestination != null)
+            else if (GoogleDriveDestination is { } __value4 && googleDriveDestination != null)
             {
-                return googleDriveDestination(GoogleDriveDestination!);
+                return googleDriveDestination(__value4);
             }
-            else if (IsVimeoDestination && vimeoDestination != null)
+            else if (VimeoDestination is { } __value5 && vimeoDestination != null)
             {
-                return vimeoDestination(VimeoDestination!);
+                return vimeoDestination(__value5);
             }
-            else if (IsTiktokDestination && tiktokDestination != null)
+            else if (TiktokDestination is { } __value6 && tiktokDestination != null)
             {
-                return tiktokDestination(TiktokDestination!);
+                return tiktokDestination(__value6);
             }
-            else if (IsAkamaiNetStorageDestination && akamaiNetStorageDestination != null)
+            else if (AkamaiNetStorageDestination is { } __value7 && akamaiNetStorageDestination != null)
             {
-                return akamaiNetStorageDestination(AkamaiNetStorageDestination!);
+                return akamaiNetStorageDestination(__value7);
             }
-            else if (IsAzureBlobStorageDestination && azureBlobStorageDestination != null)
+            else if (AzureBlobStorageDestination is { } __value8 && azureBlobStorageDestination != null)
             {
-                return azureBlobStorageDestination(AzureBlobStorageDestination!);
+                return azureBlobStorageDestination(__value8);
             }
 
             return default(TResult);
@@ -701,41 +701,41 @@ namespace Shotstack
                 Validate();
             }
 
-            if (IsShotstackDestination)
+            if (ShotstackDestination is { } __value0)
             {
-                shotstackDestination?.Invoke(ShotstackDestination!);
+                shotstackDestination?.Invoke(__value0);
             }
-            else if (IsMuxDestination)
+            else if (MuxDestination is { } __value1)
             {
-                muxDestination?.Invoke(MuxDestination!);
+                muxDestination?.Invoke(__value1);
             }
-            else if (IsS3Destination)
+            else if (S3Destination is { } __value2)
             {
-                s3Destination?.Invoke(S3Destination!);
+                s3Destination?.Invoke(__value2);
             }
-            else if (IsGoogleCloudStorageDestination)
+            else if (GoogleCloudStorageDestination is { } __value3)
             {
-                googleCloudStorageDestination?.Invoke(GoogleCloudStorageDestination!);
+                googleCloudStorageDestination?.Invoke(__value3);
             }
-            else if (IsGoogleDriveDestination)
+            else if (GoogleDriveDestination is { } __value4)
             {
-                googleDriveDestination?.Invoke(GoogleDriveDestination!);
+                googleDriveDestination?.Invoke(__value4);
             }
-            else if (IsVimeoDestination)
+            else if (VimeoDestination is { } __value5)
             {
-                vimeoDestination?.Invoke(VimeoDestination!);
+                vimeoDestination?.Invoke(__value5);
             }
-            else if (IsTiktokDestination)
+            else if (TiktokDestination is { } __value6)
             {
-                tiktokDestination?.Invoke(TiktokDestination!);
+                tiktokDestination?.Invoke(__value6);
             }
-            else if (IsAkamaiNetStorageDestination)
+            else if (AkamaiNetStorageDestination is { } __value7)
             {
-                akamaiNetStorageDestination?.Invoke(AkamaiNetStorageDestination!);
+                akamaiNetStorageDestination?.Invoke(__value7);
             }
-            else if (IsAzureBlobStorageDestination)
+            else if (AzureBlobStorageDestination is { } __value8)
             {
-                azureBlobStorageDestination?.Invoke(AzureBlobStorageDestination!);
+                azureBlobStorageDestination?.Invoke(__value8);
             }
         }
 
@@ -759,41 +759,41 @@ namespace Shotstack
                 Validate();
             }
 
-            if (IsShotstackDestination)
+            if (ShotstackDestination is { } __value0)
             {
-                shotstackDestination?.Invoke(ShotstackDestination!);
+                shotstackDestination?.Invoke(__value0);
             }
-            else if (IsMuxDestination)
+            else if (MuxDestination is { } __value1)
             {
-                muxDestination?.Invoke(MuxDestination!);
+                muxDestination?.Invoke(__value1);
             }
-            else if (IsS3Destination)
+            else if (S3Destination is { } __value2)
             {
-                s3Destination?.Invoke(S3Destination!);
+                s3Destination?.Invoke(__value2);
             }
-            else if (IsGoogleCloudStorageDestination)
+            else if (GoogleCloudStorageDestination is { } __value3)
             {
-                googleCloudStorageDestination?.Invoke(GoogleCloudStorageDestination!);
+                googleCloudStorageDestination?.Invoke(__value3);
             }
-            else if (IsGoogleDriveDestination)
+            else if (GoogleDriveDestination is { } __value4)
             {
-                googleDriveDestination?.Invoke(GoogleDriveDestination!);
+                googleDriveDestination?.Invoke(__value4);
             }
-            else if (IsVimeoDestination)
+            else if (VimeoDestination is { } __value5)
             {
-                vimeoDestination?.Invoke(VimeoDestination!);
+                vimeoDestination?.Invoke(__value5);
             }
-            else if (IsTiktokDestination)
+            else if (TiktokDestination is { } __value6)
             {
-                tiktokDestination?.Invoke(TiktokDestination!);
+                tiktokDestination?.Invoke(__value6);
             }
-            else if (IsAkamaiNetStorageDestination)
+            else if (AkamaiNetStorageDestination is { } __value7)
             {
-                akamaiNetStorageDestination?.Invoke(AkamaiNetStorageDestination!);
+                akamaiNetStorageDestination?.Invoke(__value7);
             }
-            else if (IsAzureBlobStorageDestination)
+            else if (AzureBlobStorageDestination is { } __value8)
             {
-                azureBlobStorageDestination?.Invoke(AzureBlobStorageDestination!);
+                azureBlobStorageDestination?.Invoke(__value8);
             }
         }
 

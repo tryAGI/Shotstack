@@ -45,8 +45,8 @@ namespace Shotstack
         /// <summary>
         ///
         /// </summary>
-        public global::Shotstack.DolbyEnhancement PickDolby() => IsDolby
-            ? Dolby!
+        public global::Shotstack.DolbyEnhancement PickDolby() => Dolby is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dolby' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -105,9 +105,9 @@ namespace Shotstack
                 Validate();
             }
 
-            if (IsDolby && dolby != null)
+            if (Dolby is { } __value0 && dolby != null)
             {
-                return dolby(Dolby!);
+                return dolby(__value0);
             }
 
             return default(TResult);
@@ -125,9 +125,9 @@ namespace Shotstack
                 Validate();
             }
 
-            if (IsDolby)
+            if (Dolby is { } __value0)
             {
-                dolby?.Invoke(Dolby!);
+                dolby?.Invoke(__value0);
             }
         }
 
@@ -143,9 +143,9 @@ namespace Shotstack
                 Validate();
             }
 
-            if (IsDolby)
+            if (Dolby is { } __value0)
             {
-                dolby?.Invoke(Dolby!);
+                dolby?.Invoke(__value0);
             }
         }
 
