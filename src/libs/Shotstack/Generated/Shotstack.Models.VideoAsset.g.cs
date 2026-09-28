@@ -95,12 +95,11 @@ namespace Shotstack
         public global::Shotstack.VideoAssetVolumeEffect? VolumeEffect { get; set; }
 
         /// <summary>
-        /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire video (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire video (i.e. original length / 2).<br/>
-        /// Example: 1
+        /// Adjust the playback speed of the video clip. Use a number for a constant speed or an array of [Tween](./#tocs_tween) objects to change speed over time, for example easing from normal speed up to 3x.
         /// </summary>
-        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public float? Speed { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>))]
+        public global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? Speed { get; set; }
 
         /// <summary>
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
@@ -158,8 +157,7 @@ namespace Shotstack
         /// &lt;/ul&gt;
         /// </param>
         /// <param name="speed">
-        /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Adjusting the speed will also adjust the duration of the clip and may require you to adjust the Clip length. For example, if you set speed to 0.5, the clip will need to be 2x as long to play the entire video (i.e. original length / 0.5). If you set speed to 2, the clip will need to be half as long to play the entire video (i.e. original length / 2).<br/>
-        /// Example: 1
+        /// Adjust the playback speed of the video clip. Use a number for a constant speed or an array of [Tween](./#tocs_tween) objects to change speed over time, for example easing from normal speed up to 3x.
         /// </param>
         /// <param name="crop">
         /// Crop the sides of an asset by a relative amount. The size of the crop is specified using a scale between 0 and 1, relative to the screen width - i.e a left crop of 0.5 will crop half of the asset from the left, a top crop  of 0.25 will crop the top by quarter of the asset.
@@ -183,7 +181,7 @@ namespace Shotstack
             double? trim,
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
             global::Shotstack.VideoAssetVolumeEffect? volumeEffect,
-            float? speed,
+            global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? speed,
             global::Shotstack.Crop? crop,
             global::Shotstack.ChromaKey? chromaKey,
             global::Shotstack.VideoAssetType type = global::Shotstack.VideoAssetType.Video)
