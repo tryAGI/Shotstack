@@ -14,9 +14,9 @@ namespace Shotstack
         /// </summary>
         /// <example>{"480p":0.9375,"720p":1.8962,"1080p":4.2625}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, object>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.Dictionary<string, double>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Shotstack.OneOf<double?, object> Credits { get; set; }
+        public required global::Shotstack.OneOf<double?, global::System.Collections.Generic.Dictionary<string, double>> Credits { get; set; }
 
         /// <summary>
         /// The option whose value selects the rate, and the value assumed when the option is absent. Present only when `credits` is keyed.
@@ -66,7 +66,7 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GenerationModelPricing(
-            global::Shotstack.OneOf<double?, object> credits,
+            global::Shotstack.OneOf<double?, global::System.Collections.Generic.Dictionary<string, double>> credits,
             string effectiveFrom,
             global::Shotstack.GenerationModelPricingTieredBy? tieredBy,
             global::Shotstack.GenerationModelPricingQuantity? quantity)
