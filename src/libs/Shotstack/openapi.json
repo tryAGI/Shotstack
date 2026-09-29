@@ -446,7 +446,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "The generated asset was already cached and is immediately available.",
+            "description": "The asset was generated before: `done` with its URL, or `failed` with the error that ended it.",
             "content": {
               "application/json": {
                 "schema": {
@@ -478,11 +478,90 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "The request is invalid, for example a missing asset or prompt, a disallowed URL or a `length` that is not positive.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "The account has too few credits for this generation. `available` holds how many it has.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The account cannot use this generation. `code` says why.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The `Idempotency-Key` was already used for a different asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The account has reached its generation quota.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "A service the request depends on is temporarily unavailable. `code` is `AiAccessUnavailable` when access to AI generation could not be confirmed.",
+            "headers": {
+              "Retry-After": {
+                "description": "Suggested seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
+                }
+              }
+            }
           }
         },
         "description": "Generate a single image, video or audio asset from a text prompt without\nrendering a full edit. Submit a prompt-bearing asset; the response is\nimmediate when an identical asset has been generated before (results are\ncached by prompt, model and options), otherwise the job is queued and can\nbe polled via the status endpoint.\n\nGeneration is billed in credits per asset. Identical repeat requests\nresolve from the cache at no charge.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
         "summary": "Generate Asset",
         "operationId": "postGenerate",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "description": "A key that makes this request its own generation. Retrying with the same key returns the job it first created instead of generating and billing again, and a new key generates afresh even when the asset matches an earlier one. Without a key, identical assets share one cached result. For 24 hours a key reused for a different asset is rejected; after that it returns its first result.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "A prompt-bearing image, video or audio asset to generate.",
           "content": {
@@ -502,6 +581,13 @@
                         "$ref": "#/components/schemas/AudioAsset"
                       }
                     ]
+                  },
+                  "length": {
+                    "description": "The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.",
+                    "type": "number",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "example": 5
                   }
                 },
                 "required": [
@@ -536,10 +622,28 @@
           },
           "202": {
             "description": "The generation job is still processing.",
+            "headers": {
+              "Retry-After": {
+                "description": "Suggested seconds to wait before polling again.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GenerationResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No generation job with this id exists for the calling account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationErrorResponse"
                 }
               }
             }
@@ -628,7 +732,14 @@
             }
           },
           "404": {
-            "description": "No model exists with that identifier."
+            "description": "No listed model has that identifier. `error.name` tells an unknown model from one that has been withdrawn.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationModelErrorResponse"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -4382,6 +4493,271 @@
         ],
         "type": "object"
       },
+      "GenerationModel": {
+        "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts and what it costs. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
+        "properties": {
+          "model": {
+            "description": "The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.",
+            "type": "string",
+            "example": "seedance-2.0-text-to-video"
+          },
+          "type": {
+            "description": "The asset type this model generates.",
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "audio"
+            ],
+            "example": "video"
+          },
+          "name": {
+            "description": "The model's display name, for a model picker.",
+            "type": "string",
+            "example": "Seedance 2.0 \u00b7 Text to video"
+          },
+          "description": {
+            "description": "What the model is suited to, in a sentence or two.",
+            "type": "string",
+            "example": "Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio."
+          },
+          "pricing": {
+            "description": "What one generation with this model costs.",
+            "$ref": "#/components/schemas/GenerationModelPricing"
+          },
+          "options": {
+            "description": "JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "available": {
+            "description": "Whether the account behind the calling API key can generate with this model. Omitted when that cannot be determined; treat a missing value as unknown, not as available. Generation requests are checked either way.",
+            "type": "boolean",
+            "example": false
+          },
+          "unavailableReason": {
+            "description": "Why `available` is false. `AiCapabilityNotIncluded`: the account's plan does not include this kind of generation. `AiDisabled`: AI generation is turned off for the account. `AiAccessUnavailable`: access could not be confirmed; try again later.",
+            "type": "string",
+            "enum": [
+              "AiCapabilityNotIncluded",
+              "AiDisabled",
+              "AiAccessUnavailable"
+            ],
+            "example": "AiCapabilityNotIncluded"
+          }
+        },
+        "required": [
+          "model",
+          "type"
+        ],
+        "type": "object"
+      },
+      "GenerationModelPricing": {
+        "description": "What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.",
+        "properties": {
+          "credits": {
+            "description": "Credits per unit. A number when the rate is flat, or an object keyed by the values of the option named in `tieredBy`.",
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                }
+              }
+            ],
+            "example": {
+              "480p": 0.9375,
+              "720p": 1.8962,
+              "1080p": 4.2625
+            }
+          },
+          "tieredBy": {
+            "description": "The option whose value selects the rate, and the value assumed when the option is absent. Present only when `credits` is keyed.",
+            "type": "object",
+            "properties": {
+              "option": {
+                "type": "string",
+                "example": "resolution"
+              },
+              "default": {
+                "type": "string",
+                "example": "720p"
+              }
+            },
+            "required": [
+              "option",
+              "default"
+            ]
+          },
+          "quantity": {
+            "description": "How many units a generation consumes. Take the value `measure` names, or `default` when the request carries none, hold it within `min` and `max`, divide by `per`, and round up when `round` is `up`. Absent when one generation is one unit.",
+            "type": "object",
+            "properties": {
+              "measure": {
+                "description": "What the count is taken from, and the scale it is measured in.",
+                "type": "string",
+                "enum": [
+                  "clipSeconds",
+                  "promptCharacters"
+                ],
+                "example": "clipSeconds"
+              },
+              "per": {
+                "description": "How many of `measure` make one billable unit.",
+                "type": "number",
+                "example": 60
+              },
+              "min": {
+                "description": "Fewest accepted. A smaller request is charged at this.",
+                "type": "number",
+                "example": 3
+              },
+              "max": {
+                "description": "Most accepted. A larger request is charged at this.",
+                "type": "number",
+                "example": 600
+              },
+              "default": {
+                "description": "Assumed when the request carries no value.",
+                "type": "number",
+                "example": 30
+              },
+              "round": {
+                "description": "Present when a partial unit is charged as a whole one. A 61 second track on a per-minute rate is charged as two minutes.",
+                "type": "string",
+                "enum": [
+                  "up"
+                ],
+                "example": "up"
+              }
+            },
+            "required": [
+              "measure",
+              "per"
+            ]
+          },
+          "effectiveFrom": {
+            "description": "The date this rate took effect, or `legacy` for a rate that predates dated pricing.",
+            "type": "string",
+            "example": "2026-08-13"
+          }
+        },
+        "required": [
+          "credits",
+          "effectiveFrom"
+        ],
+        "type": "object"
+      },
+      "GenerationModelListResponse": {
+        "description": "The generation models available to this account.",
+        "properties": {
+          "models": {
+            "description": "The available models.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenerationModel"
+            }
+          }
+        },
+        "required": [
+          "models"
+        ],
+        "type": "object"
+      },
+      "GenerationResponse": {
+        "description": "The status of an on-demand asset generation job. Completed jobs include the public URL of the generated asset.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The generation job id. Deterministic for a given owner and asset payload (or idempotency key), so identical requests return the same job and cached result.",
+            "type": "string",
+            "example": "8a1f2c3d-4e5b-5a6c-9d7e-1f2a3b4c5d6e"
+          },
+          "status": {
+            "description": "The status of the generation job.",
+            "type": "string",
+            "enum": [
+              "queued",
+              "processing",
+              "done",
+              "failed"
+            ],
+            "example": "done"
+          },
+          "url": {
+            "description": "The public URL of the generated asset. Present only when `status` is `done`.",
+            "type": "string",
+            "example": "https://shotstack-api-v1-output.s3-ap-southeast-2.amazonaws.com/owner/8a1f2c3d.png"
+          },
+          "error": {
+            "description": "A human readable error message. Present only when `status` is `failed`.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status"
+        ]
+      },
+      "GenerationErrorResponse": {
+        "description": "Why a generation request was not accepted or a job could not be found.",
+        "type": "object",
+        "properties": {
+          "error": {
+            "description": "A human readable error message.",
+            "type": "string",
+            "example": "Insufficient generation credits."
+          },
+          "code": {
+            "description": "Why access to AI generation was refused. `AiCapabilityNotIncluded`: the account's plan does not include this kind of generation. `FeatureNotIncluded`: the plan does not include a feature the asset uses. `AiDisabled`: AI generation is turned off for the account. `AiAccessUnavailable`: access could not be confirmed; try again later.",
+            "type": "string",
+            "example": "AiCapabilityNotIncluded"
+          },
+          "available": {
+            "description": "The credits the account has available. Present when it has too few.",
+            "type": "number",
+            "example": 1.5
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "GenerationModelErrorResponse": {
+        "description": "Why a generation model could not be returned.",
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "`UnknownGenerationModel`: no model has this identifier. `WithdrawnGenerationModel`: the model is no longer listed, but edits that already use it still validate, bill and render.",
+                "type": "string",
+                "enum": [
+                  "UnknownGenerationModel",
+                  "WithdrawnGenerationModel"
+                ],
+                "example": "UnknownGenerationModel"
+              },
+              "message": {
+                "description": "A human readable error message.",
+                "type": "string",
+                "example": "Unknown generation model \"seedance-9\"."
+              }
+            },
+            "required": [
+              "name",
+              "message"
+            ]
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
       "QueuedResponse": {
         "description": "The response received after a [render request](#render-asset) or [template render](#render-template) is submitted. The render task is queued for rendering and a unique render id is returned.",
         "properties": {
@@ -5716,213 +6092,6 @@
         "required": [
           "provider"
         ]
-      },
-      "GenerationResponse": {
-        "description": "The status of an on-demand asset generation job. Completed jobs include the public URL of the generated asset.",
-        "type": "object",
-        "properties": {
-          "id": {
-            "description": "The generation job id. Deterministic for a given owner and asset payload (or idempotency key), so identical requests return the same job and cached result.",
-            "type": "string",
-            "example": "8a1f2c3d-4e5b-5a6c-9d7e-1f2a3b4c5d6e"
-          },
-          "status": {
-            "description": "The status of the generation job.",
-            "type": "string",
-            "enum": [
-              "queued",
-              "processing",
-              "done",
-              "failed"
-            ],
-            "example": "done"
-          },
-          "url": {
-            "description": "The public URL of the generated asset. Present only when `status` is `done`.",
-            "type": "string",
-            "example": "https://shotstack-api-v1-output.s3-ap-southeast-2.amazonaws.com/owner/8a1f2c3d.png"
-          },
-          "error": {
-            "description": "A human readable error message. Present only when `status` is `failed`.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "status"
-        ]
-      },
-      "GenerationModelPricing": {
-        "description": "What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.",
-        "properties": {
-          "credits": {
-            "description": "Credits per unit. A number when the rate is flat, or an object keyed by the values of the option named in `tieredBy`.",
-            "oneOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "object",
-                "additionalProperties": true
-              }
-            ],
-            "example": {
-              "480p": 0.9375,
-              "720p": 1.8962,
-              "1080p": 4.2625
-            }
-          },
-          "tieredBy": {
-            "description": "The option whose value selects the rate, and the value assumed when the option is absent. Present only when `credits` is keyed.",
-            "type": "object",
-            "properties": {
-              "option": {
-                "type": "string",
-                "example": "resolution"
-              },
-              "default": {
-                "type": "string",
-                "example": "720p"
-              }
-            },
-            "required": [
-              "option",
-              "default"
-            ]
-          },
-          "quantity": {
-            "description": "How many units a generation consumes. Take the value `measure` names, or `default` when the request carries none, hold it within `min` and `max`, divide by `per`, and round up when `round` is `up`. Absent when one generation is one unit.",
-            "type": "object",
-            "properties": {
-              "measure": {
-                "description": "What the count is taken from, and the scale it is measured in.",
-                "type": "string",
-                "enum": [
-                  "clipSeconds",
-                  "promptCharacters"
-                ],
-                "example": "clipSeconds"
-              },
-              "per": {
-                "description": "How many of `measure` make one billable unit.",
-                "type": "number",
-                "example": 60
-              },
-              "min": {
-                "description": "Fewest accepted. A smaller request is charged at this.",
-                "type": "number",
-                "example": 3
-              },
-              "max": {
-                "description": "Most accepted. A larger request is charged at this.",
-                "type": "number",
-                "example": 600
-              },
-              "default": {
-                "description": "Assumed when the request carries no value.",
-                "type": "number",
-                "example": 30
-              },
-              "round": {
-                "description": "Present when a partial unit is charged as a whole one. A 61 second track on a per-minute rate is charged as two minutes.",
-                "type": "string",
-                "enum": [
-                  "up"
-                ],
-                "example": "up"
-              }
-            },
-            "required": [
-              "measure",
-              "per"
-            ]
-          },
-          "effectiveFrom": {
-            "description": "The date this rate took effect, or `legacy` for a rate that predates dated pricing.",
-            "type": "string",
-            "example": "2026-08-13"
-          }
-        },
-        "required": [
-          "credits",
-          "effectiveFrom"
-        ],
-        "type": "object"
-      },
-      "GenerationModel": {
-        "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts and what it costs. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
-        "properties": {
-          "model": {
-            "description": "The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.",
-            "type": "string",
-            "example": "seedance-2.0-text-to-video"
-          },
-          "type": {
-            "description": "The asset type this model generates.",
-            "type": "string",
-            "enum": [
-              "image",
-              "video",
-              "audio"
-            ],
-            "example": "video"
-          },
-          "name": {
-            "description": "The model's display name, for a model picker.",
-            "type": "string",
-            "example": "Seedance 2.0 \u00b7 Text to video"
-          },
-          "description": {
-            "description": "What the model is suited to, in a sentence or two.",
-            "type": "string",
-            "example": "Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio."
-          },
-          "pricing": {
-            "description": "What one generation with this model costs.",
-            "$ref": "#/components/schemas/GenerationModelPricing"
-          },
-          "options": {
-            "description": "JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.",
-            "type": "object",
-            "additionalProperties": true
-          },
-          "available": {
-            "description": "Whether the account behind the calling API key can generate with this model. Omitted when that cannot be determined; treat a missing value as unknown, not as available. Generation requests are checked either way.",
-            "type": "boolean",
-            "example": false
-          },
-          "unavailableReason": {
-            "description": "Why `available` is false. `AiCapabilityNotIncluded`: the account's plan does not include this kind of generation. `AiDisabled`: AI generation is turned off for the account. `AiAccessUnavailable`: access could not be confirmed; try again later.",
-            "type": "string",
-            "enum": [
-              "AiCapabilityNotIncluded",
-              "AiDisabled",
-              "AiAccessUnavailable"
-            ],
-            "example": "AiCapabilityNotIncluded"
-          }
-        },
-        "required": [
-          "model",
-          "type"
-        ],
-        "type": "object"
-      },
-      "GenerationModelListResponse": {
-        "description": "The generation models available to this account.",
-        "properties": {
-          "models": {
-            "description": "The available models.",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GenerationModel"
-            }
-          }
-        },
-        "required": [
-          "models"
-        ],
-        "type": "object"
       }
     },
     "responses": {},

@@ -279,6 +279,30 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.GenerationModelTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityMeasureJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityMeasureNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityRoundJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityRoundNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationResponseStatusJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationResponseStatusNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelErrorResponseErrorNameJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationModelErrorResponseErrorNameNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.RenderResponseDataStatusJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.RenderResponseDataStatusNullableJsonConverter),
@@ -318,26 +342,6 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.TiktokDestinationOptionsPrivacyLevelJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TiktokDestinationOptionsPrivacyLevelNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationResponseStatusJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationResponseStatusNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityMeasureJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityMeasureNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityRoundJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityRoundNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelTypeJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelTypeNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonNullableJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.AssetJsonConverter),
 
@@ -379,7 +383,7 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
-            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, object>),
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.Dictionary<string, double>>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>),
 
@@ -620,6 +624,24 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DolbyEnhancementOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DolbyEnhancementOptionsPreset), TypeInfoPropertyName = "DolbyEnhancementOptionsPreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Transfer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModel))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelType), TypeInfoPropertyName = "GenerationModelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricing))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelUnavailableReason), TypeInfoPropertyName = "GenerationModelUnavailableReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.Dictionary<string, double>>), TypeInfoPropertyName = "OneOfDoubleDictionaryStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingTieredBy))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityMeasure), TypeInfoPropertyName = "GenerationModelPricingQuantityMeasure2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityRound), TypeInfoPropertyName = "GenerationModelPricingQuantityRound2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponseStatus), TypeInfoPropertyName = "GenerationResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelErrorResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelErrorResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelErrorResponseErrorName), TypeInfoPropertyName = "GenerationModelErrorResponseErrorName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.QueuedResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.QueuedResponseData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenderResponse))]
@@ -670,19 +692,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TiktokDestinationOptionsPrivacyLevel), TypeInfoPropertyName = "TiktokDestinationOptionsPrivacyLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AkamaiNetStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AzureBlobStorageDestinationOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponseStatus), TypeInfoPropertyName = "GenerationResponseStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricing))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, object>), TypeInfoPropertyName = "OneOfDoubleObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingTieredBy))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantity))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityMeasure), TypeInfoPropertyName = "GenerationModelPricingQuantityMeasure2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityRound), TypeInfoPropertyName = "GenerationModelPricingQuantityRound2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModel))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelType), TypeInfoPropertyName = "GenerationModelType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelUnavailableReason), TypeInfoPropertyName = "GenerationModelUnavailableReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelListResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PostGenerateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>), TypeInfoPropertyName = "OneOfImageAssetVideoAssetAudioAsset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MergeField>))]
@@ -696,12 +705,12 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Destinations>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Rendition>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.GenerationModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.TemplateListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.AssetResponseData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.SourceResponseData>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RenditionResponseAttributes>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.IngestErrorResponseData>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.GenerationModel>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
