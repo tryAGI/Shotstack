@@ -44,9 +44,9 @@ namespace Shotstack
 
         /// <summary>
         /// The generation model to use when `prompt` is set (e.g. `flux-schnell`, `nano-banana-2`). Defaults to `nano-banana-2` if omitted. Each model's available options are defined by the model registry.<br/>
-        /// Example: flux-schnell
+        /// Example: nano-banana-2
         /// </summary>
-        /// <example>flux-schnell</example>
+        /// <example>nano-banana-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
@@ -83,7 +83,7 @@ namespace Shotstack
         /// </param>
         /// <param name="model">
         /// The generation model to use when `prompt` is set (e.g. `flux-schnell`, `nano-banana-2`). Defaults to `nano-banana-2` if omitted. Each model's available options are defined by the model registry.<br/>
-        /// Example: flux-schnell
+        /// Example: nano-banana-2
         /// </param>
         /// <param name="options">
         /// Model-specific generation settings. Valid keys and values depend on the chosen `model` and are defined by the model registry. Omitted options use the model's defaults. Unknown or invalid options are rejected.<br/>

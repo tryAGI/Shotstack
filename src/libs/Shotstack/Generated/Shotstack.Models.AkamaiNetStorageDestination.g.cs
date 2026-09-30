@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// Send videos and assets to [Akamai NetStorage](https://techdocs.akamai.com/netstorage-usage/docs). Send files to your NetStorage upload directory with a custom path and filename. Akamai credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/akamai-netstorage), not in the request.
+    /// Send videos and assets to [Akamai NetStorage](https://techdocs.akamai.com/netstorage/docs). Send files to your NetStorage upload directory with a custom path and filename. Akamai credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/akamai-netstorage), not in the request.
     /// </summary>
     public sealed partial class AkamaiNetStorageDestination
     {

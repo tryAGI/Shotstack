@@ -48,7 +48,8 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShotstackDestination' but the value was {ToString()}.");
 
         /// <summary>
-        /// Send videos to the [Mux](https://shotstack.io/docs/guide/serving-assets/destinations/mux/) video hosting and streaming service. Mux credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/mux), not in the request.
+        /// **Notice: The Mux destination is deprecated.** It continues to work, with no behaviour change for existing integrations.<br/>
+        /// Send videos to the [Mux](https://www.mux.com/docs) video hosting and streaming service. Mux credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/mux), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.MuxDestination? MuxDestination { get; init; }
@@ -233,6 +234,7 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'VimeoDestination' but the value was {ToString()}.");
 
         /// <summary>
+        /// **Notice: The TikTok destination is deprecated.** It continues to work, with no behaviour change for existing integrations.<br/>
         /// Send videos to TikTok. TikTok credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/tiktok), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -270,7 +272,7 @@ namespace Shotstack
             : throw new global::System.InvalidOperationException($"Expected union variant 'TiktokDestination' but the value was {ToString()}.");
 
         /// <summary>
-        /// Send videos and assets to [Akamai NetStorage](https://techdocs.akamai.com/netstorage-usage/docs). Send files to your NetStorage upload directory with a custom path and filename. Akamai credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/akamai-netstorage), not in the request.
+        /// Send videos and assets to [Akamai NetStorage](https://techdocs.akamai.com/netstorage/docs). Send files to your NetStorage upload directory with a custom path and filename. Akamai credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/akamai-netstorage), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Shotstack.AkamaiNetStorageDestination? AkamaiNetStorageDestination { get; init; }

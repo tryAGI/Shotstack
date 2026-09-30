@@ -585,18 +585,28 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.Destinations>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Destinations), TypeInfoPropertyName = "Destinations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShotstackDestination))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.MuxDestination))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.S3Destination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GoogleCloudStorageDestination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GoogleDriveDestination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VimeoDestination))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TiktokDestination))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AkamaiNetStorageDestination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AzureBlobStorageDestination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DestinationsDiscriminator))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.MuxDestinationOptions))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem), TypeInfoPropertyName = "MuxDestinationOptionsPlaybackPolicyItem2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.S3DestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GoogleCloudStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GoogleDriveDestinationOptions))]
@@ -688,8 +698,12 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionFontStyle), TypeInfoPropertyName = "RichCaptionFontStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionStyleTextTransform), TypeInfoPropertyName = "RichCaptionStyleTextTransform2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichCaptionStyleTextDecoration), TypeInfoPropertyName = "RichCaptionStyleTextDecoration2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TiktokDestinationOptions))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TiktokDestinationOptionsPrivacyLevel), TypeInfoPropertyName = "TiktokDestinationOptionsPrivacyLevel2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AkamaiNetStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AzureBlobStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PostGenerateRequest))]
@@ -703,7 +717,9 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.List<global::Shotstack.Tween>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RichTextGradientStop>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Destinations>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Rendition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.GenerationModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.TemplateListResponseItem>))]

@@ -17,7 +17,7 @@ namespace Shotstack
         /// 5. **Output**: The final media file is generated and stored<br/>
         /// **Video Preprocessing:**<br/>
         /// Video assets undergo automatic preprocessing to ensure compatibility. You can force <br/>
-        /// preprocessing by setting `"transcode": true` on video assets. See [Preprocessing](#preprocessing) <br/>
+        /// preprocessing by setting `"transcode": true` on video assets. See [VideoAsset](#tocs_videoasset) <br/>
         /// for more details.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
@@ -41,7 +41,7 @@ namespace Shotstack
         /// 5. **Output**: The final media file is generated and stored<br/>
         /// **Video Preprocessing:**<br/>
         /// Video assets undergo automatic preprocessing to ensure compatibility. You can force <br/>
-        /// preprocessing by setting `"transcode": true` on video assets. See [Preprocessing](#preprocessing) <br/>
+        /// preprocessing by setting `"transcode": true` on video assets. See [VideoAsset](#tocs_videoasset) <br/>
         /// for more details.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
@@ -65,7 +65,7 @@ namespace Shotstack
         /// 5. **Output**: The final media file is generated and stored<br/>
         /// **Video Preprocessing:**<br/>
         /// Video assets undergo automatic preprocessing to ensure compatibility. You can force <br/>
-        /// preprocessing by setting `"transcode": true` on video assets. See [Preprocessing](#preprocessing) <br/>
+        /// preprocessing by setting `"transcode": true` on video assets. See [VideoAsset](#tocs_videoasset) <br/>
         /// for more details.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>

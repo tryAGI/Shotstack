@@ -8,7 +8,7 @@ namespace Shotstack
         /// Direct Upload<br/>
         /// Request a signed URL to upload a file to. The response returns a signed URL that you use to upload the file to.<br/>
         /// The signed URL looks similar to:<br/>
-        /// https://shotstack-ingest-api-stage-sources.s3.ap-southeast-2.amazonaws.com/5ca6hu7s9k/zzytey4v-32km-kq1z-aftr-3kcuqi0brad2/source?AWSAccessKeyId=ASIAWJV7UWDMGTZLHTXP&amp;Expires=1677209777&amp;Signature=PKR4dGDDdOuMTAQmDASzLGmLOeo%3D&amp;x-amz-acl=public-read&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEGMaDmFwLX......56osBGByztm7WZdbmXzO09KR<br/>
+        /// `https://shotstack-ingest-api-stage-sources.s3.ap-southeast-2.amazonaws.com/5ca6hu7s9k/zzytey4v-32km-kq1z-aftr-3kcuqi0brad2/source?AWSAccessKeyId=ASIAWJV7UWDMGTZLHTXP&amp;Expires=1677209777&amp;Signature=PKR4dGDDdOuMTAQmDASzLGmLOeo%3D&amp;x-amz-acl=public-read&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEGMaDmFwLX......56osBGByztm7WZdbmXzO09KR`<br/>
         /// In a separate API call, use this signed URL to send a PUT request with the binary file. Using  cURL you can use<br/>
         /// a command like:<br/>
         ///     <br/>
@@ -30,7 +30,7 @@ namespace Shotstack
         /// Direct Upload<br/>
         /// Request a signed URL to upload a file to. The response returns a signed URL that you use to upload the file to.<br/>
         /// The signed URL looks similar to:<br/>
-        /// https://shotstack-ingest-api-stage-sources.s3.ap-southeast-2.amazonaws.com/5ca6hu7s9k/zzytey4v-32km-kq1z-aftr-3kcuqi0brad2/source?AWSAccessKeyId=ASIAWJV7UWDMGTZLHTXP&amp;Expires=1677209777&amp;Signature=PKR4dGDDdOuMTAQmDASzLGmLOeo%3D&amp;x-amz-acl=public-read&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEGMaDmFwLX......56osBGByztm7WZdbmXzO09KR<br/>
+        /// `https://shotstack-ingest-api-stage-sources.s3.ap-southeast-2.amazonaws.com/5ca6hu7s9k/zzytey4v-32km-kq1z-aftr-3kcuqi0brad2/source?AWSAccessKeyId=ASIAWJV7UWDMGTZLHTXP&amp;Expires=1677209777&amp;Signature=PKR4dGDDdOuMTAQmDASzLGmLOeo%3D&amp;x-amz-acl=public-read&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEGMaDmFwLX......56osBGByztm7WZdbmXzO09KR`<br/>
         /// In a separate API call, use this signed URL to send a PUT request with the binary file. Using  cURL you can use<br/>
         /// a command like:<br/>
         ///     <br/>
