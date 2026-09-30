@@ -10,7 +10,8 @@ namespace Shotstack
     /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
     /// - **Generated:** set `prompt` to describe the motion. Choose a generator<br/>
     ///   with `model` and configure it with model-specific `options`. Models that<br/>
-    ///   animate a starting image take it as `options.inputSrc`; the default model<br/>
+    ///   animate an image take it as `options.startSrc` (the original<br/>
+    ///   image-to-video models use `options.inputSrc`); the default model<br/>
     ///   generates from the prompt alone. The generated `src` is filled in<br/>
     ///   automatically.<br/>
     /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
@@ -37,7 +38,7 @@ namespace Shotstack
         public string? Src { get; set; }
 
         /// <summary>
-        /// A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it. A starting image goes in `options.inputSrc`, on the models that accept one.<br/>
+        /// A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it. A starting image goes in `options.startSrc` — or `options.inputSrc` on the original image-to-video models — on the models that accept one.<br/>
         /// Example: Slowly zoom out and orbit left around the object.
         /// </summary>
         /// <example>Slowly zoom out and orbit left around the object.</example>
@@ -127,7 +128,7 @@ namespace Shotstack
         /// Example: https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4
         /// </param>
         /// <param name="prompt">
-        /// A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it. A starting image goes in `options.inputSrc`, on the models that accept one.<br/>
+        /// A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it. A starting image goes in `options.startSrc` — or `options.inputSrc` on the original image-to-video models — on the models that accept one.<br/>
         /// Example: Slowly zoom out and orbit left around the object.
         /// </param>
         /// <param name="model">

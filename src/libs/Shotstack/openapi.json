@@ -1708,7 +1708,7 @@
         "additionalProperties": false
       },
       "VideoAsset": {
-        "description": "The VideoAsset adds a video to a Clip. The video can be sourced from a URL\n(`src`), generated from a text prompt (`prompt`), or both. At least one of\n`src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.\n- **Generated:** set `prompt` to describe the motion. Choose a generator\n  with `model` and configure it with model-specific `options`. Models that\n  animate a starting image take it as `options.inputSrc`; the default model\n  generates from the prompt alone. The generated `src` is filled in\n  automatically.\n- **Both:** `src` acts as a preview placeholder while `prompt` drives\n  generation \u2014 the video is regenerated from the prompt at render time.\n  Unchanged prompts and options resolve from the generation cache.\n",
+        "description": "The VideoAsset adds a video to a Clip. The video can be sourced from a URL\n(`src`), generated from a text prompt (`prompt`), or both. At least one of\n`src` or `prompt` must be provided.\n\n- **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.\n- **Generated:** set `prompt` to describe the motion. Choose a generator\n  with `model` and configure it with model-specific `options`. Models that\n  animate an image take it as `options.startSrc` (the original\n  image-to-video models use `options.inputSrc`); the default model\n  generates from the prompt alone. The generated `src` is filled in\n  automatically.\n- **Both:** `src` acts as a preview placeholder while `prompt` drives\n  generation \u2014 the video is regenerated from the prompt at render time.\n  Unchanged prompts and options resolve from the generation cache.\n",
         "type": "object",
         "properties": {
           "type": {
@@ -1727,7 +1727,7 @@
             "example": "https://s3-ap-northeast-1.amazonaws.com/my-bucket/video.mp4"
           },
           "prompt": {
-            "description": "A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it. A starting image goes in `options.inputSrc`, on the models that accept one.",
+            "description": "A text prompt to generate the video from. The engine generates a video at render time and fills `src` automatically; an existing `src` is treated as a preview placeholder and replaced. Use `model` to choose the generator and `options` to configure it. A starting image goes in `options.startSrc` \u2014 or `options.inputSrc` on the original image-to-video models \u2014 on the models that accept one.",
             "type": "string",
             "maxLength": 4000,
             "example": "Slowly zoom out and orbit left around the object."
@@ -2547,7 +2547,7 @@
       },
       "ImageToVideoAsset": {
         "deprecated": true,
-        "description": "**Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)\nwith `prompt`, a `model` that accepts a starting image, and that image in\n`options.inputSrc` \u2014 for example `seedance-2.0-image-to-video`.** This type continues to\nfunction and is internally rewritten to VideoAsset; no behaviour change for\nexisting integrations.\n\nThe ImageToVideoAsset lets you create a video from an image and a text prompt.\n",
+        "description": "**Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)\nwith `prompt`, a `model` that accepts a starting image, and that image in\n`options.startSrc` \u2014 for example `seedance-2.0-image-to-video`.** This type continues to\nfunction and is internally rewritten to VideoAsset; no behaviour change for\nexisting integrations.\n\nThe ImageToVideoAsset lets you create a video from an image and a text prompt.\n",
         "properties": {
           "type": {
             "type": "string",

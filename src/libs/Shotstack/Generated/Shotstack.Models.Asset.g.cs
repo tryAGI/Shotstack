@@ -21,7 +21,8 @@ namespace Shotstack
         /// - **Source URL:** set `src` to the URL of an mp4 (or compatible) video file.<br/>
         /// - **Generated:** set `prompt` to describe the motion. Choose a generator<br/>
         ///   with `model` and configure it with model-specific `options`. Models that<br/>
-        ///   animate a starting image take it as `options.inputSrc`; the default model<br/>
+        ///   animate an image take it as `options.startSrc` (the original<br/>
+        ///   image-to-video models use `options.inputSrc`); the default model<br/>
         ///   generates from the prompt alone. The generated `src` is filled in<br/>
         ///   automatically.<br/>
         /// - **Both:** `src` acts as a preview placeholder while `prompt` drives<br/>
@@ -599,7 +600,7 @@ namespace Shotstack
         /// <summary>
         /// **Notice: ImageToVideoAsset is deprecated. Use [VideoAsset](#tocs_videoasset)<br/>
         /// with `prompt`, a `model` that accepts a starting image, and that image in<br/>
-        /// `options.inputSrc` — for example `seedance-2.0-image-to-video`.** This type continues to<br/>
+        /// `options.startSrc` — for example `seedance-2.0-image-to-video`.** This type continues to<br/>
         /// function and is internally rewritten to VideoAsset; no behaviour change for<br/>
         /// existing integrations.<br/>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
