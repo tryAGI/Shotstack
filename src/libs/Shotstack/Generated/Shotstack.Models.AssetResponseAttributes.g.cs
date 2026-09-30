@@ -43,7 +43,7 @@ namespace Shotstack
         public string? RenderId { get; set; }
 
         /// <summary>
-        /// The third party id of an asset transferred to an external provider, i.e. Mux, YouTube or S3. If the provider is Shotstack, the providerID is the same as the asset id.<br/>
+        /// The third party id of an asset transferred to an external provider, such as Vimeo or S3. If the provider is Shotstack, the providerID is the same as the asset id.<br/>
         /// Example: a4482cbf-e321-42a2-ac8b-947d26886840
         /// </summary>
         /// <example>a4482cbf-e321-42a2-ac8b-947d26886840</example>
@@ -132,7 +132,7 @@ namespace Shotstack
         /// Example: 2abd5c11-0f3d-4c6d-ba20-235fc9b8e8b7
         /// </param>
         /// <param name="providerId">
-        /// The third party id of an asset transferred to an external provider, i.e. Mux, YouTube or S3. If the provider is Shotstack, the providerID is the same as the asset id.<br/>
+        /// The third party id of an asset transferred to an external provider, such as Vimeo or S3. If the provider is Shotstack, the providerID is the same as the asset id.<br/>
         /// Example: a4482cbf-e321-42a2-ac8b-947d26886840
         /// </param>
         /// <param name="filename">

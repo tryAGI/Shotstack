@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace Shotstack
 {
     public partial class IngestClient
@@ -486,7 +488,9 @@ namespace Shotstack
         public async global::System.Threading.Tasks.Task<global::Shotstack.QueuedSourceResponse> PostSourceAsync(
             string? url = default,
             global::Shotstack.Outputs? outputs = default,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::Shotstack.Destinations? destinations = default,
+#pragma warning disable CS0618 // Type or member is obsolete
             string? callback = default,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -4,20 +4,24 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: MuxDestinationOptions, like the Mux destination, is deprecated.** It continues to work, with no behaviour change for existing integrations.<br/>
     /// Pass additional options to control how Mux processes video. Currently supports playback_policy and passthrough options.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class MuxDestinationOptions
     {
         /// <summary>
         /// Sets the Mux `playback_policy` option. Value is an array of strings - use `public`, `signed`, or both.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("playbackPolicy")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<global::Shotstack.MuxDestinationOptionsPlaybackPolicyItem>? PlaybackPolicy { get; set; }
 
         /// <summary>
         /// Sets the Mux `passthrough` option. Max 255 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("passthrough")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Passthrough { get; set; }
 
         /// <summary>

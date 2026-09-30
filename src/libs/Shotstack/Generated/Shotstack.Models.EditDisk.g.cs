@@ -5,7 +5,7 @@ namespace Shotstack
 {
     /// <summary>
     /// **Notice: This option is now deprecated and will be removed. Disk types are handled automatically. Setting a disk type has no effect.**<br/>
-    /// The disk type to use for storing footage and assets for each render. See [disk types](https://shotstack.io/docs/guide/architecting-an-application/disk-types/) for more details.<br/>
+    /// The disk type to use for storing footage and assets for each render.<br/>
     /// &lt;ul&gt;<br/>
     ///   &lt;li&gt;`local` - optimized for high speed rendering with up to 512MB storage&lt;/li&gt;<br/>
     ///   &lt;li&gt;`mount` - optimized for larger file sizes and longer videos with 5GB for source footage and 512MB for output render&lt;/li&gt;<br/>

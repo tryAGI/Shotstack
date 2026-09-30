@@ -4,14 +4,17 @@
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: TiktokDestinationOptions, like the TikTok destination, is deprecated.** It continues to work, with no behaviour change for existing integrations.<br/>
     /// Pass additional options to control how TikTok publishes video.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class TiktokDestinationOptions
     {
         /// <summary>
         /// A title for the video that will be displayed on TikTok.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Title { get; set; }
 
         /// <summary>
@@ -24,6 +27,7 @@ namespace Shotstack
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacyLevel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.TiktokDestinationOptionsPrivacyLevelJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TiktokDestinationOptionsPrivacyLevel? PrivacyLevel { get; set; }
 
         /// <summary>
@@ -31,6 +35,7 @@ namespace Shotstack
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disableDuet")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DisableDuet { get; set; }
 
         /// <summary>
@@ -38,6 +43,7 @@ namespace Shotstack
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disableStitch")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DisableStitch { get; set; }
 
         /// <summary>
@@ -45,6 +51,7 @@ namespace Shotstack
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disableComment")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DisableComment { get; set; }
 
         /// <summary>

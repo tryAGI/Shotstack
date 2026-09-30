@@ -1,11 +1,15 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Shotstack
 {
     /// <summary>
+    /// **Notice: The TikTok destination is deprecated.** It continues to work, with no behaviour change for existing integrations.<br/>
     /// Send videos to TikTok. TikTok credentials are required and added via the [dashboard](https://dashboard.shotstack.io/integrations/tiktok), not in the request.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class TiktokDestination
     {
         /// <summary>
@@ -17,12 +21,15 @@ namespace Shotstack
         /// <example>tiktok</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Provider { get; set; } = "tiktok";
 
         /// <summary>
+        /// **Notice: TiktokDestinationOptions, like the TikTok destination, is deprecated.** It continues to work, with no behaviour change for existing integrations.<br/>
         /// Pass additional options to control how TikTok publishes video.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::Shotstack.TiktokDestinationOptions? Options { get; set; }
 
         /// <summary>
@@ -39,18 +46,13 @@ namespace Shotstack
         /// Default Value: tiktok<br/>
         /// Example: tiktok
         /// </param>
-        /// <param name="options">
-        /// Pass additional options to control how TikTok publishes video.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TiktokDestination(
-            string provider,
-            global::Shotstack.TiktokDestinationOptions? options)
+            string provider)
         {
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
-            this.Options = options;
         }
 
         /// <summary>
