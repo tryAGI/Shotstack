@@ -279,6 +279,10 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.GenerationAssetTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GenerationAssetTypeNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.GenerationModelTypeJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.GenerationModelTypeNullableJsonConverter),
@@ -384,8 +388,6 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.Dictionary<string, double>>),
-
-            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>),
 
             typeof(global::Shotstack.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -634,6 +636,8 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DolbyEnhancementOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.DolbyEnhancementOptionsPreset), TypeInfoPropertyName = "DolbyEnhancementOptionsPreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Transfer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationAsset))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationAssetType), TypeInfoPropertyName = "GenerationAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelType), TypeInfoPropertyName = "GenerationModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricing))]
@@ -707,7 +711,6 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AkamaiNetStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AzureBlobStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PostGenerateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset>), TypeInfoPropertyName = "OneOfImageAssetVideoAssetAudioAsset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MergeField>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Font>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Track>))]

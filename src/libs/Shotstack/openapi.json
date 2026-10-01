@@ -780,7 +780,8 @@
           }
         ],
         "requestBody": {
-          "description": "A prompt-bearing image, video or audio asset to generate.",
+          "required": true,
+          "description": "The asset to generate and, for models that generate to a duration, the length of the clip it fills.",
           "content": {
             "application/json": {
               "example": {
@@ -794,17 +795,7 @@
                 "type": "object",
                 "properties": {
                   "asset": {
-                    "oneOf": [
-                      {
-                        "$ref": "#/components/schemas/ImageAsset"
-                      },
-                      {
-                        "$ref": "#/components/schemas/VideoAsset"
-                      },
-                      {
-                        "$ref": "#/components/schemas/AudioAsset"
-                      }
-                    ]
+                    "$ref": "#/components/schemas/GenerationAsset"
                   },
                   "length": {
                     "description": "The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.",
@@ -4798,6 +4789,48 @@
           "destinations"
         ],
         "type": "object"
+      },
+      "GenerationAsset": {
+        "description": "An image, video or audio asset to generate from a text prompt.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "The kind of asset to generate.",
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "audio"
+            ],
+            "example": "image"
+          },
+          "prompt": {
+            "description": "A description of the asset to generate. For text-to-speech models it is the text spoken.",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000,
+            "pattern": "\\S",
+            "example": "A lighthouse on a rocky coast at sunset, cinematic lighting"
+          },
+          "model": {
+            "description": "The generation model. Defaults to `nano-banana-2` for images, `seedance-2.0-text-to-video` for video and `elevenlabs-multilingual-v2` for audio. `GET /models` lists the models for each type.",
+            "type": "string",
+            "example": "nano-banana-2"
+          },
+          "options": {
+            "description": "Settings for the chosen `model`. `GET /models` lists the options each model accepts; omitted options use the model's defaults and unknown or invalid options are rejected. A starting image for video goes in `startSrc` (`inputSrc` on the original image-to-video models) and a speech voice in `voice`.",
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "aspectRatio": "16:9"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "prompt"
+        ]
       },
       "GenerationModel": {
         "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts and what it costs. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",

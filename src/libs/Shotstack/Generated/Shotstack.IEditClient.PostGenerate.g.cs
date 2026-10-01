@@ -66,7 +66,9 @@ namespace Shotstack
         /// <param name="idempotencyKey">
         /// Optional idempotency key. When omitted, the SDK generates one for this request.
         /// </param>
-        /// <param name="asset"></param>
+        /// <param name="asset">
+        /// An image, video or audio asset to generate from a text prompt.
+        /// </param>
         /// <param name="length">
         /// The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.<br/>
         /// Example: 5
@@ -75,7 +77,7 @@ namespace Shotstack
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.GenerationResponse> PostGenerateAsync(
-            global::Shotstack.OneOf<global::Shotstack.ImageAsset, global::Shotstack.VideoAsset, global::Shotstack.AudioAsset> asset,
+            global::Shotstack.GenerationAsset asset,
             string? idempotencyKey = default,
             double? length = default,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
