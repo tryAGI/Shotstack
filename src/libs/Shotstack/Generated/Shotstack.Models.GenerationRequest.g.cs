@@ -6,7 +6,7 @@ namespace Shotstack
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class PostGenerateRequest
+    public sealed partial class GenerationRequest
     {
         /// <summary>
         /// An image, video or audio asset to generate from a text prompt.
@@ -30,7 +30,7 @@ namespace Shotstack
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostGenerateRequest" /> class.
+        /// Initializes a new instance of the <see cref="GenerationRequest" /> class.
         /// </summary>
         /// <param name="asset">
         /// An image, video or audio asset to generate from a text prompt.
@@ -42,7 +42,7 @@ namespace Shotstack
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public PostGenerateRequest(
+        public GenerationRequest(
             global::Shotstack.GenerationAsset asset,
             double? length)
         {
@@ -51,9 +51,9 @@ namespace Shotstack
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostGenerateRequest" /> class.
+        /// Initializes a new instance of the <see cref="GenerationRequest" /> class.
         /// </summary>
-        public PostGenerateRequest()
+        public GenerationRequest()
         {
         }
 

@@ -43,8 +43,8 @@ namespace Shotstack
 
         /// <summary>
         /// Get Generation Model<br/>
-        /// Get one generation model, including the JSON Schema for the options it accepts and<br/>
-        /// what it costs in credits.<br/>
+        /// Get one generation model, including the JSON Schema for the options it accepts.<br/>
+        /// Use `POST /generate/quote` for a credit estimate.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="id"></param>
@@ -66,8 +66,8 @@ namespace Shotstack
         }
         /// <summary>
         /// Get Generation Model<br/>
-        /// Get one generation model, including the JSON Schema for the options it accepts and<br/>
-        /// what it costs in credits.<br/>
+        /// Get one generation model, including the JSON Schema for the options it accepts.<br/>
+        /// Use `POST /generate/quote` for a credit estimate.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="id"></param>

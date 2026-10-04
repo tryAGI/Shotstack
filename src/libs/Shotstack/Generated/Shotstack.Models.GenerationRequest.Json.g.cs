@@ -2,7 +2,7 @@
 
 namespace Shotstack
 {
-    public sealed partial class PostGenerateRequest
+    public sealed partial class GenerationRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Shotstack
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Shotstack.PostGenerateRequest? FromJson(
+        public static global::Shotstack.GenerationRequest? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Shotstack.PostGenerateRequest),
-                jsonSerializerContext) as global::Shotstack.PostGenerateRequest;
+                typeof(global::Shotstack.GenerationRequest),
+                jsonSerializerContext) as global::Shotstack.GenerationRequest;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Shotstack.PostGenerateRequest? FromJson(
+        public static global::Shotstack.GenerationRequest? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Shotstack.PostGenerateRequest? FromJson(
+        public static global::Shotstack.GenerationRequest? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Shotstack
                     global::Shotstack.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Shotstack.PostGenerateRequest>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Shotstack.GenerationRequest>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Shotstack
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Shotstack.PostGenerateRequest?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationRequest?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Shotstack.PostGenerateRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Shotstack.PostGenerateRequest;
+                typeof(global::Shotstack.GenerationRequest),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Shotstack.GenerationRequest;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.PostGenerateRequest?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationRequest?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.PostGenerateRequest?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationRequest?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Shotstack
                     global::Shotstack.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Shotstack.PostGenerateRequest?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Shotstack.GenerationRequest?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

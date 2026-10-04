@@ -291,14 +291,6 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.GenerationModelUnavailableReasonNullableJsonConverter),
 
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityMeasureJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityMeasureNullableJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityRoundJsonConverter),
-
-            typeof(global::Shotstack.JsonConverters.GenerationModelPricingQuantityRoundNullableJsonConverter),
-
             typeof(global::Shotstack.JsonConverters.GenerationResponseStatusJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.GenerationResponseStatusNullableJsonConverter),
@@ -386,8 +378,6 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
-
-            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.Dictionary<string, double>>),
 
             typeof(global::Shotstack.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -640,14 +630,9 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationAssetType), TypeInfoPropertyName = "GenerationAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelType), TypeInfoPropertyName = "GenerationModelType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricing))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelUnavailableReason), TypeInfoPropertyName = "GenerationModelUnavailableReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.Dictionary<string, double>>), TypeInfoPropertyName = "OneOfDoubleDictionaryStringDouble2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, double>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingTieredBy))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantity))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityMeasure), TypeInfoPropertyName = "GenerationModelPricingQuantityMeasure2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelPricingQuantityRound), TypeInfoPropertyName = "GenerationModelPricingQuantityRound2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationQuote))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationModelListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.GenerationModel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GenerationResponse))]
@@ -710,7 +695,6 @@ namespace Shotstack
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AkamaiNetStorageDestinationOptions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AzureBlobStorageDestinationOptions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PostGenerateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.MergeField>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Font>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Track>))]

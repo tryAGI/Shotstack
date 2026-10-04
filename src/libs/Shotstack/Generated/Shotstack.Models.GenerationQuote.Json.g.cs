@@ -2,7 +2,7 @@
 
 namespace Shotstack
 {
-    public sealed partial class GenerationModelPricingQuantity
+    public sealed partial class GenerationQuote
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace Shotstack
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Shotstack.GenerationModelPricingQuantity? FromJson(
+        public static global::Shotstack.GenerationQuote? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Shotstack.GenerationModelPricingQuantity),
-                jsonSerializerContext) as global::Shotstack.GenerationModelPricingQuantity;
+                typeof(global::Shotstack.GenerationQuote),
+                jsonSerializerContext) as global::Shotstack.GenerationQuote;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Shotstack.GenerationModelPricingQuantity? FromJson(
+        public static global::Shotstack.GenerationQuote? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Shotstack.GenerationModelPricingQuantity? FromJson(
+        public static global::Shotstack.GenerationQuote? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace Shotstack
                     global::Shotstack.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Shotstack.GenerationModelPricingQuantity>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Shotstack.GenerationQuote>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace Shotstack
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationModelPricingQuantity?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationQuote?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Shotstack.GenerationModelPricingQuantity),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Shotstack.GenerationModelPricingQuantity;
+                typeof(global::Shotstack.GenerationQuote),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Shotstack.GenerationQuote;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationModelPricingQuantity?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationQuote?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace Shotstack
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationModelPricingQuantity?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Shotstack.GenerationQuote?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace Shotstack
                     global::Shotstack.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Shotstack.GenerationModelPricingQuantity?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Shotstack.GenerationQuote?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

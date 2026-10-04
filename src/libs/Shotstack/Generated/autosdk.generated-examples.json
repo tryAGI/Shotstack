@@ -24,6 +24,17 @@
     },
     {
       "Order": 3,
+      "Title": "Quote Generation",
+      "Slug": "postgeneratequote",
+      "Description": "Estimate credits for the same asset and clip length accepted by \u0060POST /generate\u0060.\nRequires an API key and the same model access as generation. Invalid options and\ndisallowed source URLs are rejected. No provider request, job, quota usage or credit\nreservation is created. A quote does not guarantee an available balance or quota.\n\nPrices are evaluated at request time. Request another quote when settings change;\ngeneration uses the current price when submitted.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
+      "Language": "http",
+      "Code": "### Quote Generation\n# @name postGenerateQuote\nPOST {{host}}/edit/v1/generate/quote\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022asset\u0022: {\n    \u0022type\u0022: \u0022image\u0022,\n    \u0022prompt\u0022: \u0022A lighthouse on a rocky coast at sunset, cinematic lighting\u0022,\n    \u0022model\u0022: \u0022nano-banana-2\u0022\n  }\n}\n\n## Responses\n# 200\n# Description: The generation credit estimate.\n# Content-Type: application/json\n# 400\n# Description: The request is invalid, for example a missing asset or prompt, a disallowed URL or a \u0060length\u0060 that is not positive.\n# Content-Type: application/json\n# 401\n# Description: An API key is required.\n# 403\n# Description: The account cannot use this generation. \u0060code\u0060 says why.\n# Content-Type: application/json\n# 503\n# Description: A service the request depends on is temporarily unavailable. \u0060code\u0060 is \u0060AiAccessUnavailable\u0060 when access to AI generation could not be confirmed.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "postGenerateQuote",
+      "Setup": null
+    },
+    {
+      "Order": 4,
       "Title": "Render Asset",
       "Slug": "postrender",
       "Description": "Queue and render the contents of an [Edit](#tocs_edit) as a video, image or audio file.\n\n**Rendering Process:**\n1. **Validation**: The edit JSON is validated\n2. **Download**: All assets are downloaded and cached  \n3. **Preprocessing**: Video assets are automatically processed to fix compatibility issues\n4. **Rendering**: The timeline is rendered using the processed assets\n5. **Output**: The final media file is generated and stored\n\n**Video Preprocessing:**\nVideo assets undergo automatic preprocessing to ensure compatibility. You can force \npreprocessing by setting \u0060\u0022transcode\u0022: true\u0060 on video assets. See [VideoAsset](#tocs_videoasset) \nfor more details.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
@@ -34,7 +45,7 @@
       "Setup": null
     },
     {
-      "Order": 4,
+      "Order": 5,
       "Title": "Create Template",
       "Slug": "posttemplate",
       "Description": "Save an [Edit](#tocs_edit) as a re-usable template. Templates can be retrieved and modified in your application\nbefore being rendered. [Merge fields](#tocs_mergefield) can be also used to merge data in to a template and\n[render](#render-template) it in a single request.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
@@ -45,7 +56,7 @@
       "Setup": null
     },
     {
-      "Order": 5,
+      "Order": 6,
       "Title": "Render Template",
       "Slug": "posttemplaterender",
       "Description": "Render an asset from a template id and optional merge fields. Merge fields can be used to replace placeholder\nvariables within the [Edit](#tocs_edit).\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
@@ -56,7 +67,7 @@
       "Setup": null
     },
     {
-      "Order": 6,
+      "Order": 7,
       "Title": "Update Template",
       "Slug": "puttemplate",
       "Description": "Update an existing template by template id.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/edit/{version}\u003C/a\u003E",
@@ -67,7 +78,7 @@
       "Setup": null
     },
     {
-      "Order": 7,
+      "Order": 8,
       "Title": "Fetch Source",
       "Slug": "postsource",
       "Description": "Queue a source file to be fetched from a URL and stored by Shotstack. Source files can be videos, images, audio\nfiles and fonts. Once ingested, new [output renditions](#tocs_outputs) can be created from the source file.\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/ingest/{version}\u003C/a\u003E",
@@ -78,7 +89,7 @@
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 9,
       "Title": "Transfer Asset",
       "Slug": "postserveasset",
       "Description": "Transfer a file from any publicly available URL to one or more Serve API\n[destinations](#tocs_destinations).\n\n**Base URL:** \u003Ca href=\u0022#\u0022\u003Ehttps://api.shotstack.io/serve/{version}\u003C/a\u003E",

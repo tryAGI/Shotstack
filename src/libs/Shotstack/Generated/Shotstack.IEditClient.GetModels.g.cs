@@ -7,7 +7,7 @@ namespace Shotstack
         /// <summary>
         /// List Generation Models<br/>
         /// List the generation models available for `prompt`-bearing image, video and audio<br/>
-        /// assets, with the options each accepts and what it costs in credits.<br/>
+        /// assets, with the options each accepts. Use `POST /generate/quote` for a credit estimate.<br/>
         /// Use this to populate a model picker and render its option fields, rather than<br/>
         /// hard coding a model list. A newly launched model appears here without any change<br/>
         /// on your side. Each entry carries the asset type it generates, so filter the list<br/>
@@ -26,7 +26,7 @@ namespace Shotstack
         /// <summary>
         /// List Generation Models<br/>
         /// List the generation models available for `prompt`-bearing image, video and audio<br/>
-        /// assets, with the options each accepts and what it costs in credits.<br/>
+        /// assets, with the options each accepts. Use `POST /generate/quote` for a credit estimate.<br/>
         /// Use this to populate a model picker and render its option fields, rather than<br/>
         /// hard coding a model list. A newly launched model appears here without any change<br/>
         /// on your side. Each entry carries the asset type it generates, so filter the list<br/>
