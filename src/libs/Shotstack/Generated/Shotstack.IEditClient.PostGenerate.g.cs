@@ -24,7 +24,7 @@ namespace Shotstack
         /// <exception cref="global::Shotstack.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.GenerationResponse> PostGenerateAsync(
 
-            global::Shotstack.PostGenerateRequest request,
+            global::Shotstack.GenerationRequest request,
             string? idempotencyKey = default,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -48,7 +48,7 @@ namespace Shotstack
         /// <exception cref="global::Shotstack.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationResponse>> PostGenerateAsResponseAsync(
 
-            global::Shotstack.PostGenerateRequest request,
+            global::Shotstack.GenerationRequest request,
             string? idempotencyKey = default,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

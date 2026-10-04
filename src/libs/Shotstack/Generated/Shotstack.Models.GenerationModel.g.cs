@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts and what it costs. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.
+    /// A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts. Use `POST /generate/quote` for a credit estimate. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.
     /// </summary>
     public sealed partial class GenerationModel
     {
@@ -42,12 +42,6 @@ namespace Shotstack
         /// <example>Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
-
-        /// <summary>
-        /// What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pricing")]
-        public global::Shotstack.GenerationModelPricing? Pricing { get; set; }
 
         /// <summary>
         /// JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.
@@ -97,9 +91,6 @@ namespace Shotstack
         /// What the model is suited to, in a sentence or two.<br/>
         /// Example: Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio.
         /// </param>
-        /// <param name="pricing">
-        /// What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.
-        /// </param>
         /// <param name="options">
         /// JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.
         /// </param>
@@ -119,7 +110,6 @@ namespace Shotstack
             global::Shotstack.GenerationModelType type,
             string? name,
             string? description,
-            global::Shotstack.GenerationModelPricing? pricing,
             object? options,
             bool? available,
             global::Shotstack.GenerationModelUnavailableReason? unavailableReason)
@@ -128,7 +118,6 @@ namespace Shotstack
             this.Type = type;
             this.Name = name;
             this.Description = description;
-            this.Pricing = pricing;
             this.Options = options;
             this.Available = available;
             this.UnavailableReason = unavailableReason;

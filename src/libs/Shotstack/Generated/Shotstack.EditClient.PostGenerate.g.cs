@@ -28,12 +28,12 @@ namespace Shotstack
         partial void PreparePostGenerateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? idempotencyKey,
-            global::Shotstack.PostGenerateRequest request);
+            global::Shotstack.GenerationRequest request);
         partial void PreparePostGenerateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? idempotencyKey,
-            global::Shotstack.PostGenerateRequest request);
+            global::Shotstack.GenerationRequest request);
         partial void ProcessPostGenerateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,7 +63,7 @@ namespace Shotstack
         /// <exception cref="global::Shotstack.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Shotstack.GenerationResponse> PostGenerateAsync(
 
-            global::Shotstack.PostGenerateRequest request,
+            global::Shotstack.GenerationRequest request,
             string? idempotencyKey = default,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -98,7 +98,7 @@ namespace Shotstack
         /// <exception cref="global::Shotstack.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationResponse>> PostGenerateAsResponseAsync(
 
-            global::Shotstack.PostGenerateRequest request,
+            global::Shotstack.GenerationRequest request,
             string? idempotencyKey = default,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -704,7 +704,7 @@ namespace Shotstack
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Shotstack.PostGenerateRequest
+            var __request = new global::Shotstack.GenerationRequest
             {
                 Asset = asset,
                 Length = length,

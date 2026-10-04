@@ -792,24 +792,65 @@
                 }
               },
               "schema": {
-                "type": "object",
-                "properties": {
-                  "asset": {
-                    "$ref": "#/components/schemas/GenerationAsset"
-                  },
-                  "length": {
-                    "description": "The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.",
-                    "type": "number",
-                    "minimum": 0,
-                    "exclusiveMinimum": true,
-                    "example": 5
-                  }
-                },
-                "required": [
-                  "asset"
-                ]
+                "$ref": "#/components/schemas/GenerationRequest"
               }
             }
+          }
+        },
+        "security": [
+          {
+            "DeveloperKey": []
+          }
+        ],
+        "tags": [
+          "Edit"
+        ]
+      }
+    },
+    "/edit/v1/generate/quote": {
+      "post": {
+        "summary": "Quote Generation",
+        "operationId": "postGenerateQuote",
+        "description": "Estimate credits for the same asset and clip length accepted by `POST /generate`.\nRequires an API key and the same model access as generation. Invalid options and\ndisallowed source URLs are rejected. No provider request, job, quota usage or credit\nreservation is created. A quote does not guarantee an available balance or quota.\n\nPrices are evaluated at request time. Request another quote when settings change;\ngeneration uses the current price when submitted.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "asset": {
+                  "type": "image",
+                  "prompt": "A lighthouse on a rocky coast at sunset, cinematic lighting",
+                  "model": "nano-banana-2"
+                }
+              },
+              "schema": {
+                "$ref": "#/components/schemas/GenerationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The generation credit estimate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationQuote"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "description": "An API key is required."
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "503": {
+            "$ref": "#/components/responses/503"
           }
         },
         "security": [
@@ -890,7 +931,7 @@
     },
     "/edit/v1/models": {
       "get": {
-        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets, with the options each accepts and what it costs in credits.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\nEach model's `available` reflects the plan of the account behind the calling API\nkey, so offer only the models it marks available.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets, with the options each accepts. Use `POST /generate/quote` for a credit estimate.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\nEach model's `available` reflects the plan of the account behind the calling API\nkey, so offer only the models it marks available.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
         "summary": "List Generation Models",
         "operationId": "getModels",
         "responses": {
@@ -932,7 +973,7 @@
     },
     "/edit/v1/models/{id}": {
       "get": {
-        "description": "Get one generation model, including the JSON Schema for the options it accepts and\nwhat it costs in credits.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "description": "Get one generation model, including the JSON Schema for the options it accepts.\nUse `POST /generate/quote` for a credit estimate.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
         "summary": "Get Generation Model",
         "operationId": "getModel",
         "responses": {
@@ -4833,7 +4874,7 @@
         ]
       },
       "GenerationModel": {
-        "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts and what it costs. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
+        "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts. Use `POST /generate/quote` for a credit estimate. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
         "properties": {
           "model": {
             "description": "The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.",
@@ -4859,10 +4900,6 @@
             "description": "What the model is suited to, in a sentence or two.",
             "type": "string",
             "example": "Generate cinematic video with realistic motion, prompt-directed camera movement and optional synchronised audio."
-          },
-          "pricing": {
-            "description": "What one generation with this model costs.",
-            "$ref": "#/components/schemas/GenerationModelPricing"
           },
           "options": {
             "description": "JSON Schema for the model's `options` object. Only returned for a single model, or for a list requested with `expand=options`. Values outside this schema are rejected.",
@@ -4891,104 +4928,44 @@
         ],
         "type": "object"
       },
-      "GenerationModelPricing": {
-        "description": "What one generation costs, in credits: the rate multiplied by the units consumed. `quantity` says how to count the units, and is absent when one generation is one unit. Where a model charges differently per option value, `credits` is an object keyed by that value and `tieredBy` names the option that selects it.",
+      "GenerationRequest": {
+        "type": "object",
+        "properties": {
+          "asset": {
+            "$ref": "#/components/schemas/GenerationAsset"
+          },
+          "length": {
+            "description": "The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.",
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": true,
+            "example": 5
+          }
+        },
+        "required": [
+          "asset"
+        ]
+      },
+      "GenerationQuote": {
+        "type": "object",
+        "description": "Current credit estimate for a generation, calculated with the same rules as submission. Does not reserve credits or lock a price. A cached result costs nothing; final duration-based charges can be lower. Submit the same asset and length to generate it.",
         "properties": {
           "credits": {
-            "description": "Credits per unit. A number when the rate is flat, or an object keyed by the values of the option named in `tieredBy`.",
-            "oneOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "number"
-                }
-              }
-            ],
-            "example": {
-              "480p": 0.9375,
-              "720p": 1.8962,
-              "1080p": 4.2625
-            }
+            "type": "number",
+            "minimum": 0,
+            "description": "Estimated generation credits, rounded to four decimal places.",
+            "example": 0.6038
           },
-          "tieredBy": {
-            "description": "The option whose value selects the rate, and the value assumed when the option is absent. Present only when `credits` is keyed.",
-            "type": "object",
-            "properties": {
-              "option": {
-                "type": "string",
-                "example": "resolution"
-              },
-              "default": {
-                "type": "string",
-                "example": "720p"
-              }
-            },
-            "required": [
-              "option",
-              "default"
-            ]
-          },
-          "quantity": {
-            "description": "How many units a generation consumes. Take the value `measure` names, or `default` when the request carries none, hold it within `min` and `max`, divide by `per`, and round up when `round` is `up`. Absent when one generation is one unit.",
-            "type": "object",
-            "properties": {
-              "measure": {
-                "description": "What the count is taken from, and the scale it is measured in.",
-                "type": "string",
-                "enum": [
-                  "clipSeconds",
-                  "promptCharacters"
-                ],
-                "example": "clipSeconds"
-              },
-              "per": {
-                "description": "How many of `measure` make one billable unit.",
-                "type": "number",
-                "example": 60
-              },
-              "min": {
-                "description": "Fewest accepted. A smaller request is charged at this.",
-                "type": "number",
-                "example": 3
-              },
-              "max": {
-                "description": "Most accepted. A larger request is charged at this.",
-                "type": "number",
-                "example": 600
-              },
-              "default": {
-                "description": "Assumed when the request carries no value.",
-                "type": "number",
-                "example": 30
-              },
-              "round": {
-                "description": "Present when a partial unit is charged as a whole one. A 61 second track on a per-minute rate is charged as two minutes.",
-                "type": "string",
-                "enum": [
-                  "up"
-                ],
-                "example": "up"
-              }
-            },
-            "required": [
-              "measure",
-              "per"
-            ]
-          },
-          "effectiveFrom": {
-            "description": "The date this rate took effect, or `legacy` for a rate that predates dated pricing.",
-            "type": "string",
-            "example": "2026-08-13"
+          "ceiling": {
+            "type": "boolean",
+            "description": "True when an unresolved duration uses the model's reservation allowance.",
+            "example": false
           }
         },
         "required": [
           "credits",
-          "effectiveFrom"
-        ],
-        "type": "object"
+          "ceiling"
+        ]
       },
       "GenerationModelListResponse": {
         "description": "The generation models available to this account.",
@@ -6385,7 +6362,46 @@
         ]
       }
     },
-    "responses": {},
+    "responses": {
+      "400": {
+        "description": "The request is invalid, for example a missing asset or prompt, a disallowed URL or a `length` that is not positive.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/GenerationErrorResponse"
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "The account cannot use this generation. `code` says why.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/GenerationErrorResponse"
+            }
+          }
+        }
+      },
+      "503": {
+        "description": "A service the request depends on is temporarily unavailable. `code` is `AiAccessUnavailable` when access to AI generation could not be confirmed.",
+        "headers": {
+          "Retry-After": {
+            "description": "Suggested seconds to wait before retrying.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/GenerationErrorResponse"
+            }
+          }
+        }
+      }
+    },
     "parameters": {},
     "examples": {},
     "requestBodies": {},

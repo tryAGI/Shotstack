@@ -7,7 +7,7 @@ namespace Shotstack
     {
 
 
-        private static readonly global::Shotstack.EndPointSecurityRequirement s_GetModelsSecurityRequirement0 =
+        private static readonly global::Shotstack.EndPointSecurityRequirement s_PostGenerateQuoteSecurityRequirement0 =
             new global::Shotstack.EndPointSecurityRequirement
             {
                 Authorizations = new global::Shotstack.EndPointAuthorizationRequirement[]
@@ -21,45 +21,49 @@ namespace Shotstack
                     },
                 },
             };
-        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_GetModelsSecurityRequirements =
+        private static readonly global::Shotstack.EndPointSecurityRequirement[] s_PostGenerateQuoteSecurityRequirements =
             new global::Shotstack.EndPointSecurityRequirement[]
-            {                s_GetModelsSecurityRequirement0,
+            {                s_PostGenerateQuoteSecurityRequirement0,
             };
-        partial void PrepareGetModelsArguments(
-            global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetModelsRequest(
+        partial void PreparePostGenerateQuoteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetModelsResponse(
+            global::Shotstack.GenerationRequest request);
+        partial void PreparePostGenerateQuoteRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Shotstack.GenerationRequest request);
+        partial void ProcessPostGenerateQuoteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetModelsResponseContent(
+        partial void ProcessPostGenerateQuoteResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Generation Models<br/>
-        /// List the generation models available for `prompt`-bearing image, video and audio<br/>
-        /// assets, with the options each accepts. Use `POST /generate/quote` for a credit estimate.<br/>
-        /// Use this to populate a model picker and render its option fields, rather than<br/>
-        /// hard coding a model list. A newly launched model appears here without any change<br/>
-        /// on your side. Each entry carries the asset type it generates, so filter the list<br/>
-        /// client side when a picker only needs one kind.<br/>
-        /// Option schemas are omitted by default. Request them with `expand=options`.<br/>
-        /// Each model's `available` reflects the plan of the account behind the calling API<br/>
-        /// key, so offer only the models it marks available.<br/>
+        /// Quote Generation<br/>
+        /// Estimate credits for the same asset and clip length accepted by `POST /generate`.<br/>
+        /// Requires an API key and the same model access as generation. Invalid options and<br/>
+        /// disallowed source URLs are rejected. No provider request, job, quota usage or credit<br/>
+        /// reservation is created. A quote does not guarantee an available balance or quota.<br/>
+        /// Prices are evaluated at request time. Request another quote when settings change;<br/>
+        /// generation uses the current price when submitted.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Shotstack.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Shotstack.GenerationModelListResponse> GetModelsAsync(
+        public async global::System.Threading.Tasks.Task<global::Shotstack.GenerationQuote> PostGenerateQuoteAsync(
+
+            global::Shotstack.GenerationRequest request,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetModelsAsResponseAsync(
+            var __response = await PostGenerateQuoteAsResponseAsync(
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -67,35 +71,38 @@ namespace Shotstack
             return __response.Body;
         }
         /// <summary>
-        /// List Generation Models<br/>
-        /// List the generation models available for `prompt`-bearing image, video and audio<br/>
-        /// assets, with the options each accepts. Use `POST /generate/quote` for a credit estimate.<br/>
-        /// Use this to populate a model picker and render its option fields, rather than<br/>
-        /// hard coding a model list. A newly launched model appears here without any change<br/>
-        /// on your side. Each entry carries the asset type it generates, so filter the list<br/>
-        /// client side when a picker only needs one kind.<br/>
-        /// Option schemas are omitted by default. Request them with `expand=options`.<br/>
-        /// Each model's `available` reflects the plan of the account behind the calling API<br/>
-        /// key, so offer only the models it marks available.<br/>
+        /// Quote Generation<br/>
+        /// Estimate credits for the same asset and clip length accepted by `POST /generate`.<br/>
+        /// Requires an API key and the same model access as generation. Invalid options and<br/>
+        /// disallowed source URLs are rejected. No provider request, job, quota usage or credit<br/>
+        /// reservation is created. A quote does not guarantee an available balance or quota.<br/>
+        /// Prices are evaluated at request time. Request another quote when settings change;<br/>
+        /// generation uses the current price when submitted.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Shotstack.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationModelListResponse>> GetModelsAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationQuote>> PostGenerateQuoteAsResponseAsync(
+
+            global::Shotstack.GenerationRequest request,
             global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetModelsArguments(
-                httpClient: HttpClient);
+            PreparePostGenerateQuoteArguments(
+                httpClient: HttpClient,
+                request: request);
 
 
             var __authorizations = global::Shotstack.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetModelsSecurityRequirements,
-                operationName: "GetModelsAsync");
+                securityRequirements: s_PostGenerateQuoteSecurityRequirements,
+                operationName: "PostGenerateQuoteAsync");
 
             using var __timeoutCancellationTokenSource = global::Shotstack.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -115,7 +122,7 @@ namespace Shotstack
             {
 
                             var __pathBuilder = new global::Shotstack.PathBuilder(
-                                path: "/edit/v1/models",
+                                path: "/edit/v1/generate/quote",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Shotstack.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -123,12 +130,18 @@ namespace Shotstack
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Post,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::Shotstack.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -137,9 +150,10 @@ namespace Shotstack
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetModelsRequest(
+                PreparePostGenerateQuoteRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    request: request);
 
                 global::Shotstack.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -158,10 +172,10 @@ namespace Shotstack
                     await global::Shotstack.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Shotstack.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/edit/v1/models\"",
-                                httpMethod: "GET",
+                                operationId: "PostGenerateQuote",
+                                methodName: "PostGenerateQuoteAsync",
+                                pathTemplate: "\"/edit/v1/generate/quote\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -192,10 +206,10 @@ namespace Shotstack
                         await global::Shotstack.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Shotstack.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/edit/v1/models\"",
-                                httpMethod: "GET",
+                                operationId: "PostGenerateQuote",
+                                methodName: "PostGenerateQuoteAsync",
+                                pathTemplate: "\"/edit/v1/generate/quote\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -233,10 +247,10 @@ namespace Shotstack
                         await global::Shotstack.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Shotstack.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/edit/v1/models\"",
-                                httpMethod: "GET",
+                                operationId: "PostGenerateQuote",
+                                methodName: "PostGenerateQuoteAsync",
+                                pathTemplate: "\"/edit/v1/generate/quote\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -273,7 +287,7 @@ namespace Shotstack
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetModelsResponse(
+                ProcessPostGenerateQuoteResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -281,10 +295,10 @@ namespace Shotstack
                     await global::Shotstack.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Shotstack.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/edit/v1/models\"",
-                                httpMethod: "GET",
+                                operationId: "PostGenerateQuote",
+                                methodName: "PostGenerateQuoteAsync",
+                                pathTemplate: "\"/edit/v1/generate/quote\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -303,10 +317,10 @@ namespace Shotstack
                     await global::Shotstack.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Shotstack.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetModels",
-                                methodName: "GetModelsAsync",
-                                pathTemplate: "\"/edit/v1/models\"",
-                                httpMethod: "GET",
+                                operationId: "PostGenerateQuote",
+                                methodName: "PostGenerateQuoteAsync",
+                                pathTemplate: "\"/edit/v1/generate/quote\"",
+                                httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -320,6 +334,149 @@ namespace Shotstack
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The request is invalid, for example a missing asset or prompt, a disallowed URL or a `length` that is not positive.
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::Shotstack.GenerationErrorResponse? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::Shotstack.GenerationErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::Shotstack.GenerationErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::Shotstack.ApiException<global::Shotstack.GenerationErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            //
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::Shotstack.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The account cannot use this generation. `code` says why.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::Shotstack.GenerationErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::Shotstack.GenerationErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::Shotstack.GenerationErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::Shotstack.ApiException<global::Shotstack.GenerationErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // A service the request depends on is temporarily unavailable. `code` is `AiAccessUnavailable` when access to AI generation could not be confirmed.
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::Shotstack.GenerationErrorResponse? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::Shotstack.GenerationErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::Shotstack.GenerationErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+
+                                throw global::Shotstack.ApiException<global::Shotstack.GenerationErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -333,7 +490,7 @@ namespace Shotstack
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetModelsResponseContent(
+                                ProcessPostGenerateQuoteResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -342,9 +499,9 @@ namespace Shotstack
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Shotstack.GenerationModelListResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Shotstack.GenerationQuote.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationModelListResponse>(
+                                    return new global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationQuote>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Shotstack.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -374,9 +531,9 @@ namespace Shotstack
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Shotstack.GenerationModelListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Shotstack.GenerationQuote.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationModelListResponse>(
+                                    return new global::Shotstack.AutoSDKHttpResponse<global::Shotstack.GenerationQuote>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Shotstack.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -415,6 +572,43 @@ namespace Shotstack
             {
                 __httpRequest?.Dispose();
             }
+        }
+        /// <summary>
+        /// Quote Generation<br/>
+        /// Estimate credits for the same asset and clip length accepted by `POST /generate`.<br/>
+        /// Requires an API key and the same model access as generation. Invalid options and<br/>
+        /// disallowed source URLs are rejected. No provider request, job, quota usage or credit<br/>
+        /// reservation is created. A quote does not guarantee an available balance or quota.<br/>
+        /// Prices are evaluated at request time. Request another quote when settings change;<br/>
+        /// generation uses the current price when submitted.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
+        /// </summary>
+        /// <param name="asset">
+        /// An image, video or audio asset to generate from a text prompt.
+        /// </param>
+        /// <param name="length">
+        /// The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.<br/>
+        /// Example: 5
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Shotstack.GenerationQuote> PostGenerateQuoteAsync(
+            global::Shotstack.GenerationAsset asset,
+            double? length = default,
+            global::Shotstack.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::Shotstack.GenerationRequest
+            {
+                Asset = asset,
+                Length = length,
+            };
+
+            return await PostGenerateQuoteAsync(
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
