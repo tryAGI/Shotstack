@@ -6,8 +6,8 @@ namespace Shotstack
     {
         /// <summary>
         /// Generate Asset<br/>
-        /// Generate a single image, video or audio asset from a text prompt without<br/>
-        /// rendering a full edit. Submit a prompt-bearing asset; the response is<br/>
+        /// Generate a single image, video or audio asset from a prompt or, for some models, a source file, without<br/>
+        /// rendering a full edit. Submit an asset with a prompt or source file; the response is<br/>
         /// immediate when an identical asset has been generated before (results are<br/>
         /// cached by prompt, model and options), otherwise the job is queued and can<br/>
         /// be polled via the status endpoint.<br/>
@@ -30,8 +30,8 @@ namespace Shotstack
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate Asset<br/>
-        /// Generate a single image, video or audio asset from a text prompt without<br/>
-        /// rendering a full edit. Submit a prompt-bearing asset; the response is<br/>
+        /// Generate a single image, video or audio asset from a prompt or, for some models, a source file, without<br/>
+        /// rendering a full edit. Submit an asset with a prompt or source file; the response is<br/>
         /// immediate when an identical asset has been generated before (results are<br/>
         /// cached by prompt, model and options), otherwise the job is queued and can<br/>
         /// be polled via the status endpoint.<br/>
@@ -54,8 +54,8 @@ namespace Shotstack
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate Asset<br/>
-        /// Generate a single image, video or audio asset from a text prompt without<br/>
-        /// rendering a full edit. Submit a prompt-bearing asset; the response is<br/>
+        /// Generate a single image, video or audio asset from a prompt or, for some models, a source file, without<br/>
+        /// rendering a full edit. Submit an asset with a prompt or source file; the response is<br/>
         /// immediate when an identical asset has been generated before (results are<br/>
         /// cached by prompt, model and options), otherwise the job is queued and can<br/>
         /// be polled via the status endpoint.<br/>
@@ -67,7 +67,7 @@ namespace Shotstack
         /// Optional idempotency key. When omitted, the SDK generates one for this request.
         /// </param>
         /// <param name="asset">
-        /// An image, video or audio asset to generate from a text prompt.
+        /// An asset to generate, from a text `prompt` or, for models that take one, a source `src`.
         /// </param>
         /// <param name="length">
         /// The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.<br/>
