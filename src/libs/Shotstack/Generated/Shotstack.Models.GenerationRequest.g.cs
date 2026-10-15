@@ -9,7 +9,7 @@ namespace Shotstack
     public sealed partial class GenerationRequest
     {
         /// <summary>
-        /// An image, video or audio asset to generate from a text prompt.
+        /// An asset to generate, from a text `prompt` or, for models that take one, a source `src`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asset")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,7 +33,7 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="GenerationRequest" /> class.
         /// </summary>
         /// <param name="asset">
-        /// An image, video or audio asset to generate from a text prompt.
+        /// An asset to generate, from a text `prompt` or, for models that take one, a source `src`.
         /// </param>
         /// <param name="length">
         /// The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.<br/>

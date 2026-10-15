@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts. Use `POST /generate/quote` for a credit estimate. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.
+    /// A generation model available to image, video and audio assets generated from a prompt or, for some models, a source file, with the options it accepts. Use `POST /generate/quote` for a credit estimate. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.
     /// </summary>
     public sealed partial class GenerationModel
     {

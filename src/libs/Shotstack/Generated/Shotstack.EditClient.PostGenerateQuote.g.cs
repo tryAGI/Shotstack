@@ -584,7 +584,7 @@ namespace Shotstack
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="asset">
-        /// An image, video or audio asset to generate from a text prompt.
+        /// An asset to generate, from a text `prompt` or, for models that take one, a source `src`.
         /// </param>
         /// <param name="length">
         /// The length, in seconds, of the clip the asset fills. A model that generates to a duration takes it from this value in place of its own duration option. Other models ignore it.<br/>

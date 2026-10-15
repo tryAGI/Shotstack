@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// An image, video or audio asset to generate from a text prompt.
+    /// An asset to generate, from a text `prompt` or, for models that take one, a source `src`.
     /// </summary>
     public sealed partial class GenerationAsset
     {
@@ -24,8 +24,13 @@ namespace Shotstack
         /// </summary>
         /// <example>A lighthouse on a rocky coast at sunset, cinematic lighting</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public string? Prompt { get; set; }
+
+        /// <summary>
+        /// The source file for models that take one instead of a prompt, such as `shotstack-music-analysis`. A public HTTPS URL.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("src")]
+        public string? Src { get; set; }
 
         /// <summary>
         /// The generation model. Defaults to `nano-banana-2` for images, `seedance-2.0-text-to-video` for video and `elevenlabs-multilingual-v2` for audio. `GET /models` lists the models for each type.<br/>
@@ -60,6 +65,9 @@ namespace Shotstack
         /// A description of the asset to generate. For text-to-speech models it is the text spoken.<br/>
         /// Example: A lighthouse on a rocky coast at sunset, cinematic lighting
         /// </param>
+        /// <param name="src">
+        /// The source file for models that take one instead of a prompt, such as `shotstack-music-analysis`. A public HTTPS URL.
+        /// </param>
         /// <param name="model">
         /// The generation model. Defaults to `nano-banana-2` for images, `seedance-2.0-text-to-video` for video and `elevenlabs-multilingual-v2` for audio. `GET /models` lists the models for each type.<br/>
         /// Example: nano-banana-2
@@ -73,12 +81,14 @@ namespace Shotstack
 #endif
         public GenerationAsset(
             global::Shotstack.GenerationAssetType type,
-            string prompt,
+            string? prompt,
+            string? src,
             string? model,
             object? options)
         {
             this.Type = type;
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Prompt = prompt;
+            this.Src = src;
             this.Model = model;
             this.Options = options;
         }

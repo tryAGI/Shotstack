@@ -765,7 +765,7 @@
             }
           }
         },
-        "description": "Generate a single image, video or audio asset from a text prompt without\nrendering a full edit. Submit a prompt-bearing asset; the response is\nimmediate when an identical asset has been generated before (results are\ncached by prompt, model and options), otherwise the job is queued and can\nbe polled via the status endpoint.\n\nGeneration is billed in credits per asset. Identical repeat requests\nresolve from the cache at no charge.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "description": "Generate a single image, video or audio asset from a prompt or, for some models, a source file, without\nrendering a full edit. Submit an asset with a prompt or source file; the response is\nimmediate when an identical asset has been generated before (results are\ncached by prompt, model and options), otherwise the job is queued and can\nbe polled via the status endpoint.\n\nGeneration is billed in credits per asset. Identical repeat requests\nresolve from the cache at no charge.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
         "summary": "Generate Asset",
         "operationId": "postGenerate",
         "parameters": [
@@ -931,7 +931,7 @@
     },
     "/edit/v1/models": {
       "get": {
-        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets, with the options each accepts. Use `POST /generate/quote` for a credit estimate.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\nEach model's `available` reflects the plan of the account behind the calling API\nkey, so offer only the models it marks available.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
+        "description": "List the generation models available for `prompt`-bearing image, video and audio\nassets generated from a prompt or, for some models, a source file, with the options each accepts. Use `POST /generate/quote` for a credit estimate.\n\nUse this to populate a model picker and render its option fields, rather than\nhard coding a model list. A newly launched model appears here without any change\non your side. Each entry carries the asset type it generates, so filter the list\nclient side when a picker only needs one kind.\n\nOption schemas are omitted by default. Request them with `expand=options`.\n\nEach model's `available` reflects the plan of the account behind the calling API\nkey, so offer only the models it marks available.\n\n**Base URL:** <a href=\"#\">https://api.shotstack.io/edit/{version}</a>\n",
         "summary": "List Generation Models",
         "operationId": "getModels",
         "responses": {
@@ -4832,7 +4832,7 @@
         "type": "object"
       },
       "GenerationAsset": {
-        "description": "An image, video or audio asset to generate from a text prompt.",
+        "description": "An asset to generate, from a text `prompt` or, for models that take one, a source `src`.",
         "type": "object",
         "properties": {
           "type": {
@@ -4853,6 +4853,11 @@
             "pattern": "\\S",
             "example": "A lighthouse on a rocky coast at sunset, cinematic lighting"
           },
+          "src": {
+            "description": "The source file for models that take one instead of a prompt, such as `shotstack-music-analysis`. A public HTTPS URL.",
+            "type": "string",
+            "format": "uri"
+          },
           "model": {
             "description": "The generation model. Defaults to `nano-banana-2` for images, `seedance-2.0-text-to-video` for video and `elevenlabs-multilingual-v2` for audio. `GET /models` lists the models for each type.",
             "type": "string",
@@ -4869,12 +4874,11 @@
         },
         "additionalProperties": false,
         "required": [
-          "type",
-          "prompt"
+          "type"
         ]
       },
       "GenerationModel": {
-        "description": "A generation model available to `prompt`-bearing image, video and audio assets, with the options it accepts. Use `POST /generate/quote` for a credit estimate. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
+        "description": "A generation model available to image, video and audio assets generated from a prompt or, for some models, a source file, with the options it accepts. Use `POST /generate/quote` for a credit estimate. Render a model picker and its option fields from this rather than hard coding a model list, so a newly launched model is available without a client release.",
         "properties": {
           "model": {
             "description": "The identifier to set as the asset `model`. Carries no provider name, so routing can change without a public rename.",
