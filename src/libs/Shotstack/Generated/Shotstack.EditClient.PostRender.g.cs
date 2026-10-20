@@ -461,7 +461,7 @@ namespace Shotstack
         /// A timeline represents the contents of a video edit over time, an audio edit over time, in seconds, or an image layout. A timeline consists of layers called tracks. Tracks are composed of titles, images, audio, html or video segments referred to as clips which are placed along the track at specific starting point and lasting for a specific amount of time.
         /// </param>
         /// <param name="output">
-        /// The output format, render range and type of media to generate. For all formats except `mp3`, either `resolution` or `size` (with both `width` and `height`) must be specified.
+        /// The output format, render range and type of media to generate. For all formats except `mp3`, either `resolution` or `size` (with both `width` and `height`) must be specified. A custom `size` can be up to 3840px on each side, or 1920px for `gif`. Video can be up to 3840 × 2160 pixels (8,294,400) in any shape, for example 2160 × 3840 for vertical 4K; larger sizes are rejected. Video above 1920 × 1080 pixels, including the `4k` resolution, needs a plan that includes 4K.
         /// </param>
         /// <param name="merge">
         /// An array of key/value pairs that provides an easy way to create templates with placeholders. The placeholders can be used to find and replace keys with values. For example you can search for the placeholder `{{NAME}}` and replace it with the value `Jane`.
