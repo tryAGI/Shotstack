@@ -9,7 +9,7 @@ namespace Shotstack
     public sealed partial class Size
     {
         /// <summary>
-        /// Set a custom width for the video or image file in pixels. Value must be divisible by 2. Maximum video width is 1920px, maximum image width is 4096px.<br/>
+        /// Set a custom width for the video or image file in pixels. Value must be divisible by 2.<br/>
         /// Example: 1200
         /// </summary>
         /// <example>1200</example>
@@ -17,7 +17,7 @@ namespace Shotstack
         public int? Width { get; set; }
 
         /// <summary>
-        /// Set a custom height for the video or image file in pixels. Value must be divisible by 2. Maximum video height is 1920px, maximum image height is 4096px.<br/>
+        /// Set a custom height for the video or image file in pixels. Value must be divisible by 2.<br/>
         /// Example: 800
         /// </summary>
         /// <example>800</example>
@@ -34,11 +34,11 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="Size" /> class.
         /// </summary>
         /// <param name="width">
-        /// Set a custom width for the video or image file in pixels. Value must be divisible by 2. Maximum video width is 1920px, maximum image width is 4096px.<br/>
+        /// Set a custom width for the video or image file in pixels. Value must be divisible by 2.<br/>
         /// Example: 1200
         /// </param>
         /// <param name="height">
-        /// Set a custom height for the video or image file in pixels. Value must be divisible by 2. Maximum video height is 1920px, maximum image height is 4096px.<br/>
+        /// Set a custom height for the video or image file in pixels. Value must be divisible by 2.<br/>
         /// Example: 800
         /// </param>
 #if NET7_0_OR_GREATER

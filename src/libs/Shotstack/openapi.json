@@ -4004,7 +4004,7 @@
         ]
       },
       "Output": {
-        "description": "The output format, render range and type of media to generate. For all formats except `mp3`, either `resolution` or `size` (with both `width` and `height`) must be specified.",
+        "description": "The output format, render range and type of media to generate. For all formats except `mp3`, either `resolution` or `size` (with both `width` and `height`) must be specified. A custom `size` can be up to 3840px on each side, or 1920px for `gif`. Video can be up to 3840 \u00d7 2160 pixels (8,294,400) in any shape, for example 2160 \u00d7 3840 for vertical 4K; larger sizes are rejected. Video above 1920 \u00d7 1080 pixels, including the `4k` resolution, needs a plan that includes 4K.",
         "properties": {
           "format": {
             "description": "The output format and type of media file to generate. <ul>\n  <li>`mp4` - mp4 video file</li>\n  <li>`gif` - animated gif</li>\n  <li>`jpg` - jpg image file</li>\n  <li>`png` - png image file</li>\n  <li>`bmp` - bmp image file</li>\n  <li>`mp3` - mp3 audio file (audio only)</li>\n</ul>",
@@ -4128,14 +4128,14 @@
         "description": "Set a custom size for a video or image in pixels. When using a custom size omit the `resolution` and `aspectRatio`. Custom sizes must be divisible by 2 based on the encoder specifications.",
         "properties": {
           "width": {
-            "description": "Set a custom width for the video or image file in pixels. Value must be divisible by 2. Maximum video width is 1920px, maximum image width is 4096px.",
+            "description": "Set a custom width for the video or image file in pixels. Value must be divisible by 2.",
             "type": "integer",
             "minimum": 1,
             "maximum": 4096,
             "example": 1200
           },
           "height": {
-            "description": "Set a custom height for the video or image file in pixels. Value must be divisible by 2. Maximum video height is 1920px, maximum image height is 4096px.",
+            "description": "Set a custom height for the video or image file in pixels. Value must be divisible by 2.",
             "type": "integer",
             "minimum": 1,
             "maximum": 4096,
