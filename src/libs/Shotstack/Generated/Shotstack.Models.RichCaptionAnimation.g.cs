@@ -14,7 +14,7 @@ namespace Shotstack
         ///   &lt;li&gt;`highlight` - Word changes to active color when spoken (shows all words)&lt;/li&gt;<br/>
         ///   &lt;li&gt;`pop` - Each word scales up when active&lt;/li&gt;<br/>
         ///   &lt;li&gt;`fade` - Gradual opacity transition per word&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`slide` - Words slide in from a direction&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`slide` - Words slide in, travelling in `direction`&lt;/li&gt;<br/>
         ///   &lt;li&gt;`bounce` - Spring animation on word appearance&lt;/li&gt;<br/>
         ///   &lt;li&gt;`typewriter` - Words appear one by one and stay visible&lt;/li&gt;<br/>
         ///   &lt;li&gt;`none` - No animation, all words visible immediately&lt;/li&gt;<br/>
@@ -30,7 +30,7 @@ namespace Shotstack
         public required global::Shotstack.RichCaptionAnimationStyle Style { get; set; } = global::Shotstack.RichCaptionAnimationStyle.Highlight;
 
         /// <summary>
-        /// Direction for directional animations (slide). Only applicable when style is `slide`.<br/>
+        /// The direction words travel when style is `slide`.<br/>
         /// Default Value: up<br/>
         /// Example: up
         /// </summary>
@@ -54,7 +54,7 @@ namespace Shotstack
         ///   &lt;li&gt;`highlight` - Word changes to active color when spoken (shows all words)&lt;/li&gt;<br/>
         ///   &lt;li&gt;`pop` - Each word scales up when active&lt;/li&gt;<br/>
         ///   &lt;li&gt;`fade` - Gradual opacity transition per word&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`slide` - Words slide in from a direction&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`slide` - Words slide in, travelling in `direction`&lt;/li&gt;<br/>
         ///   &lt;li&gt;`bounce` - Spring animation on word appearance&lt;/li&gt;<br/>
         ///   &lt;li&gt;`typewriter` - Words appear one by one and stay visible&lt;/li&gt;<br/>
         ///   &lt;li&gt;`none` - No animation, all words visible immediately&lt;/li&gt;<br/>
@@ -63,7 +63,7 @@ namespace Shotstack
         /// Example: highlight
         /// </param>
         /// <param name="direction">
-        /// Direction for directional animations (slide). Only applicable when style is `slide`.<br/>
+        /// The direction words travel when style is `slide`.<br/>
         /// Default Value: up<br/>
         /// Example: up
         /// </param>

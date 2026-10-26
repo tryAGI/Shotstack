@@ -33,7 +33,7 @@ namespace Shotstack
         ///     &lt;li&gt;`shuffleTopLeft` - rotate in from top left&lt;/li&gt;<br/>
         ///     &lt;li&gt;`zoom` - fast zoom in&lt;/li&gt;<br/>
         ///   &lt;/ul&gt;<br/>
-        /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
+        /// The transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.TransitionInJsonConverter))]
@@ -64,7 +64,7 @@ namespace Shotstack
         ///     &lt;li&gt;`shuffleTopLeft` - rotate out from top left&lt;/li&gt;<br/>
         ///     &lt;li&gt;`zoom` - fast zoom out&lt;/li&gt;<br/>
         ///   &lt;/ul&gt;<br/>
-        /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
+        /// The transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("out")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Shotstack.JsonConverters.TransitionOutJsonConverter))]
@@ -104,7 +104,7 @@ namespace Shotstack
         ///     &lt;li&gt;`shuffleTopLeft` - rotate in from top left&lt;/li&gt;<br/>
         ///     &lt;li&gt;`zoom` - fast zoom in&lt;/li&gt;<br/>
         ///   &lt;/ul&gt;<br/>
-        /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
+        /// The transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.
         /// </param>
         /// <param name="out">
         /// The transition out. Available transitions are:<br/>
@@ -131,7 +131,7 @@ namespace Shotstack
         ///     &lt;li&gt;`shuffleTopLeft` - rotate out from top left&lt;/li&gt;<br/>
         ///     &lt;li&gt;`zoom` - fast zoom out&lt;/li&gt;<br/>
         ///   &lt;/ul&gt;<br/>
-        /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
+        /// The transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

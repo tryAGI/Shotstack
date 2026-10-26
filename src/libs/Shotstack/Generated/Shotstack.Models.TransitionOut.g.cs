@@ -28,7 +28,7 @@ namespace Shotstack
     ///     &lt;li&gt;`shuffleTopLeft` - rotate out from top left&lt;/li&gt;<br/>
     ///     &lt;li&gt;`zoom` - fast zoom out&lt;/li&gt;<br/>
     ///   &lt;/ul&gt;<br/>
-    /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
+    /// The transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.
     /// </summary>
     public enum TransitionOut
     {

@@ -8,9 +8,11 @@ namespace Shotstack
     ///   &lt;ul&gt;<br/>
     ///     &lt;li&gt;Opacity - animate the transparency of a clip.&lt;/li&gt;<br/>
     ///     &lt;li&gt;Offset - animate the x and y position of a clip.&lt;/li&gt;<br/>
+    ///     &lt;li&gt;Scale - animate the size of a clip.&lt;/li&gt;<br/>
     ///     &lt;li&gt;Rotation - animate the rotation of a clip.&lt;/li&gt;<br/>
     ///     &lt;li&gt;Skew - animate the horizontal and vertical shearing effect.&lt;/li&gt;<br/>
     ///     &lt;li&gt;Volume - animate the audio volume of a clip.&lt;/li&gt;<br/>
+    ///     &lt;li&gt;Speed - animate the playback speed of a video clip.&lt;/li&gt;<br/>
     ///   &lt;/ul&gt;
     /// </summary>
     public sealed partial class Tween

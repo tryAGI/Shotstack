@@ -2506,7 +2506,7 @@
         "type": "object",
         "properties": {
           "style": {
-            "description": "The animation style to apply to words: <ul>\n  <li>`karaoke` - Word-by-word color fill as spoken (shows all words, highlights active)</li>\n  <li>`highlight` - Word changes to active color when spoken (shows all words)</li>\n  <li>`pop` - Each word scales up when active</li>\n  <li>`fade` - Gradual opacity transition per word</li>\n  <li>`slide` - Words slide in from a direction</li>\n  <li>`bounce` - Spring animation on word appearance</li>\n  <li>`typewriter` - Words appear one by one and stay visible</li>\n  <li>`none` - No animation, all words visible immediately</li>\n</ul>",
+            "description": "The animation style to apply to words: <ul>\n  <li>`karaoke` - Word-by-word color fill as spoken (shows all words, highlights active)</li>\n  <li>`highlight` - Word changes to active color when spoken (shows all words)</li>\n  <li>`pop` - Each word scales up when active</li>\n  <li>`fade` - Gradual opacity transition per word</li>\n  <li>`slide` - Words slide in, travelling in `direction`</li>\n  <li>`bounce` - Spring animation on word appearance</li>\n  <li>`typewriter` - Words appear one by one and stay visible</li>\n  <li>`none` - No animation, all words visible immediately</li>\n</ul>",
             "type": "string",
             "enum": [
               "karaoke",
@@ -2522,7 +2522,7 @@
             "example": "highlight"
           },
           "direction": {
-            "description": "Direction for directional animations (slide). Only applicable when style is `slide`.",
+            "description": "The direction words travel when style is `slide`.",
             "type": "string",
             "enum": [
               "left",
@@ -2929,7 +2929,7 @@
         "description": "In and out transitions for a clip - i.e. fade in and fade out",
         "properties": {
           "in": {
-            "description": "The transition in. Available transitions are:\n  <ul>\n    <li>`fade` - fade in</li>\n    <li>`reveal` - reveal from left to right</li>\n    <li>`wipeLeft` - fade across screen to the left</li>\n    <li>`wipeRight` - fade across screen to the right</li>\n    <li>`slideLeft` - move slightly left and fade in</li>\n    <li>`slideRight` - move slightly right and fade in</li>\n    <li>`slideUp` - move slightly up and fade in</li>\n    <li>`slideDown` - move slightly down and fade in</li>\n    <li>`carouselLeft` - slide in from right to left</li>\n    <li>`carouselRight` - slide in from left to right</li>\n    <li>`carouselUp` - slide in from bottom to top</li>\n    <li>`carouselDown` - slide in from top to bottom</li>\n    <li>`shuffleTopRight` - rotate in from top right</li>\n    <li>`shuffleRightTop` - rotate in from right top</li>\n    <li>`shuffleRightBottom` - rotate in from right bottom</li>\n    <li>`shuffleBottomRight` - rotate in from bottom right</li>\n    <li>`shuffleBottomLeft` - rotate in from bottom left</li>\n    <li>`shuffleLeftBottom` - rotate in from left bottom</li>\n    <li>`shuffleLeftTop` - rotate in from left top</li>\n    <li>`shuffleTopLeft` - rotate in from top left</li>\n    <li>`zoom` - fast zoom in</li>\n  </ul>\nThe transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.",
+            "description": "The transition in. Available transitions are:\n  <ul>\n    <li>`fade` - fade in</li>\n    <li>`reveal` - reveal from left to right</li>\n    <li>`wipeLeft` - fade across screen to the left</li>\n    <li>`wipeRight` - fade across screen to the right</li>\n    <li>`slideLeft` - move slightly left and fade in</li>\n    <li>`slideRight` - move slightly right and fade in</li>\n    <li>`slideUp` - move slightly up and fade in</li>\n    <li>`slideDown` - move slightly down and fade in</li>\n    <li>`carouselLeft` - slide in from right to left</li>\n    <li>`carouselRight` - slide in from left to right</li>\n    <li>`carouselUp` - slide in from bottom to top</li>\n    <li>`carouselDown` - slide in from top to bottom</li>\n    <li>`shuffleTopRight` - rotate in from top right</li>\n    <li>`shuffleRightTop` - rotate in from right top</li>\n    <li>`shuffleRightBottom` - rotate in from right bottom</li>\n    <li>`shuffleBottomRight` - rotate in from bottom right</li>\n    <li>`shuffleBottomLeft` - rotate in from bottom left</li>\n    <li>`shuffleLeftBottom` - rotate in from left bottom</li>\n    <li>`shuffleLeftTop` - rotate in from left top</li>\n    <li>`shuffleTopLeft` - rotate in from top left</li>\n    <li>`zoom` - fast zoom in</li>\n  </ul>\nThe transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.",
             "enum": [
               "none",
               "fade",
@@ -2997,7 +2997,7 @@
             "type": "string"
           },
           "out": {
-            "description": "The transition out. Available transitions are:\n  <ul>\n    <li>`fade` - fade out</li>\n    <li>`reveal` - reveal from right to left</li>\n    <li>`wipeLeft` - fade across screen to the left</li>\n    <li>`wipeRight` - fade across screen to the right</li>\n    <li>`slideLeft` - move slightly left and fade out</li>\n    <li>`slideRight` - move slightly right and fade out</li>\n    <li>`slideUp` - move slightly up and fade out</li>\n    <li>`slideDown` - move slightly down and fade out</li>\n    <li>`carouselLeft` - slide out from right to left</li>\n    <li>`carouselRight` - slide out from left to right</li>\n    <li>`carouselUp` - slide out from bottom to top</li>\n    <li>`carouselDown` - slide out from top  to bottom</li>\n    <li>`shuffleTopRight` - rotate out from top right</li>\n    <li>`shuffleRightTop` - rotate out from right top</li>\n    <li>`shuffleRightBottom` - rotate out from right bottom</li>\n    <li>`shuffleBottomRight` - rotate out from bottom right</li>\n    <li>`shuffleBottomLeft` - rotate out from bottom left</li>\n    <li>`shuffleLeftBottom` - rotate out from left bottom</li>\n    <li>`shuffleLeftTop` - rotate out from left top</li>\n    <li>`shuffleTopLeft` - rotate out from top left</li>\n    <li>`zoom` - fast zoom out</li>\n  </ul>\nThe transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.",
+            "description": "The transition out. Available transitions are:\n  <ul>\n    <li>`fade` - fade out</li>\n    <li>`reveal` - reveal from right to left</li>\n    <li>`wipeLeft` - fade across screen to the left</li>\n    <li>`wipeRight` - fade across screen to the right</li>\n    <li>`slideLeft` - move slightly left and fade out</li>\n    <li>`slideRight` - move slightly right and fade out</li>\n    <li>`slideUp` - move slightly up and fade out</li>\n    <li>`slideDown` - move slightly down and fade out</li>\n    <li>`carouselLeft` - slide out from right to left</li>\n    <li>`carouselRight` - slide out from left to right</li>\n    <li>`carouselUp` - slide out from bottom to top</li>\n    <li>`carouselDown` - slide out from top  to bottom</li>\n    <li>`shuffleTopRight` - rotate out from top right</li>\n    <li>`shuffleRightTop` - rotate out from right top</li>\n    <li>`shuffleRightBottom` - rotate out from right bottom</li>\n    <li>`shuffleBottomRight` - rotate out from bottom right</li>\n    <li>`shuffleBottomLeft` - rotate out from bottom left</li>\n    <li>`shuffleLeftBottom` - rotate out from left bottom</li>\n    <li>`shuffleLeftTop` - rotate out from left top</li>\n    <li>`shuffleTopLeft` - rotate out from top left</li>\n    <li>`zoom` - fast zoom out</li>\n  </ul>\nThe transition speed can also be controlled by appending `Fast` or `Slow` to any transition except `zoom`, e.g. `fadeFast` or `carouselLeftSlow`.",
             "enum": [
               "none",
               "fade",
@@ -3676,7 +3676,7 @@
         "description": "Animation properties for text entrance effects.",
         "properties": {
           "preset": {
-            "description": "The animation preset to apply. Available presets: <ul>\n  <li>`fadeIn` - fadeIn in animation</li>\n  <li>`slideIn` - slide in from a direction</li>\n  <li>`typewriter` - typewriter effect</li>\n  <li>`ascend` - ascend from a direction</li>\n  <li>`shift` - shift in from a direction</li>\n  <li>`movingLetters` - letters move in from a direction</li>\n</ul>",
+            "description": "The animation preset to apply. Every preset starts with the clip. Available presets: <ul>\n  <li>`fadeIn` - fade in</li>\n  <li>`slideIn` - fade in while sliding in `direction`</li>\n  <li>`typewriter` - type the text out behind a cursor</li>\n  <li>`ascend` - each word rises (`up`) or drops (`down`) into place</li>\n  <li>`shift` - fade in while shifting a short distance in `direction`</li>\n  <li>`movingLetters` - fade in, then ripple the letters along `direction` for the rest of the clip. Ignores `duration` and `style`.</li>\n</ul>",
             "type": "string",
             "enum": [
               "fadeIn",
@@ -3689,14 +3689,14 @@
             "example": "shift"
           },
           "duration": {
-            "description": "Override animation duration in seconds. Must be between 0.1 and 30 seconds.",
+            "description": "Override animation duration in seconds. Must be between 0.1 and 30 seconds. When omitted, the text animates at about 30 characters per second, taking at least 0.3 seconds and at most 90% of the clip.",
             "type": "number",
             "minimum": 0.1,
             "maximum": 30,
             "example": 2
           },
           "style": {
-            "description": "Animation style - animate by character or by word. Only applicable for typewriter and shift animations.",
+            "description": "Animate by character or by word. Applies to `fadeIn`, `slideIn`, `typewriter` and `shift`, where `shift` defaults to `character`. `ascend` always animates by word.",
             "type": "string",
             "enum": [
               "character",
@@ -3705,7 +3705,7 @@
             "example": "character"
           },
           "direction": {
-            "description": "Direction for directional animations. Required for slideIn, ascend, shift, and movingLetters presets. <ul>\n  <li>`ascend` - supports: up, down</li>\n  <li>`shift` - supports: left, right, up, down</li>\n  <li>`slideIn` - supports: left, right, up, down</li>\n  <li>`movingLetters` - supports: left, right, up, down</li>\n</ul>",
+            "description": "The direction the text travels. Defaults to `left` for `slideIn` and `shift`, and to `up` for `ascend` and `movingLetters`. <ul>\n  <li>`ascend` - supports: up, down</li>\n  <li>`shift` - supports: left, right, up, down</li>\n  <li>`slideIn` - supports: left, right, up, down</li>\n  <li>`movingLetters` - supports: left, right, up, down</li>\n</ul>",
             "type": "string",
             "enum": [
               "left",
@@ -3915,7 +3915,7 @@
         "type": "object"
       },
       "Tween": {
-        "description": "Use a Tween to [animate properties over time](/docs/guide/architecting-an-application/animations/). The following properties are currently supported and can be animated:\n  <ul>\n    <li>Opacity - animate the transparency of a clip.</li>\n    <li>Offset - animate the x and y position of a clip.</li>\n    <li>Rotation - animate the rotation of a clip.</li>\n    <li>Skew - animate the horizontal and vertical shearing effect.</li>\n    <li>Volume - animate the audio volume of a clip.</li>\n  </ul>",
+        "description": "Use a Tween to [animate properties over time](/docs/guide/architecting-an-application/animations/). The following properties are currently supported and can be animated:\n  <ul>\n    <li>Opacity - animate the transparency of a clip.</li>\n    <li>Offset - animate the x and y position of a clip.</li>\n    <li>Scale - animate the size of a clip.</li>\n    <li>Rotation - animate the rotation of a clip.</li>\n    <li>Skew - animate the horizontal and vertical shearing effect.</li>\n    <li>Volume - animate the audio volume of a clip.</li>\n    <li>Speed - animate the playback speed of a video clip.</li>\n  </ul>",
         "properties": {
           "from": {
             "description": "The initial property value at the start of the animation.",

@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// Direction for directional animations (slide). Only applicable when style is `slide`.<br/>
+    /// The direction words travel when style is `slide`.<br/>
     /// Default Value: up<br/>
     /// Example: up
     /// </summary>

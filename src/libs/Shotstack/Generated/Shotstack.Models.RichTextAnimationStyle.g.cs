@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// Animation style - animate by character or by word. Only applicable for typewriter and shift animations.<br/>
+    /// Animate by character or by word. Applies to `fadeIn`, `slideIn`, `typewriter` and `shift`, where `shift` defaults to `character`. `ascend` always animates by word.<br/>
     /// Example: character
     /// </summary>
     public enum RichTextAnimationStyle
