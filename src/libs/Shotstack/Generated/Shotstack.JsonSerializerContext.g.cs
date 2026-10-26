@@ -384,6 +384,7 @@ namespace Shotstack
     #pragma warning restore CS3016
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Edit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Timeline))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Output))]

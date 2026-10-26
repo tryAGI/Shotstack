@@ -4,7 +4,7 @@
 namespace Shotstack
 {
     /// <summary>
-    /// Direction for directional animations. Required for slideIn, ascend, shift, and movingLetters presets. &lt;ul&gt;<br/>
+    /// The direction the text travels. Defaults to `left` for `slideIn` and `shift`, and to `up` for `ascend` and `movingLetters`. &lt;ul&gt;<br/>
     ///   &lt;li&gt;`ascend` - supports: up, down&lt;/li&gt;<br/>
     ///   &lt;li&gt;`shift` - supports: left, right, up, down&lt;/li&gt;<br/>
     ///   &lt;li&gt;`slideIn` - supports: left, right, up, down&lt;/li&gt;<br/>

@@ -9,13 +9,13 @@ namespace Shotstack
     public sealed partial class RichTextAnimation
     {
         /// <summary>
-        /// The animation preset to apply. Available presets: &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`fadeIn` - fadeIn in animation&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`slideIn` - slide in from a direction&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`typewriter` - typewriter effect&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`ascend` - ascend from a direction&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`shift` - shift in from a direction&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`movingLetters` - letters move in from a direction&lt;/li&gt;<br/>
+        /// The animation preset to apply. Every preset starts with the clip. Available presets: &lt;ul&gt;<br/>
+        ///   &lt;li&gt;`fadeIn` - fade in&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`slideIn` - fade in while sliding in `direction`&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`typewriter` - type the text out behind a cursor&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`ascend` - each word rises (`up`) or drops (`down`) into place&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`shift` - fade in while shifting a short distance in `direction`&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`movingLetters` - fade in, then ripple the letters along `direction` for the rest of the clip. Ignores `duration` and `style`.&lt;/li&gt;<br/>
         /// &lt;/ul&gt;<br/>
         /// Example: shift
         /// </summary>
@@ -26,7 +26,7 @@ namespace Shotstack
         public required global::Shotstack.RichTextAnimationPreset Preset { get; set; }
 
         /// <summary>
-        /// Override animation duration in seconds. Must be between 0.1 and 30 seconds.<br/>
+        /// Override animation duration in seconds. Must be between 0.1 and 30 seconds. When omitted, the text animates at about 30 characters per second, taking at least 0.3 seconds and at most 90% of the clip.<br/>
         /// Example: 2
         /// </summary>
         /// <example>2</example>
@@ -34,7 +34,7 @@ namespace Shotstack
         public double? Duration { get; set; }
 
         /// <summary>
-        /// Animation style - animate by character or by word. Only applicable for typewriter and shift animations.<br/>
+        /// Animate by character or by word. Applies to `fadeIn`, `slideIn`, `typewriter` and `shift`, where `shift` defaults to `character`. `ascend` always animates by word.<br/>
         /// Example: character
         /// </summary>
         /// <example>character</example>
@@ -43,7 +43,7 @@ namespace Shotstack
         public global::Shotstack.RichTextAnimationStyle? Style { get; set; }
 
         /// <summary>
-        /// Direction for directional animations. Required for slideIn, ascend, shift, and movingLetters presets. &lt;ul&gt;<br/>
+        /// The direction the text travels. Defaults to `left` for `slideIn` and `shift`, and to `up` for `ascend` and `movingLetters`. &lt;ul&gt;<br/>
         ///   &lt;li&gt;`ascend` - supports: up, down&lt;/li&gt;<br/>
         ///   &lt;li&gt;`shift` - supports: left, right, up, down&lt;/li&gt;<br/>
         ///   &lt;li&gt;`slideIn` - supports: left, right, up, down&lt;/li&gt;<br/>
@@ -66,26 +66,26 @@ namespace Shotstack
         /// Initializes a new instance of the <see cref="RichTextAnimation" /> class.
         /// </summary>
         /// <param name="preset">
-        /// The animation preset to apply. Available presets: &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`fadeIn` - fadeIn in animation&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`slideIn` - slide in from a direction&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`typewriter` - typewriter effect&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`ascend` - ascend from a direction&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`shift` - shift in from a direction&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`movingLetters` - letters move in from a direction&lt;/li&gt;<br/>
+        /// The animation preset to apply. Every preset starts with the clip. Available presets: &lt;ul&gt;<br/>
+        ///   &lt;li&gt;`fadeIn` - fade in&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`slideIn` - fade in while sliding in `direction`&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`typewriter` - type the text out behind a cursor&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`ascend` - each word rises (`up`) or drops (`down`) into place&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`shift` - fade in while shifting a short distance in `direction`&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`movingLetters` - fade in, then ripple the letters along `direction` for the rest of the clip. Ignores `duration` and `style`.&lt;/li&gt;<br/>
         /// &lt;/ul&gt;<br/>
         /// Example: shift
         /// </param>
         /// <param name="duration">
-        /// Override animation duration in seconds. Must be between 0.1 and 30 seconds.<br/>
+        /// Override animation duration in seconds. Must be between 0.1 and 30 seconds. When omitted, the text animates at about 30 characters per second, taking at least 0.3 seconds and at most 90% of the clip.<br/>
         /// Example: 2
         /// </param>
         /// <param name="style">
-        /// Animation style - animate by character or by word. Only applicable for typewriter and shift animations.<br/>
+        /// Animate by character or by word. Applies to `fadeIn`, `slideIn`, `typewriter` and `shift`, where `shift` defaults to `character`. `ascend` always animates by word.<br/>
         /// Example: character
         /// </param>
         /// <param name="direction">
-        /// Direction for directional animations. Required for slideIn, ascend, shift, and movingLetters presets. &lt;ul&gt;<br/>
+        /// The direction the text travels. Defaults to `left` for `slideIn` and `shift`, and to `up` for `ascend` and `movingLetters`. &lt;ul&gt;<br/>
         ///   &lt;li&gt;`ascend` - supports: up, down&lt;/li&gt;<br/>
         ///   &lt;li&gt;`shift` - supports: left, right, up, down&lt;/li&gt;<br/>
         ///   &lt;li&gt;`slideIn` - supports: left, right, up, down&lt;/li&gt;<br/>

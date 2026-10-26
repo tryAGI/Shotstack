@@ -4,13 +4,13 @@
 namespace Shotstack
 {
     /// <summary>
-    /// The animation preset to apply. Available presets: &lt;ul&gt;<br/>
-    ///   &lt;li&gt;`fadeIn` - fadeIn in animation&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`slideIn` - slide in from a direction&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`typewriter` - typewriter effect&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`ascend` - ascend from a direction&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`shift` - shift in from a direction&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`movingLetters` - letters move in from a direction&lt;/li&gt;<br/>
+    /// The animation preset to apply. Every preset starts with the clip. Available presets: &lt;ul&gt;<br/>
+    ///   &lt;li&gt;`fadeIn` - fade in&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`slideIn` - fade in while sliding in `direction`&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`typewriter` - type the text out behind a cursor&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`ascend` - each word rises (`up`) or drops (`down`) into place&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`shift` - fade in while shifting a short distance in `direction`&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`movingLetters` - fade in, then ripple the letters along `direction` for the rest of the clip. Ignores `duration` and `style`.&lt;/li&gt;<br/>
     /// &lt;/ul&gt;<br/>
     /// Example: shift
     /// </summary>
