@@ -29,7 +29,7 @@ namespace Shotstack
 
         /// <summary>
         /// The preset output resolution of the video or image. For custom sizes use the `size` property. Either `resolution` or `size` (with both `width` and `height`) must be specified for all formats except `mp3`. &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`preview` - 512px x 288px @ 15fps&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`preview` - 512px x 288px @ 12fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`mobile` - 640px x 360px @ 25fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`sd` - 1024px x 576px @ 25fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`hd` - 1280px x 720px @ 25fps&lt;/li&gt;<br/>
@@ -65,7 +65,7 @@ namespace Shotstack
         public global::Shotstack.Size? Size { get; set; }
 
         /// <summary>
-        /// Override the default frames per second. Useful for when the source footage is recorded at 30fps, i.e. on  mobile devices. Lower frame rates can be used to add cinematic quality (24fps) or to create smaller file size/faster render times or animated gifs (12 or 15fps). Default is 25fps. &lt;ul&gt;<br/>
+        /// Override the default frames per second. Useful for when the source footage is recorded at 30fps, i.e. on  mobile devices. Lower frame rates can be used to add cinematic quality (24fps) or to create smaller file size/faster render times or animated gifs (12 or 15fps). Default is 25fps, or 12fps for the `preview` resolution. &lt;ul&gt;<br/>
         ///   &lt;li&gt;`12` - 12fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`15` - 15fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`24` - 24fps&lt;/li&gt;<br/>
@@ -86,11 +86,11 @@ namespace Shotstack
 
         /// <summary>
         /// Override the resolution and scale the video or image to render at a different size. When using scaleTo the asset should be edited at the resolution dimensions, i.e. use font sizes that look best at HD, then use scaleTo to output the file at SD and the text will be scaled to the correct size. This is useful if you want to create multiple asset sizes. &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`preview` - 512px x 288px @ 15fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`mobile` - 640px x 360px @ 25fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`sd` - 1024px x 576px @25fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`hd` - 1280px x 720px @25fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`1080` - 1920px x 1080px @25fps&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`preview` - 512px x 288px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`mobile` - 640px x 360px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`sd` - 1024px x 576px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`hd` - 1280px x 720px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`1080` - 1920px x 1080px&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scaleTo")]
@@ -174,7 +174,7 @@ namespace Shotstack
         /// </param>
         /// <param name="resolution">
         /// The preset output resolution of the video or image. For custom sizes use the `size` property. Either `resolution` or `size` (with both `width` and `height`) must be specified for all formats except `mp3`. &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`preview` - 512px x 288px @ 15fps&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`preview` - 512px x 288px @ 12fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`mobile` - 640px x 360px @ 25fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`sd` - 1024px x 576px @ 25fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`hd` - 1280px x 720px @ 25fps&lt;/li&gt;<br/>
@@ -197,7 +197,7 @@ namespace Shotstack
         /// Set a custom size for a video or image in pixels. When using a custom size omit the `resolution` and `aspectRatio`. Custom sizes must be divisible by 2 based on the encoder specifications.
         /// </param>
         /// <param name="fps">
-        /// Override the default frames per second. Useful for when the source footage is recorded at 30fps, i.e. on  mobile devices. Lower frame rates can be used to add cinematic quality (24fps) or to create smaller file size/faster render times or animated gifs (12 or 15fps). Default is 25fps. &lt;ul&gt;<br/>
+        /// Override the default frames per second. Useful for when the source footage is recorded at 30fps, i.e. on  mobile devices. Lower frame rates can be used to add cinematic quality (24fps) or to create smaller file size/faster render times or animated gifs (12 or 15fps). Default is 25fps, or 12fps for the `preview` resolution. &lt;ul&gt;<br/>
         ///   &lt;li&gt;`12` - 12fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`15` - 15fps&lt;/li&gt;<br/>
         ///   &lt;li&gt;`24` - 24fps&lt;/li&gt;<br/>
@@ -214,11 +214,11 @@ namespace Shotstack
         /// </param>
         /// <param name="scaleTo">
         /// Override the resolution and scale the video or image to render at a different size. When using scaleTo the asset should be edited at the resolution dimensions, i.e. use font sizes that look best at HD, then use scaleTo to output the file at SD and the text will be scaled to the correct size. This is useful if you want to create multiple asset sizes. &lt;ul&gt;<br/>
-        ///   &lt;li&gt;`preview` - 512px x 288px @ 15fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`mobile` - 640px x 360px @ 25fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`sd` - 1024px x 576px @25fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`hd` - 1280px x 720px @25fps&lt;/li&gt;<br/>
-        ///   &lt;li&gt;`1080` - 1920px x 1080px @25fps&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`preview` - 512px x 288px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`mobile` - 640px x 360px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`sd` - 1024px x 576px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`hd` - 1280px x 720px&lt;/li&gt;<br/>
+        ///   &lt;li&gt;`1080` - 1920px x 1080px&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
         /// </param>
         /// <param name="quality">

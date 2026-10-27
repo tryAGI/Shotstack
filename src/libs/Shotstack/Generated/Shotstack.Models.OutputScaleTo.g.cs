@@ -5,11 +5,11 @@ namespace Shotstack
 {
     /// <summary>
     /// Override the resolution and scale the video or image to render at a different size. When using scaleTo the asset should be edited at the resolution dimensions, i.e. use font sizes that look best at HD, then use scaleTo to output the file at SD and the text will be scaled to the correct size. This is useful if you want to create multiple asset sizes. &lt;ul&gt;<br/>
-    ///   &lt;li&gt;`preview` - 512px x 288px @ 15fps&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`mobile` - 640px x 360px @ 25fps&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`sd` - 1024px x 576px @25fps&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`hd` - 1280px x 720px @25fps&lt;/li&gt;<br/>
-    ///   &lt;li&gt;`1080` - 1920px x 1080px @25fps&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`preview` - 512px x 288px&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`mobile` - 640px x 360px&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`sd` - 1024px x 576px&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`hd` - 1280px x 720px&lt;/li&gt;<br/>
+    ///   &lt;li&gt;`1080` - 1920px x 1080px&lt;/li&gt;<br/>
     /// &lt;/ul&gt;
     /// </summary>
     public enum OutputScaleTo
