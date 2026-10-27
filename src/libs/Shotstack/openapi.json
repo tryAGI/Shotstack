@@ -4020,7 +4020,7 @@
             "example": "mp4"
           },
           "resolution": {
-            "description": "The preset output resolution of the video or image. For custom sizes use the `size` property. Either `resolution` or `size` (with both `width` and `height`) must be specified for all formats except `mp3`. <ul>\n  <li>`preview` - 512px x 288px @ 15fps</li>\n  <li>`mobile` - 640px x 360px @ 25fps</li>\n  <li>`sd` - 1024px x 576px @ 25fps</li>\n  <li>`hd` - 1280px x 720px @ 25fps</li>\n  <li>`1080` - 1920px x 1080px @ 25fps</li>\n  <li>`4k` - 3840px x 2160px @ 25fps</li>\n</ul>",
+            "description": "The preset output resolution of the video or image. For custom sizes use the `size` property. Either `resolution` or `size` (with both `width` and `height`) must be specified for all formats except `mp3`. <ul>\n  <li>`preview` - 512px x 288px @ 12fps</li>\n  <li>`mobile` - 640px x 360px @ 25fps</li>\n  <li>`sd` - 1024px x 576px @ 25fps</li>\n  <li>`hd` - 1280px x 720px @ 25fps</li>\n  <li>`1080` - 1920px x 1080px @ 25fps</li>\n  <li>`4k` - 3840px x 2160px @ 25fps</li>\n</ul>",
             "enum": [
               "preview",
               "mobile",
@@ -4048,7 +4048,7 @@
             "$ref": "#/components/schemas/Size"
           },
           "fps": {
-            "description": "Override the default frames per second. Useful for when the source footage is recorded at 30fps, i.e. on  mobile devices. Lower frame rates can be used to add cinematic quality (24fps) or to create smaller file size/faster render times or animated gifs (12 or 15fps). Default is 25fps. <ul>\n  <li>`12` - 12fps</li>\n  <li>`15` - 15fps</li>\n  <li>`24` - 24fps</li>\n  <li>`23.976` - 23.976fps</li>\n  <li>`25` (default) - 25fps</li>\n  <li>`29.97` - 29.97fps</li>\n  <li>`30` - 30fps</li>\n  <li>`48` - 48fps</li>\n  <li>`50` - 50fps</li>\n  <li>`59.94` - 59.94fps</li>\n  <li>`60` - 60fps</li>\n</ul>",
+            "description": "Override the default frames per second. Useful for when the source footage is recorded at 30fps, i.e. on  mobile devices. Lower frame rates can be used to add cinematic quality (24fps) or to create smaller file size/faster render times or animated gifs (12 or 15fps). Default is 25fps, or 12fps for the `preview` resolution. <ul>\n  <li>`12` - 12fps</li>\n  <li>`15` - 15fps</li>\n  <li>`24` - 24fps</li>\n  <li>`23.976` - 23.976fps</li>\n  <li>`25` (default) - 25fps</li>\n  <li>`29.97` - 29.97fps</li>\n  <li>`30` - 30fps</li>\n  <li>`48` - 48fps</li>\n  <li>`50` - 50fps</li>\n  <li>`59.94` - 59.94fps</li>\n  <li>`60` - 60fps</li>\n</ul>",
             "enum": [
               12,
               15,
@@ -4066,7 +4066,7 @@
             "example": 25
           },
           "scaleTo": {
-            "description": "Override the resolution and scale the video or image to render at a different size. When using scaleTo the asset should be edited at the resolution dimensions, i.e. use font sizes that look best at HD, then use scaleTo to output the file at SD and the text will be scaled to the correct size. This is useful if you want to create multiple asset sizes. <ul>\n  <li>`preview` - 512px x 288px @ 15fps</li>\n  <li>`mobile` - 640px x 360px @ 25fps</li>\n  <li>`sd` - 1024px x 576px @25fps</li>\n  <li>`hd` - 1280px x 720px @25fps</li>\n  <li>`1080` - 1920px x 1080px @25fps</li>\n</ul>",
+            "description": "Override the resolution and scale the video or image to render at a different size. When using scaleTo the asset should be edited at the resolution dimensions, i.e. use font sizes that look best at HD, then use scaleTo to output the file at SD and the text will be scaled to the correct size. This is useful if you want to create multiple asset sizes. <ul>\n  <li>`preview` - 512px x 288px</li>\n  <li>`mobile` - 640px x 360px</li>\n  <li>`sd` - 1024px x 576px</li>\n  <li>`hd` - 1280px x 720px</li>\n  <li>`1080` - 1920px x 1080px</li>\n</ul>",
             "enum": [
               "preview",
               "mobile",
