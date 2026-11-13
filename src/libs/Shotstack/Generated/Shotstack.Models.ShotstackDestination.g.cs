@@ -20,7 +20,7 @@ namespace Shotstack
         public required string Provider { get; set; } = "shotstack";
 
         /// <summary>
-        /// Set to `true` to [opt-out](https://shotstack.io/docs/guide/serving-assets/self-host/) from the Shotstack hosting and CDN service. All files must be downloaded within 24 hours of rendering.<br/>
+        /// Set to `true` to [opt-out](https://shotstack.io/docs/guide/serving-assets/self-host/) from the Shotstack hosting and CDN service. By default files are hosted and stay until you delete them. If you opt out, the file is not hosted and must be downloaded from the render status `url` within 24 hours of rendering.<br/>
         /// Example: false
         /// </summary>
         /// <example>false</example>
@@ -42,7 +42,7 @@ namespace Shotstack
         /// Example: shotstack
         /// </param>
         /// <param name="exclude">
-        /// Set to `true` to [opt-out](https://shotstack.io/docs/guide/serving-assets/self-host/) from the Shotstack hosting and CDN service. All files must be downloaded within 24 hours of rendering.<br/>
+        /// Set to `true` to [opt-out](https://shotstack.io/docs/guide/serving-assets/self-host/) from the Shotstack hosting and CDN service. By default files are hosted and stay until you delete them. If you opt out, the file is not hosted and must be downloaded from the render status `url` within 24 hours of rendering.<br/>
         /// Example: false
         /// </param>
 #if NET7_0_OR_GREATER
