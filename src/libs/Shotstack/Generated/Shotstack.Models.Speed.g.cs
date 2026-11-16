@@ -6,7 +6,7 @@ namespace Shotstack
     /// <summary>
     /// Set the playback speed of a video or audio file. Allows you to preserve the pitch of the audio so that it is sped up without sounding too high pitched or too low.
     /// </summary>
-    public sealed partial class Speed2
+    public sealed partial class Speed
     {
         /// <summary>
         /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Set values less than 1 to slow down the playback speed, i.e. set speed to 0.5 to play back at half speed. Set values greater than 1 to speed up the playback speed, i.e. set speed to 2 to play back at double speed.<br/>
@@ -14,7 +14,7 @@ namespace Shotstack
         /// </summary>
         /// <example>1.5F</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public float? Speed { get; set; }
+        public float? Speed1 { get; set; }
 
         /// <summary>
         /// Set whether to adjust the audio pitch or not. Set to false to make the audio sound higher or lower pitched. By default the pitch is preserved.<br/>
@@ -31,9 +31,9 @@ namespace Shotstack
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Speed2" /> class.
+        /// Initializes a new instance of the <see cref="Speed" /> class.
         /// </summary>
-        /// <param name="speed">
+        /// <param name="speed1">
         /// Adjust the playback speed of the video clip between 0 (paused) and 10 (10x normal speed) where 1 is normal speed (defaults to 1). Set values less than 1 to slow down the playback speed, i.e. set speed to 0.5 to play back at half speed. Set values greater than 1 to speed up the playback speed, i.e. set speed to 2 to play back at double speed.<br/>
         /// Example: 1.5F
         /// </param>
@@ -44,18 +44,18 @@ namespace Shotstack
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Speed2(
-            float? speed,
+        public Speed(
+            float? speed1,
             bool? preservePitch)
         {
-            this.Speed = speed;
+            this.Speed1 = speed1;
             this.PreservePitch = preservePitch;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Speed2" /> class.
+        /// Initializes a new instance of the <see cref="Speed" /> class.
         /// </summary>
-        public Speed2()
+        public Speed()
         {
         }
 

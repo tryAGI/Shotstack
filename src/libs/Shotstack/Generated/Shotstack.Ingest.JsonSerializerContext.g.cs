@@ -60,7 +60,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenditionFormat), TypeInfoPropertyName = "RenditionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenditionFit), TypeInfoPropertyName = "RenditionFit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RenditionResolution), TypeInfoPropertyName = "RenditionResolution2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Speed2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Speed))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Enhancements))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TranscriptionFormat), TypeInfoPropertyName = "TranscriptionFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AudioEnhancement), TypeInfoPropertyName = "AudioEnhancement2")]
