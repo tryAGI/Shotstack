@@ -141,6 +141,12 @@ namespace Shotstack
         public global::Shotstack.ClipFilter? Filter { get; set; }
 
         /// <summary>
+        /// A list of filters to apply to the Clip, in the order they appear. Each filter has a `type` and its own properties. The same type can be used more than once and numeric properties can be animated with [Tween](./#tocs_tween) objects. If `filter` is also set, the filters in this list are applied before it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
+        public global::System.Collections.Generic.IList<global::Shotstack.Filter>? Filters { get; set; }
+
+        /// <summary>
         /// Offset an asset on the horizontal axis (left or right). Use a number or an array of [Tween](./#tocs_tween) objects to create a custom animation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("opacity")]
@@ -246,6 +252,9 @@ namespace Shotstack
         /// &lt;/ul&gt;<br/>
         /// Example: greyscale
         /// </param>
+        /// <param name="filters">
+        /// A list of filters to apply to the Clip, in the order they appear. Each filter has a `type` and its own properties. The same type can be used more than once and numeric properties can be animated with [Tween](./#tocs_tween) objects. If `filter` is also set, the filters in this list are applied before it.
+        /// </param>
         /// <param name="opacity">
         /// Offset an asset on the horizontal axis (left or right). Use a number or an array of [Tween](./#tocs_tween) objects to create a custom animation.
         /// </param>
@@ -273,6 +282,7 @@ namespace Shotstack
             global::Shotstack.Transition? transition,
             global::Shotstack.ClipEffect? effect,
             global::Shotstack.ClipFilter? filter,
+            global::System.Collections.Generic.IList<global::Shotstack.Filter>? filters,
             global::Shotstack.OneOf<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? opacity,
             global::Shotstack.Transformation? transform,
             string? alias)
@@ -290,6 +300,7 @@ namespace Shotstack
             this.Transition = transition;
             this.Effect = effect;
             this.Filter = filter;
+            this.Filters = filters;
             this.Opacity = opacity;
             this.Transform = transform;
             this.Alias = alias;

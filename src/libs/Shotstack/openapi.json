@@ -1627,6 +1627,13 @@
             "type": "string",
             "example": "greyscale"
           },
+          "filters": {
+            "description": "A list of filters to apply to the Clip, in the order they appear. Each filter has a `type` and its own properties. The same type can be used more than once and numeric properties can be animated with [Tween](./#tocs_tween) objects. If `filter` is also set, the filters in this list are applied before it.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Filter"
+            }
+          },
           "opacity": {
             "description": "Offset an asset on the horizontal axis (left or right). Use a number or an array of [Tween](./#tocs_tween) objects to create a custom animation.",
             "oneOf": [
@@ -3982,6 +3989,568 @@
         },
         "additionalProperties": false,
         "type": "object"
+      },
+      "Filter": {
+        "type": "object",
+        "description": "A filter that adjusts the look of a Clip. Choose from one of the available filter types below. Tween values outside a field's range are limited to that range.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "brightness": "#/components/schemas/BrightnessFilter",
+            "contrast": "#/components/schemas/ContrastFilter",
+            "saturation": "#/components/schemas/SaturationFilter",
+            "hue": "#/components/schemas/HueFilter",
+            "grade": "#/components/schemas/GradeFilter",
+            "blur": "#/components/schemas/BlurFilter",
+            "sharpen": "#/components/schemas/SharpenFilter",
+            "pixelate": "#/components/schemas/PixelateFilter",
+            "rgbSplit": "#/components/schemas/RgbSplitFilter",
+            "negative": "#/components/schemas/NegativeFilter"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BrightnessFilter"
+          },
+          {
+            "$ref": "#/components/schemas/ContrastFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SaturationFilter"
+          },
+          {
+            "$ref": "#/components/schemas/HueFilter"
+          },
+          {
+            "$ref": "#/components/schemas/GradeFilter"
+          },
+          {
+            "$ref": "#/components/schemas/BlurFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SharpenFilter"
+          },
+          {
+            "$ref": "#/components/schemas/PixelateFilter"
+          },
+          {
+            "$ref": "#/components/schemas/RgbSplitFilter"
+          },
+          {
+            "$ref": "#/components/schemas/NegativeFilter"
+          }
+        ],
+        "additionalProperties": false
+      },
+      "BrightnessFilter": {
+        "description": "Lightens or darkens the clip.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `brightness`.",
+            "type": "string",
+            "enum": [
+              "brightness"
+            ]
+          },
+          "value": {
+            "description": "Sets the brightness shift of the clip. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The brightness shift from -1 to 1. Positive values lighten the clip, negative values darken it and 0 leaves it unchanged (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.2
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the brightness shift over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "ContrastFilter": {
+        "description": "Increases or decreases the difference between the light and dark areas of the clip.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `contrast`.",
+            "type": "string",
+            "enum": [
+              "contrast"
+            ]
+          },
+          "value": {
+            "description": "Sets the contrast of the clip. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The contrast multiplier from 0 to 4. 1 leaves the clip unchanged (default), higher values increase the contrast and 0 produces flat grey.",
+                "minimum": 0,
+                "maximum": 4,
+                "example": 1.5
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the contrast over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "SaturationFilter": {
+        "description": "Increases or decreases the intensity of the colors in the clip.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `saturation`.",
+            "type": "string",
+            "enum": [
+              "saturation"
+            ]
+          },
+          "value": {
+            "description": "Sets the saturation of the clip. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The saturation multiplier from 0 to 4. 1 leaves the clip unchanged (default), higher values make colors more vivid and 0 produces greyscale.",
+                "minimum": 0,
+                "maximum": 4,
+                "example": 1.5
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the saturation over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "HueFilter": {
+        "description": "Rotates the hues of the clip around the color wheel.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `hue`.",
+            "type": "string",
+            "enum": [
+              "hue"
+            ]
+          },
+          "value": {
+            "description": "Sets the hue rotation of the clip in degrees. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The rotation in degrees. 0 leaves the clip unchanged (default) and 360 is a full turn back to the original hues.",
+                "example": 90
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the hue rotation over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "GradeFilter": {
+        "description": "Applies several grading adjustments at once: exposure, temperature, tint, highlights, shadows and vibrance. Every property is optional and an omitted property leaves the clip unchanged.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `grade`.",
+            "type": "string",
+            "enum": [
+              "grade"
+            ]
+          },
+          "exposure": {
+            "description": "Sets the exposure of the clip in stops. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The exposure change from -4 to 4 stops. Each stop doubles or halves the brightness. 0 leaves the clip unchanged (default).",
+                "minimum": -4,
+                "maximum": 4,
+                "example": 0.5
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the exposure over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "temperature": {
+            "description": "Sets the white balance of the clip. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The temperature shift from -1 to 1. Positive values warm the clip, negative values cool it and 0 leaves it unchanged (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.3
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the temperature over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "tint": {
+            "description": "Sets the tint of the clip between green and magenta. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The tint shift from -1 to 1. Positive values shift the clip toward magenta, negative values toward green and 0 leaves it unchanged (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.2
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the tint over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "highlights": {
+            "description": "Adjusts the brightest areas of the clip. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The highlights adjustment from -1 to 1. Positive values brighten the bright areas, negative values darken them and 0 leaves the clip unchanged (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": -0.3
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the highlights adjustment over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "shadows": {
+            "description": "Adjusts the darkest areas of the clip. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The shadows adjustment from -1 to 1. Positive values lift the dark areas, negative values deepen them and 0 leaves the clip unchanged (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.3
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the shadows adjustment over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "vibrance": {
+            "description": "Adjusts the saturation of the clip, with a stronger effect on muted colors than on colors that are already vivid. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The vibrance adjustment from -1 to 1. Positive values strengthen color, mostly in muted tones, negative values mute color and 0 leaves the clip unchanged (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.3
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the vibrance over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "BlurFilter": {
+        "description": "Blurs the clip. Set `value` to blur both axes equally, or set `x` and `y` to blur each axis separately.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `blur`.",
+            "type": "string",
+            "enum": [
+              "blur"
+            ]
+          },
+          "value": {
+            "description": "Sets the blur radius in pixels, measured on the clip before it is scaled to fit the viewport. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The blur radius in pixels from 0 to 100. 0 applies no blur (default) and 10 matches the `blur` filter preset.",
+                "minimum": 0,
+                "maximum": 100,
+                "example": 10
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the blur radius over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "x": {
+            "description": "Sets the horizontal blur radius in pixels, overriding `value` on that axis. When omitted, `value` is used. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The horizontal blur radius in pixels from 0 to 100.",
+                "minimum": 0,
+                "maximum": 100,
+                "example": 20
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the horizontal blur radius over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "y": {
+            "description": "Sets the vertical blur radius in pixels, overriding `value` on that axis. When omitted, `value` is used. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The vertical blur radius in pixels from 0 to 100.",
+                "minimum": 0,
+                "maximum": 100,
+                "example": 5
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the vertical blur radius over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "SharpenFilter": {
+        "description": "Sharpens the clip.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `sharpen`.",
+            "type": "string",
+            "enum": [
+              "sharpen"
+            ]
+          },
+          "value": {
+            "description": "Sets the amount of sharpening. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The sharpening amount from 0 to 40. 0 applies no sharpening (default).",
+                "minimum": 0,
+                "maximum": 40,
+                "example": 5
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the sharpening amount over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "radius": {
+            "description": "Sets the sharpening radius in pixels for a 720p frame. It scales with the frame height. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The sharpening radius from 0 to 10. Defaults to 3.",
+                "minimum": 0,
+                "maximum": 10,
+                "example": 3
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the sharpening radius over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "PixelateFilter": {
+        "description": "Turns the clip into blocky pixels.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `pixelate`.",
+            "type": "string",
+            "enum": [
+              "pixelate"
+            ]
+          },
+          "value": {
+            "description": "Sets the strength of the pixelation. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The pixelation strength from 0 to 1. 0 leaves the clip unchanged (default).",
+                "minimum": 0,
+                "maximum": 1,
+                "example": 0.5
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the pixelation strength over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "RgbSplitFilter": {
+        "description": "Offsets the red and blue channels in opposite directions to create a color fringing effect. Channels pushed past one edge of the frame reappear at the opposite edge, so small values such as 0.02 work best and 1 or -1 shows no split.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `rgbSplit`.",
+            "type": "string",
+            "enum": [
+              "rgbSplit"
+            ]
+          },
+          "x": {
+            "description": "Sets the horizontal offset of the red and blue channels as a fraction of the clip's frame. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The horizontal offset from -1 to 1. Red moves right by this fraction and blue moves left by the same amount. Negative values reverse the direction and 0 applies no offset (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.02
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the horizontal offset over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          },
+          "y": {
+            "description": "Sets the vertical offset of the red and blue channels as a fraction of the clip's frame. Use a number or an array of [Tween](./#tocs_tween) objects to change it over time.",
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "The vertical offset from -1 to 1. Red moves up by this fraction and blue moves down by the same amount. Negative values reverse the direction and 0 applies no offset (default).",
+                "minimum": -1,
+                "maximum": 1,
+                "example": 0.02
+              },
+              {
+                "type": "array",
+                "description": "An array of [Tween](./#tocs_tween) objects that change the vertical offset over time.",
+                "items": {
+                  "$ref": "#/components/schemas/Tween"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "NegativeFilter": {
+        "description": "Inverts the clip, turning light areas dark and dark areas light. It has no properties other than `type` and cannot be animated.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "description": "The filter type - set to `negative`.",
+            "type": "string",
+            "enum": [
+              "negative"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
       },
       "MergeField": {
         "description": "A merge field consists of a key; `find`, and a value; `replace`. Merge fields can be used to replace placeholders within the JSON edit to create re-usable templates. Placeholders should be a string with double brace delimiters, i.e. `\"{{NAME}}\"`. A placeholder can be used for any value within the JSON edit.",

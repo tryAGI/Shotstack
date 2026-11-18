@@ -223,6 +223,50 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.TweenEasingNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.FilterDiscriminatorTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.FilterDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.BrightnessFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.BrightnessFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.ContrastFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.ContrastFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.SaturationFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.SaturationFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.HueFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.HueFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GradeFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.GradeFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.BlurFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.BlurFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.SharpenFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.SharpenFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.PixelateFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.PixelateFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.RgbSplitFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.RgbSplitFilterTypeNullableJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.NegativeFilterTypeJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.NegativeFilterTypeNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.OutputFormatJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.OutputFormatNullableJsonConverter),
@@ -341,6 +385,8 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.AssetJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.FilterJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.DestinationsJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.AudioEnhancementJsonConverter),
@@ -378,6 +424,42 @@ namespace Shotstack
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
+
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
             typeof(global::Shotstack.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -421,6 +503,8 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Transition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ClipEffect), TypeInfoPropertyName = "ClipEffect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ClipFilter), TypeInfoPropertyName = "ClipFilter2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Shotstack.Filter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Filter), TypeInfoPropertyName = "Filter2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>), TypeInfoPropertyName = "OneOfDoubleIListTween2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Transformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAsset))]
@@ -566,6 +650,28 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextAnimationDirection), TypeInfoPropertyName = "RichTextAnimationDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TweenInterpolation), TypeInfoPropertyName = "TweenInterpolation2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TweenEasing), TypeInfoPropertyName = "TweenEasing2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.BrightnessFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ContrastFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SaturationFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HueFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GradeFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.BlurFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SharpenFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PixelateFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RgbSplitFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.NegativeFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.FilterDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.FilterDiscriminatorType), TypeInfoPropertyName = "FilterDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.BrightnessFilterType), TypeInfoPropertyName = "BrightnessFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ContrastFilterType), TypeInfoPropertyName = "ContrastFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SaturationFilterType), TypeInfoPropertyName = "SaturationFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.HueFilterType), TypeInfoPropertyName = "HueFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.GradeFilterType), TypeInfoPropertyName = "GradeFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.BlurFilterType), TypeInfoPropertyName = "BlurFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SharpenFilterType), TypeInfoPropertyName = "SharpenFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.PixelateFilterType), TypeInfoPropertyName = "PixelateFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RgbSplitFilterType), TypeInfoPropertyName = "RgbSplitFilterType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.NegativeFilterType), TypeInfoPropertyName = "NegativeFilterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OutputFormat), TypeInfoPropertyName = "OutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OutputResolution), TypeInfoPropertyName = "OutputResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OutputAspectRatio), TypeInfoPropertyName = "OutputAspectRatio2")]
@@ -702,6 +808,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Clip>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<float?, global::System.Collections.Generic.List<global::Shotstack.Tween>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Tween>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Filter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.List<global::Shotstack.Tween>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RichTextGradientStop>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Destinations>))]
