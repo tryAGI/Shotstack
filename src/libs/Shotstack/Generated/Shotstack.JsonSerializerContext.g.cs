@@ -419,6 +419,8 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
+            typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
 
             typeof(global::Shotstack.JsonConverters.OneOfJsonConverter<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>),
@@ -567,6 +569,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RichTextAnimation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AudioAssetType), TypeInfoPropertyName = "AudioAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.AudioAssetEffect), TypeInfoPropertyName = "AudioAssetEffect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Duck))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAssetType), TypeInfoPropertyName = "ShapeAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAssetShape), TypeInfoPropertyName = "ShapeAssetShape2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ShapeAssetFill))]
@@ -631,6 +634,8 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SvgAssetType), TypeInfoPropertyName = "SvgAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionIn), TypeInfoPropertyName = "TransitionIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionOut), TypeInfoPropertyName = "TransitionOut2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<string, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "OneOfStringIListString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RotateTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SkewTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.FlipTransformation))]
@@ -810,6 +815,8 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Tween>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Filter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<double?, global::System.Collections.Generic.List<global::Shotstack.Tween>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<string, global::System.Collections.Generic.List<string>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.RichTextGradientStop>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Shotstack.Destinations>))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.

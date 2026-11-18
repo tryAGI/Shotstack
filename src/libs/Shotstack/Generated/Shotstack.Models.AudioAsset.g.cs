@@ -94,6 +94,12 @@ namespace Shotstack
         public global::Shotstack.AudioAssetEffect? Effect { get; set; }
 
         /// <summary>
+        /// Lowers the clip's volume while other clips play and restores it afterwards, for example to keep music under a voiceover. The volume ramps down just before each referenced clip starts and back up after it ends. Requires a numeric `volume` on the clip and cannot be combined with `speed`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duck")]
+        public global::Shotstack.Duck? Duck { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -135,6 +141,9 @@ namespace Shotstack
         ///   &lt;li&gt;`fadeInFadeOut` - fade volume in and out&lt;/li&gt;<br/>
         /// &lt;/ul&gt;
         /// </param>
+        /// <param name="duck">
+        /// Lowers the clip's volume while other clips play and restores it afterwards, for example to keep music under a voiceover. The volume ramps down just before each referenced clip starts and back up after it ends. Requires a numeric `volume` on the clip and cannot be combined with `speed`.
+        /// </param>
         /// <param name="type">
         /// The type of asset - set to `audio` for audio assets.<br/>
         /// Default Value: audio
@@ -151,6 +160,7 @@ namespace Shotstack
             global::Shotstack.OneOf<float?, global::System.Collections.Generic.IList<global::Shotstack.Tween>>? volume,
             float? speed,
             global::Shotstack.AudioAssetEffect? effect,
+            global::Shotstack.Duck? duck,
             global::Shotstack.AudioAssetType type = global::Shotstack.AudioAssetType.Audio)
         {
             this.Type = type;
@@ -162,6 +172,7 @@ namespace Shotstack
             this.Volume = volume;
             this.Speed = speed;
             this.Effect = effect;
+            this.Duck = duck;
         }
 
         /// <summary>

@@ -136,6 +136,7 @@ namespace Shotstack
             options.Converters.Add(new global::Shotstack.JsonConverters.DestinationsJsonConverter());
             options.Converters.Add(new global::Shotstack.JsonConverters.OneOfJsonConverter<double?, string>());
             options.Converters.Add(new global::Shotstack.JsonConverters.OneOfJsonConverter<double?, string>());
+            options.Converters.Add(new global::Shotstack.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Shotstack.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
