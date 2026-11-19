@@ -171,6 +171,10 @@ namespace Shotstack
 
             typeof(global::Shotstack.JsonConverters.TransitionOutNullableJsonConverter),
 
+            typeof(global::Shotstack.JsonConverters.MuteSoundJsonConverter),
+
+            typeof(global::Shotstack.JsonConverters.MuteSoundNullableJsonConverter),
+
             typeof(global::Shotstack.JsonConverters.TextAlignmentHorizontalJsonConverter),
 
             typeof(global::Shotstack.JsonConverters.TextAlignmentHorizontalNullableJsonConverter),
@@ -637,6 +641,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.TransitionOut), TypeInfoPropertyName = "TransitionOut2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.OneOf<string, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "OneOfStringIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.MuteSound), TypeInfoPropertyName = "MuteSound2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.RotateTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.SkewTransformation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.FlipTransformation))]

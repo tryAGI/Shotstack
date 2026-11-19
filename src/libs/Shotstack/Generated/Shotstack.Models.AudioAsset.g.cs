@@ -100,7 +100,7 @@ namespace Shotstack
         public global::Shotstack.Duck? Duck { get; set; }
 
         /// <summary>
-        /// Silences English profanity in the clip's speech, and any listed `words`. The audio is transcribed when the edit renders, and the volume drops to zero just before each matching word and returns just after it. Rich captions transcribed from this clip show the same words masked. Profanity detection is not exhaustive: list any word that must not be heard. Cannot be combined with `speed`, `duck` or a volume tween array.
+        /// Silences English profanity in the clip's speech, and any listed `words`. The audio is transcribed when the edit renders, and the volume drops to zero over each matching word, with an optional bleep. Rich captions transcribed from this clip show the same words masked. Profanity detection is not exhaustive: list any word that must not be heard. Cannot be combined with `speed`, `duck` or a volume tween array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mute")]
         public global::Shotstack.Mute? Mute { get; set; }
@@ -151,7 +151,7 @@ namespace Shotstack
         /// Lowers the clip's volume while other clips play and restores it afterwards, for example to keep music under a voiceover. The volume ramps down just before each referenced clip starts and back up after it ends. Requires a numeric `volume` on the clip and cannot be combined with `speed`.
         /// </param>
         /// <param name="mute">
-        /// Silences English profanity in the clip's speech, and any listed `words`. The audio is transcribed when the edit renders, and the volume drops to zero just before each matching word and returns just after it. Rich captions transcribed from this clip show the same words masked. Profanity detection is not exhaustive: list any word that must not be heard. Cannot be combined with `speed`, `duck` or a volume tween array.
+        /// Silences English profanity in the clip's speech, and any listed `words`. The audio is transcribed when the edit renders, and the volume drops to zero over each matching word, with an optional bleep. Rich captions transcribed from this clip show the same words masked. Profanity detection is not exhaustive: list any word that must not be heard. Cannot be combined with `speed`, `duck` or a volume tween array.
         /// </param>
         /// <param name="type">
         /// The type of asset - set to `audio` for audio assets.<br/>
