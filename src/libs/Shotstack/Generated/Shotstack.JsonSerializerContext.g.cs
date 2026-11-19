@@ -544,6 +544,7 @@ namespace Shotstack
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetType), TypeInfoPropertyName = "VideoAssetType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.VideoAssetVolumeEffect), TypeInfoPropertyName = "VideoAssetVolumeEffect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Mute))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.Crop))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ChromaKey))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Shotstack.ImageAssetType), TypeInfoPropertyName = "ImageAssetType2")]
